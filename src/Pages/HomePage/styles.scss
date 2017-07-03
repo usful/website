@@ -1,11 +1,18 @@
 .homePage {
   background-color: white;
   color: black;
-  padding: 10em 7em;
+  width: 90em;
+  padding: 7em 0 7em 6em;
+  margin: 0 auto;
+  box-sizing: border-box;
 
   section.top {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  .container {
+    position: relative;
   }
 }

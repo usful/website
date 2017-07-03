@@ -35,6 +35,12 @@
 
 html,
 body {
-  font-size: 16px;
+  font-size: 1.6vh;
   font-family: Adamina, serif;
+}
+
+@media (max-height: 700px) {
+  html, body {
+    font-size: 10px;
+  }
 }

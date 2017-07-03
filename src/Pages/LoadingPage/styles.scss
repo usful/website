@@ -1,0 +1,38 @@
+@import '../../variables';
+
+.loadingPage {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: $black;
+  color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 100;
+
+  .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 1em;
+
+    .bar {
+      background-color: $white;
+      height: 1em;
+      width: 0;
+
+      transition: width 100ms ease-in-out;
+    }
+  }
+
+  &.hiding {
+    opacity: 0;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

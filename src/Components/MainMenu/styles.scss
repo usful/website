@@ -1,0 +1,27 @@
+@import '../../variables';
+
+.mainMenu {
+  position: absolute;
+  top: 24rem;
+  left: -26rem;
+  display: flex;
+  flex-direction: row;
+  width: 45rem;
+  justify-content: center;
+  padding: 0 1rem;
+  transform: rotate(270deg);
+
+  a {
+    font-family: Adamina, serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    color: $black;
+    transition: color $transition;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}

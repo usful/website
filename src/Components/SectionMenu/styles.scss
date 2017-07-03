@@ -1,0 +1,18 @@
+@import '../../variables';
+
+.sectionMenu {
+  position: absolute;
+  bottom: 5rem;
+  right: 8rem;
+  background-color: $black;
+  display: flex;
+  flex-direction: row;
+  box-shadow: $dropShadow;
+
+  transition: background-color $transition, transform $transition;
+
+  &:hover {
+    background-color: $green;
+    transform: translate3d(0, -0.5rem, 0);
+  }
+}

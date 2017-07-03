@@ -1,0 +1,17 @@
+@import '../../../variables';
+
+.projectSlider {
+  width: 69rem;
+  height: 42rem;
+  margin-left: 3rem;
+  position: relative;
+  background-color: $black;
+  overflow: hidden;
+
+  section.slides {
+    height: 42rem;
+    display: flex;
+    flex-direction: row;
+    transition: transform $transitionMedium;
+  }
+}
