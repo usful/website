@@ -1,0 +1,11 @@
+.homePage {
+  background-color: white;
+  color: black;
+  padding: 10em 7em;
+
+  section.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

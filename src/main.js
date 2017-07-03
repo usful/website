@@ -1,7 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
+
+import HomePage from './Pages/HomePage';
+
+const App = () => {
+  return <HomePage/>;
+};
 
 render(
-  <h1>How are you!</h1>,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById('root')
 );
