@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .homePage {
   background-color: white;
   color: black;
@@ -5,14 +7,20 @@
   padding: 7em 0 7em 6em;
   margin: 0 auto;
   box-sizing: border-box;
+  opacity: 1;
 
   section.top {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: -1.8rem;
   }
 
   .container {
     position: relative;
+  }
+
+  &.hiding {
+    opacity: 0;
   }
 }

@@ -4,6 +4,7 @@ export default {
       id: 'a1',
       slug: 'experiences',
       name: 'Experiences',
+      hero: '/img/sergio-alejandro-ortiz-110188.jpg',
       projects: [
         {
           id: 'ep1',

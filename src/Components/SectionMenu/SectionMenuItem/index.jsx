@@ -1,11 +1,23 @@
 import React from 'react';
 import styles from './styles.scss';
 
-export default function SectionMenuItem(props) {
+export default function SectionMenuItem({
+  item,
+  position,
+  onMouseOver = () => {},
+  onMouseLeave = () => {}
+}) {
   return (
-    <a href={props.item.slug} className={styles.sectionMenuItem}>
-      <span>{`0${props.position}`}</span>
-      <label>{props.item.name}</label>
+    <a
+      href={item.slug}
+      className={styles.sectionMenuItem}
+      onMouseOver={() => onMouseOver(item)}
+      onMouseLeave={() => onMouseLeave(item)}
+    >
+      <span>{`0${position}`}</span>
+      <label>
+        {item.name}
+      </label>
     </a>
   );
 }
