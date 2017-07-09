@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import styles from './styles.scss';
+import utils from '../../utils';
 
 import PageBase from '../PageBase';
 import Logo from '../../Components/Logo';
@@ -20,24 +21,65 @@ export default class HomePage extends PageBase {
     super(props);
   }
 
+  async show1() {
+    await utils.pause(1);
+
+    this.setState({
+      show1: true
+    });
+
+    await utils.pause(utils.timing);
+
+    this.setState({ show2: true, showing: false });
+
+    await utils.pause(utils.timing);
+
+    this.props.onShown();
+  }
+
+  async hide1() {
+    await utils.pause(1);
+
+    this.setState({
+      show2: false
+    });
+
+    await utils.pause(utils.timing);
+
+    this.setState({
+      show1: false
+    });
+
+    this.props.onHidden();
+
+    await utils.pause(utils.timing);
+
+    this.setState({
+      hidden: true,
+      hiding: false
+    });
+  }
+
   sectionMouseOver(section) {
-    console.log('over', section);
+    //console.log('over', section);
   }
 
   sectionMouseLeave(section) {
-    console.log('out', section);
+    //console.log('out', section);
   }
 
   sectionMenuMouseLeave() {
-    console.log('menu-out');
+    //console.log('menu-out');
   }
 
   render() {
     return (
       <div
         className={cx(styles.homePage, {
+          [styles.showing]: this.state.showing,
           [styles.show1]: this.state.show1,
           [styles.show2]: this.state.show2,
+          [styles.hiding]: this.state.hiding,
           [styles.hidden]: this.state.hidden
         })}
         style={this.transitionStyle}

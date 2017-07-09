@@ -37,13 +37,12 @@
     text-transform: uppercase;
   }
 
-
-  &.show1 {
-    opacity: 0;
+  &.showing {
+    opacity: 1;
   }
 
-  &.show2 {
-    opacity: 1;
+  &.hiding {
+    opacity: 0;
   }
 
   &.hidden {

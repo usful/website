@@ -1,7 +1,10 @@
 import arrayClamp from './arrayClamp';
-const timing = 2000;
+import pause from './pause';
+
+const timing = 1000;
 
 export default {
   timing,
-  arrayClamp
+  arrayClamp,
+  pause
 };

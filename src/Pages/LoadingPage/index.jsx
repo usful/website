@@ -17,9 +17,6 @@ export default class LoadingPage extends PageBase {
 
     this.state = {
       ...this.state,
-      showLevel: 3,
-      show2: true,
-      show1: true,
       hidden: false
     };
   }
@@ -28,8 +25,8 @@ export default class LoadingPage extends PageBase {
     return (
       <section
         className={cx(styles.loadingPage, {
-          [styles.show1]: this.state.show1,
-          [styles.show2]: this.state.show2,
+          [styles.showing]: this.state.showing,
+          [styles.hiding]: this.state.hiding,
           [styles.hidden]: this.state.hidden
         })}
         style={this.transitionStyle}

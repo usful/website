@@ -1,0 +1,35 @@
+@import '../../variables';
+
+.technologiesPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: blue;
+  color: white;
+  margin: 0 auto;
+  box-sizing: border-box;
+  opacity: 1;
+
+  &.hiding {
+    opacity: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/** TABLET **/
+@media (max-width:1024px) {
+}
+
+/** PHONE **/
+@media (max-width:640px)  {
+}
+
+
+@media (min-width:1025px) {
+}
