@@ -32,12 +32,18 @@
     }
   }
 
-  &.hiding {
-    opacity: 0;
+
+  &.show1 {
+    opacity: 1;
+  }
+
+  &.show2 {
+    opacity: 1;
   }
 
   &.hidden {
-    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

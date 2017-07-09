@@ -9,13 +9,21 @@ export default class PageBase extends Component {
     onShow: () => {},
     onHide: () => {},
     onHidden: () => {},
-    visible: false
+    visible: false,
+    showLevels: 2
   };
 
   constructor(props) {
     super(props);
 
     this.state = {
+      showLevel: 0,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      showing: false,
       hiding: false,
       hidden: true
     };
@@ -38,41 +46,67 @@ export default class PageBase extends Component {
   }
 
   show() {
+    console.log(this.constructor.name, 'show', this.state.hidden);
+
     if (!this.state.hidden) {
       return;
     }
 
     this.setState({
       hidden: false,
-      hiding: true
+      hiding: false,
+      showing: true
     });
 
-    setTimeout(() => this.setState({ hiding: false }), 1);
-    setTimeout(() => this.props.onShown(), utils.fadeTiming);
+    setTimeout(() => this._showStep(1), 1);
 
     this.props.onShow();
   }
 
+  _showStep(step) {
+    console.log(this.constructor.name, '_showStep', this.state.showLevel, this.props.showLevels);
+    
+    const next = this.state.showLevel + step;
+
+    if (next > this.props.showLevels) {
+      this.props.onShown();
+      return;
+    }
+
+    this.setState({
+      showLevel: next,
+      [`show${next}`]: step > 0
+    });
+  
+    if (next === 1 && step < 0) {
+      setTimeout(() => this.setState({ hidden: true }), 1);
+      this.props.onHidden();
+      return;
+    }
+    
+    setTimeout(() => this._showStep(step), utils.timing);
+  }
+
   hide() {
+    console.log(this.constructor.name, 'hide', this.state.hidden);
+
     if (this.state.hidden) {
       return;
     }
 
     this.setState({
-      hiding: true
+      hiding: true,
+      showing: false
     });
 
-    setTimeout(() => {
-      this.setState({ hidden: true });
-      this.props.onHidden();
-    }, utils.fadeTiming);
+    this._showStep(-1);
 
     this.props.onHide();
   }
 
   get transitionStyle() {
     return {
-      transition: `opacity ${utils.fadeTiming}ms ease-out`
+      transition: `opacity ${utils.timing}ms ease-out`
     };
   }
 

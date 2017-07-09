@@ -1,7 +1,7 @@
 import arrayClamp from './arrayClamp';
-const fadeTiming = 2000;
+const timing = 2000;
 
 export default {
-  fadeTiming,
+  timing,
   arrayClamp
 };

@@ -36,7 +36,8 @@ export default class HomePage extends PageBase {
     return (
       <div
         className={cx(styles.homePage, {
-          [styles.hiding]: this.state.hiding,
+          [styles.show1]: this.state.show1,
+          [styles.show2]: this.state.show2,
           [styles.hidden]: this.state.hidden
         })}
         style={this.transitionStyle}
