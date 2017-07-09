@@ -8,7 +8,8 @@ export default class PageBase extends Component {
     onShown: () => {},
     onShow: () => {},
     onHide: () => {},
-    onHidden: () => {}
+    onHidden: () => {},
+    visible: false
   };
 
   constructor(props) {
@@ -16,18 +17,36 @@ export default class PageBase extends Component {
 
     this.state = {
       hiding: false,
-      hidden: false
+      hidden: true
     };
   }
-  
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.visible && this.state.hidden) {
+      this.show();
+    } else if (!nextProps.visible && !this.state.hidden) {
+      this.hide();
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.visible && this.state.hidden) {
+      this.show();
+    } else if (!this.props.visible && !this.state.hidden) {
+      this.hide();
+    }
+  }
+
   show() {
-    this.setState(
-      {
-        hidden: false,
-        hiding: true
-      }
-    );
-  
+    if (!this.state.hidden) {
+      return;
+    }
+
+    this.setState({
+      hidden: false,
+      hiding: true
+    });
+
     setTimeout(() => this.setState({ hiding: false }), 1);
     setTimeout(() => this.props.onShown(), utils.fadeTiming);
 
@@ -35,6 +54,10 @@ export default class PageBase extends Component {
   }
 
   hide() {
+    if (this.state.hidden) {
+      return;
+    }
+
     this.setState({
       hiding: true
     });
@@ -43,7 +66,7 @@ export default class PageBase extends Component {
       this.setState({ hidden: true });
       this.props.onHidden();
     }, utils.fadeTiming);
-    
+
     this.props.onHide();
   }
 

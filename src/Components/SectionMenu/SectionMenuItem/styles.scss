@@ -2,10 +2,8 @@
 
 .sectionMenuItem {
   color: $white;
-  font-size: 1.4rem;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1em 1.5em;
   background-color: rgba(0,0,0,0);
   transition: background-color $transition;
 
@@ -37,3 +35,44 @@
     background-color: rgba(255,255,255,0.1);
   }
 }
+
+
+@media (min-width:1025px) {
+  .sectionMenuItem {
+    font-size: 1.4rem;
+    padding: 1em 1.5em;
+  }
+}
+
+/** TABLET **/
+@media (max-width:1024px) {
+  .sectionMenuItem {
+    font-size: 1.3rem;
+    padding: 1em 1.25em;
+  }
+}
+
+/** PHONE **/
+@media (max-width:640px) {
+  .sectionMenuItem {
+    font-size: 2.5rem;
+    padding: 0.5em 0;
+    width: 70vw;
+
+    text-align: center;
+
+    span {
+      display: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+  }
+}
+

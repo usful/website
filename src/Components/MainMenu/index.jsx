@@ -1,11 +1,11 @@
 import React from 'react';
+import cx from 'classnames';
+
 import styles from './styles.scss';
 
-export default function MainMenu(props) {
-  const items = props.items || [];
-
+export default function MainMenu({ items = [], className }) {
   return (
-    <menu className={styles.mainMenu}>
+    <menu className={cx(styles.mainMenu, className)}>
       {items.map(item =>
         <a href={item.slug} key={item.id}>
           {item.name}

@@ -1,16 +1,6 @@
 @import '../../variables';
 
 .mainMenu {
-  position: absolute;
-  top: 24rem;
-  left: -26rem;
-  display: flex;
-  flex-direction: row;
-  width: 45rem;
-  justify-content: center;
-  padding: 0 1rem;
-  transform: rotate(270deg);
-
   a {
     font-family: Adamina, serif;
     font-size: 1.1rem;
@@ -22,6 +12,25 @@
 
     &:hover {
       color: $green;
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width:1024px) {
+  .mainMenu {
+    a {
+      font-size: 1.8rem;
+      padding: 0.5em 0;
+    }
+  }
+}
+
+@media (min-width:1025px) {
+  .mainMenu {
+    a {
+      font-size: 1.1rem;
+      padding: 1em 1.5em;
     }
   }
 }

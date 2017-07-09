@@ -13,15 +13,11 @@ export default class LoadingPage extends PageBase {
 
   constructor(props) {
     super(props);
-  }
 
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.progress >= 100 &&
-      !(this.state.hidden || this.state.hiding)
-    ) {
-      this.hide();
-    }
+    this.state = {
+      hidden: false,
+      hiding: false
+    };
   }
 
   render() {
@@ -42,6 +38,7 @@ export default class LoadingPage extends PageBase {
             style={{ width: `${this.props.progress}%` }}
           />
         </div>
+        <h1 className={styles.logo}>usful</h1>
       </section>
     );
   }

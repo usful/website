@@ -1,17 +1,64 @@
 @import '../../../variables';
 
 .projectSlider {
-  width: 69rem;
-  height: 42rem;
-  margin-left: 3rem;
   position: relative;
   background-color: $black;
   overflow: hidden;
 
   section.slides {
-    height: 42rem;
     display: flex;
     flex-direction: row;
     transition: transform $transitionMedium;
+  }
+
+
+  section.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5.375em;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0));
+
+    h1 {
+      color: #fff;
+      text-align: right;
+      padding: 1em;
+      font-family: 'Maison Neue', sans-serif;
+      font-weight: 400;
+      transition: opacity $transitionMedium;
+      font-size: 1rem;
+
+      a {
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0 0.5em;
+      }
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width:1024px) {
+  .projectSlider {
+    width: 90vw;
+    height: 35rem;
+
+    section.slides {
+      height: 35rem;
+    }
+  }
+}
+
+@media (min-width:1025px) {
+  .projectSlider {
+    width: 69rem;
+    height: 42rem;
+    margin-left: 3rem;
+
+    section.slides {
+      height: 42rem;
+    }
   }
 }

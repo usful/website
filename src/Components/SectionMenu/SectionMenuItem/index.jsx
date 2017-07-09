@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.scss';
+import { Link } from 'react-router-dom';
 
 export default function SectionMenuItem({
   item,
@@ -8,8 +9,8 @@ export default function SectionMenuItem({
   onMouseLeave = () => {}
 }) {
   return (
-    <a
-      href={item.slug}
+    <Link
+      to={item.slug}
       className={styles.sectionMenuItem}
       onMouseOver={() => onMouseOver(item)}
       onMouseLeave={() => onMouseLeave(item)}
@@ -18,6 +19,6 @@ export default function SectionMenuItem({
       <label>
         {item.name}
       </label>
-    </a>
+    </Link>
   );
 }

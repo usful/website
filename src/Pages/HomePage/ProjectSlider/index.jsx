@@ -4,7 +4,6 @@ import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
 import utils from '../../../utils';
 
-const SLIDER_WIDTH = 69; //ems
 const INTERVAL = 5000;
 
 const getProjects = sections =>
@@ -15,7 +14,7 @@ const getProjects = sections =>
 export default class ProjectSlider extends Component {
   static defaultProps = {
     sections: [],
-    interval: INTERVAL,
+    interval: INTERVAL
   };
 
   constructor(props) {
@@ -24,19 +23,23 @@ export default class ProjectSlider extends Component {
     this.state = {
       projects: getProjects(props.sections),
       currentProject: 0,
+      sliderWidth: 100
     };
   }
 
   componentDidMount() {
     this.timer = setInterval(() => this.next(), this.props.interval);
+    this.setState({
+      sliderWidth: this.refs.slider.offsetWidth
+    });
   }
 
   _moveSlide(by) {
     this.setState({
       currentProject: utils.arrayClamp(
         this.state.currentProject + by,
-        this.state.projects,
-      ),
+        this.state.projects
+      )
     });
   }
 
@@ -56,29 +59,40 @@ export default class ProjectSlider extends Component {
     if (nextProps.sections !== this.props.sections) {
       this.setState({
         projects: getProjects(nextProps.sections),
-        currentProject: 0,
+        currentProject: 0
       });
     }
   }
 
   render() {
+    const { currentProject, projects, sliderWidth } = this.state;
+
     const slidesStyle = {
-      width: `${this.state.projects.length * SLIDER_WIDTH}rem`,
-      transform: `translateX(${-this.state.currentProject * SLIDER_WIDTH}rem)`,
+      width: projects.length * sliderWidth,
+      transform: `translateX(${-currentProject * sliderWidth}px)`
     };
 
+    const project = projects[currentProject];
+
     return (
-      <div className={styles.projectSlider}>
+      <div ref="slider" className={styles.projectSlider}>
         <section className={styles.slides} style={slidesStyle}>
-          {this.state.projects.map((project, i) =>
+          {projects.map((project, i) =>
             <ProjectSlide
               key={project.id}
               project={project}
-              selected={i === this.state.currentProject}
-            />,
+              selected={i === currentProject}
+            />
           )}
         </section>
         {this.props.children}
+        <section className={styles.info}>
+          <h1>
+            <a href={`/${project.type}/${project.slug}`}>{project.name}</a>
+            in
+            <a href={`/${project.type}`}>{project.type}</a>
+          </h1>
+        </section>
       </div>
     );
   }

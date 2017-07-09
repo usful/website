@@ -18,13 +18,8 @@ export default class HomePage extends PageBase {
 
   constructor(props) {
     super(props);
-    
-    this.state = {
-      hidden: true,
-      hiding: false
-    };
   }
-  
+
   sectionMouseOver(section) {
     console.log('over', section);
   }
@@ -38,28 +33,38 @@ export default class HomePage extends PageBase {
   }
 
   render() {
-    if (this.state.hidden) {
-      return null;
-    }
-
     return (
       <div
-        className={cx(styles.homePage, { [styles.hiding]: this.state.hiding })}
+        className={cx(styles.homePage, {
+          [styles.hiding]: this.state.hiding,
+          [styles.hidden]: this.state.hidden
+        })}
         style={this.transitionStyle}
       >
         <div className={styles.container}>
           <section className={styles.top}>
-            <Logo />
-            <TagLine />
+            <Logo className={styles.logo} />
+            <TagLine className={styles.tagLine} />
           </section>
-          <ProjectSlider sections={this.props.sections} />
-          <MainMenu items={this.props.menu} />
+          <section className={styles.slider}>
+            <ProjectSlider sections={this.props.sections} />
+          </section>
           <SectionMenu
+            className={styles.sectionMenu}
             items={this.props.sections}
             onSectionOver={section => this.sectionMouseOver(section)}
             onSectionLeave={section => this.sectionMouseLeave(section)}
             onMouseLeave={() => this.sectionMenuMouseLeave()}
           />
+          <MainMenu className={styles.mainMenu} items={this.props.menu} />
+          <section className={styles.social}>
+            <a href="http://www.twitter.com" className="ion-social-twitter" />
+            <a
+              href="http://www.instagram.com"
+              className="ion-social-instagram-outline"
+            />
+            <a href="http://www.facebook.com" className="ion-social-facebook" />
+          </section>
         </div>
       </div>
     );

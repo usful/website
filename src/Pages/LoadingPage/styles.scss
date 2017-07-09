@@ -28,6 +28,15 @@
     }
   }
 
+  .logo {
+    font-family: sans-serif;
+    font-size: 8rem;
+    opacity: 0.05;
+    text-align: center;
+    padding: 42vh 0;
+    text-transform: uppercase;
+  }
+
   &.hiding {
     opacity: 0;
   }
