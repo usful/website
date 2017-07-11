@@ -12,6 +12,10 @@
     align-items: center;
   }
 
+  .slider {
+    position: relative;
+  }
+
   .container {
     position: relative;
   }
@@ -98,6 +102,11 @@
       margin: 1rem 0 3rem 0;
     }
 
+    .slider {
+      width: 90vw;
+      height: 35rem;
+    }
+
     section.social {
       a {
         padding: 0 0.5em;
@@ -177,6 +186,12 @@
       top: 7rem;
       display: flex;
       flex-direction: column;
+    }
+
+    .slider {
+      margin-left: 3rem;
+      width: 69rem;
+      height: 42rem;
     }
 
     &.show2 {

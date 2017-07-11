@@ -1,0 +1,23 @@
+@import '../../../variables';
+
+.sectionHero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  color: white;
+  transform: translate3d(0, 0, 0);
+
+  opacity: 0;
+  transition: opacity $transition;
+
+  &.hovering {
+    opacity: 1;
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+}

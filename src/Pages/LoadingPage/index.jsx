@@ -37,7 +37,7 @@ export default class LoadingPage extends PageBase {
             style={{ width: `${this.props.progress}%` }}
           />
         </div>
-        <h1 className={styles.logo}>usful</h1>
+        <h1 className={styles.logo}>Loading ...</h1>
       </section>
     );
   }

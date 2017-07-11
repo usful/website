@@ -1,15 +1,20 @@
 @import '../../variables';
 
 .sectionMenu {
-  background-color: $black;
-  display: flex;
-  flex-direction: row;
-  box-shadow: $dropShadow;
+  overflow: hidden;
+  padding: 2rem;
 
-  transition: background-color $transition, transform $transition;
+  .menu {
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    box-shadow: $dropShadow;
 
-  &:hover {
-    background-color: $green;
-    transform: translate3d(0, -0.5rem, 0);
+    transition: background-color $transition, transform $transition;
+
+    &:hover {
+      background-color: $green;
+      transform: translate3d(0, -0.5rem, 0);
+    }
   }
 }

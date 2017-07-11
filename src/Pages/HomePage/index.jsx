@@ -10,15 +10,23 @@ import TagLine from '../../Components/TagLine';
 import SectionMenu from '../../Components/SectionMenu';
 import MainMenu from '../../Components/MainMenu';
 import ProjectSlider from './ProjectSlider';
+import SectionHero from './SectionHero';
 
 export default class HomePage extends PageBase {
   static defaultProps = {
     ...PageBase.defaultProps,
-    sections: []
+    sections: [],
+    menu: []
   };
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      ...this.state,
+      hovering: null,
+      selected: null
+    };
   }
 
   async show1() {
@@ -61,11 +69,13 @@ export default class HomePage extends PageBase {
   }
 
   sectionMouseOver(section) {
-    //console.log('over', section);
+    this.setState({ hovering: section.id });
   }
 
   sectionMouseLeave(section) {
-    //console.log('out', section);
+    if (this.state.hovering === section.id) {
+      this.setState({ hovering: null });
+    }
   }
 
   sectionMenuMouseLeave() {
@@ -73,14 +83,17 @@ export default class HomePage extends PageBase {
   }
 
   render() {
+    const { menu, sections } = this.props;
+    const { showing, show1, show2, hiding, hidden } = this.state;
+
     return (
       <div
         className={cx(styles.homePage, {
-          [styles.showing]: this.state.showing,
-          [styles.show1]: this.state.show1,
-          [styles.show2]: this.state.show2,
-          [styles.hiding]: this.state.hiding,
-          [styles.hidden]: this.state.hidden
+          [styles.showing]: showing,
+          [styles.show1]: show1,
+          [styles.show2]: show2,
+          [styles.hiding]: hiding,
+          [styles.hidden]: hidden
         })}
         style={this.transitionStyle}
       >
@@ -90,16 +103,23 @@ export default class HomePage extends PageBase {
             <TagLine className={styles.tagLine} />
           </section>
           <section className={styles.slider}>
-            <ProjectSlider sections={this.props.sections} />
+            <ProjectSlider sections={sections} />
+            {sections.map(section =>
+              <SectionHero
+                key={section.id}
+                section={section}
+                hovering={this.state.hovering === section.id}
+              />
+            )}
           </section>
           <SectionMenu
             className={styles.sectionMenu}
-            items={this.props.sections}
+            items={sections}
             onSectionOver={section => this.sectionMouseOver(section)}
             onSectionLeave={section => this.sectionMouseLeave(section)}
             onMouseLeave={() => this.sectionMenuMouseLeave()}
           />
-          <MainMenu className={styles.mainMenu} items={this.props.menu} />
+          <MainMenu className={styles.mainMenu} items={menu} />
           <section className={styles.social}>
             <a href="http://www.twitter.com" className="ion-social-twitter" />
             <a

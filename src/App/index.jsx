@@ -12,7 +12,7 @@ import {
   LoadingPage
 } from '../Pages';
 
-const FAKE_PROGRESS = 10;
+const FAKE_PROGRESS = 50;
 
 export default class App extends Component {
   constructor(props) {

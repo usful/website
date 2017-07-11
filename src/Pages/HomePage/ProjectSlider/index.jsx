@@ -4,7 +4,7 @@ import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
 import utils from '../../../utils';
 
-const INTERVAL = 5000;
+const INTERVAL = 7500;
 
 const getProjects = sections =>
   sections

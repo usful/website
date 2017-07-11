@@ -29,12 +29,11 @@
   }
 
   .logo {
-    font-family: sans-serif;
-    font-size: 8rem;
-    opacity: 0.05;
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    opacity: 0.03;
     text-align: center;
     padding: 42vh 0;
-    text-transform: uppercase;
   }
 
   &.showing {

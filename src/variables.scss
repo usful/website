@@ -7,7 +7,7 @@ $transitionTimeMedium: 750ms;
 $transition: $transitionTime ease-in-out;
 $transitionMedium: $transitionTimeMedium ease-in-out;
 
-$showTransition: 1000ms ease-in;
+$showTransition: 750ms ease-in;
 
 @mixin shownState {
   opacity: 1;
@@ -17,7 +17,7 @@ $showTransition: 1000ms ease-in;
 @mixin hiddenState {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
-  transition: opacity $showTransition, transform $showTransition;
+  transition: opacity $showTransition, transform $showTransition, width $showTransition;
 }
 
 $dropShadow: 0 0.2em 0.5em rgba(0,0,0,0.25);
