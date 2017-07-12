@@ -21,7 +21,7 @@ export default class ProjectSlide extends Component {
 
     return (
       <div
-        className={cx(styles.projectSlide, {
+        className={cx(styles.projectSlide, 'projectSlide', {
           [styles.selected]: selected
         })}
         style={style}

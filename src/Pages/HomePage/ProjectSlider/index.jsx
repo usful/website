@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import styles from './styles.scss';
+import cx from 'classnames';
 
+import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
 import utils from '../../../utils';
 
@@ -14,7 +15,8 @@ const getProjects = sections =>
 export default class ProjectSlider extends Component {
   static defaultProps = {
     sections: [],
-    interval: INTERVAL
+    interval: INTERVAL,
+    showInfo: true
   };
 
   constructor(props) {
@@ -75,7 +77,12 @@ export default class ProjectSlider extends Component {
     const project = projects[currentProject];
 
     return (
-      <div ref="slider" className={styles.projectSlider}>
+      <div
+        ref="slider"
+        className={cx(styles.projectSlider, {
+          [styles.showInfo]: this.props.showInfo
+        })}
+      >
         <section className={styles.slides} style={slidesStyle}>
           {projects.map((project, i) =>
             <ProjectSlide

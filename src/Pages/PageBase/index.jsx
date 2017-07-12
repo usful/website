@@ -48,11 +48,11 @@ export default class PageBase extends Component {
       hidden: false,
       hiding: false,
       showing: true
+    }, () => {
+      this.show1();
+
+      this.props.onShow();
     });
-
-    this.show1();
-
-    this.props.onShow();
   }
 
   async show1() {
@@ -69,11 +69,10 @@ export default class PageBase extends Component {
     this.setState({
       hiding: true,
       showing: false
+    }, () => {
+      this.hide1();
+      this.props.onHide();
     });
-
-    this.hide1();
-
-    this.props.onHide();
   }
 
   async hide1() {
@@ -82,9 +81,7 @@ export default class PageBase extends Component {
     this.setState({
       hidden: true,
       hiding: false
-    });
-
-    this.props.onHidden();
+    }, () => this.props.onHidden());
   }
 
   get transitionStyle() {

@@ -18,6 +18,8 @@
     right: 0;
     height: 5.375em;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity $transitionMedium;
 
     h1 {
       color: #fff;
@@ -25,7 +27,6 @@
       padding: 1em;
       font-family: 'Maison Neue', sans-serif;
       font-weight: 400;
-      transition: opacity $transitionMedium;
       font-size: 1rem;
 
       a {
@@ -34,6 +35,12 @@
         text-transform: uppercase;
         padding: 0 0.5em;
       }
+    }
+  }
+
+  &.showInfo {
+    section.info {
+      opacity: 1;
     }
   }
 }

@@ -30,11 +30,13 @@ export default class App extends Component {
 
     this.state = {
       loadingProgress: 0,
-      loaded: false
+      loaded: false,
+      section: 'home'
     };
   }
 
   async updateLoadingProgress() {
+    console.log('updateLoadingProgress');
     if (this.state.loadingProgress >= 100) {
       this.setState({
         loaded: true
@@ -54,34 +56,54 @@ export default class App extends Component {
   }
 
   async onLoadHide() {
+    console.log('onLoadHide');
+
+    if (!this.unlisten) {
+      console.log('onLoadHide hooking up listener');
+      //Hook up a listener to the router history.
+      //Since we have custom page transitions, we will show/hide
+      //using some custom code.
+      this.unlisten = window.router.history.listen(location => {
+        data.sections.forEach(
+          section =>
+            (section.active = window.router.history.location.pathname.includes(
+              section.slug
+            ))
+        );
+
+        //trigger a render
+        this.setState({
+          _ts: Date.now()
+        }, () => this.transitionPages());
+      });
+    }
+
+    //On the first load, show the next page picked up by the router.
     await this.transitionPages();
     this.showNextPage();
   }
 
   componentDidMount() {
+    console.log('componentDidMount');
     this.updateLoadingProgress();
   }
 
-  componentWillUpdate() {
-    if (!this.unlisten) {
-      this.unlisten = window.router.history.listen(location =>
-        this.transitionPages()
-      );
-    }
-  }
-
   componentWillUnmount() {
-    this.unlisten();
+    if (this.unlisten) {
+      this.unlisten();
+    }
   }
 
   showNextPage() {
     if (this.currentPage) {
-      console.log('showNextPage', this.currentPage);
+      console.log('showNextPage showing', this.currentPage);
       this.currentPage.show();
     }
   }
 
   async transitionPages() {
+    console.log('transitionPages');
+    //Wait for changes to propagate thru react state.
     await utils.pause();
 
     if (this.currentPage) {
@@ -92,8 +114,9 @@ export default class App extends Component {
     for (let name in this.page) {
       const page = this.page[name];
 
+      //Check to see which page is now active.
       if (page.props.active) {
-        console.log('transitionPages setting next', page);
+        // TODO: apparently we don't use lastPage. Remove it?
         this.lastPage = this.currentPage;
         this.currentPage = page;
       }
@@ -112,6 +135,7 @@ export default class App extends Component {
               ref={el => (this.page.home = el || this.page.home)}
               sections={data.sections}
               menu={data.menu}
+              activeSection={this.state.section}
               onHidden={() => this.showNextPage()}
             />}
         />
@@ -119,6 +143,8 @@ export default class App extends Component {
           path="/experiences"
           children={({ match }) =>
             <ExperiencesPage
+              menu={data.menu}
+              section={data.sections.find(section => section.slug === 'experiences')}
               active={!!match}
               ref={el => (this.page.experiences = el || this.page.experiences)}
               onHidden={() => this.showNextPage()}
@@ -129,6 +155,7 @@ export default class App extends Component {
           children={({ match }) =>
             <TechnologiesPage
               active={!!match}
+              section={data.sections.find(section => section.slug === 'technology')}
               ref={el =>
                 (this.page.technologies = el || this.page.technologies)}
               onHidden={() => this.showNextPage()}

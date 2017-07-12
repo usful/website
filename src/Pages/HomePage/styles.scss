@@ -5,11 +5,15 @@
   color: black;
   margin: 0 auto;
   box-sizing: border-box;
-  opacity: 1;
+  opacity: 0;
 
   section.top {
     display: flex;
     align-items: center;
+
+    .logo {
+      font-size: 7.5rem;
+    }
   }
 
   .slider {
@@ -37,8 +41,8 @@
   }
 
   section.top,
-  .sectionMenu,
   .mainMenu,
+  .sectionMenu,
   section.social {
     @include hiddenState;
   }
@@ -53,15 +57,11 @@
 
   &.show2 {
     section.top,
-    .sectionMenu,
     .mainMenu,
+    .sectionMenu,
     section.social {
       @include shownState;
     }
-  }
-
-  &.hiding {
-    opacity: 0;
   }
 
   &.hidden {

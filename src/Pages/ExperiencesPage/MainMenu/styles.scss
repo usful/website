@@ -1,0 +1,36 @@
+@import '../../../variables';
+
+.mainMenu {
+  a {
+    font-family: 'Maison Neue', serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    color: $white;
+    transition: color $transition;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width:1024px) {
+  .mainMenu {
+    a {
+      font-size: 1.8rem;
+      padding: 0.5em 0;
+    }
+  }
+}
+
+@media (min-width:1025px) {
+  .mainMenu {
+    a {
+      font-size: 1.1rem;
+      padding: 1em 1.5em;
+    }
+  }
+}

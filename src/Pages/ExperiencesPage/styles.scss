@@ -6,11 +6,48 @@
   left: 0;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: red;
-  color: white;
+  background-color: $black;
+  color: $white;
   margin: 0 auto;
   box-sizing: border-box;
   opacity: 1;
+
+  section.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .logo {
+      font-size: 3rem;
+      flex: 1;
+    }
+
+  }
+
+  section.experiences {
+    h1 {
+      font-size: 3rem;
+      margin: 1.5em 0 0 0;
+      text-align: center;
+    }
+
+    hr {
+      width: 8rem;
+      border: none;
+      background: $white;
+      height: 1px;
+      margin: 2rem auto 3rem auto;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $white;
+      opacity: 0.8;
+      text-align: center;
+      line-height: 1.4em;
+      padding: 0 25%;
+    }
+  }
 
   &.hiding {
     opacity: 0;
@@ -32,4 +69,7 @@
 
 
 @media (min-width:1025px) {
+  .experiencesPage {
+    padding: 4rem 10vw;
+  }
 }
