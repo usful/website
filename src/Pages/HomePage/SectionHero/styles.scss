@@ -9,15 +9,16 @@
   background-size: cover;
   color: white;
   transform: translate3d(0, 0, 0);
-
+  visibility: hidden;
   opacity: 0;
-  transition: opacity $transition;
+  transition: opacity $transition, transform 2000ms ease-out;
 
-  &.hovering {
+  &.hovering, &.selected {
+    visibility: visible;
     opacity: 1;
   }
 
   &.selected {
-    opacity: 1;
+    //transform: scale3d(2,2,1);
   }
 }

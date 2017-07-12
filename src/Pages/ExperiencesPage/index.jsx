@@ -4,10 +4,17 @@ import cx from 'classnames';
 import styles from './styles.scss';
 
 import PageBase from '../PageBase';
+import Logo from '../../Components/Logo';
+import MainMenu from './MainMenu';
+import Experience from "./Experience/index";
 
 export default class ExperiencesPage extends PageBase {
   static defaultProps = {
-    ...PageBase.defaultProps
+    ...PageBase.defaultProps,
+    menu: [],
+    section: {
+      projects: []
+    }
   };
 
   constructor(props) {
@@ -15,6 +22,8 @@ export default class ExperiencesPage extends PageBase {
   }
 
   render() {
+    const projects = this.props.section.projects;
+
     return (
       <div
         className={cx(styles.experiencesPage, {
@@ -23,12 +32,23 @@ export default class ExperiencesPage extends PageBase {
         })}
         style={this.transitionStyle}
       >
-        <h1>Experiences</h1>
-        <h1>Experiences</h1>
-        <h1>Experiences</h1>
-        <h1>Experiences</h1>
-        <h1>Experiences</h1>
-        <h1>Experiences</h1>
+        <section className={styles.top}>
+          <Logo className={styles.logo} />
+          <MainMenu items={this.props.menu} />
+        </section>
+
+        <section className={styles.experiences}>
+          <h1>Experiences</h1>
+          <hr />
+          <p>
+            Next level echo park stumptown roof party, art party tbh live-edge
+            fingerstache celiac heirloom hella. Sartorial pabst elit, heirloom
+            minim ethical copper mug cold-pressed four loko. Cornhole readymade
+            yuccie paleo wayfarers labore exercitation occaecat et.{' '}
+          </p>
+
+          {projects.map(experience => <Experience key={experience.id} experience={experience} />)}
+        </section>
       </div>
     );
   }

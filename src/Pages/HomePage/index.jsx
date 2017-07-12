@@ -8,7 +8,7 @@ import PageBase from '../PageBase';
 import Logo from '../../Components/Logo';
 import TagLine from '../../Components/TagLine';
 import SectionMenu from '../../Components/SectionMenu';
-import MainMenu from '../../Components/MainMenu';
+import MainMenu from './MainMenu';
 import ProjectSlider from './ProjectSlider';
 import SectionHero from './SectionHero';
 
@@ -25,7 +25,10 @@ export default class HomePage extends PageBase {
     this.state = {
       ...this.state,
       hovering: null,
-      selected: null
+      selected: null,
+      show1: false,
+      show2: false,
+      hide1: false
     };
   }
 
@@ -33,12 +36,16 @@ export default class HomePage extends PageBase {
     await utils.pause(1);
 
     this.setState({
-      show1: true
+      show1: true,
+      hide1: false
     });
 
     await utils.pause(utils.timing);
 
-    this.setState({ show2: true, showing: false });
+    this.setState({
+      show2: true,
+      showing: false
+    });
 
     await utils.pause(utils.timing);
 
@@ -49,6 +56,7 @@ export default class HomePage extends PageBase {
     await utils.pause(1);
 
     this.setState({
+      hide1: true,
       show2: false
     });
 
@@ -78,13 +86,9 @@ export default class HomePage extends PageBase {
     }
   }
 
-  sectionMenuMouseLeave() {
-    //console.log('menu-out');
-  }
-
   render() {
     const { menu, sections } = this.props;
-    const { showing, show1, show2, hiding, hidden } = this.state;
+    const { showing, show1, show2, hide1, hiding, hidden } = this.state;
 
     return (
       <div
@@ -103,7 +107,7 @@ export default class HomePage extends PageBase {
             <TagLine className={styles.tagLine} />
           </section>
           <section className={styles.slider}>
-            <ProjectSlider sections={sections} />
+            <ProjectSlider showInfo={show2} sections={sections} />
             {sections.map(section =>
               <SectionHero
                 key={section.id}
@@ -115,9 +119,9 @@ export default class HomePage extends PageBase {
           <SectionMenu
             className={styles.sectionMenu}
             items={sections}
+            visible={!hide1}
             onSectionOver={section => this.sectionMouseOver(section)}
             onSectionLeave={section => this.sectionMouseLeave(section)}
-            onMouseLeave={() => this.sectionMenuMouseLeave()}
           />
           <MainMenu className={styles.mainMenu} items={menu} />
           <section className={styles.social}>
