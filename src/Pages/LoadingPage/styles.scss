@@ -19,15 +19,16 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 1em;
+    height: 100vh;
 
     .bar {
       background-color: $white;
-      height: 1em;
-      width: 0;
-      will-change: width;
+      height: 100vh;
+      width: 100%;
+      will-change: transform;
+      transform: scaleX(0);
 
-      transition: width 150ms linear;
+      transition: transform 500ms ease-out;
     }
   }
 

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import styles from './styles.scss';
 import data from '../data';
-import utils from '../utils';
 import NavigationHelper from '../NavigationHelper';
+import LoadHelper from '../LoadHelper';
 
 import {
   HomePage,
@@ -12,42 +12,23 @@ import {
   LoadingPage
 } from '../Pages';
 
-const FAKE_PROGRESS = 10;
-
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loadingProgress: 0,
+      progress: 0,
       loaded: false
     };
-  }
-
-  async updateLoadingProgress() {
-    if (this.state.loadingProgress >= 100) {
-      this.setState({
-        loaded: true
-      });
-
-      return;
-    }
-
-    //TODO: this is fake loading progress, we will make it real later.
-    this.setState({
-      loadingProgress: this.state.loadingProgress + FAKE_PROGRESS
-    });
-
-    await utils.pause();
-
-    this.updateLoadingProgress();
   }
 
   async onLoadHide() {
     if (!this.unlisten) {
       //Hook up a listener to the router history.
-      this.unlisten = window.router.history.listen(location =>
-        NavigationHelper.matchRoute(location.pathname) && this.setState({_ts: Date.now()})
+      this.unlisten = window.router.history.listen(
+        location =>
+          NavigationHelper.matchRoute(location.pathname) &&
+          this.setState({ _ts: Date.now() })
       );
     }
 
@@ -56,7 +37,12 @@ export default class App extends Component {
 
   componentDidMount() {
     console.log('componentDidMount');
-    this.updateLoadingProgress();
+
+    LoadHelper.addProgressListener(progress =>
+      this.setState({ progress })
+    );
+
+    LoadHelper.addLoadedListener(() => this.setState({loaded: true}));
 
     //On the first load, show the page matched up by the router.
     NavigationHelper.matchRoute(window.location.pathname);
@@ -66,6 +52,8 @@ export default class App extends Component {
     if (this.unlisten) {
       this.unlisten();
     }
+
+    LoadHelper.removeAllListeners();
   }
 
   render() {
@@ -98,7 +86,7 @@ export default class App extends Component {
         />
         <LoadingPage
           visible={!this.state.loaded}
-          progress={this.state.loadingProgress}
+          progress={this.state.progress}
           onHide={() => this.onLoadHide()}
         />
       </div>

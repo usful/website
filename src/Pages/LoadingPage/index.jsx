@@ -33,7 +33,7 @@ export default class LoadingPage extends PageBase {
         <div className={styles.progress}>
           <div
             className={styles.bar}
-            style={{ width: `${this.props.progress}%` }}
+            style={{ transform: `scaleX(${this.props.progress})` }}
           />
         </div>
         <h1 className={styles.logo}>Loading ...</h1>
