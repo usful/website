@@ -9,8 +9,9 @@
   background-color: blue;
   color: white;
   margin: 0 auto;
-  box-sizing: border-box;
+  overflow-x: hidden;
   opacity: 1;
+  transition: opacity $transitionLong;
 
   &.hiding {
     opacity: 0;
@@ -19,6 +20,7 @@
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 }
 

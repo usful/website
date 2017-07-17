@@ -4,8 +4,9 @@
   background-color: white;
   color: black;
   margin: 0 auto;
-  box-sizing: border-box;
   opacity: 0;
+  transition: opacity $transitionLong;
+  overflow-x: hidden;
 
   section.top {
     display: flex;
@@ -31,8 +32,8 @@
       width: 1em;
       height: 1em;
       margin: 0.2em 0;
-      transition: color $transition;
       text-align: center;
+      transition: color $transition;
 
       &:hover {
         color: $green;
@@ -73,9 +74,11 @@
 /** TABLET **/
 @media (max-width: 1024px) {
   .homePage {
-    width: 100vw;
-    padding: 3em 5vw;
-    text-align: center;
+    .container {
+      width: 100vw;
+      padding: 3em 5vw;
+      text-align: center;
+    }
 
     section.top {
       flex-direction: column;
@@ -145,8 +148,11 @@
 
 @media (min-width: 1025px) {
   .homePage {
-    width: 90em;
-    padding: 7em 0 7em 6em;
+    .container {
+      width: 90em;
+      padding: 7em 0 7em 6em;
+      margin: 0 auto;
+    }
 
     section.top {
       flex-direction: row;
@@ -164,26 +170,26 @@
 
     .sectionMenu {
       position: absolute;
-      bottom: 5rem;
-      right: 8rem;
+      bottom: 11rem;
+      right: 3rem;
     }
 
     .mainMenu {
       position: absolute;
-      top: 24rem;
-      left: -26rem;
+      top: 31rem;
+      left: -22rem;
       width: 45rem;
       display: flex;
       flex-direction: row;
       justify-content: center;
       padding: 0 1rem;
-      transform: rotate(270deg) translate3d(-1rem, 0, 0);
+      transform: rotate(270deg) translate3d(-2rem, 0, 0);
     }
 
     section.social {
       position: absolute;
       right: 8rem;
-      top: 7rem;
+      top: 14rem;
       display: flex;
       flex-direction: column;
     }
@@ -196,21 +202,8 @@
 
     &.show2 {
       .mainMenu {
-        transform: rotate(270deg);
+        transform: rotate(270deg) translate3d(0, 0, 0);
       }
     }
   }
-}
-
-@media (min-width: 320px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
-}
-@media (min-width: 481px) {
-  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-}
-@media (min-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-}
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
 }

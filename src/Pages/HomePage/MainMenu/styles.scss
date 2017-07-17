@@ -2,17 +2,17 @@
 
 .mainMenu {
   a {
+    position: relative;
     font-family: Adamina, serif;
     font-size: 1.1rem;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1em 1.5em;
+    padding: 0.5em 0.5em;
+    margin: 0.5em 1em;
     color: $black;
-    transition: color $transition;
+    -webkit-font-smoothing: antialiased;
 
-    &:hover {
-      color: $green;
-    }
+    @include hoverLine($black);
   }
 }
 
@@ -30,7 +30,8 @@
   .mainMenu {
     a {
       font-size: 1.1rem;
-      padding: 1em 1.5em;
+      padding: 0.5em 0.5em;
+      margin: 0.5em 1em;
     }
   }
 }

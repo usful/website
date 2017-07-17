@@ -1,0 +1,36 @@
+@import '../../variables';
+
+svg {
+
+  .yellowFill {
+    fill: $yellow;
+  }
+
+  .greenFill {
+    fill: $green;
+  }
+
+  .whiteFill {
+    fill: $white;
+  }
+
+  .blackFill {
+    fill: $black;
+  }
+
+  .yellowStroke {
+    stroke: $yellow;
+  }
+
+  .greenStroke {
+    stroke: $green;
+  }
+
+  .whiteStroke {
+    stroke: $white;
+  }
+
+  .blackStroke {
+    stroke: $black;
+  }
+}

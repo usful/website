@@ -11,6 +11,8 @@
   right: 0;
   bottom: 0;
   opacity: 1;
+  overflow: hidden;
+  transition: opacity $transitionLong;
 
   .progress {
     position: absolute;
@@ -23,8 +25,9 @@
       background-color: $white;
       height: 1em;
       width: 0;
+      will-change: width;
 
-      transition: width 100ms ease-in-out;
+      transition: width 150ms linear;
     }
   }
 

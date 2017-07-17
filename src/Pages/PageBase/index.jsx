@@ -84,11 +84,6 @@ export default class PageBase extends Component {
     }, () => this.props.onHidden());
   }
 
-  get transitionStyle() {
-    return {
-      transition: `opacity ${utils.timing}ms ease-in`
-    };
-  }
 
   render() {
     return null;

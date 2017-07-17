@@ -37,6 +37,7 @@ html,
 body {
   font-size: 1.6vh;
   font-family: Adamina, serif;
+  background-color: #1f1f1f;
 }
 
 @media (max-height: 700px) {

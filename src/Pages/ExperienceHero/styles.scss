@@ -1,0 +1,28 @@
+.experienceHero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 100ms linear;
+
+  video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+
+  &.hovering {
+    opacity: 1;
+    visibility: visible;
+  }
+}

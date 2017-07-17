@@ -99,7 +99,6 @@ export default class HomePage extends PageBase {
           [styles.hiding]: hiding,
           [styles.hidden]: hidden
         })}
-        style={this.transitionStyle}
       >
         <div className={styles.container}>
           <section className={styles.top}>

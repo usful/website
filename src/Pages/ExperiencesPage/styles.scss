@@ -9,34 +9,43 @@
   background-color: $black;
   color: $white;
   margin: 0 auto;
-  box-sizing: border-box;
   opacity: 1;
+  transition: opacity $transitionLong;
+  overflow-x: hidden;
 
   section.top {
+    @include hiddenState;
+
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    .logo {
-      font-size: 3rem;
+    .logoLink {
       flex: 1;
-    }
+      text-decoration: none;
 
+      .logo {
+        color: $white;
+        font-size: 3rem;
+      }
+    }
   }
 
-  section.experiences {
-    h1 {
+  section.intro {
+    @include hiddenState;
+
+    > h1 {
       font-size: 3rem;
       margin: 1.5em 0 0 0;
       text-align: center;
     }
 
     hr {
-      width: 8rem;
+      width: 7rem;
       border: none;
-      background: $white;
+      background: $yellow;
       height: 1px;
-      margin: 2rem auto 3rem auto;
+      margin: 1.75rem auto 2rem auto;
     }
 
     p {
@@ -49,27 +58,58 @@
     }
   }
 
-  &.hiding {
-    opacity: 0;
+  section.experiences {
+    padding: 4rem 10vw;
+    @include hiddenState;
+  }
+
+  &.showing {
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  &.show1 {
+    section.top {
+      @include shownState;
+    }
+  }
+
+  &.show2 {
+    section.intro {
+      @include shownState;
+    }
+  }
+
+  &.show3 {
+    section.experiences {
+      @include shownState;
+    }
   }
 
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
+  }
+
+  .hoverHide {
+    transition: opacity 100ms linear !important;
+    opacity: 0 !important;
   }
 }
 
 /** TABLET **/
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
 }
 
 /** PHONE **/
-@media (max-width:640px)  {
+@media (max-width: 640px) {
 }
 
-
-@media (min-width:1025px) {
+@media (min-width: 1025px) {
   .experiencesPage {
-    padding: 4rem 10vw;
+    .container {
+      padding: 4rem 15vw;
+    }
   }
 }

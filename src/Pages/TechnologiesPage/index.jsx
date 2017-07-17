@@ -21,7 +21,6 @@ export default class TechnologiesPage extends PageBase {
           [styles.hiding]: this.state.hiding,
           [styles.hidden]: this.state.hidden
         })}
-        style={this.transitionStyle}
       >
         <h1>Technologies</h1>
         <h1>Technologies</h1>

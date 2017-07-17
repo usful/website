@@ -1,13 +1,44 @@
 $black: #1f1f1f;
 $white: #fff;
 $green: #4c7648;
+$yellow: #f6d600;
+$darkGrey: #444;
 
-$transitionTime: 175ms;
+$transitionTime: 500ms;
 $transitionTimeMedium: 750ms;
+$transitionTimeLong: 1250ms;
 $transition: $transitionTime ease-in-out;
 $transitionMedium: $transitionTimeMedium ease-in-out;
+$transitionLong: $transitionTimeLong ease-in-out;
 
-$showTransition: 750ms ease-in;
+$showTransition: 500ms ease-in;
+
+@mixin hoverLine($color: rgba(255,255,255,0.7)) {
+  position: relative;
+
+  &::after {
+    content: '';
+    will-change: width;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    background: $color;
+    transition: .3s transform cubic-bezier(.77, 0, .175, 1),
+      .2s width cubic-bezier(.77, 0, .175, 1);
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+  }
+
+  &:hover::after {
+    transform-origin: 0 50%;
+    transform: scaleX(1);
+  }
+}
 
 @mixin shownState {
   opacity: 1;
@@ -15,12 +46,14 @@ $showTransition: 750ms ease-in;
 }
 
 @mixin hiddenState {
+  will-change: opacity, transform;
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
-  transition: opacity $showTransition, transform $showTransition, width $showTransition;
+  transition: opacity $showTransition, transform $showTransition,
+    width $showTransition;
 }
 
-$dropShadow: 0 0.2em 0.5em rgba(0,0,0,0.25);
+$dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
 
 @mixin dropShadow {
   box-shadow: $dropShadow;
