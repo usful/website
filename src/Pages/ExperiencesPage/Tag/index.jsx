@@ -21,7 +21,7 @@ export default function Tag({ tag, color }) {
   return (
     <div className={styles.tag}>
       <Icon color={color}/>
-      <h1>{tag}</h1>
+      <label>{tag}</label>
     </div>
   )
 }

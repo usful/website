@@ -49,27 +49,33 @@ export default class NavigationHelper {
   ];
 
   static showNextPage() {
+    console.log('NavigationHelper.showNextPage');
+
     if (this.nextPage) {
+      this.nextPage.component.show();
+
       this.currentPage = this.nextPage;
       this.nextPage = null;
 
       console.log(
-        Date.now(),
         'NavigationHelper.showNextPage showing',
-        this.currentPage
+        this.currentPage.name
       );
-
-      this.currentPage.component.show();
     }
   }
 
   static matchRoute(pathname) {
-    console.log(Date.now(), 'NavigationHelper.matchRoute', pathname);
-
     this.pages.forEach(page => {
       const match = matchPath(pathname, page.path);
 
       if (match) {
+        console.log(
+          'NavigationHelper.matchRoute',
+          pathname,
+          page.path.path,
+          !!match
+        );
+
         if (page.section) {
           page.section.active = true;
 
@@ -77,12 +83,6 @@ export default class NavigationHelper {
             const projectMatch = matchPath(pathname, page.projectPath);
 
             if (projectMatch) {
-              console.log(
-                Date.now(),
-                'NavigationHelper.matchRoute project match',
-                projectMatch
-              );
-
               page.section.projects.forEach(
                 project =>
                   (project.active =
@@ -93,25 +93,37 @@ export default class NavigationHelper {
               if (page.active) {
                 return;
               }
+            } else {
+              page.section.projects.forEach(
+                project => (project.active = false)
+              );
             }
           }
         }
 
-        if (this.currentPage) {
+        if (page !== this.currentPage) {
           console.log(
-            Date.now(),
-            'NavigationHelper.transitionPages hiding',
+            'NavigationHelper.transitionPages checking',
+            page,
             this.currentPage
           );
-          this.currentPage.component.hide();
+
+          if (this.currentPage) {
+            console.log(
+              'NavigationHelper.transitionPages hiding',
+              this.currentPage.name
+            );
+
+            this.currentPage.component.hide();
+
+            this.lastPage = this.currentPage;
+            this.currentPage = null;
+          }
+
+          page.active = true;
+
+          this.nextPage = page;
         }
-
-        this.lastPage = this.currentPage;
-        this.currentPage = null;
-
-        page.active = true;
-
-        this.nextPage = page;
       } else {
         if (page.section) {
           page.section.active = false;

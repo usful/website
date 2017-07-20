@@ -8,8 +8,8 @@ import utils from '../../utils';
 import PageBase from '../PageBase';
 import Logo from '../../Components/Logo';
 import MainMenu from './MainMenu';
-import Experience from './Experience/index';
-import ExperienceHero from '../ExperienceHero/index';
+import ExperienceLink from './ExperienceLink/index';
+import ExperienceHero from './ExperienceHero/index';
 import ExperienceProject from './ExperienceProject/index';
 
 export default class ExperiencesPage extends PageBase {
@@ -62,12 +62,6 @@ export default class ExperiencesPage extends PageBase {
   async hide1() {
     await utils.pause(1);
 
-    //Are we navigating to an experience page?
-    if (window.router.history.location.pathname.includes('/experiences/')) {
-      this.props.onHidden();
-      return;
-    }
-
     this.setState({
       hide1: true,
       show3: false
@@ -115,12 +109,12 @@ export default class ExperiencesPage extends PageBase {
       hiding,
       hidden,
       hovering,
-      selected
     } = this.state;
 
     const { section, menu } = this.props;
 
-    const hideElement = hovering ? styles.hoverHide : '';
+    const selected = section.projects.find(experience => experience.active);
+    const hideElement = (hovering || selected) ? styles.hoverHide : '';
 
     return (
       <div
@@ -138,7 +132,7 @@ export default class ExperiencesPage extends PageBase {
           {section.projects.map(experience =>
             <ExperienceHero
               key={experience.id}
-              hovering={hovering === experience.id}
+              hovering={(hovering === experience.id || selected === experience) && this.state.show3}
               experience={experience}
             />
           )}
@@ -151,22 +145,22 @@ export default class ExperiencesPage extends PageBase {
           </section>
 
           <section className={cx(styles.intro, hideElement)}>
-            <h1>Experiences</h1>
+            <h1>Millennials like Experiences</h1>
             <hr />
             <p>
               Next level echo park stumptown roof party, art party tbh live-edge
               fingerstache celiac heirloom hella. Sartorial pabst elit, heirloom
               minim ethical copper mug cold-pressed four loko. Cornhole
-              readymade yuccie paleo wayfarers labore exercitation occaecat et.{' '}
+              readymade yuccie paleo wayfarers labore exercitation occaecat et.
             </p>
           </section>
 
           <section className={styles.experiences}>
             {section.projects.map((experience, i) =>
-              <Experience
+              <ExperienceLink
                 key={experience.id}
                 experience={experience}
-                hovering={!!hovering}
+                hovering={!!hovering || selected}
                 active={hovering === experience.id}
                 count={section.projects.length}
                 onMouseOver={experience => this.experienceMouseOver(experience)}
@@ -182,7 +176,8 @@ export default class ExperiencesPage extends PageBase {
           <ExperienceProject
             key={experience.id}
             experience={experience}
-            position={i+1}
+            selected={experience.active}
+            position={i + 1}
             count={section.projects.length}
           />
         )}

@@ -8,8 +8,7 @@ import PageBase from '../PageBase';
 export default class LoadingPage extends PageBase {
   static defaultProps = {
     ...PageBase.defaultProps,
-    progress: 0,
-    visible: true
+    progress: 0
   };
 
   constructor(props) {

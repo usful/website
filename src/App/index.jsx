@@ -17,32 +17,25 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      progress: 0,
-      loaded: false
+      progress: 0
     };
   }
 
   async onLoadHide() {
     if (!this.unlisten) {
       //Hook up a listener to the router history.
-      this.unlisten = window.router.history.listen(
-        location =>
-          NavigationHelper.matchRoute(location.pathname) &&
-          this.setState({ _ts: Date.now() })
-      );
+      this.unlisten = window.router.history.listen(location => {
+        NavigationHelper.matchRoute(location.pathname);
+        this.setState({ _ts: Date.now() });
+      });
     }
 
     NavigationHelper.showNextPage();
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
-
-    LoadHelper.addProgressListener(progress =>
-      this.setState({ progress })
-    );
-
-    LoadHelper.addLoadedListener(() => this.setState({loaded: true}));
+    LoadHelper.addProgressListener(progress => this.setState({ progress }));
+    LoadHelper.addLoadedListener(() => this.refs.loading.hide());
 
     //On the first load, show the page matched up by the router.
     NavigationHelper.matchRoute(window.location.pathname);
@@ -58,9 +51,11 @@ export default class App extends Component {
 
   render() {
     const home = NavigationHelper.pages.find(page => page.name === 'home');
+
     const experiences = NavigationHelper.pages.find(
       page => page.name === 'experiences'
     );
+
     const technology = NavigationHelper.pages.find(
       page => page.name === 'technology'
     );
@@ -85,9 +80,9 @@ export default class App extends Component {
           onHidden={() => NavigationHelper.showNextPage()}
         />
         <LoadingPage
-          visible={!this.state.loaded}
+          ref="loading"
           progress={this.state.progress}
-          onHide={() => this.onLoadHide()}
+          onHidden={() => this.onLoadHide()}
         />
       </div>
     );

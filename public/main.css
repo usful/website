@@ -33,6 +33,14 @@
   src: url('/fonts/MaisonNeue-Bold.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Maison Neue Mono';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/fonts/MaisonNeue-Mono.ttf') format('truetype');
+}
+
+
 html,
 body {
   font-size: 1.6vh;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 import Tag from '../Tag';
 
-export default function Experience({
+export default function ExperienceLink({
   experience = { name: '', tags: [] },
   count = 0,
   position = 0,
@@ -14,7 +14,7 @@ export default function Experience({
   hovering = false,
   active = false
 }) {
-  let padding = `${60 - 40 / count * position}%`;
+  const padding = `${60 - 40 / count * position}%`;
 
   const style = {
     paddingLeft: position % 2 ? 0 : padding,

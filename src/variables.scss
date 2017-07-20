@@ -3,6 +3,7 @@ $white: #fff;
 $green: #4c7648;
 $yellow: #f6d600;
 $darkGrey: #444;
+$lightGrey: #acacac;
 
 $transitionTime: 500ms;
 $transitionTimeMedium: 750ms;
@@ -10,8 +11,8 @@ $transitionTimeLong: 1250ms;
 $transition: $transitionTime ease-in-out;
 $transitionMedium: $transitionTimeMedium ease-in-out;
 $transitionLong: $transitionTimeLong ease-in-out;
-
-$showTransition: 500ms ease-in;
+$transitionSlick: 300ms cubic-bezier(.77, 0, .175, 1);
+$showTransition: 500ms ease-in-out;
 
 @mixin hoverLine($color: rgba(255,255,255,0.7)) {
   position: relative;
@@ -28,8 +29,8 @@ $showTransition: 500ms ease-in;
     width: 100%;
     margin: 0 auto;
     background: $color;
-    transition: .3s transform cubic-bezier(.77, 0, .175, 1),
-      .2s width cubic-bezier(.77, 0, .175, 1);
+    transition: transform $transitionSlick,
+      width $transitionSlick;
     transform-origin: 100% 50%;
     transform: scaleX(0);
   }

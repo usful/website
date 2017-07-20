@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import styles from './styles.scss';
-import LoadableVideo from '../../Components/LoadableVideo';
+import LoadableVideo from '../../../Components/LoadableVideo';
 
 export default function ExperienceHero({ experience, hovering }) {
   const style = { backgroundImage: `url(${experience.hero})` };

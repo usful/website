@@ -1,5 +1,8 @@
 @import '../../../variables';
 
+$navWidth: 6rem;
+$descriptionWidth: 40rem;
+
 .experienceProject {
   position: fixed;
   top: 0;
@@ -7,32 +10,123 @@
   right: 0;
   bottom: 0;
   display: flex;
-  flex-direction: row;
-  pointer-events: none;
-  opacity: 0;
-
-  transition: opacity $transition;
+  visibility: visible;
 
   .content {
-    flex: 1;
-    min-height: 100%;
+    width: 100vw;
+    min-height: 100vh;
     background-color: transparent;
+    opacity: 0;
+    transition: opacity $showTransition;
+    padding-right: $descriptionWidth + $navWidth;
   }
 
   .description {
-    width: 40rem;
-    min-height: 100%;
-    background-color: green;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: $descriptionWidth + $navWidth;
+    min-height: 100vw;
+    height: 100vw;
+    padding: 2rem (3rem + $navWidth) 2rem 3rem;
+    background-color: $white;
+    transform: translateX($descriptionWidth + $navWidth);
+    transition: transform $showTransition;
+    color: $black;
+
+    .title {
+      @include hiddenState;
+      margin: 3rem 0 2rem 0;
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      section.tags {
+        padding: 0.5rem 0 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        :global(.icon) {
+          font-size: 125%;
+          margin: 0.25em;
+        }
+      }
+    }
+
+    .info {
+      @include hiddenState;
+      .infoBox {
+        border-top: 1px solid $darkGrey;
+        border-left: 1px solid $darkGrey;
+        border-right: 1px solid $darkGrey;
+        padding: 1rem;
+
+        &:last-of-type {
+          border-bottom: 1px solid $darkGrey;
+        }
+
+        label {
+          font-family: 'Maison Neue Mono', sans-serif;
+          color: $lightGrey;
+        }
+
+        p {
+          font-family: 'Maison Neue', sans-serif;
+          padding: 0.5rem 0;
+          font-size: 1.2rem;
+          line-height: 1.4em;
+        }
+      }
+    }
   }
 
   .nav {
-    width: 8rem;
-    min-height: 100%;
-    background-color: blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: $navWidth;
+    min-height: 100vw;
+    height: 100vw;
+    background-color: $black;
+    transform: translateX($navWidth);
+    transition: transform $showTransition;
   }
 
-  &.selected {
-    opacity: 1;
-    pointer-events: auto;
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.show1 {
+    visibility: visible;
+  }
+
+  &.show1 {
+    .content {
+      opacity: 1;
+    }
+
+    .description {
+      transform: translateX(0);
+    }
+  }
+
+  &.show2 {
+    .description {
+      .title {
+        @include shownState;
+      }
+
+      .info {
+        @include shownState;
+      }
+    }
+  }
+
+  &.show3 {
+    .nav {
+      transform: translateX(0);
+    }
   }
 }

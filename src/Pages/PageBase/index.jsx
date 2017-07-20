@@ -23,22 +23,6 @@ export default class PageBase extends Component {
     };
   }
 
-  propsChanged(visible, hidden) {
-    if (visible && hidden) {
-      this.show();
-    } else if (!visible && !hidden) {
-      this.hide();
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.propsChanged(nextProps.visible, this.state.hidden);
-  }
-
-  componentDidMount() {
-    this.propsChanged(this.props.visible, this.state.hidden);
-  }
-
   show() {
     if (!this.state.hidden) {
       return;
