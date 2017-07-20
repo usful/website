@@ -5,13 +5,15 @@
   top: 0;
   left: 0;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   min-width: 100vw;
   background-color: $black;
   color: $white;
   margin: 0 auto;
   opacity: 1;
   transition: opacity $transitionLong;
-  overflow-x: hidden;
 
   section.top {
     @include hiddenState;
@@ -59,8 +61,8 @@
   }
 
   section.experiences {
-    padding: 4rem 10vw;
     @include hiddenState;
+    padding: 4rem 10vw;
   }
 
   &.showing {
@@ -100,16 +102,64 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
+  .experiencesPage {
+    .container {
+      width: 100vw;
+      padding: 2rem;
+    }
+
+    section.top {
+      @include hiddenState;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .logoLink {
+        flex: 1;
+        text-decoration: none;
+
+        .logo {
+          color: $white;
+          font-size: 3rem;
+        }
+      }
+    }
+
+    section.intro {
+      > h1 {
+        font-size: 2.5rem;
+      }
+
+      hr {
+        width: 33vw;
+      }
+
+      p {
+        font-size: 1.25rem;
+        padding: 0 3rem;
+      }
+    }
+  }
 }
 
 /** PHONE **/
 @media (max-width: 640px) {
+  section.top {
+    .logoLink {
+      text-align: center;
+    }
+  }
 }
 
 @media (min-width: 1025px) {
   .experiencesPage {
     .container {
       padding: 4rem 15vw;
+
+      section.experiences {
+        padding: 4rem 0 4rem 5vw;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
 
 .mainMenu {
   a {
-    font-family: 'Maison Neue', serif;
+    font-family: 'Maison Neue Mono', serif;
     font-size: 1.1rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -18,9 +18,18 @@
 @media (max-width: 1024px) {
   .mainMenu {
     a {
-      font-size: 1.8rem;
-      padding: 0.5em 0;
+      font-size: 1.1rem;
+      padding: 0.25em 0.25em;
+      margin: 0.75em 1.25em;
     }
+  }
+}
+
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .mainMenu {
+    display: none;
   }
 }
 

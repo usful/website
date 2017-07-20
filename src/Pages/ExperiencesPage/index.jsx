@@ -45,6 +45,9 @@ export default class ExperiencesPage extends PageBase {
 
     await utils.pause(utils.timing * 0.75);
 
+    // TODO: Smooth scroll.
+    window.scrollTo(0,0);
+
     this.setState({
       show2: true
     });
@@ -108,13 +111,13 @@ export default class ExperiencesPage extends PageBase {
       hide1,
       hiding,
       hidden,
-      hovering,
+      hovering
     } = this.state;
 
     const { section, menu } = this.props;
 
     const selected = section.projects.find(experience => experience.active);
-    const hideElement = (hovering || selected) ? styles.hoverHide : '';
+    const hideElement = hovering || selected ? styles.hoverHide : '';
 
     return (
       <div
@@ -132,7 +135,10 @@ export default class ExperiencesPage extends PageBase {
           {section.projects.map(experience =>
             <ExperienceHero
               key={experience.id}
-              hovering={(hovering === experience.id || selected === experience) && this.state.show3}
+              hovering={
+                (hovering === experience.id || selected === experience) &&
+                this.state.show3
+              }
               experience={experience}
             />
           )}
@@ -162,11 +168,9 @@ export default class ExperiencesPage extends PageBase {
                 experience={experience}
                 hovering={!!hovering || selected}
                 active={hovering === experience.id}
-                count={section.projects.length}
                 onMouseOver={experience => this.experienceMouseOver(experience)}
                 onMouseLeave={experience =>
                   this.experienceMouseLeave(experience)}
-                position={i}
               />
             )}
           </section>
@@ -179,6 +183,7 @@ export default class ExperiencesPage extends PageBase {
             selected={experience.active}
             position={i + 1}
             count={section.projects.length}
+            next={section.projects[utils.arrayClamp(i+1, section.projects)]}
           />
         )}
       </div>

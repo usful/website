@@ -26,8 +26,8 @@ $descriptionWidth: 40rem;
     top: 0;
     right: 0;
     width: $descriptionWidth + $navWidth;
-    min-height: 100vw;
-    height: 100vw;
+    min-height: 100vh;
+    height: 100vh;
     padding: 2rem (3rem + $navWidth) 2rem 3rem;
     background-color: $white;
     transform: translateX($descriptionWidth + $navWidth);
@@ -87,11 +87,64 @@ $descriptionWidth: 40rem;
     top: 0;
     right: 0;
     width: $navWidth;
-    min-height: 100vw;
-    height: 100vw;
+    min-height: 100vh;
+    height: 100vh;
     background-color: $black;
     transform: translateX($navWidth);
     transition: transform $showTransition;
+    display: flex;
+    flex-direction: column;
+
+    .navClose {
+      display: block;
+      background: transparent;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.3rem;
+
+      &:active {
+        outline: none;
+      }
+    }
+
+    .next {
+      flex: 1;
+
+      .rotate {
+        transform-origin: 0 100%;
+        height: 6rem;
+        padding-top: 3rem;
+        text-align: center;
+        width: 60vh;
+        transform: rotate(90deg);
+
+        label {
+          display: inline-block;
+          font-family: 'Maison Neue Mono', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          opacity: 0.6;
+          font-size: 1.2rem;
+          padding-right: 0.5rem;
+        }
+
+        a {
+          display: inline-block;
+          font-size: 1.2rem;
+          color: $white;
+          text-decoration: none;
+          padding: 0 0.5em 0.25em 0.5em;
+          @include hoverLine;
+        }
+      }
+    }
+
+    .count {
+      text-align: center;
+      padding: 2rem 0;
+    }
   }
 
   &.hidden {

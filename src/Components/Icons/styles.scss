@@ -1,6 +1,13 @@
 @import '../../variables';
 
 svg {
+  .dashArray {
+    stroke: white;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash $transitionSlick forwards;
+  }
 
   .yellowFill {
     fill: $yellow;
@@ -32,5 +39,12 @@ svg {
 
   .blackStroke {
     stroke: $black;
+  }
+}
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }

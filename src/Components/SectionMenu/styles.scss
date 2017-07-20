@@ -2,7 +2,6 @@
 
 .sectionMenu {
   overflow: hidden;
-  padding: 2rem;
 
   .menu {
     background-color: $black;
@@ -23,6 +22,16 @@
         background-color: $green;
         transform: translate3d(0, -0.5rem, 0);
       }
+    }
+  }
+}
+
+
+/** PHONE **/
+@media (max-width:640px) {
+  .sectionMenu {
+    .menu {
+      flex-direction: column;
     }
   }
 }

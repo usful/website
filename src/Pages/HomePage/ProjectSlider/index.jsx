@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
@@ -95,9 +96,9 @@ export default class ProjectSlider extends Component {
         {this.props.children}
         <section className={styles.info}>
           <h1>
-            <a href={`/${project.type}/${project.slug}`}>{project.name}</a>
+            <Link to={`/${project.type}/${project.slug}`}>{project.name}</Link>
             in
-            <a href={`/${project.type}`}>{project.type}</a>
+            <Link to={`/${project.type}`}>{project.type}</Link>
           </h1>
         </section>
       </div>

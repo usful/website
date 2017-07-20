@@ -15,7 +15,7 @@ export default function SectionMenuItem({
       onMouseOver={() => onMouseOver(item)}
       onMouseLeave={() => onMouseLeave(item)}
     >
-      <span>{`0${position}`}</span>
+      <span>{`${position}`.padStart(2,'0')}</span>
       <label>
         {item.name}
       </label>

@@ -37,13 +37,6 @@
 }
 
 
-@media (min-width:1025px) {
-  .sectionMenuItem {
-    font-size: 1.4rem;
-    padding: 1em 1.5em;
-  }
-}
-
 /** TABLET **/
 @media (max-width:1024px) {
   .sectionMenuItem {
@@ -76,3 +69,9 @@
   }
 }
 
+@media (min-width:1025px) {
+  .sectionMenuItem {
+    font-size: 1.4rem;
+    padding: 1em 1.5em;
+  }
+}

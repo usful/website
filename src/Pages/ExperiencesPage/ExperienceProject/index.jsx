@@ -1,10 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
+
 import styles from './styles.scss';
 
 import utils from '../../../utils';
 import PageBase from '../../PageBase';
 import Tag from '../Tag';
+import CloseIcon from '../../../Components/Icons/Close';
 
 export default class ExperienceProject extends PageBase {
   constructor(props) {
@@ -75,7 +78,7 @@ export default class ExperienceProject extends PageBase {
   }
 
   render() {
-    const { experience, count, position } = this.props;
+    const { experience, count, position, next } = this.props;
     const { showing, shown, show1, show2, show3, hiding, hidden } = this.state;
 
     return (
@@ -90,8 +93,7 @@ export default class ExperienceProject extends PageBase {
           [styles.hidden]: hidden
         })}
       >
-        <section className={styles.content}>
-        </section>
+        <section className={styles.content} />
         <section className={styles.description}>
           <div className={styles.title}>
             <h1>
@@ -125,10 +127,18 @@ export default class ExperienceProject extends PageBase {
           </div>
         </section>
         <section className={styles.nav}>
-          <h1>Navbar</h1>
-          <h2>
-            {position} / {count}
-          </h2>
+          <Link to="/experiences" className={styles.navClose}>
+            <CloseIcon color="white" />
+          </Link>
+          <div className={styles.next}>
+            <div className={styles.rotate}>
+              <label>Next:</label>
+              <Link to={`/experiences/${next.slug}`}>{next.name}</Link>
+            </div>
+          </div>
+          <div className={styles.count}>
+            {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
+          </div>
         </section>
       </div>
     );
