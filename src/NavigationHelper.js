@@ -1,136 +1,87 @@
 import { matchPath } from 'react-router-dom';
 import data from './data';
+import { EventEmitter } from 'fbemitter';
+
+const emitter = new EventEmitter();
 
 export default class NavigationHelper {
-  static currentPage = null;
-  static nextPage = null;
-  static lastPage = null;
+  static history = [];
+  static data = data;
 
-  static pages = [
-    {
-      name: 'home',
-      section: null,
-      component: null,
-      active: false,
-      path: {
-        path: '/',
-        exact: true,
-        strict: false
-      }
-    },
-    {
-      name: 'experiences',
-      section: data.sections.find(section => section.slug === 'experiences'),
-      component: null,
-      active: false,
-      path: {
-        path: '/experiences',
-        strict: false
-      },
-      projectPath: {
-        path: '/experiences/:project',
-        strict: false
-      }
-    },
-    {
-      name: 'technology',
-      section: data.sections.find(section => section.slug === 'technology'),
-      component: null,
-      active: false,
-      path: {
-        path: '/technology',
-        strict: false
-      },
-      projectPath: {
-        path: '/technology/:project',
-        strict: false
-      }
-    }
-  ];
-
-  static showNextPage() {
-    console.log('NavigationHelper.showNextPage');
-
-    if (this.nextPage) {
-      this.nextPage.component.show();
-
-      this.currentPage = this.nextPage;
-      this.nextPage = null;
-
-      console.log(
-        'NavigationHelper.showNextPage showing',
-        this.currentPage.name
-      );
+  static setup() {
+    if (!this._setup) {
+      window.router.history.listen(location => this.routeChanged(location));
+      emitter.emit('setup');
+      this._setup = true;
     }
   }
 
-  static matchRoute(pathname) {
-    this.pages.forEach(page => {
-      const match = matchPath(pathname, page.path);
+  static async routeChanged(next) {
+    let last, lastSection, lastProject;
+    let nextSection, nextProject;
 
-      if (match) {
-        console.log(
-          'NavigationHelper.matchRoute',
-          pathname,
-          page.path.path,
-          !!match
+    last = this.history[this.history.length - 1];
+
+    if (last) {
+      lastSection = this.data.sections.find(section =>
+        matchPath(last.pathname, section.route)
+      );
+
+      if (lastSection) {
+        lastProject = lastSection.projects.find(project =>
+          matchPath(last.pathname, project.route)
         );
-
-        if (page.section) {
-          page.section.active = true;
-
-          if (page.section.projects) {
-            const projectMatch = matchPath(pathname, page.projectPath);
-
-            if (projectMatch) {
-              page.section.projects.forEach(
-                project =>
-                  (project.active =
-                    project.slug === projectMatch.params.project)
-              );
-
-              //Page has already been transitioned to.
-              if (page.active) {
-                return;
-              }
-            } else {
-              page.section.projects.forEach(
-                project => (project.active = false)
-              );
-            }
-          }
-        }
-
-        if (page !== this.currentPage) {
-          console.log(
-            'NavigationHelper.transitionPages checking',
-            page,
-            this.currentPage
-          );
-
-          if (this.currentPage) {
-            console.log(
-              'NavigationHelper.transitionPages hiding',
-              this.currentPage.name
-            );
-
-            this.currentPage.component.hide();
-
-            this.lastPage = this.currentPage;
-            this.currentPage = null;
-          }
-
-          page.active = true;
-
-          this.nextPage = page;
-        }
-      } else {
-        if (page.section) {
-          page.section.active = false;
-        }
-
-        page.active = false;
       }
-    });
+    }
+
+    console.log(
+      `Route Changed ${last ? last.pathname : 'none'} => ${next.pathname}`
+    );
+
+    nextSection = this.data.sections.find(section =>
+      matchPath(next.pathname, section.route)
+    );
+
+    if (nextSection) {
+      nextProject = nextSection.projects.find(project =>
+        matchPath(next.pathname, project.route)
+      );
+
+      if (nextSection !== lastSection) {
+        if (lastSection) {
+          await lastSection._component.hide();
+          lastSection._active = false;
+          emitter.emit('update');
+        }
+
+        await nextSection._component.show();
+        nextSection._active = true;
+        emitter.emit('update');
+      }
+
+      if (lastProject) {
+        await lastProject._component.hide();
+        lastProject._active = false;
+        emitter.emit('update');
+      }
+
+      if (nextProject) {
+        await nextProject._component.show();
+        nextProject._active = true;
+        emitter.emit('update');
+      }
+    }
+
+    this.history.push({ ...next });
+  }
+
+  static getSection(name) {
+    return NavigationHelper.data.sections.find(
+      section => section.name === name
+    );
+  }
+
+  static addListener(cb) {
+    return emitter.addListener('update', cb);
   }
 }

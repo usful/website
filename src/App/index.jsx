@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import styles from './styles.scss';
-import data from '../data';
 import NavigationHelper from '../NavigationHelper';
 import LoadHelper from '../LoadHelper';
 
@@ -22,62 +21,42 @@ export default class App extends Component {
   }
 
   async onLoadHide() {
-    if (!this.unlisten) {
-      //Hook up a listener to the router history.
-      this.unlisten = window.router.history.listen(location => {
-        NavigationHelper.matchRoute(location.pathname);
-        this.setState({ _ts: Date.now() });
-      });
-    }
-
-    NavigationHelper.showNextPage();
+    NavigationHelper.setup();
+    NavigationHelper.routeChanged(window.router.history.location);
   }
 
   componentDidMount() {
+    NavigationHelper.addListener(() => this.setState({_ts: Date.now()}));
     LoadHelper.addProgressListener(progress => this.setState({ progress }));
     LoadHelper.addLoadedListener(() => this.refs.loading.hide());
-
-    //On the first load, show the page matched up by the router.
-    NavigationHelper.matchRoute(window.location.pathname);
   }
 
   componentWillUnmount() {
-    if (this.unlisten) {
-      this.unlisten();
-    }
-
-    LoadHelper.removeAllListeners();
+    console.log('!!!!!!!!!! App Unmounted');
   }
 
   render() {
-    const home = NavigationHelper.pages.find(page => page.name === 'home');
-
-    const experiences = NavigationHelper.pages.find(
-      page => page.name === 'experiences'
-    );
-
-    const technology = NavigationHelper.pages.find(
-      page => page.name === 'technology'
-    );
+    const home = NavigationHelper.getSection('Home');
+    const experiences = NavigationHelper.getSection('Experiences');
+    const technology = NavigationHelper.getSection('Technology');
 
     return (
       <div className={styles.siteContainer}>
         <HomePage
-          ref={el => (home.component = el || home.component)}
-          sections={data.sections}
-          menu={data.menu}
-          onHidden={() => NavigationHelper.showNextPage()}
+          ref={el => (home._component = el || home._component)}
+          sections={NavigationHelper.data.sections.filter(
+            section => section.name !== 'Home'
+          )}
+          menu={NavigationHelper.data.menu}
         />
         <ExperiencesPage
-          menu={data.menu}
-          section={experiences.section}
-          ref={el => (experiences.component = el || experiences.component)}
-          onHidden={() => NavigationHelper.showNextPage()}
+          menu={NavigationHelper.data.menu}
+          section={experiences}
+          ref={el => (experiences._component = el || experiences._component)}
         />
         <TechnologiesPage
-          section={technology.section}
-          ref={el => (technology.component = el || technology.component)}
-          onHidden={() => NavigationHelper.showNextPage()}
+          section={technology}
+          ref={el => (technology._component = el || technology._component)}
         />
         <LoadingPage
           ref="loading"

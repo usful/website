@@ -9,6 +9,8 @@ import PageBase from '../../PageBase';
 import Tag from '../Tag';
 import CloseIcon from '../../../Components/Icons/Close';
 
+const MODIFIER = 0.8;
+
 export default class ExperienceProject extends PageBase {
   constructor(props) {
     super(props);
@@ -22,13 +24,13 @@ export default class ExperienceProject extends PageBase {
       hide1: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show2: true
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show3: true,
@@ -55,19 +57,19 @@ export default class ExperienceProject extends PageBase {
       show3: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show2: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show1: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.props.onHidden();
 

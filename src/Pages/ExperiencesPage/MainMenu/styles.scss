@@ -10,6 +10,7 @@
     padding: 0.25em 0.25em;
     margin: 0.75em 1.25em;
 
+    @include fontSmoothing;
     @include hoverLine;
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import styles from './styles.scss';
 import LoadableImage from '../../../../Components/LoadableImage';
+import LoadableVideo from '../../../../Components/LoadableVideo';
 
 export default class ProjectSlide extends Component {
   static defaultProps = {
@@ -27,7 +28,9 @@ export default class ProjectSlide extends Component {
         })}
         style={style}
       >
-        <LoadableImage className={styles.hero} src={project.hero}/>
+        {project.heroVideo
+          ? <LoadableVideo muted autoPlay loop src={project.heroVideo} />
+          : <LoadableImage className={styles.hero} src={project.hero}/>}
       </div>
     );
   }

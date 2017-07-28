@@ -65,11 +65,11 @@ export default class HomePage extends PageBase {
     this.setState({
       show1: false
     });
-
-    this.props.onHidden();
-
+    
     await utils.pause(utils.timing);
-
+  
+    this.props.onHidden();
+  
     this.setState({
       hidden: true,
       hiding: false

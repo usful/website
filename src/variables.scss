@@ -18,7 +18,7 @@ $showTransition: 500ms ease-in-out;
   position: relative;
 
   &::after {
-    content: '';
+    content: ' ';
     will-change: width;
     position: absolute;
     left: 0;
@@ -58,4 +58,9 @@ $dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
 
 @mixin dropShadow {
   box-shadow: $dropShadow;
+}
+
+@mixin fontSmoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

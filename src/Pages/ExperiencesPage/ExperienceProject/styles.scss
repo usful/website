@@ -119,6 +119,7 @@ $descriptionWidth: 40rem;
         text-align: center;
         width: 60vh;
         transform: rotate(90deg);
+        @include fontSmoothing;
 
         label {
           display: inline-block;

@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 import utils from '../../utils';
 
+import NavigationHelper from '../../NavigationHelper';
 import PageBase from '../PageBase';
 import Logo from '../../Components/Logo';
 import MainMenu from './MainMenu';
 import ExperienceLink from './ExperienceLink/index';
 import ExperienceHero from './ExperienceHero/index';
 import ExperienceProject from './ExperienceProject/index';
+
+const MODIFIER = 0.8;
 
 export default class ExperiencesPage extends PageBase {
   static defaultProps = {
@@ -43,16 +46,16 @@ export default class ExperiencesPage extends PageBase {
       hide1: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     // TODO: Smooth scroll.
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     this.setState({
       show2: true
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show3: true,
@@ -70,19 +73,19 @@ export default class ExperiencesPage extends PageBase {
       show3: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show2: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.setState({
       show1: false
     });
 
-    await utils.pause(utils.timing * 0.75);
+    await utils.pause(utils.timing * MODIFIER);
 
     this.props.onHidden();
 
@@ -116,7 +119,7 @@ export default class ExperiencesPage extends PageBase {
 
     const { section, menu } = this.props;
 
-    const selected = section.projects.find(experience => experience.active);
+    const selected = section.projects.find(experience => experience._active);
     const hideElement = hovering || selected ? styles.hoverHide : '';
 
     return (
@@ -176,14 +179,15 @@ export default class ExperiencesPage extends PageBase {
           </section>
         </div>
 
-        {section.projects.map((experience, i) =>
+        {section.projects.map((project, i) =>
           <ExperienceProject
-            key={experience.id}
-            experience={experience}
-            selected={experience.active}
+            ref={el => (project._component = el || project._component)}
+            key={project.id}
+            experience={project}
+            selected={project._active}
             position={i + 1}
             count={section.projects.length}
-            next={section.projects[utils.arrayClamp(i+1, section.projects)]}
+            next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
           />
         )}
       </div>

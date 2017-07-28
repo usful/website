@@ -23,20 +23,25 @@ export default class PageBase extends Component {
     };
   }
 
-  show() {
+  async show() {
     if (!this.state.hidden) {
       return;
     }
 
-    this.setState({
-      hidden: false,
-      hiding: false,
-      showing: true
-    }, () => {
-      this.show1();
+    await new Promise(resolve =>
+      this.setState(
+        {
+          hidden: false,
+          hiding: false,
+          showing: true
+        },
+        resolve
+      )
+    );
 
-      this.props.onShow();
-    });
+    this.props.onShow();
+  
+    await this.show1();
   }
 
   async show1() {
@@ -45,29 +50,37 @@ export default class PageBase extends Component {
     this.props.onShown();
   }
 
-  hide() {
+  async hide() {
     if (this.state.hidden) {
       return;
     }
+  
+    await new Promise(resolve =>
+      this.setState(
+        {
+          hiding: true,
+          showing: false
+        },
+        resolve
+      )
+    );
+  
+    this.props.onHide();
 
-    this.setState({
-      hiding: true,
-      showing: false
-    }, () => {
-      this.hide1();
-      this.props.onHide();
-    });
+    await this.hide1();
   }
 
   async hide1() {
     await utils.pause(utils.timing);
 
-    this.setState({
-      hidden: true,
-      hiding: false
-    }, () => this.props.onHidden());
+    this.setState(
+      {
+        hidden: true,
+        hiding: false
+      },
+      () => this.props.onHidden()
+    );
   }
-
 
   render() {
     return null;
