@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styles from './styles.scss';
 import utils from '../../utils';
 
-import PageBase from '../PageBase';
+import Showable from '../../Components/Showable';
 import Logo from '../../Components/Logo';
 import TagLine from '../../Components/TagLine';
 import SectionMenu from '../../Components/SectionMenu';
@@ -12,11 +12,11 @@ import MainMenu from './MainMenu';
 import ProjectSlider from './ProjectSlider';
 import SectionHero from './SectionHero';
 
-export default class HomePage extends PageBase {
-  static numberOfStates = 2;
-  
+export default class HomePage extends Showable {
+  static showStates = 2;
+
   static defaultProps = {
-    ...PageBase.defaultProps,
+    ...Showable.defaultProps,
     sections: [],
     menu: []
   };
@@ -30,7 +30,7 @@ export default class HomePage extends PageBase {
       selected: null
     };
   }
-  
+
   sectionMouseOver(section) {
     this.setState({ hovering: section.id });
   }
@@ -43,18 +43,10 @@ export default class HomePage extends PageBase {
 
   render() {
     const { menu, sections } = this.props;
-    const { showing, show1, show2, hide1, hide2, hiding, hidden } = this.state;
+    const { show2, hide2 } = this.state;
 
     return (
-      <div
-        className={cx(styles.homePage, {
-          [styles.showing]: showing,
-          [styles.show1]: show1,
-          [styles.show2]: show2,
-          [styles.hiding]: hiding,
-          [styles.hidden]: hidden
-        })}
-      >
+      <div className={cx(styles.homePage, this.showableClasses(styles))}>
         <div className={styles.container}>
           <section className={styles.top}>
             <Logo className={styles.logo} />

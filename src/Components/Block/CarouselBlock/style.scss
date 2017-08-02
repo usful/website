@@ -6,6 +6,9 @@
   .content {
     display: flex;
     flex-direction: row;
+    transform: translateX(0);
+
+    transition: transform $transitionMedium;
 
     > div {
       width: 100%;
@@ -15,14 +18,25 @@
   ul.dots {
     position: absolute;
     text-align: center;
-    bottom: 2rem;
+    bottom: 6rem;
     width: 100%;
 
     li {
       display: inline-block;
-      width: 1em;
-      height: 1em;
-      color: rgba(255,255,255,0.5);
+      width: 3rem;
+      height: 0.75rem;
+      border-radius: 0.5rem;
+      margin: 0 1rem;
+      background-color: #fff;
+      box-shadow: $dropShadow;
+      opacity: 0.5;
+      cursor: pointer;
+
+      transition: opacity $transitionSlick;
+
+      &.selected {
+        opacity: 1;
+      }
     }
   }
 }

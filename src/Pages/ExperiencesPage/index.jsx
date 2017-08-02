@@ -6,21 +6,23 @@ import styles from './styles.scss';
 import utils from '../../utils';
 
 import NavigationHelper from '../../NavigationHelper';
-import PageBase from '../PageBase';
+import Showable from '../../Components/Showable';
 import Logo from '../../Components/Logo';
 import MainMenu from './MainMenu';
 import ExperienceLink from './ExperienceLink/index';
 import ExperienceHero from './ExperienceHero/index';
 import ExperienceProject from './ExperienceProject/index';
 
+//        //mouse scroll down by Nikita Tcherednikov from the Noun Project
+
 const MODIFIER = 0.8;
 
-export default class ExperiencesPage extends PageBase {
-  static numberOfStates = 3;
+export default class ExperiencesPage extends Showable {
+  static showStates = 3;
   static timing = utils.timing * MODIFIER;
 
   static defaultProps = {
-    ...PageBase.defaultProps,
+    ...Showable.defaultProps,
     menu: [],
     section: {
       projects: []
@@ -48,16 +50,7 @@ export default class ExperiencesPage extends PageBase {
   }
 
   render() {
-    const {
-      showing,
-      show1,
-      show2,
-      show3,
-      hide1,
-      hiding,
-      hidden,
-      hovering
-    } = this.state;
+    const { hovering } = this.state;
 
     const { section, menu } = this.props;
 
@@ -65,17 +58,7 @@ export default class ExperiencesPage extends PageBase {
     const hideElement = hovering || selected ? styles.hoverHide : '';
 
     return (
-      <div
-        className={cx(styles.experiencesPage, {
-          [styles.showing]: showing,
-          [styles.show1]: show1,
-          [styles.show2]: show2,
-          [styles.show3]: show3,
-          [styles.hide1]: hide1,
-          [styles.hiding]: hiding,
-          [styles.hidden]: hidden
-        })}
-      >
+      <div className={cx(styles.experiencesPage, this.showableClasses(styles))}>
         <div className={styles.container}>
           {section.projects.map(experience =>
             <ExperienceHero
@@ -96,13 +79,18 @@ export default class ExperiencesPage extends PageBase {
           </section>
 
           <section className={cx(styles.intro, hideElement)}>
-            <h1>Millennials like Experiences</h1>
+            <h1>
+              Experiences with purpose. <br /> From conceivers, creators, and
+              builders.
+            </h1>
             <hr />
             <p>
-              Next level echo park stumptown roof party, art party tbh live-edge
-              fingerstache celiac heirloom hella. Sartorial pabst elit, heirloom
-              minim ethical copper mug cold-pressed four loko. Cornhole
-              readymade yuccie paleo wayfarers labore exercitation occaecat et.
+              We shake up the stale concept of traditional outreach with unique,
+              interactive installations designed to inspire both conversations
+              and shifts in thinking. Today, it’s all about the experience – the
+              more unique the better. Our installations transform ordinary and
+              unused spaces to offer a deep, meaningful experience associated
+              with a brand or product – and one people won’t forget.
             </p>
           </section>
 
@@ -132,6 +120,10 @@ export default class ExperiencesPage extends PageBase {
             next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
           />
         )}
+
+        <section className={styles.contact}>
+          <menu />
+        </section>
       </div>
     );
   }

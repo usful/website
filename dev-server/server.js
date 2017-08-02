@@ -10,6 +10,10 @@ const app = express();
   const compiler = webpack(require('../webpack.config')());
   app.use(webpackDevMiddleware(compiler, {
     publicPath: '/', // Same as `output.publicPath` in most cases.
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: true
+    }
   }));
 
   app.use('/technology', (req, res) => res.sendFile(path.join(__dirname + '/../public/index.html')));

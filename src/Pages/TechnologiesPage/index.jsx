@@ -3,11 +3,11 @@ import cx from 'classnames';
 
 import styles from './styles.scss';
 
-import PageBase from '../PageBase';
+import Showable from '../../Components/Showable';
 
-export default class TechnologiesPage extends PageBase {
+export default class TechnologiesPage extends Showable {
   static defaultProps = {
-    ...PageBase.defaultProps
+    ...Showable.defaultProps
   };
 
   constructor(props) {
@@ -17,10 +17,7 @@ export default class TechnologiesPage extends PageBase {
   render() {
     return (
       <div
-        className={cx(styles.technologiesPage, {
-          [styles.hiding]: this.state.hiding,
-          [styles.hidden]: this.state.hidden
-        })}
+        className={cx(styles.technologiesPage, this.showableClasses(styles))}
       >
         <h1>Technologies</h1>
         <h1>Technologies</h1>

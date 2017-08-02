@@ -7,7 +7,6 @@ export default class LoadableVideo extends Component {
 
     this.loaded = false;
     LoadHelper.addItem();
-    //console.log('LoadableVideo', this.props.src, 'created');
   }
 
   onCanPlay() {
@@ -15,7 +14,6 @@ export default class LoadableVideo extends Component {
       LoadHelper.itemLoaded();
       this.loaded = true;
     }
-    //console.log('LoadableVideo', this.props.src, 'canPlay');
   }
 
   onError() {

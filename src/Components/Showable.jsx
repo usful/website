@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import utils from '../../utils';
+import utils from '../utils/index';
 
-export default class PageBase extends Component {
-  static numberOfStates = 1;
+export default class Showable extends Component {
+  static showStates = 1;
   static timing = utils.timing;
 
   static defaultProps = {
@@ -25,7 +25,7 @@ export default class PageBase extends Component {
       hidden: true
     };
 
-    for (let i = 1; i < this.constructor.numberOfStates + 1; i++) {
+    for (let i = 1; i < this.constructor.showStates + 1; i++) {
       state[`show${i}`] = false;
       state[`hide${i}`] = false;
     }
@@ -35,8 +35,24 @@ export default class PageBase extends Component {
     };
   }
 
+  showableClasses(styles) {
+    const names = {
+      [styles.shown]: this.state.shown,
+      [styles.showing]: this.state.showing,
+      [styles.hiding]: this.state.hiding,
+      [styles.hidden]: this.state.hidden
+    };
+
+    for (let i=1; i<this.constructor.showStates+1; i++) {
+      names[styles[`show${i}`]] = this.state[`show${i}`];
+      names[styles[`hide${i}`]] = this.state[`hide${i}`];
+    }
+
+    return names;
+  }
+
   async show() {
-    const states = this.constructor.numberOfStates;
+    const states = this.constructor.showStates;
     
     if (!this.state.hidden) {
       return;
@@ -58,8 +74,6 @@ export default class PageBase extends Component {
     await utils.pause(1);
 
     for (let i = 1; i < states + 1; i++) {
-      console.log(this.constructor.name, 'showing', states, `show${i}`, `hide${states - i + 1}`);
-  
       this.setState({
         [`show${i}`]: true,
         [`hide${states - i + 1}`]: false
@@ -74,7 +88,7 @@ export default class PageBase extends Component {
   }
 
   async hide() {
-    const states = this.constructor.numberOfStates;
+    const states = this.constructor.showStates;
     
     if (this.state.hidden) {
       return;
@@ -93,10 +107,9 @@ export default class PageBase extends Component {
     this.props.onHide();
 
     for (let i = states; i > 0; i--) {
-      console.log(this.constructor.name, 'hiding', states, `hide${i}`, `show${states - i + 1}`);
       this.setState({
         [`hide${i}`]: true,
-        [`show${states - i + 1}`]: false
+        [`show${i}`]: false
       });
 
       await utils.pause(this.constructor.timing);

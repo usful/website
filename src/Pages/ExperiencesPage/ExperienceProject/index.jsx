@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 
 import utils from '../../../utils';
-import PageBase from '../../PageBase';
+import Showable from '../../../Components/Showable';
 import Tag from '../Tag';
 import CloseIcon from '../../../Components/Icons/Close';
 import Block from '../../../Components/Block';
 
 const MODIFIER = 0.8;
 
-export default class ExperienceProject extends PageBase {
-  static numberOfStates = 3;
+export default class ExperienceProject extends Showable {
+  static showStates = 3;
   static timing = utils.timing * MODIFIER;
 
   constructor(props) {
@@ -30,19 +30,10 @@ export default class ExperienceProject extends PageBase {
 
   render() {
     const { experience, count, position, next } = this.props;
-    const { showing, shown, show1, show2, show3, hiding, hidden } = this.state;
 
     return (
       <div
-        className={cx(styles.experienceProject, {
-          [styles.showing]: showing,
-          [styles.shown]: shown,
-          [styles.show1]: show1,
-          [styles.show2]: show2,
-          [styles.show3]: show3,
-          [styles.hiding]: hiding,
-          [styles.hidden]: hidden
-        })}
+        className={cx(styles.experienceProject, this.showableClasses(styles))}
       >
         <section className={styles.content}>
           <article>

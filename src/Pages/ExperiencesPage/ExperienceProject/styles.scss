@@ -12,6 +12,7 @@ $descriptionWidth: 40rem;
   display: flex;
   visibility: visible;
   overflow-y: auto;
+  overflow-x: hidden;
 
   .content {
     width: 100vw;
@@ -19,12 +20,11 @@ $descriptionWidth: 40rem;
     background-color: transparent;
     opacity: 0;
     transition: opacity $showTransition;
-    padding-right: $descriptionWidth + $navWidth;
     padding-top: 100vh;
 
     article {
+      padding: 2rem ($descriptionWidth + $navWidth - 1rem) 2rem 0;
       background-color: $offWhite;
-      padding: 2rem 0;
     }
   }
 
@@ -162,9 +162,7 @@ $descriptionWidth: 40rem;
 
   &.show1 {
     visibility: visible;
-  }
 
-  &.show1 {
     .content {
       opacity: 1;
     }
