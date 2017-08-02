@@ -16,6 +16,9 @@ import ExperienceProject from './ExperienceProject/index';
 const MODIFIER = 0.8;
 
 export default class ExperiencesPage extends PageBase {
+  static numberOfStates = 3;
+  static timing = utils.timing * MODIFIER;
+
   static defaultProps = {
     ...PageBase.defaultProps,
     menu: [],
@@ -29,70 +32,9 @@ export default class ExperiencesPage extends PageBase {
 
     this.state = {
       ...this.state,
-      show1: false,
-      show2: false,
-      show3: false,
-      hide1: false,
       hovering: null,
       selected: null
     };
-  }
-
-  async show1() {
-    await utils.pause(1);
-
-    this.setState({
-      show1: true,
-      hide1: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    // TODO: Smooth scroll.
-    window.scrollTo(0, 0);
-
-    this.setState({
-      show2: true
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show3: true,
-      showing: false
-    });
-
-    this.props.onShown();
-  }
-
-  async hide1() {
-    await utils.pause(1);
-
-    this.setState({
-      hide1: true,
-      show3: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show2: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show1: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.props.onHidden();
-
-    this.setState({
-      hidden: true,
-      hiding: false
-    });
   }
 
   experienceMouseOver(experience) {

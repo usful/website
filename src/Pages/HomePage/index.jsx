@@ -13,6 +13,8 @@ import ProjectSlider from './ProjectSlider';
 import SectionHero from './SectionHero';
 
 export default class HomePage extends PageBase {
+  static numberOfStates = 2;
+  
   static defaultProps = {
     ...PageBase.defaultProps,
     sections: [],
@@ -25,57 +27,10 @@ export default class HomePage extends PageBase {
     this.state = {
       ...this.state,
       hovering: null,
-      selected: null,
-      show1: false,
-      show2: false,
-      hide1: false
+      selected: null
     };
   }
-
-  async show1() {
-    await utils.pause(1);
-
-    this.setState({
-      show1: true,
-      hide1: false
-    });
-
-    await utils.pause(utils.timing);
-
-    this.setState({
-      show2: true,
-      showing: false
-    });
-
-    await utils.pause(utils.timing);
-
-    this.props.onShown();
-  }
-
-  async hide1() {
-    await utils.pause(1);
-
-    this.setState({
-      hide1: true,
-      show2: false
-    });
-
-    await utils.pause(utils.timing);
-
-    this.setState({
-      show1: false
-    });
-    
-    await utils.pause(utils.timing);
   
-    this.props.onHidden();
-  
-    this.setState({
-      hidden: true,
-      hiding: false
-    });
-  }
-
   sectionMouseOver(section) {
     this.setState({ hovering: section.id });
   }
@@ -88,7 +43,7 @@ export default class HomePage extends PageBase {
 
   render() {
     const { menu, sections } = this.props;
-    const { showing, show1, show2, hide1, hiding, hidden } = this.state;
+    const { showing, show1, show2, hide1, hide2, hiding, hidden } = this.state;
 
     return (
       <div
@@ -118,7 +73,7 @@ export default class HomePage extends PageBase {
           <SectionMenu
             className={styles.sectionMenu}
             items={sections}
-            visible={!hide1}
+            visible={!hide2}
             onSectionOver={section => this.sectionMouseOver(section)}
             onSectionLeave={section => this.sectionMouseLeave(section)}
           />

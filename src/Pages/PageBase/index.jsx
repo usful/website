@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import utils from '../../utils';
 
 export default class PageBase extends Component {
+  static numberOfStates = 1;
+  static timing = utils.timing;
+
   static defaultProps = {
     show: () => {},
     hide: () => {},
@@ -16,14 +19,25 @@ export default class PageBase extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    const state = {
       showing: false,
       hiding: false,
       hidden: true
     };
+
+    for (let i = 1; i < this.constructor.numberOfStates + 1; i++) {
+      state[`show${i}`] = false;
+      state[`hide${i}`] = false;
+    }
+
+    this.state = {
+      ...state
+    };
   }
 
   async show() {
+    const states = this.constructor.numberOfStates;
+    
     if (!this.state.hidden) {
       return;
     }
@@ -40,21 +54,32 @@ export default class PageBase extends Component {
     );
 
     this.props.onShow();
-  
-    await this.show1();
-  }
 
-  async show1() {
-    await utils.pause(utils.timing);
+    await utils.pause(1);
+
+    for (let i = 1; i < states + 1; i++) {
+      console.log(this.constructor.name, 'showing', states, `show${i}`, `hide${states - i + 1}`);
+  
+      this.setState({
+        [`show${i}`]: true,
+        [`hide${states - i + 1}`]: false
+      });
+
+      await utils.pause(this.constructor.timing);
+    }
+  
+    this.setState({ showing: false });
 
     this.props.onShown();
   }
 
   async hide() {
+    const states = this.constructor.numberOfStates;
+    
     if (this.state.hidden) {
       return;
     }
-  
+
     await new Promise(resolve =>
       this.setState(
         {
@@ -64,22 +89,22 @@ export default class PageBase extends Component {
         resolve
       )
     );
-  
+
     this.props.onHide();
 
-    await this.hide1();
-  }
+    for (let i = states; i > 0; i--) {
+      console.log(this.constructor.name, 'hiding', states, `hide${i}`, `show${states - i + 1}`);
+      this.setState({
+        [`hide${i}`]: true,
+        [`show${states - i + 1}`]: false
+      });
 
-  async hide1() {
-    await utils.pause(utils.timing);
-
-    this.setState(
-      {
-        hidden: true,
-        hiding: false
-      },
-      () => this.props.onHidden()
-    );
+      await utils.pause(this.constructor.timing);
+    }
+  
+    this.setState({ hiding: false, hidden: true });
+  
+    this.props.onHidden();
   }
 
   render() {

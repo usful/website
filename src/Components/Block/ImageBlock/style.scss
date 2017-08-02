@@ -1,0 +1,64 @@
+@import '../../../variables';
+
+.imageBlock {
+  padding: 2rem 0;
+  color: $black;
+
+  p {
+    font-family: "Maison Neue", sans-serif;
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.4rem;
+    flex: 2;
+  }
+
+  &.alignFull {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.alignCenter {
+    img {
+      display: block;
+      height: 24rem;
+      margin: 0 auto;
+    }
+
+    p {
+      text-align: center;
+      padding: 2rem 10rem 0 10rem;
+    }
+  }
+
+  &.alignRight,
+  &.alignLeft {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    img {
+      flex: 3;
+      object-fit: contain;
+      height: 20rem;
+    }
+  }
+
+  &.alignRight {
+    p {
+      padding-left: 2rem;
+    }
+  }
+
+  &.alignLeft {
+    p {
+      padding-right: 2rem;
+    }
+  }
+
+  &.alignCenter {
+    text-align: center;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../../variables';
+
+.textBlock {
+  color: $black;
+  padding: 2rem 4rem;
+
+  p {
+    font-size: 2.75rem;
+    font-family: Adamina, serif;
+    line-height: 1.4em;
+  }
+}

@@ -8,75 +8,24 @@ import utils from '../../../utils';
 import PageBase from '../../PageBase';
 import Tag from '../Tag';
 import CloseIcon from '../../../Components/Icons/Close';
+import Block from '../../../Components/Block';
 
 const MODIFIER = 0.8;
 
 export default class ExperienceProject extends PageBase {
+  static numberOfStates = 3;
+  static timing = utils.timing * MODIFIER;
+
   constructor(props) {
     super(props);
   }
 
-  async show1() {
-    await utils.pause(1);
-
-    this.setState({
-      show1: true,
-      hide1: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show2: true
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show3: true,
-      showing: false
-    });
-
-    this.props.onShown();
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.selected && !this.props.selected) {
-      console.log('Showing Experience Project', this.props.experience.name);
       this.show();
     } else if (!nextProps.selected && this.props.selected) {
       this.hide();
     }
-  }
-
-  async hide1() {
-    await utils.pause(1);
-
-    this.setState({
-      hide1: true,
-      show3: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show2: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.setState({
-      show1: false
-    });
-
-    await utils.pause(utils.timing * MODIFIER);
-
-    this.props.onHidden();
-
-    this.setState({
-      hidden: true,
-      hiding: false
-    });
   }
 
   render() {
@@ -95,7 +44,11 @@ export default class ExperienceProject extends PageBase {
           [styles.hidden]: hidden
         })}
       >
-        <section className={styles.content} />
+        <section className={styles.content}>
+          <article>
+            {experience.content.map(block => <Block key={block.id} {...block} />)}
+          </article>
+        </section>
         <section className={styles.description}>
           <div className={styles.title}>
             <h1>
@@ -135,7 +88,9 @@ export default class ExperienceProject extends PageBase {
           <div className={styles.next}>
             <div className={styles.rotate}>
               <label>Next:</label>
-              <Link to={`/experiences/${next.slug}`}>{next.name}</Link>
+              <Link to={`/experiences/${next.slug}`}>
+                {next.name}
+              </Link>
             </div>
           </div>
           <div className={styles.count}>

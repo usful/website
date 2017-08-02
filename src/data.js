@@ -11,7 +11,7 @@ export default {
         exact: true,
         strict: false
       },
-      projects: [],
+      projects: []
     },
     {
       _component: null,
@@ -45,7 +45,76 @@ export default {
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.\n',
           impact:
             'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.\n',
-          content: [] //Blocks
+          content: [
+            {
+              id: 'b1',
+              type: 'ImageBlock',
+              url: 'https://unsplash.it/1110/680/?random&ts=10',
+              align: 'left',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b2',
+              type: 'ImageBlock',
+              url: 'https://unsplash.it/1110/680/?random&ts=11',
+              align: 'right',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b3',
+              type: 'ImageBlock',
+              url: 'https://unsplash.it/1110/680/?random&ts=24',
+              align: 'center',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b5',
+              type: 'ImageBlock',
+              url: 'https://unsplash.it/1110/680/?random&ts=12',
+              align: 'full',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b4',
+              type: 'QuoteBlock',
+              text: `It's all about the look, the feel, the run. *wink*`,
+              by: 'Kofi Gyekye, Head Usful Dude'
+            },
+            {
+              id: 'b6',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'b7',
+                  type: 'ImageBlock',
+                  url: 'https://unsplash.it/1110/680/?random&ts=12',
+                  align: 'full'
+                },
+                {
+                  id: 'b8',
+                  type: 'ImageBlock',
+                  url: 'https://unsplash.it/1110/680/?random&ts=13',
+                  align: 'full'
+                },
+                {
+                  id: 'b9',
+                  type: 'ImageBlock',
+                  url: 'https://unsplash.it/1110/680/?random&ts=14',
+                  align: 'full'
+                }
+              ]
+            },
+            {
+              id: 'b10',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            }
+          ] //Blocks
         },
         {
           _component: null,

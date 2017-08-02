@@ -1,0 +1,28 @@
+@import '../../../variables';
+
+.carouselBlock {
+  position: relative;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  ul.dots {
+    position: absolute;
+    text-align: center;
+    bottom: 2rem;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      color: rgba(255,255,255,0.5);
+    }
+  }
+}

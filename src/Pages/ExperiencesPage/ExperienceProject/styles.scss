@@ -11,6 +11,7 @@ $descriptionWidth: 40rem;
   bottom: 0;
   display: flex;
   visibility: visible;
+  overflow-y: auto;
 
   .content {
     width: 100vw;
@@ -19,6 +20,12 @@ $descriptionWidth: 40rem;
     opacity: 0;
     transition: opacity $showTransition;
     padding-right: $descriptionWidth + $navWidth;
+    padding-top: 100vh;
+
+    article {
+      background-color: $offWhite;
+      padding: 2rem 0;
+    }
   }
 
   .description {
@@ -33,6 +40,7 @@ $descriptionWidth: 40rem;
     transform: translateX($descriptionWidth + $navWidth);
     transition: transform $showTransition;
     color: $black;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
 
     .title {
       @include hiddenState;
