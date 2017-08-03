@@ -103,8 +103,7 @@ export default {
                 {
                   id: 'bc1',
                   type: 'VideoBlock',
-                  url:
-                    'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
                 },
                 {
                   id: 'bc2',
@@ -176,6 +175,221 @@ export default {
           impact:
             'Designed to introduce the concept of urban farming in a palatable and hands-on manner, the installation showcased the simplicity of urban farming by highlighting growing technology like Bright Agrotech’s ZipGrow Towers, Urban Cultivator Microgreen Growing Units, and Landscape Culture’s “Language of Plants.” Users were able to experience this technology for themselves, inspiring an understanding of sustainable change and how to make it feasible. In doing so, the progressive values of Brookfield Office Properties became associated with the initiative. \n',
           content: [] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/experiences/digital-campaigns',
+            strict: true
+          },
+          id: 'ep4',
+          type: 'experiences',
+          slug: 'digital-campaigns',
+          name: 'Digital Campaigns',
+          tags: ['Heart', 'Education'],
+          hero: 'https://lorempixel.com/1110/680/?random&ts=1',
+          heroVideo:
+            'https://s3.amazonaws.com/anthropocene/vids/clip1.mp4',
+          client: 'Multiple',
+          description:
+            'We are the creators of user-friendly digital experiences that impact how people view and navigate both the world and their daily lives. Our Usful digital experiences heighten consumer connection and engagement with brands, products, art, and film. We work with the best designers and with top-of-the-line technology in the creation of our immersive and impactful digital projects. \n',
+          impact:
+            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about when they return to the office from their lunch break or home after work. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience. By offering a one-on-one high touchpoint, we inspire shifts in consciousness and a subsequent association of your brand to this progressive change in thinking.',
+          content: [
+            {
+              id: 'b1',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=10',
+              align: 'left',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b18',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            },
+            {
+              id: 'b2',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=11',
+              align: 'right',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b20',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            },
+            {
+              id: 'b3',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=24',
+              align: 'center',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b5',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=12',
+              align: 'full',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b4',
+              type: 'QuoteBlock',
+              text: `It's all about the look, the feel, the run. *wink*`,
+              by: 'Kofi Gyekye, Head Usful Dude'
+            },
+            {
+              id: 'b6',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'bc1',
+                  type: 'VideoBlock',
+                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+                },
+                {
+                  id: 'bc2',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=101',
+                  align: 'full'
+                },
+                {
+                  id: 'bc3',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=102',
+                  align: 'full'
+                },
+                {
+                  id: 'bc4',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=103',
+                  align: 'full'
+                }
+              ]
+            },
+            {
+              id: 'b10',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            }
+          ] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/experiences/brand-awareness-campaigns-6ix-cycle',
+            strict: true
+          },
+          id: 'ep5',
+          type: 'experiences',
+          slug: 'brand-awareness-campaigns-6ix-cycle',
+          name: 'Brand Awareness Campaigns - 6ix Cycle',
+          tags: ['Heart', 'Education'],
+          hero: 'https://lorempixel.com/1110/680/?random&ts=1',
+          heroVideo: 'https://s3.amazonaws.com/anthropocene/vids/clip8.mp4',
+          client: 'Multiple',
+          description:
+            'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto’s Adelaide Street into a high-energy outdoor spin studio. Held in collaboration with a health and wellness program at the Bay Adelaide Centre, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.\n',
+          impact:
+            'The impossible-to-miss installation got both the participants and passersby engaged and motivated, with business wear-clad audience members cheering on the participants in between meetings. The use of VR offered a multi-faceted and memorable experience for users. The first live session resulted in over 4K impressions.\n',
+          content: [
+            {
+              id: 'b1',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=10',
+              align: 'left',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b18',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            },
+            {
+              id: 'b2',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=11',
+              align: 'right',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b20',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            },
+            {
+              id: 'b3',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=24',
+              align: 'center',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b5',
+              type: 'ImageBlock',
+              url: 'https://lorempixel.com/1110/680/?random&ts=12',
+              align: 'full',
+              text:
+                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
+            },
+            {
+              id: 'b4',
+              type: 'QuoteBlock',
+              text: `It's all about the look, the feel, the run. *wink*`,
+              by: 'Kofi Gyekye, Head Usful Dude'
+            },
+            {
+              id: 'b6',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'bc1',
+                  type: 'VideoBlock',
+                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+                },
+                {
+                  id: 'bc2',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=101',
+                  align: 'full'
+                },
+                {
+                  id: 'bc3',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=102',
+                  align: 'full'
+                },
+                {
+                  id: 'bc4',
+                  type: 'ImageBlock',
+                  url: 'https://lorempixel.com/1110/680/?random&ts=103',
+                  align: 'full'
+                }
+              ]
+            },
+            {
+              id: 'b10',
+              type: 'TextBlock',
+              text:
+                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
+            }
+          ] //Blocks
         }
       ]
     },
@@ -246,13 +460,19 @@ export default {
   ],
   menu: [
     {
+      _showing: false,
+      _active: false,
+      _leaving: false,
       id: 'a4',
-      slug: 'about',
+      slug: '#about',
       name: 'About'
     },
     {
+      _showing: false,
+      _active: false,
+      _leaving: false,
       id: 'a5',
-      slug: 'contact',
+      slug: '#contact',
       name: 'Contact'
     }
   ]

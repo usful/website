@@ -8,13 +8,13 @@ import utils from '../../../utils';
 import Showable from '../../../Components/Showable';
 import Tag from '../Tag';
 import CloseIcon from '../../../Components/Icons/Close';
-import Block from '../../../Components/Block';
+import ScrollDownIcon from '../../../Components/Icons/ScrollDown';
 
-const MODIFIER = 0.8;
+import Block from '../../../Components/Block';
 
 export default class ExperienceProject extends Showable {
   static showStates = 3;
-  static timing = utils.timing * MODIFIER;
+  static timing = utils.timing * 0.8;
 
   constructor(props) {
     super(props);
@@ -28,6 +28,21 @@ export default class ExperienceProject extends Showable {
     }
   }
 
+  renderContent() {
+    const { experience } = this.props;
+    
+    if (experience.content && experience.content.length) {
+      return (
+        <article>
+          <div className={styles.scrollDown}>
+            <ScrollDownIcon/>
+          </div>
+          {experience.content.map(block => <Block key={block.id} {...block} />)}
+        </article>
+      )
+    }
+  };
+  
   render() {
     const { experience, count, position, next } = this.props;
 
@@ -36,9 +51,7 @@ export default class ExperienceProject extends Showable {
         className={cx(styles.experienceProject, this.showableClasses(styles))}
       >
         <section className={styles.content}>
-          <article>
-            {experience.content.map(block => <Block key={block.id} {...block} />)}
-          </article>
+          {this.renderContent()}
         </section>
         <section className={styles.description}>
           <div className={styles.title}>

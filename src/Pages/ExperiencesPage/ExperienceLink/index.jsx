@@ -7,8 +7,9 @@ import Tag from '../Tag';
 
 export default function ExperienceLink({
   experience = { name: '', tags: [] },
-  onMouseOver = () => {},
-  onMouseLeave = () => {},
+  onMouseOver = experience => {},
+  onMouseLeave = experience => {},
+  onClick = experience => {},
   hovering = false,
   active = false
 }) {
@@ -21,7 +22,10 @@ export default function ExperienceLink({
       onMouseOver={() => onMouseOver(experience)}
       onMouseLeave={() => onMouseLeave(experience)}
     >
-      <Link to={`/experiences/${experience.slug}`}>
+      <Link
+        to={`/experiences/${experience.slug}`}
+        onClick={() => onClick(experience)}
+      >
         <h1>
           {experience.name}
         </h1>

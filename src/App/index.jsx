@@ -11,6 +11,11 @@ import {
   LoadingPage
 } from '../Pages';
 
+import {
+  About,
+  Contact
+} from '../Modals';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -30,16 +35,15 @@ export default class App extends Component {
     LoadHelper.addProgressListener(progress => this.setState({ progress }));
     LoadHelper.addLoadedListener(() => this.refs.loading.hide());
   }
-
-  componentWillUnmount() {
-    console.log('!!!!!!!!!! App Unmounted');
-  }
-
+  
   render() {
     const home = NavigationHelper.getSection('Home');
     const experiences = NavigationHelper.getSection('Experiences');
     const technology = NavigationHelper.getSection('Technology');
-
+    
+    const about = NavigationHelper.getMenu('About');
+    const contact = NavigationHelper.getMenu('Contact');
+    
     return (
       <div className={styles.siteContainer}>
         <HomePage
@@ -63,6 +67,8 @@ export default class App extends Component {
           progress={this.state.progress}
           onHidden={() => this.onLoadHide()}
         />
+        <About ref={el => about._component = el || about._component} />
+        <Contact ref={el => contact._component = el || contact._component} />
       </div>
     );
   }

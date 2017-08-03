@@ -66,6 +66,27 @@
     padding: 4rem 10vw;
   }
 
+  section.contact {
+    ul {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      padding: 4rem 0;
+      justify-content: center;
+
+      li {
+        font-family: 'Maison Neue Mono', sans-serif;
+        padding: 0 3rem;
+        opacity: 0.5;
+
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
   &.showing {
     opacity: 1;
     pointer-events: none;

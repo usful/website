@@ -50,11 +50,10 @@ export default class ExperiencesPage extends Showable {
   }
 
   render() {
-    const { hovering } = this.state;
-
+    const { hovering, show3 } = this.state;
     const { section, menu } = this.props;
 
-    const selected = section.projects.find(experience => experience._active);
+    const selected = section.projects.find(experience => experience._active || experience._showing);
     const hideElement = hovering || selected ? styles.hoverHide : '';
 
     return (
@@ -64,8 +63,7 @@ export default class ExperiencesPage extends Showable {
             <ExperienceHero
               key={experience.id}
               hovering={
-                (hovering === experience.id || selected === experience) &&
-                this.state.show3
+                (hovering === experience.id || selected === experience) && show3
               }
               experience={experience}
             />
@@ -101,6 +99,7 @@ export default class ExperiencesPage extends Showable {
                 experience={experience}
                 hovering={!!hovering || selected}
                 active={hovering === experience.id}
+                onClick={experience => this.selected = experience}
                 onMouseOver={experience => this.experienceMouseOver(experience)}
                 onMouseLeave={experience =>
                   this.experienceMouseLeave(experience)}
@@ -120,9 +119,13 @@ export default class ExperiencesPage extends Showable {
             next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
           />
         )}
-
-        <section className={styles.contact}>
-          <menu />
+  
+        <section className={cx(styles.contact, hideElement)}>
+          <ul>
+            <li><a href="mailto:hello@usful.co">hello@usful.co</a></li>
+            <li>&copy; {new Date().getFullYear()} Usful Co Inc.</li>
+            <li><a href="tel:+14167095930">+1(416) 709-5930</a></li>
+          </ul>
         </section>
       </div>
     );
