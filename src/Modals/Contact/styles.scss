@@ -1,7 +1,89 @@
 @import '../../variables';
 
 .contact {
-  width: 100vw;
-  height: 100vw;
-  background: blue;
+  @include fullScreen;
+  position: fixed;
+  background: rgba(255,255,255,0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $showTransition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  section.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $dropShadow;
+    padding: 4rem 10rem 2rem 10rem;
+    background-color: $white;
+    text-align: center;
+
+    h1 {
+      font-family: 'Adamina', serif;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    input, textarea {
+      font-family: 'Maison Neue Mono', sans-serif;
+      border: 2px solid #f0f0f0;
+      background-color: #fbfbfb;
+      color: $black;
+      width: 30rem;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      will-change: background-color, box-shadow, border;
+
+      transition: background-color $transitionSlick, box-shadow $transitionSlick, border $transitionSlick;
+
+      &:focus {
+        background-color: $white;
+        border: 2px solid $yellow;
+        box-shadow: $dropShadow;
+        outline: none;
+      }
+
+      &.valid {
+      }
+
+      &.invalid {
+        border: 2px solid indianred;
+      }
+    }
+
+    textarea {
+      height: 7rem;
+    }
+
+    button.button {
+      @include button;
+      width: 8rem;
+    }
+
+    .closeButton {
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.25rem;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  &.showing, &.shown, &.hiding {
+    visibility: visible;
+  }
+
+  &.show1 {
+    opacity: 1;
+  }
+
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
 }

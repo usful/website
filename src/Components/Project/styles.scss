@@ -1,17 +1,16 @@
-@import '../../../variables';
+@import '../../variables';
 
 $navWidth: 6rem;
 $descriptionWidth: 40rem;
 
-.experienceProject {
+.project {
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar($black);
+
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   visibility: visible;
-  overflow-y: auto;
   overflow-x: hidden;
 
   .content {
@@ -21,7 +20,6 @@ $descriptionWidth: 40rem;
     opacity: 0;
     transition: opacity $showTransition;
     padding-top: 100vh;
-
 
     article {
       position: relative;
@@ -98,6 +96,35 @@ $descriptionWidth: 40rem;
           padding: 0.5rem 0;
           font-size: 1.2rem;
           line-height: 1.4em;
+        }
+      }
+
+      h1 {
+        margin: 3rem 0 1rem 0;
+        font-family: Adamina, serif;
+        font-size: 2rem;
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          flex: 1;
+        }
+
+        hr {
+          margin-right: 2rem;
+          width: 10rem;
+          height: 1px;
+          border: none;
+          background-color: $black;
+        }
+
+        a {
+          @include button;
         }
       }
     }
@@ -183,10 +210,13 @@ $descriptionWidth: 40rem;
     .description {
       transform: translateX(0);
     }
+
+    &.hasContent .description {
+      transform: translateX(-$scrollWidth);
+    }
   }
 
   &.show2 {
-
     .description {
       .title {
         @include shownState;
@@ -209,6 +239,10 @@ $descriptionWidth: 40rem;
 
     .nav {
       transform: translateX(0);
+    }
+
+    &.hasContent .nav {
+      transform: translateX(-$scrollWidth);
     }
   }
 }

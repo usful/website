@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 import utils from '../../utils';
 
-import NavigationHelper from '../../NavigationHelper';
 import Showable from '../../Components/Showable';
 import Logo from '../../Components/Logo';
-import MainMenu from './MainMenu';
+import MainMenu from '../../Components/MainMenu';
 import ExperienceLink from './ExperienceLink/index';
 import ExperienceHero from './ExperienceHero/index';
-import ExperienceProject from './ExperienceProject/index';
+import Project from '../../Components/Project/index';
 
 //        //mouse scroll down by Nikita Tcherednikov from the Noun Project
 
@@ -109,24 +108,17 @@ export default class ExperiencesPage extends Showable {
         </div>
 
         {section.projects.map((project, i) =>
-          <ExperienceProject
+          <Project
             ref={el => (project._component = el || project._component)}
             key={project.id}
-            experience={project}
+            project={project}
             selected={project._active}
             position={i + 1}
             count={section.projects.length}
             next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
           />
         )}
-  
-        <section className={cx(styles.contact, hideElement)}>
-          <ul>
-            <li><a href="mailto:hello@usful.co">hello@usful.co</a></li>
-            <li>&copy; {new Date().getFullYear()} Usful Co Inc.</li>
-            <li><a href="tel:+14167095930">+1(416) 709-5930</a></li>
-          </ul>
-        </section>
+
       </div>
     );
   }

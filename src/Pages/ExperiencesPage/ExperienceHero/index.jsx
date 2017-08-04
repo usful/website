@@ -5,7 +5,9 @@ import styles from './styles.scss';
 import LoadableVideo from '../../../Components/LoadableVideo';
 
 export default function ExperienceHero({ experience, hovering }) {
-  const style = { backgroundImage: `url(${experience.hero})` };
+  const style = !experience.heroVideo
+    ? { backgroundImage: `url(${experience.hero})` }
+    : null;
 
   return (
     <div

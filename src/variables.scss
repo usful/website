@@ -3,9 +3,11 @@ $white: #fff;
 $offWhite: #F8F8F8;
 $green: #4c7648;
 $yellow: #f6d600;
+$darkYellow: #D2BA2E;
 $darkGrey: #444;
 $lightGrey: #acacac;
 $mediumGrey: #DEDEDE;
+$scrollWidth: 15px;
 
 $transitionTime: 500ms;
 $transitionTimeMedium: 750ms;
@@ -65,4 +67,61 @@ $dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
 @mixin fontSmoothing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin smoothYScroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin fullScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+@mixin scrollBar($background: transparent) {
+
+  &::-webkit-scrollbar-track
+  {
+    box-shadow: $dropShadow;
+    background-color: rgba(255,255,255,0.2);
+    z-index: 99999;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: $scrollWidth;
+    background-color: $background;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: $white;
+    border: 1px solid $white;
+  }
+
+}
+
+@mixin button {
+  cursor: pointer;
+  font-family: 'Maison Neue', sans-serif;
+  border: 1px solid $darkYellow;
+  border-radius: 0.3rem;
+  background-color: $yellow;
+  padding: 1rem 2rem 0.7rem 2rem;
+  margin: 1rem 0 0 auto;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  transition: opacity $transitionSlick;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }

@@ -22,6 +22,7 @@ export default class Showable extends Component {
     const state = {
       showing: false,
       hiding: false,
+      shown: false,
       hidden: true
     };
 
@@ -43,7 +44,7 @@ export default class Showable extends Component {
       [styles.hidden]: this.state.hidden
     };
 
-    for (let i=1; i<this.constructor.showStates+1; i++) {
+    for (let i = 1; i < this.constructor.showStates + 1; i++) {
       names[styles[`show${i}`]] = this.state[`show${i}`];
       names[styles[`hide${i}`]] = this.state[`hide${i}`];
     }
@@ -53,7 +54,7 @@ export default class Showable extends Component {
 
   async show() {
     const states = this.constructor.showStates;
-    
+
     if (!this.state.hidden) {
       return;
     }
@@ -81,15 +82,15 @@ export default class Showable extends Component {
 
       await utils.pause(this.constructor.timing);
     }
-  
-    this.setState({ showing: false });
+
+    this.setState({ shown: true, showing: false });
 
     this.props.onShown();
   }
 
   async hide() {
     const states = this.constructor.showStates;
-    
+
     if (this.state.hidden) {
       return;
     }
@@ -98,6 +99,7 @@ export default class Showable extends Component {
       this.setState(
         {
           hiding: true,
+          shown: false,
           showing: false
         },
         resolve
@@ -114,9 +116,9 @@ export default class Showable extends Component {
 
       await utils.pause(this.constructor.timing);
     }
-  
+
     this.setState({ hiding: false, hidden: true });
-  
+
     this.props.onHidden();
   }
 

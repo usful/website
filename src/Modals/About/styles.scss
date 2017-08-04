@@ -1,18 +1,65 @@
 @import '../../variables';
 
 .about {
-  position: fixed;;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: red;
+  @include fullScreen;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
   opacity: 0;
   visibility: hidden;
   transition: opacity $showTransition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &.shown {
+  section.form {
+    position: relative;
+    box-shadow: $dropShadow;
+    width: 60vw;
+    background-color: $white;
+
+    .header {
+      height: 25rem;
+      background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        ),
+        url(/img/team.jpg);
+      background-size: cover;
+    }
+
+    h1 {
+      margin: -5rem 20vw 0 4vw;
+      font-family: 'Adamina', serif;
+      font-size: 3rem;
+      line-height: 1.4em;
+    }
+
+    p {
+      margin: 0 5vw 4rem 20vw;
+      font-family: 'Maison Neue', sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.4em;
+    }
+
+    .closeButton {
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.25rem;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  &.showing,
+  &.shown,
+  &.hiding {
     visibility: visible;
+  }
+
+  &.show1 {
     opacity: 1;
   }
 

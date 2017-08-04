@@ -16,17 +16,15 @@ export default class NavigationHelper {
     }
   }
 
-  static async hashChanged(next) {
-    let last, lastMenu, nextMenu;
-    debugger;
-
-    last = this.history[this.history.length - 1];
+  static async hashChanged(next, last) {
+    let lastMenu, nextMenu;
 
     if (last && last.hash) {
+
       lastMenu = this.data.menu.find(menu => menu.slug === last.hash);
 
       if (lastMenu) {
-        lastMenu._component.show();
+        lastMenu._component.hide();
       }
     }
 
@@ -44,8 +42,9 @@ export default class NavigationHelper {
     let nextSection, nextProject;
 
     last = this.history[this.history.length - 1];
+    this.history.push({ ...next });
 
-    this.hashChanged(next);
+    this.hashChanged(next, last);
 
     if (last) {
       if (last.pathname === next.pathname) {
@@ -108,8 +107,6 @@ export default class NavigationHelper {
         emitter.emit('update');
       }
     }
-
-    this.history.push({ ...next });
   }
 
   static getSection(name) {

@@ -40,7 +40,6 @@
   src: url('/fonts/MaisonNeue-Mono.ttf') format('truetype');
 }
 
-
 html,
 body {
   font-size: 1.6vh;
@@ -49,7 +48,13 @@ body {
 }
 
 @media (max-height: 700px) {
-  html, body {
+  html,
+  body {
     font-size: 10px;
   }
+}
+
+button:active,
+button:focus {
+  outline: none;
 }

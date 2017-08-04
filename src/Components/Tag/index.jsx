@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Education, Earth, People, Gift, House } from '../../../Components/Icons';
+import { Heart, Education, Earth, People, Gift, House } from '../Icons/index';
 import styles from './styles.scss';
 
 const tagMap = {

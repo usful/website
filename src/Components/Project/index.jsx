@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 
-import utils from '../../../utils';
-import Showable from '../../../Components/Showable';
-import Tag from '../Tag';
-import CloseIcon from '../../../Components/Icons/Close';
-import ScrollDownIcon from '../../../Components/Icons/ScrollDown';
+import utils from '../../utils/index';
+import Showable from '../Showable';
+import Tag from '../Tag/index';
+import CloseIcon from '../Icons/Close/index';
+import ScrollDownIcon from '../Icons/ScrollDown/index';
 
-import Block from '../../../Components/Block';
+import Block from '../Block/index';
 
-export default class ExperienceProject extends Showable {
+export default class Project extends Showable {
   static showStates = 3;
   static timing = utils.timing * 0.8;
+
+  static defaultProps = {
+    ...Showable.defaultProps,
+    baseUrl: '/experiences'
+  };
 
   constructor(props) {
     super(props);
@@ -29,26 +34,28 @@ export default class ExperienceProject extends Showable {
   }
 
   renderContent() {
-    const { experience } = this.props;
-    
-    if (experience.content && experience.content.length) {
+    const { project } = this.props;
+
+    if (project.content && project.content.length) {
       return (
         <article>
           <div className={styles.scrollDown}>
-            <ScrollDownIcon/>
+            <ScrollDownIcon />
           </div>
-          {experience.content.map(block => <Block key={block.id} {...block} />)}
+          {project.content.map(block => <Block key={block.id} {...block} />)}
         </article>
-      )
+      );
     }
-  };
-  
+  }
+
   render() {
-    const { experience, count, position, next } = this.props;
+    const { project, count, position, next } = this.props;
 
     return (
       <div
-        className={cx(styles.experienceProject, this.showableClasses(styles))}
+        className={cx(styles.project, this.showableClasses(styles), {
+          [styles.hasContent]: project.content && project.content.length
+        })}
       >
         <section className={styles.content}>
           {this.renderContent()}
@@ -56,10 +63,10 @@ export default class ExperienceProject extends Showable {
         <section className={styles.description}>
           <div className={styles.title}>
             <h1>
-              {experience.name}
+              {project.name}
             </h1>
             <section className={styles.tags}>
-              {experience.tags.map(tag =>
+              {project.tags.map(tag =>
                 <Tag tag={tag} key={tag} color="green" />
               )}
             </section>
@@ -68,31 +75,39 @@ export default class ExperienceProject extends Showable {
             <div className={styles.infoBox}>
               <label>Client:</label>
               <p>
-                {experience.client}
+                {project.client}
               </p>
             </div>
             <div className={styles.infoBox}>
               <label>Description:</label>
               <p>
-                {experience.description}
+                {project.description}
               </p>
             </div>
             <div className={styles.infoBox}>
               <label>Impact:</label>
               <p>
-                {experience.impact}
+                {project.impact}
               </p>
             </div>
+            <h1>Want to collaborate?</h1>
+            <menu className={styles.contact}>
+              <div />
+              <hr />
+              <Link className={styles.button} to="#contact">
+                Contact Us
+              </Link>
+            </menu>
           </div>
         </section>
         <section className={styles.nav}>
-          <Link to="/experiences" className={styles.navClose}>
+          <Link to={this.props.baseUrl} className={styles.navClose}>
             <CloseIcon color="white" />
           </Link>
           <div className={styles.next}>
             <div className={styles.rotate}>
               <label>Next:</label>
-              <Link to={`/experiences/${next.slug}`}>
+              <Link to={this.props.baseUrl + next.slug}>
                 {next.name}
               </Link>
             </div>

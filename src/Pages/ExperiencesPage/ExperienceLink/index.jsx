@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
-import Tag from '../Tag';
+import Tag from '../../../Components/Tag';
 
 export default function ExperienceLink({
   experience = { name: '', tags: [] },

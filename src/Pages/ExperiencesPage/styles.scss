@@ -1,14 +1,10 @@
 @import '../../variables';
 
 .experiencesPage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  max-height: 100vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  min-width: 100vw;
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar;
+
   background-color: $black;
   color: $white;
   margin: 0 auto;
@@ -64,27 +60,6 @@
   section.experiences {
     @include hiddenState;
     padding: 4rem 10vw;
-  }
-
-  section.contact {
-    ul {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      padding: 4rem 0;
-      justify-content: center;
-
-      li {
-        font-family: 'Maison Neue Mono', sans-serif;
-        padding: 0 3rem;
-        opacity: 0.5;
-
-        a {
-          color: $white;
-          text-decoration: none;
-        }
-      }
-    }
   }
 
   &.showing {

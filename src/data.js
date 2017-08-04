@@ -42,9 +42,9 @@ export default {
             'https://s3.amazonaws.com/anthropocene/vids/empty-lake.mp4',
           client: 'Multiple',
           description:
-            'We believe in the power of  the arts and culture scene to educate and inspire key audiences. Held in typically unused, unique yet convenient spaces, our attention-grabbing art projects are focused on social commentary. Our global network of respected artists can transform a blank canvass of a space into an experience that instigates a powerful dialogue. It’s this experience that becomes associated with your brand. Leave it to us to curate installations – whether clean and simple or infused with technology – that match your target objectives.',
+            'We believe in the power of  the arts and culture scene to educate and inspire key audiences. Held in typically unused, unique yet convenient spaces, our attention-grabbing art projects are focused on social commentary. Our global network of respected artists can transform a blank canvass of a space into an experience that instigates a powerful dialogue...',
           impact:
-            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about when they return to the office from their lunch break or home after work. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience. By offering a one-on-one high touchpoint, we inspire shifts in consciousness and a subsequent association of your brand to this progressive change in thinking.',
+            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about when they return to the office from their lunch break or home after work. We take unused space.',
           content: [
             {
               id: 'b1',
@@ -189,8 +189,6 @@ export default {
           name: 'Digital Campaigns',
           tags: ['Heart', 'Education'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=1',
-          heroVideo:
-            'https://s3.amazonaws.com/anthropocene/vids/clip1.mp4',
           client: 'Multiple',
           description:
             'We are the creators of user-friendly digital experiences that impact how people view and navigate both the world and their daily lives. Our Usful digital experiences heighten consumer connection and engagement with brands, products, art, and film. We work with the best designers and with top-of-the-line technology in the creation of our immersive and impactful digital projects. \n',
