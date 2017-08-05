@@ -452,6 +452,25 @@ export default {
           impact:
             'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
           content: [] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/technology/change-for-a-dollar',
+            strict: true
+          },
+          id: 'tp5',
+          type: 'technology',
+          slug: 'change-for-a-dollar',
+          name: 'Change for a Dollar',
+          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
+          industry: 'Mobile SaaS',
+          description:
+            '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
+          impact:
+            'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
+          content: [] //Blocks
         }
       ]
     }

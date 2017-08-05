@@ -18,7 +18,7 @@ $transitionLong: $transitionTimeLong ease-in-out;
 $transitionSlick: 300ms cubic-bezier(.77, 0, .175, 1);
 $showTransition: 500ms ease-in-out; //500ms
 
-@mixin hoverLine($color: rgba(255,255,255,0.7)) {
+@mixin hoverLine($color: $white) {
   position: relative;
 
   &::after {

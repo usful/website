@@ -59,6 +59,7 @@ export default class App extends Component {
           ref={el => (experiences._component = el || experiences._component)}
         />
         <TechnologiesPage
+          menu={NavigationHelper.data.menu}
           section={technology}
           ref={el => (technology._component = el || technology._component)}
         />

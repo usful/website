@@ -8,9 +8,11 @@ import utils from '../../utils';
 import Showable from '../../Components/Showable';
 import Logo from '../../Components/Logo';
 import MainMenu from '../../Components/MainMenu';
-import ExperienceLink from './ExperienceLink/index';
-import ExperienceHero from './ExperienceHero/index';
-import Project from '../../Components/Project/index';
+import Project from '../../Components/Project';
+import Footer from '../../Components/Footer';
+
+import ExperienceLink from './ExperienceLink';
+import ExperienceHero from './ExperienceHero';
 
 //        //mouse scroll down by Nikita Tcherednikov from the Noun Project
 
@@ -119,6 +121,7 @@ export default class ExperiencesPage extends Showable {
           />
         )}
 
+        <Footer/>
       </div>
     );
   }

@@ -2,16 +2,31 @@
 
 .mainMenu {
   a {
+    @include fontSmoothing;
+
     font-family: 'Maison Neue Mono', serif;
     font-size: 1.1rem;
+    color: inherit;
     text-transform: uppercase;
     text-decoration: none;
-    color: $white;
     padding: 0.25em 0.25em;
     margin: 0.75em 1.25em;
+  }
 
-    @include fontSmoothing;
-    @include hoverLine;
+  &.white {
+    color: $white;
+
+    a {
+      @include hoverLine($white);
+    }
+  }
+
+  &.black {
+    color: $black;
+
+    a {
+      @include hoverLine($black);
+    }
   }
 }
 
@@ -25,7 +40,6 @@
     }
   }
 }
-
 
 /** PHONE **/
 @media (max-width: 640px) {
