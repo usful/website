@@ -13,8 +13,8 @@ import ScrollDownIcon from '../Icons/ScrollDown/index';
 import Block from '../Block/index';
 
 export default class Project extends Showable {
-  static showStates = 3;
-  static timing = utils.timing * 0.8;
+  static enter = [utils.timing * 0.8, utils.timing * 0.8, utils.timing * 0.8];
+  static exit = [utils.timing * 0.8, utils.timing * 0.8, utils.timing * 0.8];
 
   static defaultProps = {
     ...Showable.defaultProps,
@@ -107,7 +107,7 @@ export default class Project extends Showable {
           <div className={styles.next}>
             <div className={styles.rotate}>
               <label>Next:</label>
-              <Link to={this.props.baseUrl + next.slug}>
+              <Link to={this.props.baseUrl + '/' + next.slug}>
                 {next.name}
               </Link>
             </div>

@@ -54,7 +54,7 @@ $descriptionWidth: 40rem;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
 
     .title {
-      @include hiddenState;
+      @include slideUpHidden;
       margin: 3rem 0 2rem 0;
 
       h1 {
@@ -75,7 +75,7 @@ $descriptionWidth: 40rem;
     }
 
     .info {
-      @include hiddenState;
+      @include slideUpHidden;
       .infoBox {
         border-top: 1px solid $darkGrey;
         border-left: 1px solid $darkGrey;
@@ -219,11 +219,11 @@ $descriptionWidth: 40rem;
   &.show2 {
     .description {
       .title {
-        @include shownState;
+        @include slideUpShow;
       }
 
       .info {
-        @include shownState;
+        @include slideUpShow;
       }
     }
   }

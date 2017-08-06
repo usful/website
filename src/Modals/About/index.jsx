@@ -7,8 +7,6 @@ import Showable from '../../Components/Showable';
 import CloseIcon from '../../Components/Icons/Close';
 
 export default class About extends Showable {
-  static showStates = 1;
-
   constructor(props) {
     super(props);
   }

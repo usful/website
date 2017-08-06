@@ -13,7 +13,8 @@ import ProjectSlider from './ProjectSlider';
 import SectionHero from './SectionHero';
 
 export default class HomePage extends Showable {
-  static showStates = 2;
+  static enter = [utils.timing, utils.timing];
+  static exit = [utils.timing, utils.timing];
 
   static defaultProps = {
     ...Showable.defaultProps,

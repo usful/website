@@ -48,7 +48,7 @@
   .mainMenu,
   .sectionMenu,
   section.social {
-    @include hiddenState;
+    @include slideUpHidden;
   }
 
   &.showing {
@@ -64,7 +64,7 @@
     .mainMenu,
     .sectionMenu,
     section.social {
-      @include shownState;
+      @include slideUpShow;
     }
   }
 

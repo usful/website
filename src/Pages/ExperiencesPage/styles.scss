@@ -9,10 +9,21 @@
   color: $white;
   margin: 0 auto;
   opacity: 1;
-  transition: opacity $transitionLong;
+  transition: opacity $showTransition;
+
+  .introVideo {
+    @include reverseZoomHidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
 
   section.top {
-    @include hiddenState;
+    @include slideUpHidden;
 
     display: flex;
     flex-direction: row;
@@ -30,36 +41,40 @@
   }
 
   section.intro {
-    @include hiddenState;
 
     > h1 {
-      font-size: 3rem;
-      margin: 1.5em 0 0 0;
+      @include slideUpHidden;
+
+      font-size: 4rem;
+      margin: 2em 0 0 0;
       text-align: center;
       line-height: 1.4em;
     }
 
     hr {
-      width: 7rem;
+      @include slideUpHidden;
+
+      width: 12rem;
       border: none;
       background: $yellow;
       height: 1px;
-      margin: 1.75rem auto 2rem auto;
+      margin: 2.75rem auto 3rem auto;
     }
 
     p {
+      @include slideUpHidden;
+
       font-size: 1.5rem;
       color: $white;
-      opacity: 0.8;
       text-align: center;
       line-height: 1.4em;
-      padding: 0 25%;
+      padding: 0 20%;
     }
   }
 
   section.experiences {
-    @include hiddenState;
-    padding: 4rem 10vw;
+    @include slideUpHidden;
+    padding: 16rem 10vw 4rem 10vw;
   }
 
   &.showing {
@@ -68,20 +83,39 @@
   }
 
   &.show1 {
-    section.top {
-      @include shownState;
+    .introVideo {
+      @include reverseZoomShow;
+      opacity: 0.3;
     }
   }
 
   &.show2 {
     section.intro {
-      @include shownState;
+
+      > h1 {
+        @include slideUpShow;
+      }
     }
   }
 
   &.show3 {
+    section.intro {
+
+      hr {
+        @include slideUpShow;
+      }
+
+      p {
+        @include slideUpShow;
+      }
+    }
+
     section.experiences {
-      @include shownState;
+      @include slideUpShow;
+    }
+
+    section.top {
+      @include slideUpShow;
     }
   }
 
@@ -106,7 +140,7 @@
     }
 
     section.top {
-      @include hiddenState;
+      @include slideUpHidden;
 
       display: flex;
       flex-direction: row;
@@ -155,7 +189,7 @@
       padding: 4rem 15vw;
 
       section.experiences {
-        padding: 4rem 0 4rem 5vw;
+        padding: 16rem 0 4rem 5vw;
       }
     }
   }

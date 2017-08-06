@@ -90,7 +90,7 @@ export default class NavigationHelper {
       }
 
       if (lastProject) {
-        lastProject._leaing = true;
+        lastProject._leaving = true;
         emitter.emit('update');
         await lastProject._component.hide();
         lastProject._leaving = false;

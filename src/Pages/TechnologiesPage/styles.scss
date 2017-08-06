@@ -9,47 +9,119 @@
   color: $black;
   margin: 0 auto;
   opacity: 1;
-  transition: opacity $transitionLong;
+  transition: opacity $showTransition;
 
   .intro {
     position: relative;
-    background-color: #FDF2DD;
+    background-color: #fdf2dd;
+    overflow: hidden;
+    height: 60rem;
 
     .dots {
+      @include reverseZoomHidden;
+      position: absolute;
+      width: 125%;
+      height: 125%;
+      top: -10%;
+      left: -25%;
+    }
+
+    .inner {
       position: absolute;
       width: 100%;
       height: 100%;
-      object-fit: contain;
 
-      g {
+      .top {
+        @include slideUpHidden;
+        padding: 4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
+        .logoLink {
+          flex: 1;
+          text-decoration: none;
+
+          .logo {
+            color: $black;
+            font-size: 4rem;
+          }
+        }
       }
-    }
 
-    .top {
-      padding: 4rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      .copy {
+        @include reverseZoomHidden;
 
-      .logoLink {
-        flex: 1;
-        text-decoration: none;
-
-        .logo {
-          color: $black;
-          font-size: 4rem;
+        h1 {
+          width: 18em;
+          font-size: 4.5rem;
+          padding: 0 4em 2em 4em;
+          line-height: 1.4em;
         }
       }
     }
+  }
 
-    .copy {
-      h1 {
-        width: 18em;
-        font-size: 4.5rem;
-        padding: 0 4em 2em 4em;
-        line-height: 1.4em;
+  .blurb {
+    text-align: center;
+    padding: 4rem 0;
+
+    hr {
+      height: 4px;
+      background-color: $black;
+      opacity: 0.1;
+      width: 15rem;
+      margin: 4rem auto;
+      border: none;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.75rem;
+      width: 40rem;
+      margin: 0 auto;
+      line-height: 2em;
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact {
+    padding: 6rem 0;
+    background-color: $darkGrey;
+    text-align: center;
+
+    .tagLine {
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      hr {
+        flex: 1;
+        height: 1px;
+        background-color: $white;
+        border: none;
       }
+
+      h1 {
+        color: $white;
+        font-size: 2.5rem;
+        padding: 0 2rem;
+      }
+    }
+
+    a {
+      @include button;
+      font-size: 1.2rem;
     }
   }
 
@@ -61,10 +133,34 @@
     opacity: 1;
   }
 
+  &.show1 {
+    .dots {
+      @include reverseZoomShow;
+    }
+  }
+
+  &.show2 {
+    .intro {
+      .inner {
+        .copy {
+          @include reverseZoomShow;
+        }
+      }
+    }
+  }
+
+  &.show3 {
+    .intro {
+      .inner {
+        .top {
+          @include slideUpShow;
+        }
+      }
+    }
+  }
 
   &.hidden {
     opacity: 0;
-    pointer-events: none;
     visibility: hidden;
   }
 }
@@ -78,7 +174,7 @@
     }
 
     section.top {
-      @include hiddenState;
+      @include slideUpHidden;
 
       display: flex;
       flex-direction: row;
@@ -102,5 +198,4 @@
 }
 
 @media (min-width: 1025px) {
-
 }

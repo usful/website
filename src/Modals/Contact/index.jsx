@@ -18,8 +18,6 @@ const defaultState = {
 };
 
 export default class Contact extends Showable {
-  static showStates = 1;
-
   constructor(props) {
     super(props);
 

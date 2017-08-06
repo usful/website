@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import utils from '../utils/index';
 
 export default class Showable extends Component {
-  static showStates = 1;
-  static timing = utils.timing;
+  static enter = [utils.timing];
+  static exit = [utils.timing];
 
   static defaultProps = {
     show: () => {},
@@ -26,7 +26,7 @@ export default class Showable extends Component {
       hidden: true
     };
 
-    for (let i = 1; i < this.constructor.showStates + 1; i++) {
+    for (let i = 1; i < this.constructor.enter.length + 1; i++) {
       state[`show${i}`] = false;
       state[`hide${i}`] = false;
     }
@@ -36,6 +36,14 @@ export default class Showable extends Component {
     };
   }
 
+  onShow() {}
+
+  onShown() {}
+
+  onHidden() {}
+
+  onHide() {}
+
   showableClasses(styles) {
     const names = {
       [styles.shown]: this.state.shown,
@@ -44,7 +52,7 @@ export default class Showable extends Component {
       [styles.hidden]: this.state.hidden
     };
 
-    for (let i = 1; i < this.constructor.showStates + 1; i++) {
+    for (let i = 1; i < this.constructor.enter.length + 1; i++) {
       names[styles[`show${i}`]] = this.state[`show${i}`];
       names[styles[`hide${i}`]] = this.state[`hide${i}`];
     }
@@ -53,7 +61,7 @@ export default class Showable extends Component {
   }
 
   async show() {
-    const states = this.constructor.showStates;
+    const states = this.constructor.enter.length;
 
     if (!this.state.hidden) {
       return;
@@ -70,9 +78,8 @@ export default class Showable extends Component {
       )
     );
 
+    this.onShown();
     this.props.onShow();
-
-    await utils.pause(1);
 
     for (let i = 1; i < states + 1; i++) {
       this.setState({
@@ -80,16 +87,17 @@ export default class Showable extends Component {
         [`hide${states - i + 1}`]: false
       });
 
-      await utils.pause(this.constructor.timing);
+      await utils.pause(this.constructor.enter[i - 1]);
     }
 
     this.setState({ shown: true, showing: false });
 
+    this.onShown();
     this.props.onShown();
   }
 
   async hide() {
-    const states = this.constructor.showStates;
+    const states = this.constructor.exit.length;
 
     if (this.state.hidden) {
       return;
@@ -106,19 +114,21 @@ export default class Showable extends Component {
       )
     );
 
+    this.onHide();
     this.props.onHide();
 
     for (let i = states; i > 0; i--) {
       this.setState({
-        [`hide${i}`]: true,
+        [`hide${states - i + 1}`]: true,
         [`show${i}`]: false
       });
 
-      await utils.pause(this.constructor.timing);
+      await utils.pause(this.constructor.exit[states - i]);
     }
 
     this.setState({ hiding: false, hidden: true });
 
+    this.onHidden();
     this.props.onHidden();
   }
 

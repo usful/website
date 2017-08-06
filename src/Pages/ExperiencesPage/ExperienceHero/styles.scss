@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .experienceHero {
   position: fixed;
   top: 0;
@@ -6,8 +8,8 @@
   bottom: 0;
   background-size: cover;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 100ms linear;
+  transform: scale(1.2,1.2);
+  transition: opacity 125ms linear, transform 125ms $bez2;
 
   video {
     position: fixed;
@@ -23,6 +25,6 @@
 
   &.hovering {
     opacity: 1;
-    visibility: visible;
+    transform: scale(1,1);
   }
 }

@@ -428,6 +428,7 @@ export default {
           name: 'Lane',
           hero: 'https://lorempixel.com/1110/680/?random&ts=4',
           industry: 'CRE Enterprise SaaS',
+          tagLine: 'Bringing a trillion dollar industry intro the future.',
           description:
             'Tars Tarkas himself seemed pleased with my reply, but his only comment was more or less enigmatical—"And I think I know Tal Hajus, Jeddak of Thark."\n',
           impact:
@@ -447,6 +448,7 @@ export default {
           name: 'VINI',
           hero: 'https://lorempixel.com/1110/680/?random&ts=5',
           industry: 'Mobile SaaS',
+          tagLine: 'Disrupting the wine industry.',
           description:
             '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
           impact:

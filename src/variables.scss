@@ -16,7 +16,8 @@ $transition: $transitionTime ease-in-out;
 $transitionMedium: $transitionTimeMedium ease-in-out;
 $transitionLong: $transitionTimeLong ease-in-out;
 $transitionSlick: 300ms cubic-bezier(.77, 0, .175, 1);
-$showTransition: 500ms ease-in-out; //500ms
+$showTransitionTime: 600ms;
+$showTransition: $showTransitionTime ease-in-out; //500ms
 
 @mixin hoverLine($color: $white) {
   position: relative;
@@ -45,17 +46,31 @@ $showTransition: 500ms ease-in-out; //500ms
   }
 }
 
-@mixin shownState {
+@mixin slideUpShow {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
-@mixin hiddenState {
+@mixin slideUpHidden {
   will-change: opacity, transform;
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
   transition: opacity $showTransition, transform $showTransition,
     width $showTransition;
+}
+
+$bez1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$bez2: cubic-bezier(.77, 0, .175, 1);
+@mixin reverseZoomHidden {
+  transform: scale(3, 3);
+  opacity: 0;
+  transition: opacity $showTransitionTime $bez2,
+  transform $showTransitionTime $bez2;
+}
+
+@mixin reverseZoomShow {
+  transform: scale(1, 1);
+  opacity: 1;
 }
 
 $dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
@@ -116,6 +131,8 @@ $dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
   padding: 1rem 2rem 0.7rem 2rem;
   margin: 1rem 0 0 auto;
   font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   color: $white;
