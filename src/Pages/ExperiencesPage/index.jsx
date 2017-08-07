@@ -10,23 +10,23 @@ import Logo from '../../Components/Logo';
 import MainMenu from '../../Components/MainMenu';
 import Project from '../../Components/Project';
 import Footer from '../../Components/Footer';
+import ProjectHero from '../../Components/ProjectHero';
 
 import ExperienceLink from './ExperienceLink';
-import ExperienceHero from './ExperienceHero';
 
 //        //mouse scroll down by Nikita Tcherednikov from the Noun Project
 
 export default class ExperiencesPage extends Showable {
   static enter = [
-    125, //show1 -> 2
-    2000, //show2 -> 3
-    125 //show3 -> 4
+    250, //show1 -> 2,
+    1500, //show3 -> 4
+    0 //show3 -> 4
   ];
 
   static exit = [
-    600, //show4 -> show3
-    125, //show3 -> show2
-    300 // show2 -> show1
+    1000, //show4 -> show3
+    250, //show3 -> show2,
+    125 // show2 -> show1
   ];
 
   static defaultProps = {
@@ -69,16 +69,14 @@ export default class ExperiencesPage extends Showable {
     return (
       <div className={cx(styles.experiencesPage, this.showableClasses(styles))}>
         <div className={styles.container}>
-          <video muted autoPlay loop className={styles.introVideo}>
-            <source src="https://www.anonymous.paris/assets/videos/intro/video-intro.mp4" />
-          </video>
+
           {section.projects.map(experience =>
-            <ExperienceHero
+            <ProjectHero
               key={experience.id}
-              hovering={
+              visible={
                 (hovering === experience.id || selected === experience) && show3
               }
-              experience={experience}
+              project={experience}
             />
           )}
 

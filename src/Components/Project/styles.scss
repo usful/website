@@ -9,7 +9,6 @@ $descriptionWidth: 40rem;
   @include scrollBar($black);
 
   position: fixed;
-  display: flex;
   visibility: visible;
   overflow-x: hidden;
 
@@ -42,7 +41,6 @@ $descriptionWidth: 40rem;
   .description {
     position: fixed;
     top: 0;
-    right: 0;
     width: $descriptionWidth + $navWidth;
     min-height: 100vh;
     height: 100vh;
@@ -133,7 +131,6 @@ $descriptionWidth: 40rem;
   .nav {
     position: fixed;
     top: 0;
-    right: 0;
     width: $navWidth;
     min-height: 100vh;
     height: 100vh;
@@ -193,6 +190,37 @@ $descriptionWidth: 40rem;
     .count {
       text-align: center;
       padding: 2rem 0;
+    }
+  }
+
+
+  &.right {
+    .description {
+      right: 0;
+    }
+
+    .nav {
+      right: 0;
+    }
+  }
+
+  &.left {
+    .content {
+      article {
+        padding: 2rem 0 2rem ($descriptionWidth + $navWidth - 1rem);
+      }
+    }
+
+    .description {
+      left: 0;
+      padding: 2rem 3rem 2rem (3rem + $navWidth);
+      transform: translateX(-$descriptionWidth - $navWidth);
+    }
+
+    .nav {
+      left: 0;
+      width: $navWidth;
+      transform: translateX(-$navWidth);
     }
   }
 

@@ -6,10 +6,8 @@
   width: 33vw;
 
   a {
+    cursor: pointer;
     text-decoration: none;
-  }
-
-  .inner {
     min-height: 100%;
     display: flex;
     align-items: center;
@@ -38,7 +36,7 @@
   }
 
   &:hover {
-    .inner {
+    a {
       opacity: 1;
     }
   }

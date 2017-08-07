@@ -413,7 +413,7 @@ export default {
       id: 'a3',
       slug: 'technology',
       name: 'Technology',
-      hero: '/img/Lane.png',
+      hero: '/img/lane.jpg',
       projects: [
         {
           _component: null,
@@ -426,6 +426,7 @@ export default {
           type: 'technology',
           slug: 'lane',
           name: 'Lane',
+          tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=4',
           industry: 'CRE Enterprise SaaS',
           tagLine: 'Bringing a trillion dollar industry intro the future.',
@@ -446,6 +447,7 @@ export default {
           type: 'technology',
           slug: 'vini',
           name: 'VINI',
+          tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=5',
           industry: 'Mobile SaaS',
           tagLine: 'Disrupting the wine industry.',
@@ -466,6 +468,7 @@ export default {
           type: 'technology',
           slug: 'change-for-a-dollar',
           name: 'Change for a Dollar',
+          tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=5',
           industry: 'Mobile SaaS',
           description:

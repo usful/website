@@ -3,7 +3,7 @@
 .technologyPage {
   @include fullScreen;
   @include smoothYScroll;
-  @include scrollBar;
+  @include scrollBar(rgba(0,0,0,0.2));
 
   background-color: $white;
   color: $black;
@@ -15,15 +15,14 @@
     position: relative;
     background-color: #fdf2dd;
     overflow: hidden;
-    height: 60rem;
+    height: 70rem;
 
     .dots {
       @include reverseZoomHidden;
       position: absolute;
-      width: 125%;
-      height: 125%;
-      top: -10%;
-      left: -25%;
+      width: 110%;
+      height: 110%;
+      left: -18%;
     }
 
     .inner {
@@ -33,7 +32,7 @@
 
       .top {
         @include slideUpHidden;
-        padding: 4rem;
+        padding: 3rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -44,7 +43,8 @@
 
           .logo {
             color: $black;
-            font-size: 4rem;
+            font-size: 3rem;
+            letter-spacing: 1px;
           }
         }
       }
@@ -53,11 +53,27 @@
         @include reverseZoomHidden;
 
         h1 {
-          width: 18em;
-          font-size: 4.5rem;
-          padding: 0 4em 2em 4em;
+          width: 12em;
+          font-size: 5.5rem;
+          padding: 0 0 0 2em;
           line-height: 1.4em;
         }
+      }
+
+      .leftHand {
+        @include reverseZoomHidden;
+        position: absolute;
+        left: 0;
+        top: 35rem;
+        width: 48vw;
+      }
+
+      .rightHand {
+        @include reverseZoomHidden;
+        position: absolute;
+        right: 0;
+        top: 18rem;
+        width: 48vw;
       }
     }
   }
@@ -76,13 +92,13 @@
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.75rem;
       margin-bottom: 2rem;
     }
 
     p {
-      font-size: 1.75rem;
-      width: 40rem;
+      font-size: 2.25rem;
+      width: 20em;
       margin: 0 auto;
       line-height: 2em;
     }
@@ -95,7 +111,7 @@
 
   .contact {
     padding: 6rem 0;
-    background-color: $darkGrey;
+    background-color: #2A2A2A;
     text-align: center;
 
     .tagLine {
@@ -121,7 +137,7 @@
 
     a {
       @include button;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -152,11 +168,25 @@
   &.show3 {
     .intro {
       .inner {
+        .leftHand, .rightHand {
+          @include reverseZoomShow;
+        }
+      }
+    }
+  }
+
+  &.show4 {
+    .intro {
+      .inner {
         .top {
           @include slideUpShow;
         }
       }
     }
+  }
+
+  &.hide3.hiding {
+    opacity: 0;
   }
 
   &.hidden {

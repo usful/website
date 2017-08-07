@@ -9,6 +9,8 @@ import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
 import MainMenu from '../../Components/MainMenu';
 import Logo from '../../Components/Logo';
+import Project from '../../Components/Project';
+import ProjectHero from '../../Components/ProjectHero';
 import Dots from './Dots';
 
 import TechnologyCard from './TechnologyCard';
@@ -16,12 +18,14 @@ import TechnologyCard from './TechnologyCard';
 export default class TechnologiesPage extends Showable {
   static enter = [
     125,
+    125,
     1000,
     200
   ];
 
   static exit = [
     600,
+    125,
     125,
     300
   ];
@@ -35,13 +39,13 @@ export default class TechnologiesPage extends Showable {
   }
 
   render() {
-    const { hovering, show3, shown } = this.state;
+    const { show2, shown } = this.state;
     const { section, menu } = this.props;
 
     return (
       <div className={cx(styles.technologyPage, this.showableClasses(styles))}>
         <section className={styles.intro}>
-          <Dots className={styles.dots} animate={shown} />
+          <Dots className={styles.dots} animate={shown || show2} />
           <div className={styles.inner}>
             <section className={styles.top}>
               <Link className={styles.logoLink} to="/">
@@ -52,6 +56,8 @@ export default class TechnologiesPage extends Showable {
             <div className={styles.copy}>
               <h1>Building curated, digital products for the future.</h1>
             </div>
+            <img className={styles.leftHand} src="/img/left-hand.png"/>
+            <img className={styles.rightHand} src="/img/right-hand.png"/>
           </div>
         </section>
 
@@ -74,7 +80,7 @@ export default class TechnologiesPage extends Showable {
         <section className={styles.contact}>
           <div className={styles.tagLine}>
             <hr/>
-            <h1>Want to collaborate?</h1>
+            <h1>Want to collaborate on a project?</h1>
             <hr/>
           </div>
           <div>
@@ -85,6 +91,26 @@ export default class TechnologiesPage extends Showable {
         </section>
 
         <Footer className={styles.footer} />
+
+        
+        {section.projects.map((project, i) => [
+          <ProjectHero
+            key={'hero' + project.id}
+            visible={project._active || project._showing}
+            project={project}
+          />,
+          <Project
+            ref={el => (project._component = el || project._component)}
+            baseUrl="/technology"
+            key={'project' + project.id}
+            project={project}
+            selected={project._active}
+            position={i + 1}
+            count={section.projects.length}
+            next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
+          />
+          ]
+        )}
       </div>
     );
   }

@@ -17,6 +17,7 @@
 
     .logo {
       font-size: 7.5rem;
+      letter-spacing: -0.05em;
     }
   }
 
@@ -181,7 +182,7 @@
     .mainMenu {
       position: absolute;
       top: 31rem;
-      left: -22rem;
+      left: -19rem;
       width: 45rem;
       display: flex;
       flex-direction: row;

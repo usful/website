@@ -18,7 +18,8 @@ export default class Project extends Showable {
 
   static defaultProps = {
     ...Showable.defaultProps,
-    baseUrl: '/experiences'
+    baseUrl: '/experiences',
+    align: 'right'
   };
 
   constructor(props) {
@@ -49,13 +50,18 @@ export default class Project extends Showable {
   }
 
   render() {
-    const { project, count, position, next } = this.props;
+    const { project, count, position, next, align } = this.props;
 
     return (
       <div
-        className={cx(styles.project, this.showableClasses(styles), {
-          [styles.hasContent]: project.content && project.content.length
-        })}
+        className={cx(
+          styles.project,
+          this.showableClasses(styles),
+          styles[align],
+          {
+            [styles.hasContent]: project.content && project.content.length
+          }
+        )}
       >
         <section className={styles.content}>
           {this.renderContent()}

@@ -5,6 +5,7 @@ import styles from './styles.scss';
 
 const POINTS = 759;
 
+const randomSize = () => 0.25 + Math.random() * 1.1;
 export default class Dots extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,7 @@ export default class Dots extends Component {
     };
 
     for (let i = 0; i < POINTS; i++) {
-      this.state[`points${i}`] = 1;
+      this.state[`points${i}`] = randomSize();
     }
   }
 
@@ -48,7 +49,7 @@ export default class Dots extends Component {
     const state = {};
 
     for (let i = 0; i < POINTS; i++) {
-      state[`points${i}`] = 0.25 + Math.random() * 1.1;
+      state[`points${i}`] = randomSize();
     }
 
     this.setState(state);
