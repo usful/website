@@ -11,12 +11,91 @@ export default {
         exact: true,
         strict: false
       },
-      projects: []
+      projects: [],
+      inMenu: false,
+    },
+    {
+      _component: null,
+      _active: false,
+      route: {
+        path: '/technology',
+        strict: true
+      },
+      inMenu: true,
+      id: 'a3',
+      slug: 'technology',
+      name: 'Technology',
+      hero: '/img/lane.jpg',
+      projects: [
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/technology/lane',
+            strict: true
+          },
+          id: 'tp3',
+          type: 'technology',
+          slug: 'lane',
+          name: 'Lane',
+          tags: [],
+          hero: 'https://lorempixel.com/1110/680/?random&ts=4',
+          industry: 'CRE Enterprise SaaS',
+          tagLine: 'Bringing a trillion dollar industry intro the future.',
+          description:
+            'Tars Tarkas himself seemed pleased with my reply, but his only comment was more or less enigmatical—"And I think I know Tal Hajus, Jeddak of Thark."\n',
+          impact:
+            'Full in this rapid wake, and many fathoms in the rear, swam a huge, humped old bull, which by his comparatively slow progress, as well as by the unusual yellowish incrustations overgrowing him, seemed afflicted with the jaundice, or some other infirmity. Whether this whale belonged to the pod in advance, seemed questionable; for it is not customary for such venerable leviathans to be at all social. Nevertheless, he stuck to their wake, though indeed their back water must have retarded him, because the white-bone or swell at his broad muzzle was a dashed one, like the swell formed when\n',
+          content: [] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/technology/vini',
+            strict: true
+          },
+          id: 'tp4',
+          type: 'technology',
+          slug: 'vini',
+          name: 'VINI',
+          tags: [],
+          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
+          industry: 'Mobile SaaS',
+          tagLine: 'Disrupting the wine industry.',
+          description:
+            '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
+          impact:
+            'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
+          content: [] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/technology/change-for-a-dollar',
+            strict: true
+          },
+          id: 'tp5',
+          type: 'technology',
+          slug: 'change-for-a-dollar',
+          name: 'Change for a Dollar',
+          tags: [],
+          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
+          industry: 'Mobile SaaS',
+          description:
+            '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
+          impact:
+            'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
+          content: [] //Blocks
+        }
+      ]
     },
     {
       _component: null,
       _active: false,
       id: 'a1',
+      inMenu: true,
       slug: 'experiences',
       name: 'Experiences',
       hero: '/img/sergio-alejandro-ortiz-110188.jpg',
@@ -398,7 +477,9 @@ export default {
         path: '/market',
         strict: true
       },
+      projects: [],
       id: 'a2',
+      inMenu: true,
       slug: 'market',
       name: 'Market',
       hero: '/img/brenda-godinez-228181.jpg'
@@ -407,78 +488,15 @@ export default {
       _component: null,
       _active: false,
       route: {
-        path: '/technology',
+        path: '/market/partners',
         strict: true
       },
-      id: 'a3',
-      slug: 'technology',
-      name: 'Technology',
-      hero: '/img/lane.jpg',
-      projects: [
-        {
-          _component: null,
-          _active: false,
-          route: {
-            path: '/technology/lane',
-            strict: true
-          },
-          id: 'tp3',
-          type: 'technology',
-          slug: 'lane',
-          name: 'Lane',
-          tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=4',
-          industry: 'CRE Enterprise SaaS',
-          tagLine: 'Bringing a trillion dollar industry intro the future.',
-          description:
-            'Tars Tarkas himself seemed pleased with my reply, but his only comment was more or less enigmatical—"And I think I know Tal Hajus, Jeddak of Thark."\n',
-          impact:
-            'Full in this rapid wake, and many fathoms in the rear, swam a huge, humped old bull, which by his comparatively slow progress, as well as by the unusual yellowish incrustations overgrowing him, seemed afflicted with the jaundice, or some other infirmity. Whether this whale belonged to the pod in advance, seemed questionable; for it is not customary for such venerable leviathans to be at all social. Nevertheless, he stuck to their wake, though indeed their back water must have retarded him, because the white-bone or swell at his broad muzzle was a dashed one, like the swell formed when\n',
-          content: [] //Blocks
-        },
-        {
-          _component: null,
-          _active: false,
-          route: {
-            path: '/technology/vini',
-            strict: true
-          },
-          id: 'tp4',
-          type: 'technology',
-          slug: 'vini',
-          name: 'VINI',
-          tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
-          industry: 'Mobile SaaS',
-          tagLine: 'Disrupting the wine industry.',
-          description:
-            '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
-          impact:
-            'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
-          content: [] //Blocks
-        },
-        {
-          _component: null,
-          _active: false,
-          route: {
-            path: '/technology/change-for-a-dollar',
-            strict: true
-          },
-          id: 'tp5',
-          type: 'technology',
-          slug: 'change-for-a-dollar',
-          name: 'Change for a Dollar',
-          tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
-          industry: 'Mobile SaaS',
-          description:
-            '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
-          impact:
-            'We hid our new weapons beneath the skins which formed our beds, and then Perry conceived the idea of making bows and arrows—weapons apparently unknown within Pellucidar. Next came shields; but these I found it easier to steal from the walls of the outer guardroom of the building. We had completed these arrangements for our protection after leaving Phutra when the Sagoths who had been sent to recapture the escaped prisoners returned with four of them, of whom Hooja was one. Dian and two others had eluded them. It so happened that Hooja was confined in the\n',
-          content: [] //Blocks
-        }
-      ]
-    }
+      projects: [],
+      id: 'a2',
+      inMenu: false,
+      slug: 'partners',
+      name: 'Market Partners',
+    },
   ],
   menu: [
     {

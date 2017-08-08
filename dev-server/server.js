@@ -20,18 +20,14 @@ app.use(
   })
 );
 
-app.use('/technology', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../public/index.html'))
-);
-app.use('/technology/*', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../public/index.html'))
-);
-app.use('/experiences', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../public/index.html'))
-);
-app.use('/experiences/*', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../public/index.html'))
-);
+const sendIndex = (req, res) =>
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
+
+['/technology', '/experiences', '/market'].forEach(url => {
+  app.use(url, sendIndex);
+  app.use(`${path}/*`, sendIndex);
+});
+
 app.use('/', express.static('public'));
 
 app.listen(8080, () => console.log('Listening on port 8080!'));

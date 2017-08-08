@@ -8,13 +8,12 @@ import {
   HomePage,
   ExperiencesPage,
   TechnologiesPage,
-  LoadingPage
+  LoadingPage,
+  MarketPage,
+  MarketPartnersPage
 } from '../Pages';
 
-import {
-  About,
-  Contact
-} from '../Modals';
+import { About, Contact } from '../Modals';
 
 export default class App extends Component {
   constructor(props) {
@@ -31,25 +30,27 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    NavigationHelper.addListener(() => this.setState({_ts: Date.now()}));
+    NavigationHelper.addListener(() => this.setState({ _ts: Date.now() }));
     LoadHelper.addProgressListener(progress => this.setState({ progress }));
     LoadHelper.addLoadedListener(() => this.refs.loading.hide());
   }
-  
+
   render() {
     const home = NavigationHelper.getSection('Home');
     const experiences = NavigationHelper.getSection('Experiences');
     const technology = NavigationHelper.getSection('Technology');
-    
+    const market = NavigationHelper.getSection('Market');
+    const marketPartners = NavigationHelper.getSection('Market Partners');
+
     const about = NavigationHelper.getMenu('About');
     const contact = NavigationHelper.getMenu('Contact');
-    
+
     return (
       <div className={styles.siteContainer}>
         <HomePage
           ref={el => (home._component = el || home._component)}
           sections={NavigationHelper.data.sections.filter(
-            section => section.name !== 'Home'
+            section => section.inMenu
           )}
           menu={NavigationHelper.data.menu}
         />
@@ -63,13 +64,23 @@ export default class App extends Component {
           section={technology}
           ref={el => (technology._component = el || technology._component)}
         />
+        <MarketPage
+          menu={NavigationHelper.data.menu}
+          section={market}
+          ref={el => (market._component = el || market._component)}
+        />
+        <MarketPartnersPage
+          menu={NavigationHelper.data.menu}
+          section={marketPartners}
+          ref={el => (marketPartners._component = el || market._component)}
+        />
         <LoadingPage
           ref="loading"
           progress={this.state.progress}
           onHidden={() => this.onLoadHide()}
         />
-        <About ref={el => about._component = el || about._component} />
-        <Contact ref={el => contact._component = el || contact._component} />
+        <About ref={el => (about._component = el || about._component)} />
+        <Contact ref={el => (contact._component = el || contact._component)} />
       </div>
     );
   }
