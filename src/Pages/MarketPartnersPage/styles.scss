@@ -1,182 +1,230 @@
 @import '../../variables';
 
-$coverWidth: 3rem;
-
-.marketPage {
+.marketPartnersPage {
   @include fullScreen;
   @include smoothYScroll;
   @include scrollBar(rgba(0,0,0,0.2));
 
-  background-color: $black;
-  color: $white;
+  background-color: $white;
+  color: $black;
   margin: 0 auto;
   opacity: 1;
   transition: opacity $showTransition;
 
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-
-  .coverTop,
-  .coverRight,
-  .coverBottom,
-  .coverLeft {
-    position: absolute;
-    background-color: $black;
-    opacity: 0;
-    transition: opacity $showTransition, background-color $transitionSlick;
-  }
-
-  .coverTop {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 11vh;
-  }
-
-  .coverRight {
-    top: 0;
-    right: 0;
-    width: $coverWidth;
-    height: 100vh;
-  }
-
-  .coverBottom {
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 8vh;
-  }
-
-  .coverLeft {
-    top: 0;
-    left: 0;
-    width: $coverWidth;
-    height: 100vh;
-  }
-
-  .container {
+  .intro {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 54rem;
 
-    .main {
-      .top {
-        @include slideUpHidden;
-        padding: 2rem 3rem 0 3rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 11vh;
-        overflow: hidden;
+    .carousel {
+      @include reverseZoomHidden;
+      position: absolute;
+      width: 100vw;
+      height: 54rem;
 
-        .logoLink {
-          flex: 1;
-          text-decoration: none;
-
-          .logo {
-            color: $white;
-            font-size: 3rem;
-            letter-spacing: 1px;
-          }
-        }
+      h1 {
+        font-size: 4rem;
+        padding: 0 20vw;
       }
 
-      .box {
-        opacity: 0;
-        border: 1px solid $white;
-        margin: 0 $coverWidth 0 $coverWidth;
-        height: 81vh;
-        transition: opacity $showTransition;
-        display: flex;
-        flex-direction: row;
+      .pager {
+        font-size: 2rem;
+        bottom: 12rem;
 
-        .col {
-          position: relative;
-          display: flex;
-          flex: 1;
-          border: 1px solid $white;
-          flex-direction: column;
+        li {
+          width: 5em;
+          height: 0.25em;
+        }
+      }
+    }
+
+    .top {
+      @include slideUpHidden;
+      padding: 3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .logoLink {
+        flex: 1;
+        text-decoration: none;
+
+        .logo {
+          color: $white;
+          font-size: 3rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .main {
+    padding: 6rem 0;
+    text-align: center;
+
+    > h1 {
+      font-size: 4rem;
+      line-height: 1.4em;
+      width: 20em;
+      margin: 0 auto;
+    }
+
+    > p {
+      font-family: 'Maison Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1.4em;
+      padding: 2rem 0;
+      width: 20em;
+      margin: 0 auto;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 4rem;
+        align-items: center;
+        justify-content: center;
+
+        :global(.icon) {
+          font-size: 4rem;
         }
 
         label {
+          display: block;
+          padding: 2rem 0;
+          text-transform: uppercase;
           font-family: 'Maison Neue Mono', sans-serif;
           font-size: 1.5rem;
-          flex: 1;
-          padding: 1rem;
-        }
-
-        h1 {
-          font-size: 4rem;
-          padding: 3rem;
-          line-height: 1.4em;
-          text-align: right;
-
-          &.right {
-            text-align: left;
-            padding-right: 4em;
-          }
-        }
-
-        .marketHero {
-          cursor: pointer;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0,0,0,0.5);
-          opacity: 0;
-          background-size: cover;
-
-          transition: opacity $transitionSlick;
-
-          &.visible {
-            opacity: 1;
-          }
+          text-align: center;
         }
       }
+    }
+
+    $boxHeight: 65rem;
+
+    .boxes {
+      margin: 4rem auto;
+      width: 75rem;
+      position: relative;
+      min-height: $boxHeight;
+
+      .box1 {
+        @include dropShadow;
+        top: 0;
+        left: 6rem;
+        text-align: left;
+        position: absolute;
+        width: 50rem;
+        height: $boxHeight;
+        background-size: cover;
+        padding: 3rem;
+
+        background-image: linear-gradient(
+            to bottom,
+            rgba(1, 12, 79, 0.8) 0%,
+            rgba(20, 20, 20, 1) 100%
+          ),
+          url(/img/market-partners-1.jpg);
+
+        label {
+          display: block;
+          font-size: 1.4rem;
+          font-family: 'Maison Neue Mono', sans-serif;
+          margin-bottom: 1rem;
+          color: $white;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          color: $white;
+          font-size: 4rem;
+          line-height: 1.3em;
+        }
+      }
+
+      .box2 {
+        @include dropShadow;
+        position: absolute;
+        background-image: url(/img/market1.jpg);
+        background-size: cover;
+        width: 50rem;
+        height: 35rem;
+        top: 23rem;
+      }
+
+      .box3 {
+        @include dropShadow;
+        position: absolute;
+        background-color: $yellow;
+        padding: 3rem;
+        color: $black;
+        font-family: 'Maison Neue', sans-serif;
+        width: 30rem;
+        right: 6rem;
+        top: 20rem;
+
+        p {
+          font-size: 1.5rem;
+          line-height: 1.4em;
+          text-align: left;
+          padding: 0 0 1em 0;
+        }
+      }
+    }
+
+    .imageSection {
+      margin: 6rem 15vw;
+      display: flex;
+      flex-direction: row;
+      color: $black;
+
+      .imageHolder {
+        flex: 3;
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+
+      .col {
+        flex: 5;
+        text-align: left;
+        padding: 3rem;
+
+        label {
+          display: block;
+          font-size: 1.4rem;
+          font-family: 'Maison Neue Mono', sans-serif;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          font-size: 4rem;
+          line-height: 1.3em;
+        }
+
+        p {
+          font-family: 'Maison Neue', sans-serif;
+          font-size: 1.5rem;
+          line-height: 1.4em;
+          text-align: left;
+          padding: 1em 0;
+        }
+      }
+    }
+
+    .heroBottom {
+      margin: 6rem 0;
     }
   }
 
   .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    color: $white;
-    padding: 2rem 0;
-  }
-
-  &.hovering {
-    .coverTop,
-    .coverRight,
-    .coverBottom,
-    .coverLeft {
-      background-color: $yellow;
-    }
-
-
-    .container {
-      .main {
-        .top {
-          .logoLink {
-            .logo {
-              color: $black;
-            }
-          }
-        }
-      }
-    }
-
-    .footer {
-      color: $black;
-    }
+    color: $black;
   }
 
   &.showing {
@@ -184,31 +232,18 @@ $coverWidth: 3rem;
   }
 
   &.show1 {
+    .carousel {
+      @include reverseZoomShow;
+    }
   }
 
   &.show2 {
-    .coverTop,
-    .coverRight,
-    .coverBottom,
-    .coverLeft {
-      opacity: 1;
-    }
-
-    .container {
-      .main {
-        .box {
-          opacity: 1;
-        }
-      }
-    }
   }
 
   &.show3 {
-    .container {
-      .main {
-        .top {
-          @include slideUpShow;
-        }
+    .intro {
+      .top {
+        @include slideUpShow;
       }
     }
   }

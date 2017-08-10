@@ -61,7 +61,7 @@
       }
 
       .leftHand {
-        @include reverseZoomHidden;
+        @include slideUpHidden;
         position: absolute;
         left: 0;
         top: 35rem;
@@ -69,7 +69,7 @@
       }
 
       .rightHand {
-        @include reverseZoomHidden;
+        @include slideUpHidden;
         position: absolute;
         right: 0;
         top: 18rem;
@@ -109,38 +109,6 @@
     flex-direction: row;
   }
 
-  .contact {
-    padding: 6rem 0;
-    background-color: #2A2A2A;
-    text-align: center;
-
-    .tagLine {
-      padding-bottom: 3rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      hr {
-        flex: 1;
-        height: 1px;
-        background-color: $white;
-        border: none;
-      }
-
-      h1 {
-        color: $white;
-        font-size: 2.5rem;
-        padding: 0 2rem;
-      }
-    }
-
-    a {
-      @include button;
-      font-size: 1.5rem;
-    }
-  }
-
   .footer {
     color: $black;
   }
@@ -169,7 +137,7 @@
     .intro {
       .inner {
         .leftHand, .rightHand {
-          @include reverseZoomShow;
+          @include slideUpShow;
         }
       }
     }

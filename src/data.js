@@ -5,14 +5,13 @@ export default {
       _active: false,
       id: 'h1',
       name: 'Home',
-      slug: '/',
       route: {
         path: '/',
         exact: true,
         strict: false
       },
       projects: [],
-      inMenu: false,
+      inMenu: false
     },
     {
       _component: null,
@@ -23,7 +22,6 @@ export default {
       },
       inMenu: true,
       id: 'a3',
-      slug: 'technology',
       name: 'Technology',
       hero: '/img/lane.jpg',
       projects: [
@@ -36,7 +34,6 @@ export default {
           },
           id: 'tp3',
           type: 'technology',
-          slug: 'lane',
           name: 'Lane',
           tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=4',
@@ -57,7 +54,6 @@ export default {
           },
           id: 'tp4',
           type: 'technology',
-          slug: 'vini',
           name: 'VINI',
           tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=5',
@@ -78,7 +74,6 @@ export default {
           },
           id: 'tp5',
           type: 'technology',
-          slug: 'change-for-a-dollar',
           name: 'Change for a Dollar',
           tags: [],
           hero: 'https://lorempixel.com/1110/680/?random&ts=5',
@@ -96,7 +91,6 @@ export default {
       _active: false,
       id: 'a1',
       inMenu: true,
-      slug: 'experiences',
       name: 'Experiences',
       hero: '/img/sergio-alejandro-ortiz-110188.jpg',
       route: {
@@ -113,7 +107,6 @@ export default {
           },
           id: 'ep1',
           type: 'experiences',
-          slug: 'interactive-galleries',
           name: 'Interactive Galleries',
           tags: ['Heart', 'Education'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=1',
@@ -221,7 +214,6 @@ export default {
           },
           id: 'ep2',
           type: 'experiences',
-          slug: 'physical-installations',
           name: 'Physical Installations',
           tags: ['Poop', 'Environment', 'Stuff'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=2',
@@ -243,7 +235,6 @@ export default {
           },
           id: 'ep3',
           type: 'experiences',
-          slug: 'awareness-campaigns-urban-farming',
           name: 'Awareness Campaigns - Urban Farming',
           tags: ['Environment', 'Heart'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=3',
@@ -264,7 +255,6 @@ export default {
           },
           id: 'ep4',
           type: 'experiences',
-          slug: 'digital-campaigns',
           name: 'Digital Campaigns',
           tags: ['Heart', 'Education'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=1',
@@ -370,7 +360,6 @@ export default {
           },
           id: 'ep5',
           type: 'experiences',
-          slug: 'brand-awareness-campaigns-6ix-cycle',
           name: 'Brand Awareness Campaigns - 6ix Cycle',
           tags: ['Heart', 'Education'],
           hero: 'https://lorempixel.com/1110/680/?random&ts=1',
@@ -475,12 +464,11 @@ export default {
       _active: false,
       route: {
         path: '/market',
-        strict: true
+        exact: true
       },
       projects: [],
       id: 'a2',
       inMenu: true,
-      slug: 'market',
       name: 'Market',
       hero: '/img/brenda-godinez-228181.jpg'
     },
@@ -489,14 +477,58 @@ export default {
       _active: false,
       route: {
         path: '/market/partners',
-        strict: true
+        exact: true
+      },
+      projects: [],
+      content: [
+        {
+          id: 'mb1',
+          type: 'CarouselBlock',
+          animation: 'fade',
+          content: [
+            {
+              id: 'bc1',
+              type: 'VideoBlock',
+              text: 'Join the collective of conscious human focused brands.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+            },
+            {
+              id: 'bc1',
+              type: 'VideoBlock',
+              text: 'More text that is good.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip5.mp4'
+            },
+            {
+              id: 'bc1',
+              type: 'VideoBlock',
+              text: 'Something something something else. Markets.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip6.mp4'
+            },
+            {
+              id: 'bc1',
+              type: 'VideoBlock',
+              text: 'Join our market today, contact us below.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip7.mp4'
+            },
+          ]
+        }
+      ],
+      id: 'a2',
+      inMenu: false,
+      name: 'Market Partners'
+    },
+    {
+      _component: null,
+      _active: false,
+      route: {
+        path: '/market/story',
+        exact: true
       },
       projects: [],
       id: 'a2',
       inMenu: false,
-      slug: 'partners',
-      name: 'Market Partners',
-    },
+      name: 'Market Story'
+    }
   ],
   menu: [
     {
@@ -504,7 +536,7 @@ export default {
       _active: false,
       _leaving: false,
       id: 'a4',
-      slug: '#about',
+      hash: '#about',
       name: 'About'
     },
     {
@@ -512,7 +544,7 @@ export default {
       _active: false,
       _leaving: false,
       id: 'a5',
-      slug: '#contact',
+      hash: '#contact',
       name: 'Contact'
     }
   ]

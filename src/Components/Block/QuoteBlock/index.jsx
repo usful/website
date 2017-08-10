@@ -1,9 +1,10 @@
 import React from 'react';
+import cx from 'classnames';
 import styles from './style.scss';
 
-export default function QuoteBlock({ text, by }) {
+export default function QuoteBlock({ text, by, className }) {
   return (
-    <div className={styles.quoteBlock}>
+    <div className={cx(styles.quoteBlock, className)}>
       <hr/>
       <blockquote>&#8220;{text}&#8221;</blockquote>
       <h2>{by}</h2>

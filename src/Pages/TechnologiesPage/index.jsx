@@ -6,6 +6,7 @@ import styles from './styles.scss';
 import utils from '../../utils';
 
 import Showable from '../../Components/Showable';
+import FooterTagLine from '../../Components/FooterTagLine';
 import Footer from '../../Components/Footer';
 import MainMenu from '../../Components/MainMenu';
 import Logo from '../../Components/Logo';
@@ -18,14 +19,14 @@ import TechnologyCard from './TechnologyCard';
 export default class TechnologiesPage extends Showable {
   static enter = [
     125,
-    125,
-    1000,
+    600,
+    600,
     200
   ];
 
   static exit = [
     600,
-    125,
+    300,
     125,
     300
   ];
@@ -77,21 +78,8 @@ export default class TechnologiesPage extends Showable {
           )}
         </section>
 
-        <section className={styles.contact}>
-          <div className={styles.tagLine}>
-            <hr/>
-            <h1>Want to collaborate on a project?</h1>
-            <hr/>
-          </div>
-          <div>
-            <Link to="#contact" className={styles.button}>
-              Contact Us
-            </Link>
-          </div>
-        </section>
-
+        <FooterTagLine text="Want to collaborate on a project?"/>
         <Footer className={styles.footer} />
-
         
         {section.projects.map((project, i) => [
           <ProjectHero

@@ -10,7 +10,7 @@ export default function SectionMenuItem({
 }) {
   return (
     <Link
-      to={item.slug}
+      to={item.route.path}
       className={styles.sectionMenuItem}
       onMouseOver={() => onMouseOver(item)}
       onMouseLeave={() => onMouseLeave(item)}

@@ -20,8 +20,7 @@ export default class NavigationHelper {
     let lastMenu, nextMenu;
 
     if (last && last.hash) {
-
-      lastMenu = this.data.menu.find(menu => menu.slug === last.hash);
+      lastMenu = this.data.menu.find(menu => menu.hash === last.hash);
 
       if (lastMenu) {
         lastMenu._component.hide();
@@ -29,7 +28,7 @@ export default class NavigationHelper {
     }
 
     if (next && next.hash) {
-      nextMenu = this.data.menu.find(menu => menu.slug === next.hash);
+      nextMenu = this.data.menu.find(menu => menu.hash === next.hash);
 
       if (nextMenu) {
         nextMenu._component.show();

@@ -113,7 +113,7 @@ export default class Project extends Showable {
           <div className={styles.next}>
             <div className={styles.rotate}>
               <label>Next:</label>
-              <Link to={this.props.baseUrl + '/' + next.slug}>
+              <Link to={next.route.path}>
                 {next.name}
               </Link>
             </div>

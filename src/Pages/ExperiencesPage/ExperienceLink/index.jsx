@@ -23,7 +23,7 @@ export default function ExperienceLink({
       onMouseLeave={() => onMouseLeave(experience)}
     >
       <Link
-        to={`/experiences/${experience.slug}`}
+        to={experience.route.path}
         onClick={() => onClick(experience)}
       >
         <h1>

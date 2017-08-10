@@ -8,7 +8,7 @@ export default function TechnologyCard({ project = {} }) {
 
   return (
     <div className={styles.technologyCard} style={style}>
-      <Link to={`/technology/${project.slug}`}>
+      <Link to={project.route.path}>
         <h1>
           {project.name}
         </h1>

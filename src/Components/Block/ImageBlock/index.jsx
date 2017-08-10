@@ -3,10 +3,10 @@ import cx from 'classnames';
 
 import styles from './style.scss';
 
-export default function ImageBlock({ url, text, align }) {
+export default function ImageBlock({ url, text, align, className }) {
   if (align === 'center') {
     return (
-      <div className={cx(styles.imageBlock, styles.alignCenter)}>
+      <div className={cx(styles.imageBlock, styles.alignCenter, className)}>
         <img src={url} />
         <p>
           {text}
@@ -15,7 +15,7 @@ export default function ImageBlock({ url, text, align }) {
     );
   } else if (align === 'left') {
     return (
-      <div className={cx(styles.imageBlock, styles.alignLeft)}>
+      <div className={cx(styles.imageBlock, styles.alignLeft, className)}>
         <p>
           {text}
         </p>
@@ -24,7 +24,7 @@ export default function ImageBlock({ url, text, align }) {
     );
   } else if (align === 'right') {
     return (
-      <div className={cx(styles.imageBlock, styles.alignRight)}>
+      <div className={cx(styles.imageBlock, styles.alignRight, className)}>
         <img src={url} />
         <p>
           {text}
@@ -34,8 +34,9 @@ export default function ImageBlock({ url, text, align }) {
   }
 
   return (
-    <div className={cx(styles.imageBlock, styles.alignFull)}>
+    <div className={cx(styles.imageBlock, styles.alignFull, className)}>
       <img src={url} />
+      <h1>{text}</h1>
     </div>
   );
 }

@@ -32,9 +32,20 @@ export default class ProjectSlider extends Component {
 
   componentDidMount() {
     this.timer = setInterval(() => this.next(), this.props.interval);
-    this.setState({
-      sliderWidth: this.refs.slider.offsetWidth
-    });
+    window.addEventListener('resize', this.onResize.bind(this));
+    this.onResize();
+  }
+
+  onResize() {
+    if (this._resizeThrottle) {
+      clearTimeout(this._resizeThrottle);
+    }
+
+    this._resizeThrottle = setTimeout(() =>
+      this.setState({
+        sliderWidth: this.refs.slider.offsetWidth
+      }),
+    250);
   }
 
   _moveSlide(by) {
@@ -56,6 +67,7 @@ export default class ProjectSlider extends Component {
 
   componentWillUnmount() {
     clearInterval(this.timer);
+    window.removeEventListener('event', this.onResize.bind(this));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -96,7 +108,7 @@ export default class ProjectSlider extends Component {
         {this.props.children}
         <section className={styles.info}>
           <h1>
-            <Link to={`/${project.type}/${project.slug}`}>{project.name}</Link>
+            <Link to={`/${project.route.path}`}>{project.name}</Link>
             in
             <Link to={`/${project.type}`}>{project.type}</Link>
           </h1>

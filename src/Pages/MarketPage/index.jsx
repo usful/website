@@ -12,7 +12,7 @@ import LoadableVideo from '../../Components/LoadableVideo';
 
 export default class MarketPage extends Showable {
   static enter = [1500, 600, 600];
-  static exit = [600, 600, 600];
+  static exit = [600, 300, 600];
 
   static defaultProps = {
     ...Showable.defaultProps
@@ -74,13 +74,15 @@ export default class MarketPage extends Showable {
                 <h1 className={styles.right}>
                   Shifting conciousness is the beginning of change.
                 </h1>
-                <div
+                <Link
+                  to="/market/partners"
                   className={cx(styles.marketHero, {
                     [styles.visible]: hovering === 'partners'
                   })}
                   style={{backgroundImage: 'url(/img/market1.jpg)'}}
                 />
-                <div
+                <Link
+                  to="/market/story"
                   className={cx(styles.marketHero, {
                     [styles.visible]: hovering === 'story'
                   })}
@@ -95,7 +97,8 @@ export default class MarketPage extends Showable {
                 >
                   <label>01</label>
                   <h1>Our Story</h1>
-                  <div
+                  <Link
+                    to="/market/story"
                     className={cx(styles.marketHero, {
                       [styles.visible]: hovering === 'partners'
                     })}
@@ -108,7 +111,8 @@ export default class MarketPage extends Showable {
                 >
                   <label>02</label>
                   <h1>Partners</h1>
-                  <div
+                  <Link
+                    to="/market/partners"
                     className={cx(styles.marketHero, {
                       [styles.visible]: hovering === 'story'
                     })}
