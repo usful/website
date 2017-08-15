@@ -14,7 +14,7 @@
 
   blockquote {
     display: block;
-    font-family: 'Maison Neue', serif;
+    font-family: $fontSans;
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.3em;
@@ -24,7 +24,7 @@
 
   h2 {
     font-size: 1.25rem;
-    font-family: 'Maison Neue Mono', serif;
+    font-family: $fontMono;
     color: $black;
     opacity: 0.7;
   }

@@ -12,7 +12,7 @@ export default function Footer({ className }) {
         <li>
           &copy; {new Date().getFullYear()} Usful Co Inc.
         </li>
-        <li>46 Stewart St, Toronto, Canada</li>
+        <li>Made with ❤ in Toronto, Canada</li>
       </ul>
     </section>
   );

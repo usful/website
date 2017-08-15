@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .tagLine {
-  font-family: 'Maison Neue', sans-serif;
+  font-family: $fontSans;
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 1.4em;

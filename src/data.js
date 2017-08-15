@@ -493,19 +493,19 @@ export default {
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
             },
             {
-              id: 'bc1',
+              id: 'bc8',
               type: 'VideoBlock',
               text: 'More text that is good.',
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip5.mp4'
             },
             {
-              id: 'bc1',
+              id: 'bc9',
               type: 'VideoBlock',
               text: 'Something something something else. Markets.',
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip6.mp4'
             },
             {
-              id: 'bc1',
+              id: 'bc10',
               type: 'VideoBlock',
               text: 'Join our market today, contact us below.',
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip7.mp4'
@@ -516,6 +516,51 @@ export default {
       id: 'a2',
       inMenu: false,
       name: 'Market Partners'
+    },
+    {
+      _component: null,
+      _active: false,
+      route: {
+        path: '/market/story',
+        exact: true
+      },
+      projects: [],
+      content: [
+        {
+          id: 'mb1',
+          type: 'CarouselBlock',
+          animation: 'fade',
+          content: [
+            {
+              id: 'bc1',
+              type: 'VideoBlock',
+              text: 'Join the collective of conscious human focused brands.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+            },
+            {
+              id: 'bc2',
+              type: 'VideoBlock',
+              text: 'More text that is good.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip5.mp4'
+            },
+            {
+              id: 'bc3',
+              type: 'VideoBlock',
+              text: 'Something something something else. Markets.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip6.mp4'
+            },
+            {
+              id: 'bc4',
+              type: 'VideoBlock',
+              text: 'Join our market today, contact us below.',
+              url: 'https://s3.amazonaws.com/anthropocene/vids/clip7.mp4'
+            },
+          ]
+        }
+      ],
+      id: 'ms1',
+      inMenu: false,
+      name: 'Market Story'
     },
     {
       _component: null,

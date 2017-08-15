@@ -4,7 +4,7 @@
   a {
     @include fontSmoothing;
 
-    font-family: 'Maison Neue Mono', serif;
+    font-family: $fontMono;
     font-size: 1.4rem;
     color: inherit;
     text-transform: uppercase;

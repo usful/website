@@ -5,6 +5,7 @@
   @include smoothYScroll;
   @include scrollBar(rgba(0,0,0,0.2));
 
+  overflow-x: hidden;
   background-color: $white;
   color: $black;
   margin: 0 auto;
@@ -59,22 +60,22 @@
   }
 
   .main {
-    padding: 6rem 0;
+    padding: 6rem 0 0 0;
     text-align: center;
 
     > h1 {
       font-size: 4rem;
       line-height: 1.4em;
-      width: 20em;
+      max-width: 20em;
       margin: 0 auto;
     }
 
     > p {
-      font-family: 'Maison Neue', sans-serif;
+      font-family: $fontSans;
       font-size: 2rem;
       line-height: 1.4em;
       padding: 2rem 0;
-      width: 20em;
+      max-width: 20em;
       margin: 0 auto;
     }
 
@@ -99,7 +100,7 @@
           display: block;
           padding: 2rem 0;
           text-transform: uppercase;
-          font-family: 'Maison Neue Mono', sans-serif;
+          font-family: $fontMono;
           font-size: 1.5rem;
           text-align: center;
         }
@@ -135,7 +136,7 @@
         label {
           display: block;
           font-size: 1.4rem;
-          font-family: 'Maison Neue Mono', sans-serif;
+          font-family: $fontMono;
           margin-bottom: 1rem;
           color: $white;
           text-transform: uppercase;
@@ -164,7 +165,7 @@
         background-color: $yellow;
         padding: 3rem;
         color: $black;
-        font-family: 'Maison Neue', sans-serif;
+        font-family: $fontSans;
         width: 30rem;
         right: 6rem;
         top: 20rem;
@@ -179,7 +180,7 @@
     }
 
     .imageSection {
-      margin: 6rem 15vw;
+      margin: 10rem 15vw;
       display: flex;
       flex-direction: row;
       color: $black;
@@ -198,7 +199,7 @@
         label {
           display: block;
           font-size: 1.4rem;
-          font-family: 'Maison Neue Mono', sans-serif;
+          font-family: $fontMono;
           margin-bottom: 1rem;
           text-transform: uppercase;
         }
@@ -209,7 +210,7 @@
         }
 
         p {
-          font-family: 'Maison Neue', sans-serif;
+          font-family: $fontSans;
           font-size: 1.5rem;
           line-height: 1.4em;
           text-align: left;
@@ -218,8 +219,36 @@
       }
     }
 
-    .heroBottom {
-      margin: 6rem 0;
+    .bottomHero {
+      margin: 6rem 0 0 0;
+      padding: 8rem 0 40rem 0;
+      background-size: cover;
+      background-position: 0 100%;
+      text-align: center;
+
+      label {
+        display: block;
+        font-size: 1.4rem;
+        font-family: $fontMono;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: 4rem;
+        line-height: 1.3em;
+        max-width: 20em;
+        margin: 0 auto;
+      }
+
+      p {
+        font-family: $fontSans;
+        font-size: 1.5rem;
+        line-height: 1.4em;
+        padding: 2em 0;
+        max-width: 25em;
+        margin: 0 auto;
+      }
     }
   }
 

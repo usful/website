@@ -21,13 +21,13 @@
     text-align: center;
 
     h1 {
-      font-family: 'Adamina', serif;
+      font-family: $font;
       font-size: 3rem;
       margin-bottom: 2rem;
     }
 
     input, textarea {
-      font-family: 'Maison Neue Mono', sans-serif;
+      font-family: $fontMono;
       border: 2px solid #f0f0f0;
       background-color: #fbfbfb;
       color: $black;

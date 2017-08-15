@@ -85,12 +85,12 @@ $descriptionWidth: 40rem;
         }
 
         label {
-          font-family: 'Maison Neue Mono', sans-serif;
+          font-family: $fontMono;
           color: $lightGrey;
         }
 
         p {
-          font-family: 'Maison Neue', sans-serif;
+          font-family: $fontSans;
           padding: 0.5rem 0;
           font-size: 1.2rem;
           line-height: 1.4em;
@@ -99,7 +99,7 @@ $descriptionWidth: 40rem;
 
       h1 {
         margin: 3rem 0 1rem 0;
-        font-family: Adamina, serif;
+        font-family: $font;
         font-size: 2rem;
       }
 
@@ -168,7 +168,7 @@ $descriptionWidth: 40rem;
 
         label {
           display: inline-block;
-          font-family: 'Maison Neue Mono', sans-serif;
+          font-family: $fontMono;
           text-transform: uppercase;
           letter-spacing: 1px;
           opacity: 0.6;

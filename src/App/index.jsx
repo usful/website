@@ -10,7 +10,8 @@ import {
   TechnologiesPage,
   LoadingPage,
   MarketPage,
-  MarketPartnersPage
+  MarketPartnersPage,
+  MarketStoryPage
 } from '../Pages';
 
 import { About, Contact } from '../Modals';
@@ -41,6 +42,7 @@ export default class App extends Component {
     const technology = NavigationHelper.getSection('Technology');
     const market = NavigationHelper.getSection('Market');
     const marketPartners = NavigationHelper.getSection('Market Partners');
+    const marketStory = NavigationHelper.getSection('Market Story');
 
     const about = NavigationHelper.getMenu('About');
     const contact = NavigationHelper.getMenu('Contact');
@@ -73,6 +75,11 @@ export default class App extends Component {
           menu={NavigationHelper.data.menu}
           section={marketPartners}
           ref={el => (marketPartners._component = el || market._component)}
+        />
+        <MarketStoryPage
+          menu={NavigationHelper.data.menu}
+          section={marketStory}
+          ref={el => (marketStory._component = el || market._component)}
         />
         <LoadingPage
           ref="loading"

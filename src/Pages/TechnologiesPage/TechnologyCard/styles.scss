@@ -22,7 +22,7 @@
     transition: opacity $transitionSlick;
 
     h1 {
-      font-family: 'Maison Neue', sans-serif;
+      font-family: $fontSans;
       font-size: 4rem;
       font-weight: 600;
       text-decoration: none;

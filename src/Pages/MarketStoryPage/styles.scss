@@ -1,0 +1,236 @@
+@import '../../variables';
+
+.marketStoryPage {
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar(rgba(0,0,0,0.2));
+
+  overflow-x: hidden;
+  background-color: $white;
+  color: $black;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity $showTransition;
+
+  .intro {
+    position: relative;
+    width: 100vw;
+    height: 54rem;
+
+    .carousel {
+      @include reverseZoomHidden;
+      position: absolute;
+      width: 100vw;
+      height: 54rem;
+
+      h1 {
+        font-size: 4rem;
+        padding: 0 20vw;
+      }
+
+      .pager {
+        font-size: 2rem;
+        bottom: 12rem;
+
+        li {
+          width: 5em;
+          height: 0.25em;
+        }
+      }
+    }
+
+    .top {
+      @include slideUpHidden;
+      padding: 3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .logoLink {
+        flex: 1;
+        text-decoration: none;
+
+        .logo {
+          color: $white;
+          font-size: 3rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .main {
+    background-repeat: repeat;
+    padding: 6rem 0;
+    text-align: center;
+
+    &.quotes {
+      background-color: $yellow;
+    }
+
+    &.dubsCheckum {
+      color: $white;
+      background-color: $darkGrey;
+    }
+
+    > h1 {
+      font-size: 4rem;
+      line-height: 1.4em;
+      max-width: 18em;
+      margin: 0 auto;
+    }
+
+    > p {
+      font-family: $fontSans;
+      font-size: 2rem;
+      line-height: 1.4em;
+      padding: 2rem 0;
+      max-width: 20em;
+      margin: 0 auto;
+    }
+
+    ul {
+      margin: 4rem 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .location {
+        background: $black;
+        box-shadow: $dropShadow;
+        width: 25rem;
+        margin: 0 2rem;
+
+        h2 {
+          font-size: 2.5rem;
+          margin: 2rem 0 0 0;
+          padding: 0 2rem;
+          line-height: 1.4em;
+        }
+
+        p {
+          font-size: 1.2rem;
+          font-family: $fontSans;
+          line-height: 1.4em;
+          padding: 1rem 2rem;
+        }
+
+        .map {
+          margin-top: 2rem;
+          height: 20rem;
+          width: 100%;
+        }
+      }
+
+      li {
+        display: flex;
+        flex-direction: column;
+        margin: 0 4rem;
+
+        h2 {
+          font-family: $fontSans;
+          font-size: 8rem;
+          color: $darkYellow;
+        }
+
+        label {
+          font-family: $fontMono;
+          padding: 2rem 0;
+          text-transform: uppercase;
+          opacity: 0.8;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    blockquote {
+      margin: 6rem 15rem;
+
+      h2 {
+        &::before {
+          content: '“';
+        }
+
+        &::after {
+          content: '”';
+        }
+
+        font-family: $font;
+        font-size: 5rem;
+        color: $black;
+        line-height: 1.4em;
+        text-align: left;
+        padding-right: 5rem;
+      }
+
+      label {
+        display: block;
+        font-family: $fontMono;
+        font-size: 1.5rem;
+        line-height: 1.4em;
+        text-align: right;
+        padding-right: 5rem;
+      }
+
+      &:nth-child(2n) {
+        h2 {
+          text-align: right;
+          padding-left: 5rem;
+          padding-right: 0;
+        }
+
+        label {
+          text-align: left;
+          padding-left: 5rem;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+    color: $black;
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show1 {
+    .carousel {
+      @include reverseZoomShow;
+    }
+  }
+
+  &.show2 {
+  }
+
+  &.show3 {
+    .intro {
+      .top {
+        @include slideUpShow;
+      }
+    }
+  }
+
+  &.hide3.hiding {
+    opacity: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
+}

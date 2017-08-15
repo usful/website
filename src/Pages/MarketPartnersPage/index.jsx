@@ -44,7 +44,7 @@ export default class MarketPartnersPage extends Showable {
           />
 
           <section className={styles.top}>
-            <Link className={styles.logoLink} to="/">
+            <Link className={styles.logoLink} to="/market">
               <Logo className={styles.logo} />
             </Link>
             <MainMenu color="white" items={menu} />
@@ -105,7 +105,7 @@ export default class MarketPartnersPage extends Showable {
               <p>
                 Our packaging was carefully designed and curated by world-class
                 designers. Whether are you are selling meat, vegetables, or even
-                liquids, we have beuatiful packaging to suite your needs.
+                liquids, we have beautiful packaging to suite your needs.
               </p>
             </div>
           </div>
