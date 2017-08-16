@@ -3,7 +3,7 @@
 .contact {
   @include fullScreen;
   position: fixed;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   opacity: 0;
   visibility: hidden;
   transition: opacity 250ms ease-in-out;
@@ -26,7 +26,8 @@
       margin-bottom: 2rem;
     }
 
-    input, textarea {
+    input,
+    textarea {
       font-family: $fontMono;
       border: 2px solid #f0f0f0;
       background-color: #fbfbfb;
@@ -37,7 +38,8 @@
       padding: 1rem;
       will-change: background-color, box-shadow, border;
 
-      transition: background-color $transitionSlick, box-shadow $transitionSlick, border $transitionSlick;
+      transition: background-color $transitionSlick, box-shadow $transitionSlick,
+        border $transitionSlick;
 
       &:focus {
         background-color: $white;
@@ -74,7 +76,9 @@
     }
   }
 
-  &.showing, &.shown, &.hiding {
+  &.showing,
+  &.shown,
+  &.hiding {
     visibility: visible;
   }
 
@@ -86,4 +90,28 @@
     visibility: hidden;
     opacity: 0;
   }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .contact {
+    section.form {
+      padding: 4rem 4rem 2rem 4rem;
+      background-color: $white;
+      text-align: center;
+
+      input,
+      textarea {
+        width: 20rem;
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
 }

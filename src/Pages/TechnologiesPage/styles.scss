@@ -10,6 +10,7 @@
   margin: 0 auto;
   opacity: 1;
   transition: opacity $showTransition;
+  overflow-x: hidden;
 
   .intro {
     position: relative;
@@ -166,34 +167,107 @@
 /** TABLET **/
 @media (max-width: 1024px) {
   .technologyPage {
-    .container {
-      width: 100vw;
-      padding: 2rem;
-    }
+    .intro {
+      height: 50rem;
 
-    section.top {
-      @include slideUpHidden;
+      .inner {
+        .copy {
+          h1 {
+            font-size: 3.5rem;
+            padding: 2rem 3rem;
+          }
+        }
 
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+        .leftHand {
+          top: 30rem;
+        }
 
-      .logoLink {
-        flex: 1;
-        text-decoration: none;
-
-        .logo {
-          color: $white;
-          font-size: 3rem;
+        .rightHand {
+          top: 25rem;
         }
       }
+    }
+
+    .blurb {
+
+      hr {
+        width: 33vw;
+      }
+
+      h1 {
+        font-size: 3rem;
+        padding: 0 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+        width: auto;
+        padding: 0 2rem;
+      }
+    }
+
+    .projects {
+      flex-direction: column;
     }
   }
 }
 
 /** PHONE **/
 @media (max-width: 640px) {
+  .technologyPage {
+    section.top {
+      .logoLink {
+        text-align: center;
+      }
+    }
+
+    .intro {
+      .inner {
+        .copy {
+          h1 {
+            width: auto;
+            font-size: 3.5rem;
+            padding: 2rem 3rem;
+            text-align: center;
+            line-height: 1.4em;
+          }
+        }
+
+        .leftHand {
+          top: 35rem;
+        }
+
+        .rightHand {
+          top: 30rem;
+        }
+      }
+    }
+
+    .blurb {
+
+      hr {
+        width: 33vw;
+      }
+
+      h1 {
+        font-size: 3rem;
+        padding: 0 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+        width: auto;
+        padding: 0 2rem;
+      }
+    }
+
+    .projects {
+      flex-direction: column;
+    }
+  }
 }
 
 @media (min-width: 1025px) {
+  .technologyPage {
+  }
 }

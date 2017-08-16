@@ -63,3 +63,52 @@
     text-align: center;
   }
 }
+
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .imageBlock {
+    &.alignCenter {
+      img {
+        height: 20rem;
+      }
+
+      p {
+        padding: 2rem 5rem 0 5rem;
+      }
+    }
+
+    &.alignRight,
+    &.alignLeft {
+      img {
+        height: 15rem;
+      }
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+
+  .imageBlock {
+    &.alignCenter {
+      img {
+        height: 15rem;
+      }
+
+      p {
+        padding: 2rem 5rem 0 5rem;
+      }
+    }
+
+    &.alignRight,
+    &.alignLeft {
+      img {
+        height: 10rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

@@ -69,7 +69,6 @@ export default class ExperiencesPage extends Showable {
     return (
       <div className={cx(styles.experiencesPage, this.showableClasses(styles))}>
         <div className={styles.container}>
-
           {section.projects.map(experience =>
             <ProjectHero
               key={experience.id}
@@ -89,15 +88,14 @@ export default class ExperiencesPage extends Showable {
 
           <section className={cx(styles.intro, hideElement)}>
             <h1>
-              Experiences with purpose. <br /> From conceivers, creators, and
-              builders.
+              Conceivers, creators, and builders behind <br/> experiences with
+              purpose.
             </h1>
             <hr />
             <p>
               We shake up the stale concept of traditional outreach with unique,
               interactive installations designed to inspire both conversations
-              and shifts in thinking. Today, it’s all about the experience – the
-              more unique the better. Our installations transform ordinary and
+              and shifts in thinking. Our installations transform ordinary and
               unused spaces to offer a deep, meaningful experience associated
               with a brand or product – and one people won’t forget.
             </p>

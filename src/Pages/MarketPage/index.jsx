@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
+import utils from '../../utils';
 import styles from './styles.scss';
 
 import Showable from '../../Components/Showable';
@@ -10,8 +11,23 @@ import MainMenu from '../../Components/MainMenu';
 import Logo from '../../Components/Logo';
 import LoadableVideo from '../../Components/LoadableVideo';
 
+const LINEAR_GRADIENT =
+  'linear-gradient(to bottom,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%)';
+
+const storyStyle = utils.isMobile
+  ? {
+      backgroundImage: `${LINEAR_GRADIENT}, url(/img/market1.jpg)`
+    }
+  : null;
+
+const partnerStyle = utils.isMobile
+  ? {
+      backgroundImage: `${LINEAR_GRADIENT}, url(/img/market2.jpg)`
+    }
+  : null;
+
 export default class MarketPage extends Showable {
-  static enter = [1500, 600, 600];
+  static enter = [utils.isMobile ? 300 : 1500, 600, 600];
   static exit = [600, 300, 600];
 
   static defaultProps = {
@@ -47,13 +63,15 @@ export default class MarketPage extends Showable {
           [styles.hovering]: hovering
         })}
       >
-        <LoadableVideo
-          className={styles.video}
-          autoPlay
-          muted
-          loop
-          src="/vids/tomatose.mp4"
-        />
+        {utils.isMobile
+          ? null
+          : <LoadableVideo
+              className={styles.video}
+              autoPlay
+              muted
+              loop
+              src="/vids/tomatose.mp4"
+            />}
         <div className={styles.coverTop} />
         <div className={styles.coverRight} />
         <div className={styles.coverLeft} />
@@ -69,7 +87,7 @@ export default class MarketPage extends Showable {
             </section>
 
             <section className={styles.box}>
-              <div className={styles.col}>
+              <div className={cx(styles.col, styles.intro)}>
                 <label />
                 <h1 className={styles.right}>
                   Shifting conciousness is the beginning of change.
@@ -77,16 +95,16 @@ export default class MarketPage extends Showable {
                 <Link
                   to="/market/partners"
                   className={cx(styles.marketHero, {
-                    [styles.visible]: hovering === 'partners'
+                    [styles.visible]: hovering === 'partners' && !utils.isMobile
                   })}
-                  style={{backgroundImage: 'url(/img/market1.jpg)'}}
+                  style={{ backgroundImage: 'url(/img/market1.jpg)' }}
                 />
                 <Link
                   to="/market/story"
                   className={cx(styles.marketHero, {
-                    [styles.visible]: hovering === 'story'
+                    [styles.visible]: hovering === 'story' && !utils.isMobile
                   })}
-                  style={{backgroundImage: 'url(/img/market2.jpg)'}}
+                  style={{ backgroundImage: 'url(/img/market2.jpg)' }}
                 />
               </div>
               <div className={styles.col}>
@@ -94,6 +112,7 @@ export default class MarketPage extends Showable {
                   className={styles.col}
                   onMouseOver={e => this.onMouseOver('story')}
                   onMouseLeave={e => this.onMouseLeave('story')}
+                  style={storyStyle}
                 >
                   <label>01</label>
                   <h1>Our Story</h1>
@@ -108,6 +127,7 @@ export default class MarketPage extends Showable {
                   className={styles.col}
                   onMouseOver={e => this.onMouseOver('partners')}
                   onMouseLeave={e => this.onMouseLeave('partners')}
+                  style={partnerStyle}
                 >
                   <label>02</label>
                   <h1>Partners</h1>

@@ -68,3 +68,20 @@
     opacity: 0;
   }
 }
+
+/** TABLET **/
+@media (max-width: 1024px) {
+
+  .about {
+    section.form {
+      width: 95vw;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
+}

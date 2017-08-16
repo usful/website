@@ -21,8 +21,8 @@ const PointlessWrapper = withGoogleMap(props =>
 );
 
 export default class MarketStoryPage extends Showable {
-  static enter = [300, 600, 600];
-  static exit = [600, 300, 300];
+  static enter = [300, 600];
+  static exit = [600, 300];
 
   static defaultProps = {
     ...Showable.defaultProps

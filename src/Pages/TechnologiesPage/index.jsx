@@ -17,19 +17,9 @@ import Dots from './Dots';
 import TechnologyCard from './TechnologyCard';
 
 export default class TechnologiesPage extends Showable {
-  static enter = [
-    125,
-    600,
-    600,
-    200
-  ];
+  static enter = [125, 600, 600, 200];
 
-  static exit = [
-    600,
-    300,
-    125,
-    300
-  ];
+  static exit = [600, 300, 125, 300];
 
   static defaultProps = {
     ...Showable.defaultProps
@@ -46,7 +36,9 @@ export default class TechnologiesPage extends Showable {
     return (
       <div className={cx(styles.technologyPage, this.showableClasses(styles))}>
         <section className={styles.intro}>
-          <Dots className={styles.dots} animate={shown || show2} />
+          {utils.isMobile
+            ? null
+            : <Dots className={styles.dots} animate={shown || show2} />}
           <div className={styles.inner}>
             <section className={styles.top}>
               <Link className={styles.logoLink} to="/">
@@ -57,8 +49,8 @@ export default class TechnologiesPage extends Showable {
             <div className={styles.copy}>
               <h1>Building curated, digital products for the future.</h1>
             </div>
-            <img className={styles.leftHand} src="/img/left-hand.png"/>
-            <img className={styles.rightHand} src="/img/right-hand.png"/>
+            <img className={styles.leftHand} src="/img/left-hand.png" />
+            <img className={styles.rightHand} src="/img/right-hand.png" />
           </div>
         </section>
 
@@ -69,7 +61,7 @@ export default class TechnologiesPage extends Showable {
             This will be a rough blurb about Usful Technology and how we build
             powerful products that improve peoples lives.
           </p>
-          <hr/>
+          <hr />
         </section>
 
         <section className={styles.projects}>
@@ -78,9 +70,9 @@ export default class TechnologiesPage extends Showable {
           )}
         </section>
 
-        <FooterTagLine text="Want to collaborate on a project?"/>
+        <FooterTagLine text="Want to collaborate on a project?" />
         <Footer className={styles.footer} />
-        
+
         {section.projects.map((project, i) => [
           <ProjectHero
             key={'hero' + project.id}
@@ -97,8 +89,7 @@ export default class TechnologiesPage extends Showable {
             count={section.projects.length}
             next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
           />
-          ]
-        )}
+        ])}
       </div>
     );
   }

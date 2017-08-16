@@ -98,6 +98,7 @@ $coverWidth: 3rem;
         flex-direction: row;
 
         .col {
+          background-size: cover;
           position: relative;
           display: flex;
           flex: 1;
@@ -131,7 +132,7 @@ $coverWidth: 3rem;
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0,0,0,0.5);
+          background-color: rgba(0, 0, 0, 0.5);
           opacity: 0;
           background-size: cover;
 
@@ -161,7 +162,6 @@ $coverWidth: 3rem;
     .coverLeft {
       background-color: $yellow;
     }
-
 
     .container {
       .main {
@@ -226,10 +226,81 @@ $coverWidth: 3rem;
 
 /** TABLET **/
 @media (max-width: 1024px) {
+  .marketPage {
+    .video {
+      display: none;
+    }
+
+    .coverTop,
+    .coverRight,
+    .coverBottom,
+    .coverLeft {
+      display: none;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .main {
+        .top {
+          padding: 2rem 3rem;
+        }
+
+        .box {
+          height: auto;
+          flex-direction: column;
+          border: none;
+
+          margin: 0 $coverWidth 0 $coverWidth;
+
+          .col {
+            margin: 1rem 0;
+            border: none;
+
+            .col {
+              border: 1px solid $white;
+            }
+          }
+
+          h1 {
+            font-size: 4rem;
+            padding: 10rem 2rem 12rem 2rem;
+            text-align: center;
+          }
+
+          .intro {
+            border: none;
+
+            h1,
+            h1.right {
+              font-size: 2rem;
+              padding: 1rem 2rem 2rem 2rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      position: initial;
+    }
+  }
 }
 
 /** PHONE **/
 @media (max-width: 640px) {
+  .marketPage {
+    .main {
+      .top {
+        .logoLink {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) {

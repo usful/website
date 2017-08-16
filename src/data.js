@@ -109,100 +109,95 @@ export default {
           type: 'experiences',
           name: 'Interactive Galleries',
           tags: ['Heart', 'Education'],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=1',
-          heroVideo:
-            'https://s3.amazonaws.com/anthropocene/vids/empty-lake.mp4',
-          client: 'Multiple',
+          hero: 'https://s3.amazonaws.com/anthropocene/vids/water.jpg',
+          heroVideo: '/img/experiences/interactive-galleries-hero.mp4',
+          client:
+            'Edward Burtynsky, Joshua Jensen Nagle, Benjamin Von Wong, George Steinmetz',
           description:
-            'We believe in the power of  the arts and culture scene to educate and inspire key audiences. Held in typically unused, unique yet convenient spaces, our attention-grabbing art projects are focused on social commentary. Our global network of respected artists can transform a blank canvass of a space into an experience that instigates a powerful dialogue...',
+            'Held in typically unused, unique yet convenient spaces, our attention-grabbing art projects are focused on social commentary. Our global network of respected artists can transform a blank canvass of a space into an experience that instigates a powerful dialogue. It’s this experience that becomes associated with your brand. Leave it to us to curate installations – whether clean and simple or infused with technology – that match your target objectives.',
           impact:
-            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about when they return to the office from their lunch break or home after work. We take unused space.',
+            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about. We take unused space, re-imagine it, and make it a captivating, discovery-filled, and meaningful learning experience.',
           content: [
             {
-              id: 'b1',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=10',
-              align: 'left',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b18',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b2',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=11',
-              align: 'right',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b20',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b3',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=24',
-              align: 'center',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b5',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=12',
-              align: 'full',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b4',
+              id: 'interactive-galleries-1',
               type: 'QuoteBlock',
-              text: `It's all about the look, the feel, the run. *wink*`,
-              by: 'Kofi Gyekye, Head Usful Dude'
+              text:
+                'I wish my artwork could persuade millions of people to join a global conversation about sustainability.',
+              by: 'Edward Burtynsky'
             },
             {
-              id: 'b6',
+              id: 'interactive-galleries-2',
               type: 'CarouselBlock',
               content: [
                 {
-                  id: 'bc1',
-                  type: 'VideoBlock',
-                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
+                  id: 'interactive-galleries-1-1',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-ed-1.jpg'
                 },
                 {
-                  id: 'bc2',
+                  id: 'interactive-galleries-1-2',
                   type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=101',
-                  align: 'full'
+                  url: '/img/experiences/interactive-galleries-ed-2.jpg'
                 },
                 {
-                  id: 'bc3',
+                  id: 'interactive-galleries-1-3',
                   type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=102',
-                  align: 'full'
+                  url: '/img/experiences/interactive-galleries-ed-3.jpg'
                 },
                 {
-                  id: 'bc4',
+                  id: 'interactive-galleries-1-4',
                   type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=103',
-                  align: 'full'
+                  url: '/img/experiences/interactive-galleries-ed-4.jpg'
+                },
+                {
+                  id: 'interactive-galleries-1-5',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-ed-5.jpg'
+                },
+                {
+                  id: 'interactive-galleries-1-6',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-ed-6.jpg'
                 }
               ]
             },
             {
-              id: 'b10',
+              id: 'interactive-galleries-3',
+              type: 'TextBlock',
+              text: 'Usful took visitors on a self-guided interactive audio tour that explored the work and world of renowned Canadian artist Ed Burtynsky. To share the works and findings of Manufactured Landscapes – a feature length documentary on Burtynsky – the tour showcased the photographs of Burtynsky’s 25-year exploration of how industrial activity has created and shaped the landscapes of our world.',
+            },
+            {
+              id: 'interactive-galleries-4',
+              type: 'QuoteBlock',
+              text: 'When I’m there, it brings back happy memories and simpler times, and I get to relax. When I make the large prints and see them, it immediately calms me down.',
+              by: 'Joshua Jensen Nagle'
+            },
+            {
+              id: 'interactive-galleries-5',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'interactive-galleries-4-1',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-joshua-1.jpg'
+                },
+                {
+                  id: 'interactive-galleries-4-2',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-joshua-2.jpg'
+                },
+                {
+                  id: 'interactive-galleries-4-3',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-joshua-3.jpg'
+                }
+              ]
+            },            {
+              id: 'interactive-galleries-5',
               type: 'TextBlock',
               text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            }
+                'Offering a temporary escape from the daily grind, Toronto-based photographer Joshua Jensen Nagle provided a dose of vacation inspiration with his collection of signature photographs of sun-soaked shorelines. The striking images featured in this exhibition are a continuation of his obsession with beach culture and his ongoing body of work, Endless Summer.'
+            },
           ] //Blocks
         },
         {
@@ -509,7 +504,7 @@ export default {
               type: 'VideoBlock',
               text: 'Join our market today, contact us below.',
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip7.mp4'
-            },
+            }
           ]
         }
       ],
@@ -554,7 +549,7 @@ export default {
               type: 'VideoBlock',
               text: 'Join our market today, contact us below.',
               url: 'https://s3.amazonaws.com/anthropocene/vids/clip7.mp4'
-            },
+            }
           ]
         }
       ],

@@ -10,6 +10,7 @@
   margin: 0 auto;
   opacity: 1;
   transition: opacity $showTransition;
+  overflow-x: hidden;
 
   .introVideo {
     @include reverseZoomHidden;
@@ -74,7 +75,7 @@
 
   section.experiences {
     @include slideUpHidden;
-    padding: 16rem 10vw 4rem 10vw;
+    padding: 4rem 10vw;
   }
 
   &.showing {

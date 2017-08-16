@@ -29,3 +29,24 @@
     opacity: 0.7;
   }
 }
+
+/** TABLET **/
+@media (max-width: 1024px) {
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+
+  .quoteBlock {
+    hr {
+      width: 33vw;
+    }
+
+    blockquote {
+      padding: 0 10vw;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

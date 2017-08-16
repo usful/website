@@ -267,9 +267,6 @@
   }
 
   &.show2 {
-  }
-
-  &.show3 {
     .intro {
       .top {
         @include slideUpShow;
@@ -277,7 +274,7 @@
     }
   }
 
-  &.hide3.hiding {
+  &.hide2.hiding {
     opacity: 0;
   }
 
@@ -289,10 +286,145 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
+  .marketPartnersPage {
+    .intro {
+      height: 54rem;
+
+      .carousel {
+        position: absolute;
+        width: 100vw;
+        height: 54rem;
+
+        h1 {
+          font-size: 3rem;
+          padding: 0 2rem;
+        }
+
+        .pager {
+          font-size: 1rem;
+          bottom: 12rem;
+
+          li {
+            width: 1em;
+            height: 1em;
+          }
+        }
+      }
+    }
+
+    .main {
+      > h1 {
+        font-size: 3rem;
+        max-width: 90vw;
+      }
+
+      > p {
+        font-size: 1.75rem;
+        max-width: 90vw;
+      }
+
+      ul {
+        li {
+          margin: 1rem;
+
+          :global(.icon) {
+            font-size: 2rem;
+          }
+
+          label {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .boxes {
+        width: 100vw;
+        position: relative;
+        min-height: 1vh;
+
+        .box1 {
+          box-shadow: none;
+          background: none;
+          position: initial;
+          width: 100vw;
+          height: auto;
+
+          label {
+            text-align: center;
+            color: $black;
+          }
+
+          h2 {
+            color: $black;
+            font-size: 3rem;
+            text-align: center;
+          }
+        }
+
+        .box2 {
+          position: initial;
+          width: 100vw;
+          height: 35rem;
+        }
+
+        .box3 {
+          position: initial;
+          width: 100vw;
+          text-align: center;
+        }
+      }
+
+      .imageSection {
+        margin: 5rem 0;
+        flex-direction: column;
+
+        .imageHolder {
+          flex: 1;
+          height: 35rem;
+        }
+
+        .col {
+          flex: 1;
+          text-align: center;
+
+          h2 {
+            font-size: 3rem;
+          }
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      .bottomHero {
+        margin: 6rem 0 0 0;
+        padding: 8rem 0 20rem 0;
+
+        h2 {
+          font-size: 3rem;
+          max-width: 90vw;
+        }
+
+        p {
+          max-width: 90vw;
+        }
+      }
+    }
+  }
 }
 
 /** PHONE **/
 @media (max-width: 640px) {
+  .marketPartnersPage {
+    .intro {
+      .top {
+        .logoLink {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) {

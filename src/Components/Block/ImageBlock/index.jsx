@@ -36,7 +36,6 @@ export default function ImageBlock({ url, text, align, className }) {
   return (
     <div className={cx(styles.imageBlock, styles.alignFull, className)}>
       <img src={url} />
-      <h1>{text}</h1>
     </div>
   );
 }

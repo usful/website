@@ -274,3 +274,90 @@ $descriptionWidth: 40rem;
     }
   }
 }
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .project {
+    position: fixed;
+
+    .content {
+      width: 100vw;
+      min-height: 1vh;
+      padding-top: 0;
+
+      article {
+        position: relative;
+
+        .scrollDown {
+          display: none;
+        }
+
+        padding: 2rem ($navWidth + 2rem) 2rem 0;
+        background-color: $offWhite;
+      }
+    }
+
+    .description {
+      position: initial;
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      padding: 1rem (2rem + $navWidth) 1rem 2rem;
+      transform: translateX(100vw);
+    }
+
+    &.hasContent .description {
+      min-height: 1vh;
+      height: auto;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .project {
+    .description {
+
+      .title {
+        margin: 1rem 0;
+      }
+
+      .info {
+        .infoBox {
+          border: none;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid $darkGrey;
+
+          &:last-of-type {
+            border-bottom: 1px solid $darkGrey;
+          }
+
+          label {
+            font-size: 1.3rem;
+          }
+
+          p {
+            font-size: 1.3rem;
+          }
+        }
+
+        .contact {
+          div {
+            display: none;
+          }
+
+          hr {
+            display: none;
+          }
+
+          a {
+            @include button;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

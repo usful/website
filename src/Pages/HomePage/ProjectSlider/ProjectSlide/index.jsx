@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+
+import utils from '../../../../utils';
 import styles from './styles.scss';
 import LoadableImage from '../../../../Components/LoadableImage';
 import LoadableVideo from '../../../../Components/LoadableVideo';
@@ -28,9 +30,9 @@ export default class ProjectSlide extends Component {
         })}
         style={style}
       >
-        {project.heroVideo
+        {project.heroVideo && !utils.isMobile
           ? <LoadableVideo muted autoPlay loop src={project.heroVideo} />
-          : <LoadableImage className={styles.hero} src={project.hero}/>}
+          : <LoadableImage className={styles.hero} src={project.hero} />}
       </div>
     );
   }

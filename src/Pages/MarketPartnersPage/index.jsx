@@ -17,8 +17,8 @@ import {
 } from '../../Components/Icons';
 
 export default class MarketPartnersPage extends Showable {
-  static enter = [300, 600, 600];
-  static exit = [600, 300, 300];
+  static enter = [300, 600];
+  static exit = [600, 300];
 
   static defaultProps = {
     ...Showable.defaultProps

@@ -204,9 +204,6 @@
   }
 
   &.show2 {
-  }
-
-  &.show3 {
     .intro {
       .top {
         @include slideUpShow;
@@ -214,7 +211,7 @@
     }
   }
 
-  &.hide3.hiding {
+  &.hide2.hiding {
     opacity: 0;
   }
 
@@ -226,10 +223,76 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
+  .marketStoryPage {
+    .intro {
+      height: 54rem;
+
+      .carousel {
+        position: absolute;
+        width: 100vw;
+        height: 54rem;
+
+        h1 {
+          font-size: 3rem;
+          padding: 0 2rem;
+        }
+
+        .pager {
+          font-size: 1rem;
+          bottom: 12rem;
+
+          li {
+            width: 1em;
+            height: 1em;
+          }
+        }
+      }
+    }
+
+    .main {
+      padding: 3rem 0;
+
+      > h1 {
+        font-size: 3rem;
+        max-width: 90vw;
+      }
+
+      > p {
+        font-size: 1.75rem;
+        max-width: 90vw;
+      }
+
+      ul {
+        flex-direction: column;
+
+        .location {
+          width: 90vw;
+          margin: 2rem auto;
+        }
+      }
+
+      blockquote {
+        margin: 2rem 2rem;
+
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
 }
 
 /** PHONE **/
 @media (max-width: 640px) {
+  .marketStoryPage {
+    .intro {
+      .top {
+        .logoLink {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) {

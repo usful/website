@@ -22,3 +22,27 @@
     }
   }
 }
+
+
+/** TABLET **/
+@media (max-width: 1024px) {
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .footer {
+    padding: 2rem 0;
+
+    ul {
+      flex-direction: column;
+      text-align: center;
+
+      li {
+        padding: 0.25rem 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

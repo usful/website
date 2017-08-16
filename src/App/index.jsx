@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import styles from './styles.scss';
 import NavigationHelper from '../NavigationHelper';
 import LoadHelper from '../LoadHelper';
-
 import {
   HomePage,
   ExperiencesPage,

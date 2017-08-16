@@ -10,3 +10,21 @@
     line-height: 1.4em;
   }
 }
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .textBlock {
+    padding: 2rem;
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
+}
