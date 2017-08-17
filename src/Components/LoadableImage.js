@@ -6,17 +6,14 @@ export default class LoadableImage extends Component {
     super(props);
 
     LoadHelper.addItem();
-    //console.log('LoadableImage', this.props.src, 'created');
   }
 
   onLoad() {
     LoadHelper.itemLoaded();
-    //console.log('LoadableImage', this.props.src, 'loaded');
   }
 
   onError() {
     LoadHelper.itemLoaded();
-    //console.log('LoadableImage', this.props.src, 'error');
   }
 
   render() {

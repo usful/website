@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { matchPath } from 'react-router-dom';
 import utils from '../utils/index';
 
 export default class Showable extends Component {
@@ -13,7 +14,7 @@ export default class Showable extends Component {
     onHide: () => {},
     onHidden: () => {},
     visible: false,
-    active: false
+    section: {}
   };
 
   constructor(props) {
@@ -23,8 +24,16 @@ export default class Showable extends Component {
       showing: false,
       hiding: false,
       shown: false,
-      hidden: true
+      hidden: true,
+      active: false
     };
+
+    if (this.props.section && this.props.section.route) {
+      state.active = !!matchPath(
+        window.location.pathname,
+        this.props.section.route
+      );
+    }
 
     for (let i = 1; i < this.constructor.enter.length + 1; i++) {
       state[`show${i}`] = false;
@@ -58,6 +67,14 @@ export default class Showable extends Component {
     }
 
     return names;
+  }
+
+  setActive() {
+    this.setState({ active: true });
+  }
+
+  setInactive() {
+    this.setState({ active: false });
   }
 
   async show() {
@@ -130,6 +147,10 @@ export default class Showable extends Component {
 
     this.onHidden();
     this.props.onHidden();
+  }
+
+  get shouldRender() {
+    return this.state.active;
   }
 
   render() {

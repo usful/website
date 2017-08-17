@@ -3,9 +3,10 @@ import cx from 'classnames';
 
 import styles from './style.scss';
 import Block from '../index';
+
 import utils from '../../../utils';
 
-const UPDATE_TIME = 100;
+const UPDATE_TIME = 500;
 
 export default class CarouselBlock extends Component {
   static defaultProps = {
@@ -14,7 +15,8 @@ export default class CarouselBlock extends Component {
     animation: 'slide',
     activeClass: '',
     pagerClass: '',
-    onChange: current => {}
+    onChange: current => {},
+    useLoadable: false
   };
 
   constructor(props) {
@@ -28,9 +30,7 @@ export default class CarouselBlock extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      let done =
-        this.state.currentPercentage +
-        this.props.timing / UPDATE_TIME / this.props.timing;
+      let done = this.state.currentPercentage + UPDATE_TIME / this.props.timing;
 
       if (done >= 1) {
         done = 0;
@@ -43,9 +43,13 @@ export default class CarouselBlock extends Component {
     }, UPDATE_TIME);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   moveBy(num) {
     this.setState({
-      current: utils.arrayClamp(this.state.current + num, this.props.content)
+      current: utils.arrayClamp(this.state.current + num, this.content)
     });
   }
 
@@ -57,10 +61,16 @@ export default class CarouselBlock extends Component {
     this.moveBy(-1);
   }
 
+  get content() {
+    return this.props.content || [];
+  }
+
   renderSlide() {
-    const content = this.props.content || [];
-    const translateX = -this.state.current / content.length * 100;
-    const width = content.length * 100;
+    const current = this.state.current;
+    const useLoadable = this.props.useLoadable;
+
+    const translateX = -current / this.content.length * 100;
+    const width = this.content.length * 100;
     const activeClass = this.props.activeClass;
 
     return (
@@ -71,13 +81,14 @@ export default class CarouselBlock extends Component {
           transform: `translateX(${translateX}%)`
         }}
       >
-        {content.map((block, i) =>
+        {this.content.map((block, i) =>
           <Block
             key={block.id}
             {...block}
+            useLoadable={useLoadable}
             className={cx({
               [styles.noPadding]: true,
-              [activeClass]: i === this.state.current
+              [activeClass]: i === current
             })}
           />
         )}
@@ -86,20 +97,22 @@ export default class CarouselBlock extends Component {
   }
 
   renderFade() {
-    const content = this.props.content || [];
+    const current = this.state.current;
+    const useLoadable = this.props.useLoadable;
     const activeClass = this.props.activeClass;
 
     return (
       <div className={cx(styles.content, styles.fade)}>
-        {content.map((block, i) =>
+        {this.content.map((block, i) =>
           <Block
             key={block.id}
             {...block}
+            useLoadable={useLoadable}
             className={cx({
               [styles.noPadding]: true,
               [styles.fade]: true,
-              [styles.active]: i === this.state.current,
-              [activeClass]: i === this.state.current
+              [styles.active]: i === current,
+              [activeClass]: i === current
             })}
           />
         )}
@@ -108,15 +121,13 @@ export default class CarouselBlock extends Component {
   }
 
   render() {
-    const content = this.props.content || [];
-
     return (
       <div className={cx(styles.carouselBlock, this.props.className)}>
         {this.props.animation === 'slide' ? this.renderSlide() : null}
         {this.props.animation === 'fade' ? this.renderFade() : null}
 
         <ul className={cx(styles.dots, this.props.pagerClass)}>
-          {content.map((block, i) =>
+          {this.content.map((block, i) =>
             <li
               onClick={() =>
                 this.setState({ current: i, currentPercentage: 0 })}

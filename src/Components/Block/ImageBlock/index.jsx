@@ -1,13 +1,23 @@
 import React from 'react';
+
 import cx from 'classnames';
 
 import styles from './style.scss';
+import LoadableImage from '../../LoadableImage';
 
-export default function ImageBlock({ url, text, align, className }) {
+export default function ImageBlock({
+  url,
+  text,
+  align,
+  className,
+  useLoadable
+}) {
+  const Img = useLoadable ? <LoadableImage src={url} /> : <img src={url} />;
+
   if (align === 'center') {
     return (
       <div className={cx(styles.imageBlock, styles.alignCenter, className)}>
-        <img src={url} />
+        {Img}
         <p>
           {text}
         </p>
@@ -19,13 +29,13 @@ export default function ImageBlock({ url, text, align, className }) {
         <p>
           {text}
         </p>
-        <img src={url} />
+        {Img}
       </div>
     );
   } else if (align === 'right') {
     return (
       <div className={cx(styles.imageBlock, styles.alignRight, className)}>
-        <img src={url} />
+        {Img}
         <p>
           {text}
         </p>
@@ -35,7 +45,7 @@ export default function ImageBlock({ url, text, align, className }) {
 
   return (
     <div className={cx(styles.imageBlock, styles.alignFull, className)}>
-      <img src={url} />
+      {Img}
     </div>
   );
 }

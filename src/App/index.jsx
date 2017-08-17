@@ -15,6 +15,20 @@ import {
 
 import { About, Contact } from '../Modals';
 
+const home = NavigationHelper.getSection('Home');
+const experiences = NavigationHelper.getSection('Experiences');
+const technology = NavigationHelper.getSection('Technology');
+const market = NavigationHelper.getSection('Market');
+const marketPartners = NavigationHelper.getSection('Market Partners');
+const marketStory = NavigationHelper.getSection('Market Story');
+
+const about = NavigationHelper.getMenu('About');
+const contact = NavigationHelper.getMenu('Contact');
+
+const sections = NavigationHelper.data.sections.filter(
+  section => section.inMenu
+);
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -36,23 +50,12 @@ export default class App extends Component {
   }
 
   render() {
-    const home = NavigationHelper.getSection('Home');
-    const experiences = NavigationHelper.getSection('Experiences');
-    const technology = NavigationHelper.getSection('Technology');
-    const market = NavigationHelper.getSection('Market');
-    const marketPartners = NavigationHelper.getSection('Market Partners');
-    const marketStory = NavigationHelper.getSection('Market Story');
-
-    const about = NavigationHelper.getMenu('About');
-    const contact = NavigationHelper.getMenu('Contact');
-
     return (
       <div className={styles.siteContainer}>
         <HomePage
           ref={el => (home._component = el || home._component)}
-          sections={NavigationHelper.data.sections.filter(
-            section => section.inMenu
-          )}
+          section={home}
+          sections={sections}
           menu={NavigationHelper.data.menu}
         />
         <ExperiencesPage

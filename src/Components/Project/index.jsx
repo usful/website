@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
+import Markdown from 'react-markdown';
 
 import styles from './styles.scss';
 
@@ -81,22 +82,16 @@ export default class Project extends Showable {
           </div>
           <div className={styles.info}>
             <div className={styles.infoBox}>
-              <label>Client:</label>
-              <p>
-                {project.client}
-              </p>
+              <label>Who:</label>
+              <Markdown source={project.client} />
             </div>
             <div className={styles.infoBox}>
-              <label>Description:</label>
-              <p>
-                {project.description}
-              </p>
+              <label>What:</label>
+              <Markdown source={project.description} />
             </div>
             <div className={styles.infoBox}>
               <label>Impact:</label>
-              <p>
-                {project.impact}
-              </p>
+              <Markdown source={project.impact} />
             </div>
             <h1>Want to collaborate?</h1>
             <menu className={styles.contact}>
@@ -110,8 +105,8 @@ export default class Project extends Showable {
         </section>
         {utils.isMobile
           ? <section className={styles.content}>
-            {this.renderContent()}
-          </section>
+              {this.renderContent()}
+            </section>
           : null}
         <section className={styles.nav}>
           <Link to={this.props.baseUrl} className={styles.navClose}>

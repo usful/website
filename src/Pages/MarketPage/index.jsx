@@ -54,6 +54,10 @@ export default class MarketPage extends Showable {
   }
 
   render() {
+    if (!this.shouldRender) {
+      return null;
+    }
+
     const { hovering } = this.state;
     const { section, menu } = this.props;
 

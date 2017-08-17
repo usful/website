@@ -36,7 +36,7 @@ export default {
           type: 'technology',
           name: 'Lane',
           tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=4',
+          hero: '/img/technology/lane-hero.jpg',
           industry: 'CRE Enterprise SaaS',
           tagLine: 'Bringing a trillion dollar industry intro the future.',
           description:
@@ -56,7 +56,7 @@ export default {
           type: 'technology',
           name: 'VINI',
           tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
+          hero: '/img/technology/vini-hero.jpg',
           industry: 'Mobile SaaS',
           tagLine: 'Disrupting the wine industry.',
           description:
@@ -76,7 +76,7 @@ export default {
           type: 'technology',
           name: 'Change for a Dollar',
           tags: [],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=5',
+          hero: '/img/technology/change-for-a-dollar-hero.jpg',
           industry: 'Mobile SaaS',
           description:
             '"They aren\'t straight," answered the other. "Never mind," said the farmer. "They are ears just the same," which was true enough. "Now I\'ll make the eyes," said the farmer. So he painted my right eye, and as soon as it was finished I found myself looking at him and at everything around me with a great deal of curiosity, for this was my first glimpse of the world. "That\'s a rather pretty eye," remarked the Munchkin who was watching the farmer. "Blue paint is just the color for eyes.\' "I think I\'ll make the other a little\n',
@@ -102,21 +102,21 @@ export default {
           _component: null,
           _active: false,
           route: {
-            path: '/experiences/interactive-galleries',
+            path: '/experiences/interactive-art',
             strict: true
           },
           id: 'ep1',
           type: 'experiences',
-          name: 'Interactive Galleries',
+          name: 'Interactive Art',
           tags: ['Heart', 'Education'],
-          hero: 'https://s3.amazonaws.com/anthropocene/vids/water.jpg',
+          hero: '/img/experiences/interactive-galleries-ed-4.jpg',
           heroVideo: '/img/experiences/interactive-galleries-hero.mp4',
           client:
             'Edward Burtynsky, Joshua Jensen Nagle, Benjamin Von Wong, George Steinmetz',
           description:
-            'Held in typically unused, unique yet convenient spaces, our attention-grabbing art projects are focused on social commentary. Our global network of respected artists can transform a blank canvass of a space into an experience that instigates a powerful dialogue. It’s this experience that becomes associated with your brand. Leave it to us to curate installations – whether clean and simple or infused with technology – that match your target objectives.',
+            'Held in typically unused, unique yet convenient spaces, our art projects are attention grabbing. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience. From our global network of respected artists, we can transform a blank canvas of a space into an experience that instigates a powerful dialogue. Leave it to us to curate installations – whether clean and simple or infused with technology – that match your objectives, and to craft an experience that will become associated with your brand.',
           impact:
-            'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about. We take unused space, re-imagine it, and make it a captivating, discovery-filled, and meaningful learning experience.',
+            'Our installations connect with tens of thousands of people daily, giving visitors something to talk about.',
           content: [
             {
               id: 'interactive-galleries-1',
@@ -150,11 +150,6 @@ export default {
                   url: '/img/experiences/interactive-galleries-ed-4.jpg'
                 },
                 {
-                  id: 'interactive-galleries-1-5',
-                  type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-5.jpg'
-                },
-                {
                   id: 'interactive-galleries-1-6',
                   type: 'ImageBlock',
                   url: '/img/experiences/interactive-galleries-ed-6.jpg'
@@ -164,12 +159,14 @@ export default {
             {
               id: 'interactive-galleries-3',
               type: 'TextBlock',
-              text: 'Usful took visitors on a self-guided interactive audio tour that explored the work and world of renowned Canadian artist Ed Burtynsky. To share the works and findings of Manufactured Landscapes – a feature length documentary on Burtynsky – the tour showcased the photographs of Burtynsky’s 25-year exploration of how industrial activity has created and shaped the landscapes of our world.',
+              text:
+                'Usful took visitors on a self-guided interactive tour that explored the work and world of renowned Canadian artist Ed Burtynsky. To share the works and findings of [Manufactured Landscapes](http://www.edwardburtynsky.com/site_contents/Films/Manufactured_Landscapes_Film.html) – a feature length documentary on Burtynsky – the tour showcased the photographs of Burtynsky’s 25-year exploration of how industrial activity has created and shaped the landscapes of our world.'
             },
             {
               id: 'interactive-galleries-4',
               type: 'QuoteBlock',
-              text: 'When I’m there, it brings back happy memories and simpler times, and I get to relax. When I make the large prints and see them, it immediately calms me down.',
+              text:
+                'When I’m there, it brings back happy memories and simpler times, and I get to relax... it immediately calms me down.',
               by: 'Joshua Jensen Nagle'
             },
             {
@@ -192,49 +189,171 @@ export default {
                   url: '/img/experiences/interactive-galleries-joshua-3.jpg'
                 }
               ]
-            },            {
-              id: 'interactive-galleries-5',
+            },
+            {
+              id: 'interactive-galleries-6',
               type: 'TextBlock',
               text:
-                'Offering a temporary escape from the daily grind, Toronto-based photographer Joshua Jensen Nagle provided a dose of vacation inspiration with his collection of signature photographs of sun-soaked shorelines. The striking images featured in this exhibition are a continuation of his obsession with beach culture and his ongoing body of work, Endless Summer.'
+                'Offering a temporary escape from the daily grind, Toronto-based photographer [Joshua Jensen Nagle](https://bau-xi.com/collections/joshua-jensen-nagle) provided a dose of vacation inspiration with his collection of signature photographs of sun-soaked shorelines. The striking images featured in this exhibition are a continuation of his obsession with beach culture and his ongoing body of work, Endless Summer.'
             },
+            {
+              id: 'interactive-galleries-7',
+              type: 'QuoteBlock',
+              text: 'Creativity is a way of life.',
+              by: 'Benjamin Von Wong'
+            },
+            {
+              id: 'interactive-galleries-8',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'interactive-galleries-8-1',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-vonwong-1.jpg'
+                },
+                {
+                  id: 'interactive-galleries-8-2',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-vonwong-2.jpg'
+                },
+                {
+                  id: 'interactive-galleries-8-3',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-vonwong-3.jpg'
+                }
+              ]
+            },
+            {
+              id: 'interactive-galleries-9',
+              type: 'TextBlock',
+              text:
+                'Canadian photographer Benjamin Von Wong turned 10,000 plastic bottles into a visually mind-blowing and informative art experience with [#MermaidsHatePlastic](http://www.vonwong.com/Store/MermaidsHatePlastic/). Transforming the lobby of the Bay Adelaide Centre, the exhibition made for a value-added lunch break, as it highlighted the alarming reality of plastic pollution. Accompanying the images was a self-guided tour curated by Usful and available via a mobile app.'
+            },
+            {
+              id: 'interactive-galleries-10',
+              type: 'QuoteBlock',
+              text:
+                'One of the more interesting things about desert environments is how people and animals can survive in the very limits of existence...',
+              by: 'George Steinmetz'
+            },
+            {
+              id: 'interactive-galleries-11',
+              type: 'CarouselBlock',
+              content: [
+                {
+                  id: 'interactive-galleries-11-1',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-steinmetz-1.jpg'
+                },
+                {
+                  id: 'interactive-galleries-11-2',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-steinmetz-2.jpg'
+                },
+                {
+                  id: 'interactive-galleries-11-3',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-steinmetz-3.jpg'
+                },
+                {
+                  id: 'interactive-galleries-11-4',
+                  type: 'ImageBlock',
+                  url: '/img/experiences/interactive-galleries-steinmetz-4.jpg'
+                }
+              ]
+            },
+            {
+              id: 'interactive-galleries-12',
+              type: 'TextBlock',
+              text:
+                'Visitors were offered a glimpse into some of the world’s most remote environments at [Desert Air](http://georgesteinmetz.com/images/desert-air/), a photography exhibition by award-winning National Geographic photographer George Steinmetz. Steinmetz spent fifteen years documenting the world’s extreme deserts from the air, using the lightest and slowest paraglider that exists to offer an unmatched perspective on these isolated parts of the planet.'
+            }
           ] //Blocks
         },
         {
           _component: null,
           _active: false,
           route: {
-            path: '/experiences/physical-installations',
+            path: '/experiences/6ix-cycle',
+            strict: true
+          },
+          id: 'ep5',
+          type: 'experiences',
+          name: '6ix Cycle',
+          tags: ['Heart', 'Education'],
+          hero: '/img/experiences/6ix-cycle-2.jpg',
+          heroVideo: '/img/experiences/6ix-cycle-hero.mp4',
+          client: 'Multiple',
+          description:
+            'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto into a high-energy outdoor spin studio. Held in collaboration with a corporate health and wellness program, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.',
+          impact:
+            'The impossible-to-miss installation got both the participants and passersby engaged and motivated, with business wear-clad audience members cheering on the participants in between meetings. The use of VR offered a multi-faceted and memorable experience. The first live session resulted in over 4,000 impressions.\n',
+          content: [
+            {
+              id: 'b18',
+              type: 'TextBlock',
+              text:
+                'From conception to teardown, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments. To offer a layered experience, we sourced top-of-the-line VR technology and administered the experience for the audience. We engaged with participants through a mobile app for signups and check-ins to the event.'
+            },
+            {
+              id: 'b2',
+              type: 'ImageBlock',
+              url: '/img/experiences/6ix-cycle-1.jpg',
+              align: 'full'
+            },
+            {
+              id: 'b3',
+              type: 'ImageBlock',
+              url: '/img/experiences/6ix-cycle-2.jpg',
+              align: 'full'
+            },
+            {
+              id: 'b4',
+              type: 'ImageBlock',
+              url: '/img/experiences/6ix-cycle-3.jpg',
+              align: 'full'
+            },
+            {
+              id: 'b5',
+              type: 'ImageBlock',
+              url: '/img/experiences/6ix-cycle-4.jpg',
+              align: 'full'
+            }
+          ] //Blocks
+        },
+        {
+          _component: null,
+          _active: false,
+          route: {
+            path: '/experiences/osheaga-oasis',
             strict: true
           },
           id: 'ep2',
           type: 'experiences',
-          name: 'Physical Installations',
-          tags: ['Poop', 'Environment', 'Stuff'],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=2',
-          heroVideo:
-            'https://www.anonymous.paris/assets/videos/projects/anonymous_sebastien-tellier.webm',
-          client: 'Multiple',
+          name: 'Osheaga Oasis',
+          tags: ['Environment', 'Stuff'],
+          hero: '/img/experiences/osheaga-oasis-3.jpg',
+          heroVideo: '/img/experiences/osheaga-oasis-hero.mp4',
+          client: 'TopShop',
           description:
-            'We made sure Osheaga goers got the memo that the UK’s beloved TopShop was coming to Canada with our “TopShop Urban Oasis” installation at the popular Montreal music festival. Offering a place of calm from the festivities, here, guests could rehydrate with water and were given polaroid cameras to document their festival experience. \n',
-          impact:
-            'We wanted the users to tell the story, and invited them to drop the film back so that we could process it to capture both the festival and the TopShop experience. Not only did the experience offer an unexpected and well-received layer to the festival experience, it got users talking TopShop',
+            'We were there to make sure [Osheaga](https://www.osheaga.com/en) goers got the memo that the UK’s beloved [TopShop](http://www.topshop.com) was coming to Canada with a “TopShop Urban Oasis” tech installation at the popular Montreal music festival. Offering a place of calm from the festivities, here, guests could rehydrate with water and document their festival experience with branded cameras.  TopShop fans could also deepen their connection with the brand by partaking in an interactive experience.',
+          impact: 'TODO',
           content: [] //Blocks
         },
         {
           _component: null,
           _active: false,
           route: {
-            path: '/experiences/awareness-campaigns-urban-farming',
+            path: '/experiences/earth-week',
             strict: true
           },
           id: 'ep3',
           type: 'experiences',
-          name: 'Awareness Campaigns - Urban Farming',
+          name: 'Earth Week',
           tags: ['Environment', 'Heart'],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=3',
-          heroVideo: 'https://s3.amazonaws.com/anthropocene/vids/clip5.mp4',
-          client: 'Brookfield Office Properties Canada - Bay Adelaide Centre',
+          hero: '/img/experiences/earth-week-3.jpg',
+          heroVideo: '/img/experiences/earth-week-hero.mp4',
+          client: 'Brookfield Office Properties',
           description:
             'To educate on the benefits of urban farming, Usful partnered with local urban farmers to bring affordable and viable new tech solutions to Toronto’s downtown core with an unexpected installation that became a powerful awareness campaign. Over a month period, Usful’s attention-grabbing installation tapped into the minds of thousands of Toronto pavement pounders, getting the wheels turning on the benefits of growing their own food',
           impact:
@@ -245,212 +364,21 @@ export default {
           _component: null,
           _active: false,
           route: {
-            path: '/experiences/digital-campaigns',
+            path: '/experiences/anthropocene-film',
             strict: true
           },
           id: 'ep4',
           type: 'experiences',
-          name: 'Digital Campaigns',
+          name: 'Anthropocene',
           tags: ['Heart', 'Education'],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=1',
-          client: 'Multiple',
+          hero: 'https://s3.amazonaws.com/anthropocene/vids/water.jpg',
+          heroVideo: 'https://s3.amazonaws.com/anthropocene/vids/water.mp4',
+          client: 'Anthropocene Film',
           description:
             'We are the creators of user-friendly digital experiences that impact how people view and navigate both the world and their daily lives. Our Usful digital experiences heighten consumer connection and engagement with brands, products, art, and film. We work with the best designers and with top-of-the-line technology in the creation of our immersive and impactful digital projects. \n',
           impact:
             'Our public galleries can connect with over 5,000 people daily, giving visitors something to talk about when they return to the office from their lunch break or home after work. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience. By offering a one-on-one high touchpoint, we inspire shifts in consciousness and a subsequent association of your brand to this progressive change in thinking.',
-          content: [
-            {
-              id: 'b1',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=10',
-              align: 'left',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b18',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b2',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=11',
-              align: 'right',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b20',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b3',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=24',
-              align: 'center',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b5',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=12',
-              align: 'full',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b4',
-              type: 'QuoteBlock',
-              text: `It's all about the look, the feel, the run. *wink*`,
-              by: 'Kofi Gyekye, Head Usful Dude'
-            },
-            {
-              id: 'b6',
-              type: 'CarouselBlock',
-              content: [
-                {
-                  id: 'bc1',
-                  type: 'VideoBlock',
-                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
-                },
-                {
-                  id: 'bc2',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=101',
-                  align: 'full'
-                },
-                {
-                  id: 'bc3',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=102',
-                  align: 'full'
-                },
-                {
-                  id: 'bc4',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=103',
-                  align: 'full'
-                }
-              ]
-            },
-            {
-              id: 'b10',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            }
-          ] //Blocks
-        },
-        {
-          _component: null,
-          _active: false,
-          route: {
-            path: '/experiences/brand-awareness-campaigns-6ix-cycle',
-            strict: true
-          },
-          id: 'ep5',
-          type: 'experiences',
-          name: 'Brand Awareness Campaigns - 6ix Cycle',
-          tags: ['Heart', 'Education'],
-          hero: 'https://lorempixel.com/1110/680/?random&ts=1',
-          heroVideo: 'https://s3.amazonaws.com/anthropocene/vids/clip8.mp4',
-          client: 'Multiple',
-          description:
-            'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto’s Adelaide Street into a high-energy outdoor spin studio. Held in collaboration with a health and wellness program at the Bay Adelaide Centre, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.\n',
-          impact:
-            'The impossible-to-miss installation got both the participants and passersby engaged and motivated, with business wear-clad audience members cheering on the participants in between meetings. The use of VR offered a multi-faceted and memorable experience for users. The first live session resulted in over 4K impressions.\n',
-          content: [
-            {
-              id: 'b1',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=10',
-              align: 'left',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b18',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b2',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=11',
-              align: 'right',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b20',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            },
-            {
-              id: 'b3',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=24',
-              align: 'center',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b5',
-              type: 'ImageBlock',
-              url: 'https://lorempixel.com/1110/680/?random&ts=12',
-              align: 'full',
-              text:
-                'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis'
-            },
-            {
-              id: 'b4',
-              type: 'QuoteBlock',
-              text: `It's all about the look, the feel, the run. *wink*`,
-              by: 'Kofi Gyekye, Head Usful Dude'
-            },
-            {
-              id: 'b6',
-              type: 'CarouselBlock',
-              content: [
-                {
-                  id: 'bc1',
-                  type: 'VideoBlock',
-                  url: 'https://s3.amazonaws.com/anthropocene/vids/clip4.mp4'
-                },
-                {
-                  id: 'bc2',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=101',
-                  align: 'full'
-                },
-                {
-                  id: 'bc3',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=102',
-                  align: 'full'
-                },
-                {
-                  id: 'bc4',
-                  type: 'ImageBlock',
-                  url: 'https://lorempixel.com/1110/680/?random&ts=103',
-                  align: 'full'
-                }
-              ]
-            },
-            {
-              id: 'b10',
-              type: 'TextBlock',
-              text:
-                'At the period of our arrival at the Island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. But, as before hinted, for some time there was a continual fetching and carrying on board of divers odds and ends of things, both large and small.'
-            }
-          ] //Blocks
+          content: [] //Blocks
         }
       ]
     },

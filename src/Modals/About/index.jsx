@@ -25,12 +25,10 @@ export default class About extends Showable {
           <div className={styles.header} />
           <h1>We are a team of conscious creatives.</h1>
           <p>
-            Usful products creatively challenge people to make choices that
-            better both the planet and their lives. The creation of a
-            forward-thinking team of technologists, designers, developers,
-            engineers, and architects, Usful’s physical and digital experiences
-            are designed to inspire a shift in the way users think about
-            experiences and products. Through our suite of products with
+            The creation of a forward-thinking team of technologists, designers,
+            developers, engineers, and architects, Usful’s physical and digital
+            experiences are designed to inspire a shift in the way people think
+            about experiences and products. Through our suite of products with
             purpose, we’re here to associate your brand with impactful user
             experiences that get people listening, talking, reevaluating, and
             acting.

@@ -71,12 +71,15 @@ export default class NavigationHelper {
       );
 
       if (nextSection !== lastSection) {
+        nextSection._component.setActive();
+
         if (lastSection) {
           lastSection._leaving = true;
           emitter.emit('update');
           await lastSection._component.hide();
           lastSection._leaving = false;
           lastSection._active = false;
+          lastSection._component.setInactive();
           emitter.emit('update');
         }
 

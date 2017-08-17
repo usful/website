@@ -58,7 +58,7 @@ export default class ExperiencesPage extends Showable {
   }
 
   render() {
-    const { hovering, show3, hideVideo } = this.state;
+    const { hovering, show3 } = this.state;
     const { section, menu } = this.props;
 
     const selected = section.projects.find(
@@ -68,68 +68,77 @@ export default class ExperiencesPage extends Showable {
 
     return (
       <div className={cx(styles.experiencesPage, this.showableClasses(styles))}>
-        <div className={styles.container}>
-          {section.projects.map(experience =>
-            <ProjectHero
-              key={experience.id}
-              visible={
-                (hovering === experience.id || selected === experience) && show3
-              }
-              project={experience}
-            />
-          )}
+        {this.shouldRender
+          ? <div>
+              <div className={styles.container}>
+                {section.projects.map(experience =>
+                  <ProjectHero
+                    key={experience.id}
+                    visible={
+                      (hovering === experience.id || selected === experience) &&
+                      show3
+                    }
+                    project={experience}
+                  />
+                )}
 
-          <section className={cx(styles.top, hideElement)}>
-            <Link className={styles.logoLink} to="/">
-              <Logo className={styles.logo} />
-            </Link>
-            <MainMenu items={menu} />
-          </section>
+                <section className={cx(styles.top, hideElement)}>
+                  <Link className={styles.logoLink} to="/">
+                    <Logo className={styles.logo} />
+                  </Link>
+                  <MainMenu items={menu} />
+                </section>
 
-          <section className={cx(styles.intro, hideElement)}>
-            <h1>
-              Conceivers, creators, and builders behind <br/> experiences with
-              purpose.
-            </h1>
-            <hr />
-            <p>
-              We shake up the stale concept of traditional outreach with unique,
-              interactive installations designed to inspire both conversations
-              and shifts in thinking. Our installations transform ordinary and
-              unused spaces to offer a deep, meaningful experience associated
-              with a brand or product – and one people won’t forget.
-            </p>
-          </section>
+                <section className={cx(styles.intro, hideElement)}>
+                  <h1>
+                    Conceivers, creators, and builders behind <br /> experiences
+                    with purpose.
+                  </h1>
+                  <hr />
+                  <p>
+                    We are conceivers, creators, and builders behind experiences
+                    with purpose. We shake up the stale concept of traditional
+                    outreach with unique, interactive, physical and digital
+                    installations designed to inspire both conversations and
+                    shifts in thinking, offering your brand a deep, meaningful
+                    association that your audience won’t forget.
+                  </p>
+                </section>
 
-          <section className={styles.experiences}>
-            {section.projects.map((experience, i) =>
-              <ExperienceLink
-                key={experience.id}
-                experience={experience}
-                hovering={!!hovering || selected}
-                active={hovering === experience.id}
-                onClick={experience => (this.selected = experience)}
-                onMouseOver={experience => this.experienceMouseOver(experience)}
-                onMouseLeave={experience =>
-                  this.experienceMouseLeave(experience)}
-              />
-            )}
-          </section>
-        </div>
+                <section className={styles.experiences}>
+                  {section.projects.map((experience, i) =>
+                    <ExperienceLink
+                      key={experience.id}
+                      experience={experience}
+                      hovering={!!hovering || selected}
+                      active={hovering === experience.id}
+                      onClick={experience => (this.selected = experience)}
+                      onMouseOver={experience =>
+                        this.experienceMouseOver(experience)}
+                      onMouseLeave={experience =>
+                        this.experienceMouseLeave(experience)}
+                    />
+                  )}
+                </section>
+              </div>
 
-        {section.projects.map((project, i) =>
-          <Project
-            ref={el => (project._component = el || project._component)}
-            key={project.id}
-            project={project}
-            selected={project._active}
-            position={i + 1}
-            count={section.projects.length}
-            next={section.projects[utils.arrayClamp(i + 1, section.projects)]}
-          />
-        )}
+              {section.projects.map((project, i) =>
+                <Project
+                  ref={el => (project._component = el || project._component)}
+                  key={project.id}
+                  project={project}
+                  selected={project._active}
+                  position={i + 1}
+                  count={section.projects.length}
+                  next={
+                    section.projects[utils.arrayClamp(i + 1, section.projects)]
+                  }
+                />
+              )}
 
-        <Footer />
+              <Footer />
+            </div>
+          : null}
       </div>
     );
   }

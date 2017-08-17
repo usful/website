@@ -5,7 +5,7 @@ const emitter = new EventEmitter();
 const EVENT_TOTAL_UPDATED = 'totalUpdated';
 const EVENT_PROGRESS_UPDATE = 'progressUpdate';
 const EVENT_LOADED = 'loaded';
-const INTERVAL = 40; //ms
+const INTERVAL = 80; //ms
 
 export default class LoadHelper {
   static EVENT_TOTAL_UPDATED = EVENT_TOTAL_UPDATED;
@@ -19,11 +19,6 @@ export default class LoadHelper {
   static addItem() {
     this.total = this.total + 100;
     emitter.emit(EVENT_TOTAL_UPDATED, this.total);
-
-    if (!this._interval) {
-      this._interval = setInterval(() => this.tick(), INTERVAL);
-    }
-
     return this.total;
   }
 
@@ -50,6 +45,7 @@ export default class LoadHelper {
     if (!this.loaded && this.progress >= this.total) {
       this.loaded = true;
       emitter.emit(EVENT_LOADED, this.total);
+      clearInterval(this._interval);
     }
   }
 
@@ -67,3 +63,5 @@ export default class LoadHelper {
     );
   }
 }
+
+LoadHelper._interval = setInterval(() => LoadHelper.tick(), INTERVAL);

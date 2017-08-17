@@ -48,38 +48,41 @@ export default class HomePage extends Showable {
 
     return (
       <div className={cx(styles.homePage, this.showableClasses(styles))}>
-        <div className={styles.container}>
-          <section className={styles.top}>
-            <Logo className={styles.logo} />
-            <TagLine className={styles.tagLine} />
-          </section>
-          <section className={styles.slider}>
-            <ProjectSlider showInfo={show2} sections={sections} />
-            {sections.map(section =>
-              <SectionHero
-                key={section.id}
-                section={section}
-                hovering={this.state.hovering === section.id}
-              />
-            )}
-          </section>
-          <SectionMenu
-            className={styles.sectionMenu}
-            items={sections}
-            visible={!hide2}
-            onSectionOver={section => this.sectionMouseOver(section)}
-            onSectionLeave={section => this.sectionMouseLeave(section)}
-          />
-          <MainMenu className={styles.mainMenu} items={menu} />
-          <section className={styles.social}>
-            <a href="http://www.twitter.com" className="ion-social-twitter" />
-            <a
-              href="http://www.instagram.com"
-              className="ion-social-instagram-outline"
+        {this.shouldRender ?
+          <div className={styles.container}>
+            <section className={styles.top}>
+              <Logo className={styles.logo}/>
+              <TagLine className={styles.tagLine}/>
+            </section>
+            <section className={styles.slider}>
+              <ProjectSlider showInfo={show2} sections={sections}/>
+              {sections.map(section =>
+                <SectionHero
+                  key={section.id}
+                  section={section}
+                  hovering={this.state.hovering === section.id}
+                />
+              )}
+            </section>
+            <SectionMenu
+              className={styles.sectionMenu}
+              items={sections}
+              visible={!hide2}
+              onSectionOver={section => this.sectionMouseOver(section)}
+              onSectionLeave={section => this.sectionMouseLeave(section)}
             />
-            <a href="http://www.facebook.com" className="ion-social-facebook" />
-          </section>
-        </div>
+            <MainMenu className={styles.mainMenu} items={menu}/>
+            <section className={styles.social}>
+              <a href="http://www.twitter.com" className="ion-social-twitter"/>
+              <a
+                href="http://www.instagram.com"
+                className="ion-social-instagram-outline"
+              />
+              <a href="http://www.facebook.com" className="ion-social-facebook"/>
+            </section>
+          </div>
+          : null
+        }
       </div>
     );
   }

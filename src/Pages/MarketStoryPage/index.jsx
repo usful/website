@@ -41,6 +41,7 @@ export default class MarketStoryPage extends Showable {
         <section className={styles.intro}>
           <CarouselBlock
             {...carousel}
+            useLoadable={true}
             className={styles.carousel}
             pagerClass={styles.pager}
           />

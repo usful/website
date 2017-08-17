@@ -15,7 +15,7 @@ const blocks = {
 };
 
 export default function Block(props) {
-  const Block = blocks[props.type];
+  const FBlock = blocks[props.type];
 
-  return <Block {...props} />;
+  return <FBlock {...props} />;
 }
