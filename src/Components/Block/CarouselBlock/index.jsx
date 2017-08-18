@@ -86,6 +86,7 @@ export default class CarouselBlock extends Component {
             key={block.id}
             {...block}
             useLoadable={useLoadable}
+            active={i === current}
             className={cx({
               [styles.noPadding]: true,
               [activeClass]: i === current
@@ -108,6 +109,7 @@ export default class CarouselBlock extends Component {
             key={block.id}
             {...block}
             useLoadable={useLoadable}
+            active={i === current}
             className={cx({
               [styles.noPadding]: true,
               [styles.fade]: true,

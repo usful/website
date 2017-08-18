@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
 import styles from './styles.scss';
+import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
@@ -20,6 +21,17 @@ const PointlessWrapper = withGoogleMap(props =>
   />
 );
 
+const menu = [
+  {
+    href: '/market/partners',
+    name: 'Partners'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+
+const section = data.sections.find(
+  section => section.name === 'Market Story'
+);
+
 export default class MarketStoryPage extends Showable {
   static enter = [300, 600];
   static exit = [600, 300];
@@ -33,7 +45,10 @@ export default class MarketStoryPage extends Showable {
   }
 
   render() {
-    const { section, menu } = this.props;
+    if (!this.shouldRender) {
+      return null;
+    }
+    
     const carousel = section.content[0];
 
     return (

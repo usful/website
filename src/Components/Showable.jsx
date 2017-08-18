@@ -14,7 +14,7 @@ export default class Showable extends Component {
     onHide: () => {},
     onHidden: () => {},
     visible: false,
-    section: {}
+    route: {}
   };
 
   constructor(props) {
@@ -28,11 +28,8 @@ export default class Showable extends Component {
       active: false
     };
 
-    if (this.props.section && this.props.section.route) {
-      state.active = !!matchPath(
-        window.location.pathname,
-        this.props.section.route
-      );
+    if (this.props.route) {
+      state.active = !!matchPath(window.location.pathname, this.props.route);
     }
 
     for (let i = 1; i < this.constructor.enter.length + 1; i++) {
@@ -70,11 +67,25 @@ export default class Showable extends Component {
   }
 
   setActive() {
-    this.setState({ active: true });
+    return new Promise(resolve =>
+      this.setState(
+        {
+          active: true
+        },
+        resolve
+      )
+    );
   }
 
   setInactive() {
-    this.setState({ active: false });
+    return new Promise(resolve =>
+      this.setState(
+        {
+          active: false
+        },
+        resolve
+      )
+    );
   }
 
   async show() {

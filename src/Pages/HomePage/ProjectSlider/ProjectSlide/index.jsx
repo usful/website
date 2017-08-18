@@ -31,7 +31,7 @@ export default class ProjectSlide extends Component {
         style={style}
       >
         {project.heroVideo && !utils.isMobile
-          ? <LoadableVideo muted autoPlay loop src={project.heroVideo} />
+          ? <LoadableVideo muted loop src={project.heroVideo} play={selected} />
           : <LoadableImage className={styles.hero} src={project.hero} />}
       </div>
     );

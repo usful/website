@@ -42,6 +42,8 @@
   }
 
   section.intro {
+    opacity: 1;
+    transition: opacity $showTransition;
 
     > h1 {
       @include slideUpHidden;
@@ -127,7 +129,6 @@
   }
 
   .hoverHide {
-    transition: opacity 100ms linear !important;
     opacity: 0 !important;
   }
 }

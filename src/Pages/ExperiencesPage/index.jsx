@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import utils from '../../utils';
+import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import Logo from '../../Components/Logo';
@@ -14,7 +15,19 @@ import ProjectHero from '../../Components/ProjectHero';
 
 import ExperienceLink from './ExperienceLink';
 
-//        //mouse scroll down by Nikita Tcherednikov from the Noun Project
+//mouse scroll down by Nikita Tcherednikov from the Noun Project
+
+const menu = [
+  {
+    href: '/technology',
+    name: 'Technology'
+  },
+  {
+    href: '/market',
+    name: 'Market'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+const section = data.sections.find(section => section.name === 'Experiences');
 
 export default class ExperiencesPage extends Showable {
   static enter = [
@@ -59,11 +72,11 @@ export default class ExperiencesPage extends Showable {
 
   render() {
     const { hovering, show3 } = this.state;
-    const { section, menu } = this.props;
 
     const selected = section.projects.find(
       experience => experience._active || experience._showing
     );
+
     const hideElement = hovering || selected ? styles.hoverHide : '';
 
     return (

@@ -5,8 +5,9 @@ import utils from '../../utils';
 import styles from './styles.scss';
 import LoadableVideo from '../LoadableVideo';
 
-export default function ProjectHero({ project, visible }) {
-  const style = !project.heroVideo
+export default function ProjectHero({ project = {}, visible = false}) {
+  
+  const style = !project.heroVideo || utils.isMobile
     ? { backgroundImage: `url(${project.hero})` }
     : null;
 
@@ -18,7 +19,7 @@ export default function ProjectHero({ project, visible }) {
       style={style}
     >
       {project.heroVideo && !utils.isMobile
-        ? <LoadableVideo muted autoPlay loop src={project.heroVideo} />
+        ? <LoadableVideo muted loop src={project.heroVideo} play={visible} />
         : null}
     </div>
   );

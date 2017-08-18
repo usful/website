@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import utils from '../../utils';
 import styles from './styles.scss';
+import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
@@ -25,6 +26,19 @@ const partnerStyle = utils.isMobile
       backgroundImage: `${LINEAR_GRADIENT}, url(/img/market2.jpg)`
     }
   : null;
+
+const menu = [
+  {
+    href: '/experiences',
+    name: 'XM'
+  },
+  {
+    href: '/technology',
+    name: 'Tech'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+
+const section = data.sections.find(section => section.name === 'Technology');
 
 export default class MarketPage extends Showable {
   static enter = [utils.isMobile ? 300 : 1500, 600, 600];
@@ -59,7 +73,6 @@ export default class MarketPage extends Showable {
     }
 
     const { hovering } = this.state;
-    const { section, menu } = this.props;
 
     return (
       <div
@@ -71,7 +84,7 @@ export default class MarketPage extends Showable {
           ? null
           : <LoadableVideo
               className={styles.video}
-              autoPlay
+              play={true}
               muted
               loop
               src="/vids/tomatose.mp4"

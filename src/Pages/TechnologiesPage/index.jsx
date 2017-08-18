@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import utils from '../../utils';
+import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import LoadableImage from '../../Components/LoadableImage';
@@ -16,6 +17,18 @@ import ProjectHero from '../../Components/ProjectHero';
 import Dots from './Dots';
 
 import TechnologyCard from './TechnologyCard';
+const menu = [
+  {
+    href: '/experiences',
+    name: 'XM'
+  },
+  {
+    href: '/market',
+    name: 'Market'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+
+const section = data.sections.find(section => section.name === 'Technology');
 
 export default class TechnologiesPage extends Showable {
   static enter = [125, 600, 600, 200];
@@ -26,9 +39,6 @@ export default class TechnologiesPage extends Showable {
   }
 
   render() {
-    const { show2, shown } = this.state;
-    const { section, menu } = this.props;
-
     return (
       <div className={cx(styles.technologyPage, this.showableClasses(styles))}>
         {this.shouldRender
@@ -91,6 +101,7 @@ export default class TechnologiesPage extends Showable {
                   baseUrl="/technology"
                   key={'project' + project.id}
                   project={project}
+                  route={project.route}
                   selected={project._active}
                   position={i + 1}
                   count={section.projects.length}

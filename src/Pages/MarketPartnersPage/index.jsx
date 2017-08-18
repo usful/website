@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
+import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
@@ -15,6 +16,17 @@ import {
   Gift as GiftIcon,
   People as PeopleIcon
 } from '../../Components/Icons';
+
+const menu = [
+  {
+    href: '/market/story',
+    name: 'Story'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+
+const section = data.sections.find(
+  section => section.name === 'Market Partners'
+);
 
 export default class MarketPartnersPage extends Showable {
   static enter = [300, 600];
@@ -29,7 +41,10 @@ export default class MarketPartnersPage extends Showable {
   }
 
   render() {
-    const { section, menu } = this.props;
+    if (!this.shouldRender) {
+      return null;
+    }
+    
     const carousel = section.content[0];
 
     return (
@@ -111,7 +126,10 @@ export default class MarketPartnersPage extends Showable {
             </div>
           </div>
 
-          <div className={styles.bottomHero} style={{backgroundImage: 'url(/img/market-partners-tents.jpg)'}}>
+          <div
+            className={styles.bottomHero}
+            style={{ backgroundImage: 'url(/img/market-partners-tents.jpg)' }}
+          >
             <label>Infrastucture</label>
             <h2>Well crafted tents and accessories to house your goods.</h2>
             <p>

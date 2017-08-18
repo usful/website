@@ -1,6 +1,7 @@
 import { matchPath } from 'react-router-dom';
 import data from './data';
 import { EventEmitter } from 'fbemitter';
+import utils from './utils';
 
 const emitter = new EventEmitter();
 
@@ -91,12 +92,18 @@ export default class NavigationHelper {
         emitter.emit('update');
       }
 
+      if (nextProject) {
+        await nextProject._component.setActive();
+        await utils.pause(10);
+      }
+      
       if (lastProject) {
         lastProject._leaving = true;
         emitter.emit('update');
         await lastProject._component.hide();
         lastProject._leaving = false;
         lastProject._active = false;
+        lastProject._component.setInactive();
         emitter.emit('update');
       }
 

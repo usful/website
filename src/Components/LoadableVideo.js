@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Video from './Video';
 import LoadHelper from '../LoadHelper';
 
 export default class LoadableVideo extends Component {
@@ -22,13 +23,11 @@ export default class LoadableVideo extends Component {
 
   render() {
     return (
-      <video
+      <Video
         {...this.props}
         onCanPlay={e => this.onCanPlay(e)}
         onError={e => this.onError(e)}
-      >
-        <source src={this.props.src} />
-      </video>
+      />
     );
   }
 }

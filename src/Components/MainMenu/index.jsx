@@ -8,7 +8,7 @@ export default function MainMenu({ items = [], color = 'white', className }) {
   return (
     <menu className={cx(styles.mainMenu, className, styles[color])}>
       {items.map(item =>
-        <Link to={item.hash} key={item.id}>
+        <Link to={item.href} key={item.href}>
           {item.name}
         </Link>
       )}

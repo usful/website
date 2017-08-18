@@ -51,6 +51,10 @@ export default class Project extends Showable {
   }
 
   render() {
+    if (!this.shouldRender) {
+      return null;
+    }
+    
     const { project, count, position, next, align } = this.props;
 
     return (

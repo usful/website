@@ -24,10 +24,8 @@ const marketStory = NavigationHelper.getSection('Market Story');
 
 const about = NavigationHelper.getMenu('About');
 const contact = NavigationHelper.getMenu('Contact');
-
-const sections = NavigationHelper.data.sections.filter(
-  section => section.inMenu
-);
+const setComponent = section => el =>
+  (section._component = el || section._component);
 
 export default class App extends Component {
   constructor(props) {
@@ -52,44 +50,31 @@ export default class App extends Component {
   render() {
     return (
       <div className={styles.siteContainer}>
-        <HomePage
-          ref={el => (home._component = el || home._component)}
-          section={home}
-          sections={sections}
-          menu={NavigationHelper.data.menu}
-        />
+        <HomePage ref={setComponent(home)} route={home.route} />
         <ExperiencesPage
-          menu={NavigationHelper.data.menu}
-          section={experiences}
-          ref={el => (experiences._component = el || experiences._component)}
+          ref={setComponent(experiences)}
+          route={experiences.route}
         />
         <TechnologiesPage
-          menu={NavigationHelper.data.menu}
-          section={technology}
-          ref={el => (technology._component = el || technology._component)}
+          ref={setComponent(technology)}
+          route={technology.route}
         />
-        <MarketPage
-          menu={NavigationHelper.data.menu}
-          section={market}
-          ref={el => (market._component = el || market._component)}
-        />
+        <MarketPage ref={setComponent(market)} route={market.route} />
         <MarketPartnersPage
-          menu={NavigationHelper.data.menu}
-          section={marketPartners}
-          ref={el => (marketPartners._component = el || market._component)}
+          ref={setComponent(marketPartners)}
+          route={marketPartners.route}
         />
         <MarketStoryPage
-          menu={NavigationHelper.data.menu}
-          section={marketStory}
-          ref={el => (marketStory._component = el || market._component)}
+          ref={setComponent(marketStory)}
+          route={marketStory.route}
         />
+        <About ref={setComponent(about)} />
+        <Contact ref={setComponent(contact)} />
         <LoadingPage
           ref="loading"
           progress={this.state.progress}
           onHidden={() => this.onLoadHide()}
         />
-        <About ref={el => (about._component = el || about._component)} />
-        <Contact ref={el => (contact._component = el || contact._component)} />
       </div>
     );
   }
