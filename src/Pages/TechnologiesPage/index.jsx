@@ -20,7 +20,7 @@ import TechnologyCard from './TechnologyCard';
 const menu = [
   {
     href: '/experiences',
-    name: 'XM'
+    name: 'Experiences'
   },
   {
     href: '/market',
@@ -55,7 +55,7 @@ export default class TechnologiesPage extends Showable {
                     <MainMenu color="black" items={menu} />
                   </section>
                   <div className={styles.copy}>
-                    <h1>Building curated, digital products for the future.</h1>
+                    <h1>Technology products with purpose.</h1>
                   </div>
                   <LoadableImage
                     className={styles.leftHand}
@@ -70,7 +70,7 @@ export default class TechnologiesPage extends Showable {
 
               <section className={styles.blurb}>
                 <hr />
-                <h1>End-to-end - product design & development.</h1>
+                <h1>End-to-end product design & development.</h1>
                 <p>
                   We are an end-to-end design & development product team that
                   creates captivating technology products and introduces them to

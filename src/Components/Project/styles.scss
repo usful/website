@@ -33,7 +33,7 @@ $descriptionWidth: 40rem;
         transition: opacity $showTransition;
       }
 
-      padding: 2rem ($descriptionWidth + $navWidth - 1rem) 2rem 0;
+      padding: 2rem ($descriptionWidth + $navWidth) 2rem 0;
       background-color: $offWhite;
     }
   }

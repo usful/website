@@ -15,13 +15,13 @@
   .intro {
     position: relative;
     width: 100vw;
-    height: 54rem;
+    height: 64rem;
 
     .carousel {
       @include reverseZoomHidden;
       position: absolute;
       width: 100vw;
-      height: 54rem;
+      height: 64rem;
 
       h1 {
         font-size: 4rem;
@@ -152,11 +152,18 @@
       .box2 {
         @include dropShadow;
         position: absolute;
-        background-image: url(/img/market1.jpg);
-        background-size: cover;
         width: 50rem;
         height: 35rem;
         top: 23rem;
+        overflow: hidden;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        video {
+          width: 50rem;
+          height: 35rem;
+          object-fit: cover;
+        }
       }
 
       .box3 {
@@ -189,6 +196,13 @@
         flex: 3;
         background-size: cover;
         background-position: 50% 50%;
+        overflow: hidden;
+
+        video {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
       .col {

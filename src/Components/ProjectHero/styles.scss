@@ -1,5 +1,7 @@
 @import '../../variables';
 
+$timing: 150ms;
+
 .projectHero {
   position: fixed;
   top: 0;
@@ -10,7 +12,7 @@
   opacity: 0;
   transform: scale(1.2,1.2);
   visibility: hidden;
-  transition: visibility 0ms linear 125ms, opacity 125ms linear, transform 125ms $bez2;
+  transition: visibility 0ms linear $timing, opacity $timing linear, transform $timing $bez2;
 
   video {
     position: fixed;

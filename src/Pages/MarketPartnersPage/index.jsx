@@ -11,6 +11,8 @@ import FooterTagLine from '../../Components/FooterTagLine';
 import MainMenu from '../../Components/MainMenu';
 import Logo from '../../Components/Logo';
 import CarouselBlock from '../../Components/Block/CarouselBlock';
+import Video from '../../Components/Video';
+
 import {
   House as HouseIcon,
   Gift as GiftIcon,
@@ -44,7 +46,7 @@ export default class MarketPartnersPage extends Showable {
     if (!this.shouldRender) {
       return null;
     }
-    
+
     const carousel = section.content[0];
 
     return (
@@ -94,7 +96,12 @@ export default class MarketPartnersPage extends Showable {
               <label>People</label>
               <h2>Knowledgeable people to handle your business.</h2>
             </div>
-            <div className={styles.box2} />
+            <div
+              className={styles.box2}
+              style={{ backgroundImage: 'url(/img/market1.jpg)' }}
+            >
+              <Video muted loop play={true} src="/vids/market-stall2.mp4" />
+            </div>
             <div className={styles.box3}>
               <p>
                 At Usful, we believe that people are the heart of successful
@@ -114,7 +121,9 @@ export default class MarketPartnersPage extends Showable {
               style={{
                 backgroundImage: 'url(/img/market-partners-packaging.jpg)'
               }}
-            />
+            >
+              <Video muted loop play={true} src="/vids/market-sammiches.mp4" />
+            </div>
             <div className={styles.col}>
               <label>Packaging</label>
               <h2>Beautiful packaging that makes your product stand out.</h2>
@@ -130,12 +139,14 @@ export default class MarketPartnersPage extends Showable {
             className={styles.bottomHero}
             style={{ backgroundImage: 'url(/img/market-partners-tents.jpg)' }}
           >
-            <label>Infrastucture</label>
-            <h2>Well crafted tents and accessories to house your goods.</h2>
-            <p>
-              Something about how nice the tents are and dependable for selling
-              in market. Waterproof. Rainproof.
-            </p>
+            <div className={styles.contents}>
+              <label>Infrastucture</label>
+              <h2>Well crafted tents and accessories to house your goods.</h2>
+              <p>
+                Something about how nice the tents are and dependable for selling
+                in market. Waterproof. Rainproof.
+              </p>
+            </div>
           </div>
         </section>
 

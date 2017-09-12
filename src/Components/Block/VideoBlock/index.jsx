@@ -4,11 +4,21 @@ import styles from './style.scss';
 import LoadableVideo from '../../LoadableVideo';
 import Video from '../../Video';
 
-export default function VideoBlock({ url, text, className, active, useLoadable }) {
+export default function VideoBlock({
+  url,
+  text,
+  className,
+  active,
+  useLoadable,
+  padding = 0
+}) {
   const Vid = useLoadable ? LoadableVideo : Video;
 
   return (
-    <div className={cx(styles.videoBlock, className)}>
+    <div
+      className={cx(styles.videoBlock, className)}
+      style={{ padding: `2rem ${padding}%` }}
+    >
       <Vid muted loop play={active} src={url} />
       <h1>
         {text}

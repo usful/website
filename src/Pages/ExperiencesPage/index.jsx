@@ -103,17 +103,14 @@ export default class ExperiencesPage extends Showable {
                 </section>
 
                 <section className={cx(styles.intro, hideElement)}>
-                  <h1>
-                    Conceivers, creators, and builders behind <br /> experiences
-                    with purpose.
-                  </h1>
+                  <h1>We create experiences with purpose.</h1>
                   <hr />
                   <p>
                     We are conceivers, creators, and builders behind experiences
                     with purpose. We shake up the stale concept of traditional
                     outreach with unique, interactive, physical and digital
-                    installations designed to inspire both conversations and
-                    shifts in thinking, offering your brand a deep, meaningful
+                    installations designed to inspire both conversations, and
+                    shifts in thinking; offering your brand a deep, meaningful
                     association that your audience won’t forget.
                   </p>
                 </section>

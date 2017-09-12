@@ -30,11 +30,11 @@ const partnerStyle = utils.isMobile
 const menu = [
   {
     href: '/experiences',
-    name: 'XM'
+    name: 'Experiences'
   },
   {
     href: '/technology',
-    name: 'Tech'
+    name: 'Technology'
   }
 ].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
 
@@ -87,7 +87,7 @@ export default class MarketPage extends Showable {
               play={true}
               muted
               loop
-              src="/vids/tomatose.mp4"
+              src="/vids/market-hero.mp4"
             />}
         <div className={styles.coverTop} />
         <div className={styles.coverRight} />
@@ -107,7 +107,7 @@ export default class MarketPage extends Showable {
               <div className={cx(styles.col, styles.intro)}>
                 <label />
                 <h1 className={styles.right}>
-                  Shifting conciousness is the beginning of change.
+                  Fresh. <br/>Local. <br/>Curated.
                 </h1>
                 <Link
                   to="/market/partners"

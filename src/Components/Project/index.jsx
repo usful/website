@@ -44,7 +44,7 @@ export default class Project extends Showable {
           <div className={styles.scrollDown}>
             <ScrollDownIcon />
           </div>
-          {project.content.map(block => <Block key={block.id} {...block} />)}
+          {project.content.map(block => <Block key={block.id} {...block} active />)}
         </article>
       );
     }
@@ -87,7 +87,7 @@ export default class Project extends Showable {
           <div className={styles.info}>
             <div className={styles.infoBox}>
               <label>Who:</label>
-              <Markdown source={project.client} />
+              <Markdown source={project.client || project.industry} />
             </div>
             <div className={styles.infoBox}>
               <label>What:</label>

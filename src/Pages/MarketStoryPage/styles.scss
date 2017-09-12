@@ -15,13 +15,13 @@
   .intro {
     position: relative;
     width: 100vw;
-    height: 54rem;
+    height: 64rem;
 
     .carousel {
       @include reverseZoomHidden;
       position: absolute;
       width: 100vw;
-      height: 54rem;
+      height: 64rem;
 
       h1 {
         font-size: 4rem;

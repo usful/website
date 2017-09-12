@@ -1,18 +1,23 @@
 import React from 'react';
-import { Heart, Education, Earth, People, Gift, House } from '../Icons/index';
+import {
+  Tech,
+  Heart,
+  Education,
+  Earth,
+  People,
+  Gift,
+  House
+} from '../Icons/index';
 import styles from './styles.scss';
 
 const tagMap = {
-  'Poop': Heart,
-  'Health': Heart,
-  'Heart': Heart,
-  'Earth': Earth,
-  'Environment': Earth,
-  'Stuff': Education,
-  'Education': Education,
-  'People': People,
-  'Gift': Gift,
-  'House': House,
+  Tech: Tech,
+  Health: Heart,
+  Environment: Earth,
+  Education: Education,
+  Community: People,
+  Charity: Gift,
+  House: House
 };
 
 export default function Tag({ tag, color }) {
@@ -20,10 +25,12 @@ export default function Tag({ tag, color }) {
 
   return (
     <div className={styles.tag}>
-      <Icon color={color}/>
+      <Icon color={color} />
       <div className={styles.name}>
-        <label>{tag}</label>
+        <label>
+          {tag}
+        </label>
       </div>
     </div>
-  )
+  );
 }

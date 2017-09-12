@@ -19,17 +19,17 @@ export default function ExperienceLink({
         [styles.hovering]: hovering,
         [styles.active]: active
       })}
-      onMouseOver={() => onMouseOver(experience)}
-      onMouseLeave={() => onMouseLeave(experience)}
     >
-      <Link
-        to={experience.route.path}
-        onClick={() => onClick(experience)}
-      >
-        <h1>
+      <section className={styles.link}>
+        <Link
+          to={experience.route.path}
+          onClick={() => onClick(experience)}
+          onMouseOver={() => onMouseOver(experience)}
+          onMouseLeave={() => onMouseLeave(experience)}
+        >
           {experience.name}
-        </h1>
-      </Link>
+        </Link>
+      </section>
       <section className={styles.tags}>
         {experience.tags.map(tag =>
           <Tag tag={tag} key={tag} color={hovering ? 'white' : 'green'} />

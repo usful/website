@@ -26,12 +26,11 @@ export default class About extends Showable {
           <h1>We are a team of conscious creatives.</h1>
           <p>
             The creation of a forward-thinking team of technologists, designers,
-            developers, engineers, and architects, Usful’s physical and digital
-            experiences are designed to inspire a shift in the way people think
-            about experiences and products. Through our suite of products with
-            purpose, we’re here to associate your brand with impactful user
-            experiences that get people listening, talking, reevaluating, and
-            acting.
+            developers, engineers, and architects, our lines of business are
+            designed to inspire a shift in consciousness, changing how we all
+            think about the world, and our future. From technology products to
+            physical and digital experiences, we’re here to get people
+            listening, talking, reevaluating, and acting.
           </p>
           <button className={styles.closeButton} onClick={() => this.close()}>
             <CloseIcon color="black" />
