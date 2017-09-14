@@ -12,6 +12,9 @@ import MainMenu from '../../Components/MainMenu';
 import Logo from '../../Components/Logo';
 import LoadableVideo from '../../Components/LoadableVideo';
 
+const CLIENTS = 'clients';
+const PARTNERS = 'partners';
+
 const LINEAR_GRADIENT =
   'linear-gradient(to bottom,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%)';
 
@@ -27,16 +30,7 @@ const partnerStyle = utils.isMobile
     }
   : null;
 
-const menu = [
-  {
-    href: '/experiences',
-    name: 'Experiences'
-  },
-  {
-    href: '/technology',
-    name: 'Technology'
-  }
-].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
+const menu = data.menu.map(item => ({ href: item.hash, name: item.name }));
 
 const section = data.sections.find(section => section.name === 'Technology');
 
@@ -87,7 +81,7 @@ export default class MarketPage extends Showable {
               play={true}
               muted
               loop
-              src="/vids/market-hero.mp4"
+              src="http://usful-portfolio.s3-website-us-east-1.amazonaws.com/vids/market-hero.mp4"
             />}
         <div className={styles.coverTop} />
         <div className={styles.coverRight} />
@@ -97,9 +91,11 @@ export default class MarketPage extends Showable {
         <div className={styles.container}>
           <div className={styles.main}>
             <section className={styles.top}>
-              <Link className={styles.logoLink} to="/">
-                <Logo className={styles.logo} />
-              </Link>
+              <div className={styles.spacer}>
+                <Link className={styles.logoLink} to="/">
+                  <Logo className={styles.logo} />
+                </Link>
+              </div>
               <MainMenu color={hovering ? 'black' : 'white'} items={menu} />
             </section>
 
@@ -109,17 +105,15 @@ export default class MarketPage extends Showable {
                 <h1 className={styles.right}>
                   Fresh. <br/>Local. <br/>Curated.
                 </h1>
-                <Link
-                  to="/market/partners"
+                <div
                   className={cx(styles.marketHero, {
                     [styles.visible]: hovering === 'partners' && !utils.isMobile
                   })}
                   style={{ backgroundImage: 'url(/img/market1.jpg)' }}
                 />
-                <Link
-                  to="/market/story"
+                <div
                   className={cx(styles.marketHero, {
-                    [styles.visible]: hovering === 'story' && !utils.isMobile
+                    [styles.visible]: hovering === CLIENTS && !utils.isMobile
                   })}
                   style={{ backgroundImage: 'url(/img/market2.jpg)' }}
                 />
@@ -127,31 +121,31 @@ export default class MarketPage extends Showable {
               <div className={styles.col}>
                 <div
                   className={styles.col}
-                  onMouseOver={e => this.onMouseOver('story')}
-                  onMouseLeave={e => this.onMouseLeave('story')}
+                  onMouseOver={e => this.onMouseOver(CLIENTS)}
+                  onMouseLeave={e => this.onMouseLeave(CLIENTS)}
                   style={storyStyle}
                 >
                   <label>01</label>
-                  <h1>Our Story</h1>
+                  <h1 className={styles.link}>Clients</h1>
                   <Link
-                    to="/market/story"
+                    to={`/market/${CLIENTS}`}
                     className={cx(styles.marketHero, {
-                      [styles.visible]: hovering === 'partners'
+                      [styles.visible]: hovering === PARTNERS
                     })}
                   />
                 </div>
                 <div
                   className={styles.col}
-                  onMouseOver={e => this.onMouseOver('partners')}
-                  onMouseLeave={e => this.onMouseLeave('partners')}
+                  onMouseOver={e => this.onMouseOver(PARTNERS)}
+                  onMouseLeave={e => this.onMouseLeave(PARTNERS)}
                   style={partnerStyle}
                 >
                   <label>02</label>
-                  <h1>Partners</h1>
+                  <h1 className={styles.link}>Partners</h1>
                   <Link
-                    to="/market/partners"
+                    to={`/market/${PARTNERS}`}
                     className={cx(styles.marketHero, {
-                      [styles.visible]: hovering === 'story'
+                      [styles.visible]: hovering === CLIENTS
                     })}
                   />
                 </div>

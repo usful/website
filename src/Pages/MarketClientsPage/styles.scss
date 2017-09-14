@@ -41,21 +41,6 @@
 
     .top {
       @include slideUpHidden;
-      padding: 3rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .logoLink {
-        flex: 1;
-        text-decoration: none;
-
-        .logo {
-          color: $white;
-          font-size: 3rem;
-          letter-spacing: 1px;
-        }
-      }
     }
   }
 
@@ -85,7 +70,7 @@
       font-size: 2rem;
       line-height: 1.4em;
       padding: 2rem 0;
-      max-width: 20em;
+      max-width: 30em;
       margin: 0 auto;
     }
 
@@ -287,9 +272,7 @@
   .marketStoryPage {
     .intro {
       .top {
-        .logoLink {
-          text-align: center;
-        }
+        text-align: center;
       }
     }
   }

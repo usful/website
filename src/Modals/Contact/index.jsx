@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.scss';
-import utils from '../../utils';
 
 import Showable from '../../Components/Showable';
 import CloseIcon from '../../Components/Icons/Close';
@@ -88,17 +87,25 @@ export default class Contact extends Showable {
       loading: true
     });
 
-    //Send
-    // TODO: send not hooked up yet.
-    await utils.pause(1000);
+    try {
+      await fetch('/api/contact-us', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state)
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
-    this.clear();
+    //this.clear();
 
     this.setState({
       loading: false
     });
 
-    this.close();
+    //this.close();
   }
 
   render() {

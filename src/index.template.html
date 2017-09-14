@@ -1,30 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Usful Website</title>
-  <meta name="description" content="Usful">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Usful ❤ 2017</title>
+    <meta name="description" content="Usful - Shifting consciousness is the beginning of change.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <link rel="shortcut icon" href="/public/logo-color.png" type="image/png">
-  <link rel="stylesheet" type="text/css" href="/reset.css">
-  <link rel="stylesheet" type="text/css" href="/main.css">
-  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KpWQ7HaLV8nyw8OaoLUr0K8kUAMepl4"></script>
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i.GoogleAnalyticsObject = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments);
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
-    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'));
-  </script>
-</head>
-<body>
-  <div id="root"></div>
-  <%=htmlWebpackPlugin.files.webpackManifest%>
-  <script src="/<%= htmlWebpackPlugin.files.chunks.vendors.entry %>" type="text/javascript"></script>
-  <script src="/<%= htmlWebpackPlugin.files.chunks.main.entry %>" type="text/javascript"></script>
+    <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KpWQ7HaLV8nyw8OaoLUr0K8kUAMepl4"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57226902-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="bootstrap">
+        <h1>Usful</h1>
+        <h2>Shifting consciousness is the beginning of change.</h2>
+        <h3>We are a team of conscious creatives.</h3>
+        <p>
+          The creation of a forward-thinking team of technologists, designers, developers, engineers, and architects, our
+          lines of business are designed to inspire a shift in consciousness, changing how we all think about the world,
+          and our future. From technology products to physical and digital experiences, we’re here to get people listening,
+          talking, reevaluating, and acting.
+        </p>
+
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/technology">Technology</a></li>
+          <li><a href="/experiences">Experiences</a></li>
+          <li><a href="/market">Market</a></li>
+        </ul>
+
+        <h5>Contact Us</h5>
+        <p>
+          <a href="mailto:hello@usful.co">hello@usful.co</a>
+        </p>
+      </div>
+    </div>
+    <%=htmlWebpackPlugin.files.webpackManifest%>
+    <script src="/assets/js/<%= htmlWebpackPlugin.files.chunks.vendors.entry %>" type="text/javascript"></script>
+    <script src="/assets/js/<%= htmlWebpackPlugin.files.chunks.main.entry %>" type="text/javascript"></script>
+  </body>
 </html>

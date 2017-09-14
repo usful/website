@@ -1,6 +1,7 @@
 @import '../../variables.scss';
 
 .logo {
+  display: inline-block;
   font-family: $fontSans;
   font-weight: 600;
   text-transform: uppercase;

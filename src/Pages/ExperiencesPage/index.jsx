@@ -1,14 +1,12 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import utils from '../../utils';
 import data from '../../data';
 
 import Showable from '../../Components/Showable';
-import Logo from '../../Components/Logo';
-import MainMenu from '../../Components/MainMenu';
+import TopBar from '../../Components/TopBar';
 import Project from '../../Components/Project';
 import Footer from '../../Components/Footer';
 import ProjectHero from '../../Components/ProjectHero';
@@ -32,7 +30,7 @@ const section = data.sections.find(section => section.name === 'Experiences');
 export default class ExperiencesPage extends Showable {
   static enter = [
     250, //show1 -> 2,
-    1500, //show3 -> 4
+    1000, //show3 -> 4
     0 //show3 -> 4
   ];
 
@@ -95,23 +93,17 @@ export default class ExperiencesPage extends Showable {
                   />
                 )}
 
-                <section className={cx(styles.top, hideElement)}>
-                  <Link className={styles.logoLink} to="/">
-                    <Logo className={styles.logo} />
-                  </Link>
-                  <MainMenu items={menu} />
-                </section>
+                <TopBar className={cx(styles.top, hideElement)} menu={menu} />
 
                 <section className={cx(styles.intro, hideElement)}>
-                  <h1>We create experiences with purpose.</h1>
+                  <h1>Creating experiences with purpose.</h1>
                   <hr />
                   <p>
-                    We are conceivers, creators, and builders behind experiences
-                    with purpose. We shake up the stale concept of traditional
-                    outreach with unique, interactive, physical and digital
-                    installations designed to inspire both conversations, and
-                    shifts in thinking; offering your brand a deep, meaningful
-                    association that your audience won’t forget.
+                    We shake up the stale concept of traditional outreach with
+                    unique, interactive, physical and digital installations
+                    designed to inspire both conversations, and shifts in
+                    thinking; offering your brand a deep, meaningful association
+                    that your audience won’t forget.
                   </p>
                 </section>
 

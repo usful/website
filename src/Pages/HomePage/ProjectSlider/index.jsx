@@ -6,7 +6,7 @@ import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
 import utils from '../../../utils';
 
-const INTERVAL = 2000;
+const INTERVAL = 6000;
 
 const getProjects = sections =>
   sections
@@ -108,7 +108,7 @@ export default class ProjectSlider extends Component {
         {this.props.children}
         <section className={styles.info}>
           <h1>
-            <Link to={`/${project.route.path}`}>{project.name}</Link>
+            <span>{project.name}</span>
             in
             <Link to={`/${project.type}`}>{project.type}</Link>
           </h1>

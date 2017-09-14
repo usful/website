@@ -10,7 +10,7 @@
     box-shadow: $dropShadow;
     transform: translate3d(40vw,0,0);
 
-    transition: background-color $transition, transform $transitionMedium;
+    transition: background-color 300ms ease-out, transform 300ms ease-out;
 
   }
 

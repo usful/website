@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.topBar {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .spacer {
+    flex: 1;
+
+    .logoLink {
+      text-decoration: none;
+
+      .logo {
+        font-size: 3rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

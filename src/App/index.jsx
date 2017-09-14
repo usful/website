@@ -10,7 +10,7 @@ import {
   LoadingPage,
   MarketPage,
   MarketPartnersPage,
-  MarketStoryPage
+  MarketClientsPage
 } from '../Pages';
 
 import { About, Contact } from '../Modals';
@@ -20,7 +20,7 @@ const experiences = NavigationHelper.getSection('Experiences');
 const technology = NavigationHelper.getSection('Technology');
 const market = NavigationHelper.getSection('Market');
 const marketPartners = NavigationHelper.getSection('Market Partners');
-const marketStory = NavigationHelper.getSection('Market Story');
+const marketClients = NavigationHelper.getSection('Market Clients');
 
 const about = NavigationHelper.getMenu('About');
 const contact = NavigationHelper.getMenu('Contact');
@@ -64,9 +64,9 @@ export default class App extends Component {
           ref={setComponent(marketPartners)}
           route={marketPartners.route}
         />
-        <MarketStoryPage
-          ref={setComponent(marketStory)}
-          route={marketStory.route}
+        <MarketClientsPage
+          ref={setComponent(marketClients)}
+          route={marketClients.route}
         />
         <About ref={setComponent(about)} />
         <Contact ref={setComponent(contact)} />

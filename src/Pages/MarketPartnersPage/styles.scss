@@ -41,21 +41,6 @@
 
     .top {
       @include slideUpHidden;
-      padding: 3rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .logoLink {
-        flex: 1;
-        text-decoration: none;
-
-        .logo {
-          color: $white;
-          font-size: 3rem;
-          letter-spacing: 1px;
-        }
-      }
     }
   }
 
@@ -75,7 +60,7 @@
       font-size: 2rem;
       line-height: 1.4em;
       padding: 2rem 0;
-      max-width: 20em;
+      max-width: 30em;
       margin: 0 auto;
     }
 
@@ -260,7 +245,7 @@
         font-size: 1.5rem;
         line-height: 1.4em;
         padding: 2em 0;
-        max-width: 25em;
+        max-width: 35em;
         margin: 0 auto;
       }
     }
@@ -433,9 +418,7 @@
   .marketPartnersPage {
     .intro {
       .top {
-        .logoLink {
-          text-align: center;
-        }
+        text-align: center;
       }
     }
   }

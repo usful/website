@@ -25,20 +25,6 @@
 
   section.top {
     @include slideUpHidden;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .logoLink {
-      flex: 1;
-      text-decoration: none;
-
-      .logo {
-        color: $white;
-        font-size: 3rem;
-      }
-    }
   }
 
   section.intro {
@@ -138,7 +124,7 @@
   .experiencesPage {
     .container {
       width: 100vw;
-      padding: 2rem;
+      padding: 0 2rem 2rem 2rem;
     }
 
     section.top {
@@ -188,7 +174,7 @@
 @media (min-width: 1025px) {
   .experiencesPage {
     .container {
-      padding: 3rem;
+      padding: 0 3rem 3rem 3rem;
 
       section.experiences {
         padding: 12rem 10vw 4rem 15vw;

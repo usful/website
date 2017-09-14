@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   sections: [
     {
       _component: null,
@@ -23,7 +23,7 @@ export default {
       inMenu: true,
       id: 'a3',
       name: 'Technology',
-      hero: '/img/lane.jpg',
+      hero: 'https://s3.amazonaws.com/usful-portfolio/img/lane.jpg',
       projects: [
         {
           _component: null,
@@ -36,26 +36,26 @@ export default {
           type: 'technology',
           name: 'Lane',
           tags: [],
-          hero: '/img/technology/lane-hero.jpg',
-          heroVideo: '/vids/lane-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/technology/lane-hero.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/lane-hero.mp4',
           industry: 'Commercial Real Estate, SaaS',
           tagLine:
             'The first tenant engagement solution for commercial real estate.',
           description:
-            'Commercial Real Estate is one of the biggest asset classes in the world, but one that’s had little disruption. Noticing a growing need for active tenant engagement in the industry, and a clear void of technology solutions, we created Lane, the first fully featured tenant engagement solution for CRE. Lane brings modern SaaS & Mobile technology to an industry ready for disruption, becoming the central operating system for office buildings and connecting tenants with services and amenities.',
+            'Commercial Real Estate is one of the biggest asset classes in the world, but one that’s had little disruption. Noticing a growing need for active tenant engagement in the industry, and a clear void of technology solutions, we created [Lane](https://www.joinlane.com), the first fully featured tenant engagement solution for CRE. Lane brings modern SaaS & Mobile technology to an industry ready for disruption, becoming the central operating system for office buildings and connecting tenants with services and amenities.',
           impact:
-            'Since the nationwide launch in 2016, the Lane platform engages 60,000 tenants daily, and is used by companies with portfolios of over 200MM SqFt. Thanks to training and support from the Lane team, property management companies now have an efficient and modern way to communicate with their tenants, increase engagement, and reduce tenant turnover.',
+            'Since the nationwide launch in 2016, the [Lane](https://www.joinlane.com) platform engages 60,000 tenants daily, and is used by companies with portfolios of over 200MM SqFt. Thanks to training and support from the [Lane](https://www.joinlane.com) team, property management companies now have an efficient and modern way to communicate with their tenants, increase engagement, and reduce tenant turnover.',
           content: [
             {
               id: 'bc1',
               type: 'VideoBlock',
-              url: '/vids/lane-web.mp4',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/lane-web.mp4',
               padding: 10
             },
             {
               id: 'bc2',
               type: 'VideoBlock',
-              url: '/vids/lane-mobile.mp4',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/lane-mobile.mp4',
               padding: 33
             }
           ] //Blocks
@@ -71,20 +71,20 @@ export default {
           type: 'technology',
           name: 'VINI',
           tags: [],
-          hero: '/img/technology/vini-hero.jpg',
-          heroVideo: '/vids/vini-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/technology/vini-hero.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/vini-hero.mp4',
           industry: 'Ecommerce, Luxury Goods, SaaS',
           tagLine:
             'Buy wine easy. The best and hard to find wines delivered to your door.',
           description:
-            'With a mission to eliminate the red tape when it comes to bringing the best and most difficult-to-find wine to your doorstep, Usful helped create VINI.  With a goal of disrupting the traditional wine industry, the Usful team was responsible for everything from the market research, to product design, to product development.  The result was a full featured SaaS e-commerce platform for merchants to offer hard to find wines, and a web and mobile app for wine aficionados to get them delivered.',
+            'With a mission to eliminate the red tape when it comes to bringing the best and most difficult-to-find wine to your doorstep, Usful helped create [VINI](http://www.vini.co).  With a goal of disrupting the traditional wine industry, the Usful team was responsible for everything from the market research, to product design, to product development.  The result was a full featured SaaS e-commerce platform for merchants to offer hard to find wines, and a web and mobile app for wine aficionados to get them delivered.',
           impact:
-            'VINI was able to successfully raise $500,000 in seed funding based on the product Usful created with them.',
+            '[VINI](http://www.vini.co) was able to successfully raise $500,000 in seed funding based on the product Usful created with them.',
           content: [
             {
               id: 'bv1',
               type: 'VideoBlock',
-              url: '/vids/vini-mobile.mp4',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/vini-mobile.mp4',
               padding: 33
             }
           ] //Blocks
@@ -100,7 +100,7 @@ export default {
           type: 'technology',
           name: 'Change for a Dollar',
           tags: [],
-          hero: '/img/technology/change-for-a-dollar-hero.jpg',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/technology/change-for-a-dollar-hero.jpg',
           industry: 'Charity, Fundraising',
           tagLine: 'Automated Cashless Giving',
           description:
@@ -117,7 +117,7 @@ export default {
       id: 'a1',
       inMenu: true,
       name: 'Experiences',
-      hero: '/img/sergio-alejandro-ortiz-110188.jpg',
+      hero: 'https://s3.amazonaws.com/usful-portfolio/img/sergio-alejandro-ortiz-110188.jpg',
       route: {
         path: '/experiences',
         strict: false
@@ -134,8 +134,8 @@ export default {
           type: 'experiences',
           name: '6IX Cycle',
           tags: ['Health', 'Education'],
-          hero: '/img/experiences/6ix-cycle-2.jpg',
-          heroVideo: '/img/experiences/6ix-cycle-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-2.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-hero.mp4',
           client: 'Multiple',
           description:
             'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto into a high-energy outdoor spin studio. Held in collaboration with a corporate health and wellness program, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.',
@@ -151,7 +151,7 @@ export default {
             {
               id: 'b2',
               type: 'ImageBlock',
-              url: '/img/experiences/6ix-cycle-1.jpg',
+              url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-1.jpg',
               align: 'full'
             },
             {
@@ -163,7 +163,7 @@ export default {
             {
               id: 'b4',
               type: 'ImageBlock',
-              url: '/img/experiences/6ix-cycle-3.jpg',
+              url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-3.jpg',
               align: 'full'
             }
           ] //Blocks
@@ -179,8 +179,8 @@ export default {
           type: 'experiences',
           name: 'Earth Week',
           tags: ['Environment', 'Education'],
-          hero: '/img/experiences/earth-week-3.jpg',
-          heroVideo: '/vids/earthweek-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-3.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/earthweek-hero.mp4',
           client: 'Brookfield Office Properties',
           description:
             'We partnered with local urban farming startups to bring affordable and viable new tech solutions to Toronto’s downtown core with an unexpected installation that became a powerful awareness campaign. Over a month period, the attention-grabbing installation tapped into the minds of tens of thousands of Toronto young professionals, getting the wheels turning on the benefits of growing their own food. Designed to introduce the concept of urban farming in a palatable and hands-on manner, the installation showcased the simplicity of urban farming by highlighting growing technology like Bright Agrotech’s ZipGrow Towers, Urban Cultivator Microgreen Growing Units, and Landscape Culture’s “Language of Plants.”.',
@@ -196,7 +196,7 @@ export default {
             {
               id: 'b2',
               type: 'ImageBlock',
-              url: '/img/experiences/earth-week-1.jpg',
+              url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
               align: 'full'
             },
             {
@@ -208,7 +208,7 @@ export default {
             {
               id: 'b3',
               type: 'ImageBlock',
-              url: '/img/experiences/earth-week-2.jpg',
+              url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-2.jpg',
               align: 'full'
             },
             {
@@ -220,7 +220,7 @@ export default {
             {
               id: 'b4',
               type: 'ImageBlock',
-              url: '/img/experiences/earth-week-3.jpg',
+              url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-3.jpg',
               align: 'full'
             }
           ] //Blocks
@@ -253,7 +253,7 @@ export default {
             {
               id: 'bc2',
               type: 'VideoBlock',
-              url: '/vids/anthropocene-hero.mp4',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/anthropocene-hero.mp4',
               padding: 10
             },
             {
@@ -276,12 +276,12 @@ export default {
           type: 'experiences',
           name: 'Interactive Art',
           tags: ['Education', 'Community'],
-          hero: '/img/experiences/interactive-galleries-ed-4.jpg',
-          heroVideo: '/vids/art-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-4.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/art-hero.mp4',
           client:
-            'Edward Burtynsky, Joshua Jensen Nagle, Benjamin Von Wong, George Steinmetz',
+            'Edward Burtynsky, Joshua Jensen Nagle, George Steinmetz, Benjamin Von Wong',
           description:
-            'Held in typically unused, unique yet convenient spaces, our art projects are attention grabbing. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience. From our global network of respected artists, we can transform a blank canvas of a space into an experience that instigates a powerful dialogue. Leave it to us to curate installations – whether clean and simple or infused with technology – that match your objectives, and to craft an experience that will become associated with your brand.',
+            'Held in typically unused, unique yet convenient spaces, our art projects are attention grabbing. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience.',
           impact:
             'Our installations have connected with over 10,000 young urban professionals daily, resulting in increased foot-traffic, earned media and press, and help fulfill cultural and sustainability initiatives.',
           content: [
@@ -299,27 +299,27 @@ export default {
                 {
                   id: 'interactive-galleries-1-1',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-1.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-1.jpg'
                 },
                 {
                   id: 'interactive-galleries-1-2',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-2.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-2.jpg'
                 },
                 {
                   id: 'interactive-galleries-1-3',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-3.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-3.jpg'
                 },
                 {
                   id: 'interactive-galleries-1-4',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-4.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-4.jpg'
                 },
                 {
                   id: 'interactive-galleries-1-6',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-ed-6.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-6.jpg'
                 }
               ]
             },
@@ -343,17 +343,17 @@ export default {
                 {
                   id: 'interactive-galleries-4-1',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-joshua-1.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-1.jpg'
                 },
                 {
                   id: 'interactive-galleries-4-2',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-joshua-2.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-2.jpg'
                 },
                 {
                   id: 'interactive-galleries-4-3',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-joshua-3.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-3.jpg'
                 }
               ]
             },
@@ -376,17 +376,17 @@ export default {
                 {
                   id: 'interactive-galleries-8-1',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-vonwong-1.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-1.jpg'
                 },
                 {
                   id: 'interactive-galleries-8-2',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-vonwong-2.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-2.jpg'
                 },
                 {
                   id: 'interactive-galleries-8-3',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-vonwong-3.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-3.jpg'
                 }
               ]
             },
@@ -410,22 +410,22 @@ export default {
                 {
                   id: 'interactive-galleries-11-1',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-steinmetz-1.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-1.jpg'
                 },
                 {
                   id: 'interactive-galleries-11-2',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-steinmetz-2.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-2.jpg'
                 },
                 {
                   id: 'interactive-galleries-11-3',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-steinmetz-3.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-3.jpg'
                 },
                 {
                   id: 'interactive-galleries-11-4',
                   type: 'ImageBlock',
-                  url: '/img/experiences/interactive-galleries-steinmetz-4.jpg'
+                  url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-4.jpg'
                 }
               ]
             },
@@ -454,8 +454,8 @@ export default {
           type: 'experiences',
           name: 'Osheaga Oasis',
           tags: ['Community', 'Tech'],
-          hero: '/img/experiences/osheaga-oasis-3.jpg',
-          heroVideo: '/vids/topshop-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/osheaga-oasis-3.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/topshop-hero.mp4',
           client: 'TopShop',
           description:
             'We were there to make sure [Osheaga](https://www.osheaga.com/en) goers were well aware that the UK’s beloved TopShop was coming to Canada with a “TopShop Urban Oasis” tech installation at the popular Montreal music festival. Offering a place of calm from the festivities, here, guests could rehydrate with water and document their festival experience with branded cameras.  TopShop fans could also deepen their connection with the brand by joining in an interactive experience.',
@@ -474,8 +474,8 @@ export default {
           type: 'experiences',
           name: 'Terroni',
           tags: ['Tech', 'Community'],
-          hero: '/img/experiences/terroni-hero.jpg',
-          heroVideo: '/vids/terroni-hero.mp4',
+          hero: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/terroni-hero.jpg',
+          heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/terroni-hero.mp4',
           client: 'Terroni Restaurants',
           description:
             'We redesigned and developed a new web experience for longtime favourite Toronto and Los Angeles Italian restaurant, [Terroni](http://www.terroni.com/). With a mission to offer a clean, easy, and family-friendly experience, our team devised the digital strategy, and built the entire online presence for Terroni’s family of restaurants. We took the original design and aesthetic of the brand and translated it to a visually pleasing online and digital experience filled with crisp, colourful, and delicious-looking photos.  The digital experience improves the customer journey while telling the story of the beloved brand while combining all business facets into one seamless experience.',
@@ -496,7 +496,7 @@ export default {
       id: 'a2',
       inMenu: true,
       name: 'Market',
-      hero: '/img/brenda-godinez-228181.jpg'
+      hero: 'https://s3.amazonaws.com/usful-portfolio/img/brenda-godinez-228181.jpg'
     },
     {
       _component: null,
@@ -515,26 +515,26 @@ export default {
             {
               id: 'bc1',
               type: 'VideoBlock',
-              text: 'Join the collective of conscious human focused brands.',
-              url: '/vids/market-stall.mp4'
+              text: 'Turn-key vending with access to the best customers.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-stall.mp4'
             },
             {
               id: 'bc8',
               type: 'VideoBlock',
-              text: 'More text that is good.',
-              url: '/vids/market-sammiches.mp4'
+              text: 'Join our collective of the best vendors.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-sammiches.mp4'
             },
             {
               id: 'bc9',
               type: 'VideoBlock',
-              text: 'Something something something else. Markets.',
-              url: '/vids/market-people.mp4'
+              text: 'Different locations, seasons and themes to participate in.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-people.mp4'
             },
             {
               id: 'bc10',
               type: 'VideoBlock',
-              text: 'Join our market today, contact us below.',
-              url: '/vids/market-tomato.mp4'
+              text: 'Join our market, contact us today!',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-tomato.mp4'
             }
           ]
         }
@@ -547,7 +547,7 @@ export default {
       _component: null,
       _active: false,
       route: {
-        path: '/market/story',
+        path: '/market/clients',
         exact: true
       },
       projects: [],
@@ -560,46 +560,34 @@ export default {
             {
               id: 'bc1',
               type: 'VideoBlock',
-              text: 'Join the collective of conscious human focused brands.',
-              url: '/vids/market-pasta.mp4'
-            },
-            {
-              id: 'bc2',
-              type: 'VideoBlock',
-              text: 'More text that is good.',
-              url: '/vids/market-sign.mp4'
+              text: 'A unique, immersive, food-filled turnkey experience.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-pasta.mp4'
             },
             {
               id: 'bc3',
               type: 'VideoBlock',
-              text: 'Something something something else. Markets.',
-              url: '/vids/market-casey.mp4'
+              text: 'Highly configurable and customizable for  any location or event.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-people.mp4'
+            },
+            {
+              id: 'bc2',
+              type: 'VideoBlock',
+              text: 'The best vendors and products the city has to offer.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-sign.mp4'
             },
             {
               id: 'bc4',
               type: 'VideoBlock',
-              text: 'Join our market today, contact us below.',
-              url: '/vids/market-bees.mp4'
+              text: 'We bring everything you need to host a market in any space.',
+              url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-bees.mp4'
             }
           ]
         }
       ],
       id: 'ms1',
       inMenu: false,
-      name: 'Market Story'
+      name: 'Market Clients'
     },
-    {
-      _component: null,
-      _active: false,
-      route: {
-        path: '/market/story',
-        exact: true
-      },
-      projects: [],
-      id: 'a2',
-      inMenu: false,
-      name: 'Market Story'
-    }
   ],
   menu: [
     {

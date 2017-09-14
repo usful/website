@@ -33,21 +33,6 @@
 
       .top {
         @include slideUpHidden;
-        padding: 3rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .logoLink {
-          flex: 1;
-          text-decoration: none;
-
-          .logo {
-            color: $black;
-            font-size: 3rem;
-            letter-spacing: 1px;
-          }
-        }
       }
 
       .copy {
@@ -93,8 +78,9 @@
     }
 
     h1 {
+      line-height: 1.4em;
       font-size: 3.75rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     p {
@@ -137,7 +123,8 @@
   &.show3 {
     .intro {
       .inner {
-        .leftHand, .rightHand {
+        .leftHand,
+        .rightHand {
           @include slideUpShow;
         }
       }
@@ -189,7 +176,6 @@
     }
 
     .blurb {
-
       hr {
         width: 33vw;
       }
@@ -216,9 +202,7 @@
 @media (max-width: 640px) {
   .technologyPage {
     section.top {
-      .logoLink {
-        text-align: center;
-      }
+      text-align: center;
     }
 
     .intro {
@@ -244,7 +228,6 @@
     }
 
     .blurb {
-
       hr {
         width: 33vw;
       }

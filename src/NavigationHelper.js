@@ -3,6 +3,18 @@ import data from './data';
 import { EventEmitter } from 'fbemitter';
 import utils from './utils';
 
+const TRACKING_ID = 'UA-57226902-1';
+
+let analytics;
+try {
+  analytics = gtag;
+} catch (e) {
+  analytics = () => {};
+}
+
+analytics('js', new Date());
+analytics('config', TRACKING_ID);
+
 const emitter = new EventEmitter();
 
 export default class NavigationHelper {
@@ -18,28 +30,32 @@ export default class NavigationHelper {
   }
 
   static async hashChanged(next, last) {
-    let lastMenu, nextMenu;
+    const toggle = (location, action) => {
+      if (location && location.hash) {
+        const menu = this.data.menu.find(menu => menu.hash === location.hash);
 
-    if (last && last.hash) {
-      lastMenu = this.data.menu.find(menu => menu.hash === last.hash);
-
-      if (lastMenu) {
-        lastMenu._component.hide();
+        if (menu) {
+          menu._component[action]();
+        }
       }
-    }
+    };
 
-    if (next && next.hash) {
-      nextMenu = this.data.menu.find(menu => menu.hash === next.hash);
-
-      if (nextMenu) {
-        nextMenu._component.show();
-      }
-    }
+    toggle(last, 'hide');
+    toggle(next, 'show');
   }
 
   static async routeChanged(next) {
     let last, lastSection, lastProject;
     let nextSection, nextProject;
+
+    //Google analytics
+    analytics('event', 'page_view', {
+      'page_location': `https://usful.co/${next.pathname}`,
+      'page_path': next.pathname
+    });
+
+    console.log(next.pathname);
+    //analytics('event', 'page_view');
 
     last = this.history[this.history.length - 1];
     this.history.push({ ...next });
@@ -96,7 +112,7 @@ export default class NavigationHelper {
         await nextProject._component.setActive();
         await utils.pause(10);
       }
-      
+
       if (lastProject) {
         lastProject._leaving = true;
         emitter.emit('update');

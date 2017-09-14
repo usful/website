@@ -12,7 +12,24 @@ export default function Footer({ className }) {
         <li>
           &copy; {new Date().getFullYear()} Usful Co Inc.
         </li>
-        <li>Made with ❤ in Toronto, Canada</li>
+        <li>❤ from Toronto</li>
+        <li className={styles.social}>
+          <a
+            href="https://twitter.com/Usful_"
+            target="_blank"
+            className="ion-social-twitter"
+          />
+          <a
+            href="https://www.instagram.com/usful.co/"
+            target="_blank"
+            className="ion-social-instagram-outline"
+          />
+          <a
+            href="https://www.facebook.com/beusful/"
+            target="_blank"
+            className="ion-social-facebook"
+          />
+        </li>
       </ul>
     </section>
   );

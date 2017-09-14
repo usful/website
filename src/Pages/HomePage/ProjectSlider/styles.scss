@@ -16,8 +16,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 6rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
     opacity: 0;
     transition: opacity $transitionMedium;
 
@@ -29,7 +29,7 @@
       font-weight: 400;
       font-size: 1rem;
 
-      a {
+      a, span {
         color: #fff;
         font-weight: 700;
         text-transform: uppercase;

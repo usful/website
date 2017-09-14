@@ -76,14 +76,17 @@ $coverWidth: 3rem;
         height: 11vh;
         overflow: hidden;
 
-        .logoLink {
+        .spacer {
           flex: 1;
-          text-decoration: none;
 
-          .logo {
-            color: $white;
-            font-size: 3rem;
-            letter-spacing: 1px;
+          .logoLink {
+            text-decoration: none;
+
+            .logo {
+              color: $white;
+              font-size: 3rem;
+              letter-spacing: 1px;
+            }
           }
         }
       }
@@ -121,12 +124,14 @@ $coverWidth: 3rem;
 
           &.right {
             text-align: left;
-            padding-right: 4em;
+            font-size: 6rem;
+          }
+
+          &.link {
           }
         }
 
         .marketHero {
-          cursor: pointer;
           position: absolute;
           top: 0;
           left: 0;
@@ -140,6 +145,10 @@ $coverWidth: 3rem;
 
           &.visible {
             opacity: 1;
+          }
+
+          &a {
+            cursor: pointer;
           }
         }
       }

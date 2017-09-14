@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import utils from '../../utils';
@@ -10,8 +9,7 @@ import Showable from '../../Components/Showable';
 import LoadableImage from '../../Components/LoadableImage';
 import FooterTagLine from '../../Components/FooterTagLine';
 import Footer from '../../Components/Footer';
-import MainMenu from '../../Components/MainMenu';
-import Logo from '../../Components/Logo';
+import TopBar from '../../Components/TopBar';
 import Project from '../../Components/Project';
 import ProjectHero from '../../Components/ProjectHero';
 import Dots from './Dots';
@@ -48,12 +46,7 @@ export default class TechnologiesPage extends Showable {
                   ? null
                   : <Dots className={styles.dots} animate={false} />}
                 <div className={styles.inner}>
-                  <section className={styles.top}>
-                    <Link className={styles.logoLink} to="/">
-                      <Logo className={styles.logo} />
-                    </Link>
-                    <MainMenu color="black" items={menu} />
-                  </section>
+                  <TopBar className={styles.top} menu={menu} color="black" />
                   <div className={styles.copy}>
                     <h1>Technology products with purpose.</h1>
                   </div>
@@ -70,7 +63,9 @@ export default class TechnologiesPage extends Showable {
 
               <section className={styles.blurb}>
                 <hr />
-                <h1>End-to-end product design & development.</h1>
+                <h1>
+                  End-to-end product <br /> Design &amp; Development.
+                </h1>
                 <p>
                   We are an end-to-end design & development product team that
                   creates captivating technology products and introduces them to

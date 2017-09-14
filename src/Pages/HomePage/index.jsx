@@ -78,15 +78,18 @@ export default class HomePage extends Showable {
               <MainMenu className={styles.mainMenu} items={menu} />
               <section className={styles.social}>
                 <a
-                  href="http://www.twitter.com"
+                  href="https://twitter.com/Usful_"
+                  target="_blank"
                   className="ion-social-twitter"
                 />
                 <a
-                  href="http://www.instagram.com"
+                  href="https://www.instagram.com/usful.co/"
+                  target="_blank"
                   className="ion-social-instagram-outline"
                 />
                 <a
-                  href="http://www.facebook.com"
+                  href="https://www.facebook.com/beusful/"
+                  target="_blank"
                   className="ion-social-facebook"
                 />
               </section>

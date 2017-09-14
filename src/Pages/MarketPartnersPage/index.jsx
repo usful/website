@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import data from '../../data';
@@ -8,8 +7,7 @@ import data from '../../data';
 import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
 import FooterTagLine from '../../Components/FooterTagLine';
-import MainMenu from '../../Components/MainMenu';
-import Logo from '../../Components/Logo';
+import TopBar from '../../Components/TopBar';
 import CarouselBlock from '../../Components/Block/CarouselBlock';
 import Video from '../../Components/Video';
 
@@ -21,8 +19,8 @@ import {
 
 const menu = [
   {
-    href: '/market/story',
-    name: 'Story'
+    href: '/market/clients',
+    name: 'Clients'
   }
 ].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
 
@@ -61,20 +59,16 @@ export default class MarketPartnersPage extends Showable {
             pagerClass={styles.pager}
           />
 
-          <section className={styles.top}>
-            <Link className={styles.logoLink} to="/market">
-              <Logo className={styles.logo} />
-            </Link>
-            <MainMenu color="white" items={menu} />
-          </section>
+          <TopBar className={styles.top} path="/market" menu={menu} />
         </section>
         <section className={styles.main}>
           <h1>
-            Just bring your product and we'll take care of everything else.
+            Bring your best products,<br /> we take care of the rest.
           </h1>
           <p>
-            We'll support you by giving key resources to run your business at
-            the market.
+            We support our vendors by supplying the packaging to help you
+            connect your product to key consumers, the infrastructure to help
+            you get setup quickly, and the people to move your products.
           </p>
           <ul className={styles.icons}>
             <li>
@@ -94,23 +88,26 @@ export default class MarketPartnersPage extends Showable {
           <div className={styles.boxes}>
             <div className={styles.box1}>
               <label>People</label>
-              <h2>Knowledgeable people to handle your business.</h2>
+              <h2>
+                Our ambassadors make the experience.
+              </h2>
             </div>
             <div
               className={styles.box2}
               style={{ backgroundImage: 'url(/img/market1.jpg)' }}
             >
-              <Video muted loop play={true} src="/vids/market-stall2.mp4" />
+              <Video muted loop play={true} src="http://usful-portfolio.s3-website-us-east-1.amazonaws.com/vids/market-stall2.mp4" />
             </div>
             <div className={styles.box3}>
               <p>
-                At Usful, we believe that people are the heart of successful
-                businesses. That's why we provide you with knowledgeable and
-                passionate people to help you run your business.
+                Our team of friendly and knowledgeable ambassadors makes the
+                market experience a pleasant one for all guests and is on-site
+                to assist our vendors in the market like a pro.
               </p>
               <p>
-                Don't stress about having people are your booth. We'll take care
-                of that for you.
+                Passionate and well-versed in key brand messages, the market
+                ambassadors happily inform, educate, and assist in helping
+                connect your products to consumers.
               </p>
             </div>
           </div>
@@ -122,15 +119,18 @@ export default class MarketPartnersPage extends Showable {
                 backgroundImage: 'url(/img/market-partners-packaging.jpg)'
               }}
             >
-              <Video muted loop play={true} src="/vids/market-sammiches.mp4" />
+              <Video muted loop play={true} src="http://usful-portfolio.s3-website-us-east-1.amazonaws.com/vids/market-sammiches.mp4" />
             </div>
             <div className={styles.col}>
               <label>Packaging</label>
-              <h2>Beautiful packaging that makes your product stand out.</h2>
+              <h2>Beautiful packaging for your products.</h2>
               <p>
-                Our packaging was carefully designed and curated by world-class
-                designers. Whether are you are selling meat, vegetables, or even
-                liquids, we have beautiful packaging to suite your needs.
+                When it comes to a quality experience that draws repeat
+                customers, the value is in the details. We provide beautiful and
+                well-designed packaging to all partners that looks as good as
+                your products are. Whether you’re selling salads, meats, or
+                liquids, we have packaging that meets every need and ensures
+                your product will be taken away in style.
               </p>
             </div>
           </div>
@@ -143,14 +143,18 @@ export default class MarketPartnersPage extends Showable {
               <label>Infrastucture</label>
               <h2>Well crafted tents and accessories to house your goods.</h2>
               <p>
-                Something about how nice the tents are and dependable for selling
-                in market. Waterproof. Rainproof.
+                With a design that takes the simplicity of a traditional farm
+                and combines it with the aesthetic of a European market, all of
+                our market stalls are created by in-house architects and
+                designers. Designed to withstand Canada’s unpredictable weather,
+                the stalls are constructed simply for easy movement and
+                convenience during the setup and takedown.
               </p>
             </div>
           </div>
         </section>
 
-        <FooterTagLine text="Want to join the collective?" />
+        <FooterTagLine text="Want to vend at our markets?" />
         <Footer className={styles.footer} />
       </div>
     );
