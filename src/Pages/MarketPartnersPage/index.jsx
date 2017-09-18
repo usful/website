@@ -94,7 +94,7 @@ export default class MarketPartnersPage extends Showable {
             </div>
             <div
               className={styles.box2}
-              style={{ backgroundImage: 'url(/img/market1.jpg)' }}
+              style={{ backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market1.jpg)' }}
             >
               <Video muted loop play={true} src="http://usful-portfolio.s3-website-us-east-1.amazonaws.com/vids/market-stall2.mp4" />
             </div>
@@ -116,7 +116,7 @@ export default class MarketPartnersPage extends Showable {
             <div
               className={styles.imageHolder}
               style={{
-                backgroundImage: 'url(/img/market-partners-packaging.jpg)'
+                backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market-partners-packaging.jpg)'
               }}
             >
               <Video muted loop play={true} src="http://usful-portfolio.s3-website-us-east-1.amazonaws.com/vids/market-sammiches.mp4" />
@@ -137,7 +137,7 @@ export default class MarketPartnersPage extends Showable {
 
           <div
             className={styles.bottomHero}
-            style={{ backgroundImage: 'url(/img/market-partners-tents.jpg)' }}
+            style={{ backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market-partners-tents.jpg)' }}
           >
             <div className={styles.contents}>
               <label>Infrastucture</label>

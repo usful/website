@@ -54,9 +54,6 @@ export default class NavigationHelper {
       'page_path': next.pathname
     });
 
-    console.log(next.pathname);
-    //analytics('event', 'page_view');
-
     last = this.history[this.history.length - 1];
     this.history.push({ ...next });
 

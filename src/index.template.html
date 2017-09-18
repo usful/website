@@ -10,11 +10,11 @@
     <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KpWQ7HaLV8nyw8OaoLUr0K8kUAMepl4"></script>
+    <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <link href="//fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyC_KpWQ7HaLV8nyw8OaoLUr0K8kUAMepl4"></script>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57226902-1"></script>
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-57226902-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments)};
@@ -47,7 +47,7 @@
       </div>
     </div>
     <%=htmlWebpackPlugin.files.webpackManifest%>
-    <script src="/assets/js/<%= htmlWebpackPlugin.files.chunks.vendors.entry %>" type="text/javascript"></script>
-    <script src="/assets/js/<%= htmlWebpackPlugin.files.chunks.main.entry %>" type="text/javascript"></script>
+    <script src="/<%= htmlWebpackPlugin.files.chunks.vendors.entry %>" type="text/javascript"></script>
+    <script src="/<%= htmlWebpackPlugin.files.chunks.main.entry %>" type="text/javascript"></script>
   </body>
 </html>

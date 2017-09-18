@@ -19,13 +19,13 @@ const LINEAR_GRADIENT =
 
 const storyStyle = utils.isMobile
   ? {
-      backgroundImage: `${LINEAR_GRADIENT}, url(/img/market1.jpg)`
+      backgroundImage: `${LINEAR_GRADIENT}, url(https://s3.amazonaws.com/usful-portfolio/img/market1.jpg)`
     }
   : null;
 
 const partnerStyle = utils.isMobile
   ? {
-      backgroundImage: `${LINEAR_GRADIENT}, url(/img/market2.jpg)`
+      backgroundImage: `${LINEAR_GRADIENT}, url(https://s3.amazonaws.com/usful-portfolio/img/market2.jpg)`
     }
   : null;
 
@@ -101,13 +101,13 @@ export default class MarketPage extends Showable {
                   className={cx(styles.marketHero, {
                     [styles.visible]: hovering === 'partners' && !utils.isMobile
                   })}
-                  style={{ backgroundImage: 'url(/img/market1.jpg)' }}
+                  style={{ backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market1.jpg)' }}
                 />
                 <div
                   className={cx(styles.marketHero, {
                     [styles.visible]: hovering === CLIENTS && !utils.isMobile
                   })}
-                  style={{ backgroundImage: 'url(/img/market2.jpg)' }}
+                  style={{ backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market2.jpg)' }}
                 />
               </div>
               <div className={styles.col}>

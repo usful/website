@@ -52,11 +52,11 @@ export default class TechnologiesPage extends Showable {
                   </div>
                   <LoadableImage
                     className={styles.leftHand}
-                    src="/img/left-hand.png"
+                    src="https://s3.amazonaws.com/usful-portfolio/img/left-hand.png"
                   />
                   <LoadableImage
                     className={styles.rightHand}
-                    src="/img/right-hand.png"
+                    src="https://s3.amazonaws.com/usful-portfolio/img/right-hand.png"
                   />
                 </div>
               </section>

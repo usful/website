@@ -96,7 +96,6 @@ export default class Contact extends Showable {
         body: JSON.stringify(this.state)
       });
     } catch (e) {
-      console.log(e);
     }
 
     this.clear();

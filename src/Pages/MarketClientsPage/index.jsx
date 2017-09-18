@@ -74,7 +74,7 @@ export default class MarketClientsPageF extends Showable {
         </section>
         <section
           className={styles.main}
-          style={{ backgroundImage: 'url(/img/background-shapes.jpg)' }}
+          style={{ backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/background-shapes.jpg)' }}
         >
           <h1>The Markets are high impact with large turn-out and proven success.</h1>
           <p>
