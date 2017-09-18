@@ -99,13 +99,13 @@ export default class Contact extends Showable {
       console.log(e);
     }
 
-    //this.clear();
+    this.clear();
 
     this.setState({
       loading: false
     });
 
-    //this.close();
+    this.close();
   }
 
   render() {
