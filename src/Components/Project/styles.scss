@@ -1,0 +1,364 @@
+@import '../../variables';
+
+$navWidth: 6rem;
+$descriptionWidth: 40rem;
+
+.project {
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar($black);
+
+  position: fixed;
+  visibility: visible;
+  overflow-x: hidden;
+
+  .content {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity $showTransition;
+    padding-top: 100vh;
+
+    article {
+      position: relative;
+
+      .scrollDown {
+        font-size: 2.5rem;
+        margin-top: -15rem;
+        height: 15rem;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: opacity $showTransition;
+      }
+
+      padding: 2rem ($descriptionWidth + $navWidth) 2rem 0;
+      background-color: $offWhite;
+    }
+  }
+
+  .description {
+    position: fixed;
+    top: 0;
+    width: $descriptionWidth + $navWidth;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 2rem (3rem + $navWidth) 2rem 3rem;
+    background-color: $white;
+    transform: translateX($descriptionWidth + $navWidth);
+    transition: transform $showTransition;
+    color: $black;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+
+    .title {
+      @include slideUpHidden;
+      margin: 3rem 0 2rem 0;
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      section.tags {
+        padding: 0.5rem 0 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        :global(.icon) {
+          font-size: 125%;
+          margin: 0.25em;
+        }
+      }
+    }
+
+    .info {
+      @include slideUpHidden;
+      .infoBox {
+        border-top: 1px solid $darkGrey;
+        border-left: 1px solid $darkGrey;
+        border-right: 1px solid $darkGrey;
+        padding: 1rem;
+
+        &:last-of-type {
+          border-bottom: 1px solid $darkGrey;
+        }
+
+        label {
+          font-family: $fontMono;
+          color: $lightGrey;
+        }
+
+        p {
+          font-family: $fontSans;
+          padding: 0.5rem 0;
+          font-size: 1.2rem;
+          line-height: 1.4em;
+        }
+      }
+
+      h1 {
+        margin: 3rem 0 1rem 0;
+        font-family: $font;
+        font-size: 2rem;
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          flex: 1;
+        }
+
+        hr {
+          margin-right: 2rem;
+          width: 10rem;
+          height: 1px;
+          border: none;
+          background-color: $black;
+        }
+
+        a {
+          @include button;
+        }
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    width: $navWidth;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: $black;
+    transform: translateX($navWidth);
+    transition: transform $showTransition;
+    display: flex;
+    flex-direction: column;
+
+    .navClose {
+      display: block;
+      background: transparent;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.3rem;
+
+      &:active {
+        outline: none;
+      }
+    }
+
+    .next {
+      flex: 1;
+
+      .rotate {
+        transform-origin: 0 100%;
+        height: 6rem;
+        padding-top: 3rem;
+        text-align: center;
+        width: 60vh;
+        transform: rotate(90deg);
+        @include fontSmoothing;
+
+        label {
+          display: inline-block;
+          font-family: $fontMono;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          opacity: 0.6;
+          font-size: 1.2rem;
+          padding-right: 0.5rem;
+          color: $white;
+        }
+
+        a {
+          display: inline-block;
+          font-size: 1.2rem;
+          color: $white;
+          text-decoration: none;
+          padding: 0 0.5em 0.25em 0.5em;
+          @include hoverLine;
+        }
+      }
+    }
+
+    .count {
+      text-align: center;
+      padding: 2rem 0;
+    }
+  }
+
+
+  &.right {
+    .description {
+      right: 0;
+    }
+
+    .nav {
+      right: 0;
+    }
+  }
+
+  &.left {
+    .content {
+      article {
+        padding: 2rem 0 2rem ($descriptionWidth + $navWidth - 1rem);
+      }
+    }
+
+    .description {
+      left: 0;
+      padding: 2rem 3rem 2rem (3rem + $navWidth);
+      transform: translateX(-$descriptionWidth - $navWidth);
+    }
+
+    .nav {
+      left: 0;
+      width: $navWidth;
+      transform: translateX(-$navWidth);
+    }
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.show1 {
+    visibility: visible;
+
+    .content {
+      opacity: 1;
+    }
+
+    .description {
+      transform: translateX(0);
+    }
+
+    &.hasContent .description {
+      transform: translateX(-$scrollWidth);
+    }
+  }
+
+  &.show2 {
+    .description {
+      .title {
+        @include slideUpShow;
+      }
+
+      .info {
+        @include slideUpShow;
+      }
+    }
+  }
+
+  &.show3 {
+    .content {
+      article {
+        .scrollDown {
+          opacity: 1;
+        }
+      }
+    }
+
+    .nav {
+      transform: translateX(0);
+    }
+
+    &.hasContent .nav {
+      transform: translateX(-$scrollWidth);
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .project {
+    position: fixed;
+
+    .content {
+      width: 100vw;
+      min-height: 1vh;
+      padding-top: 0;
+
+      article {
+        position: relative;
+
+        .scrollDown {
+          display: none;
+        }
+
+        padding: 2rem ($navWidth + 2rem) 2rem 0;
+        background-color: $offWhite;
+      }
+    }
+
+    .description {
+      position: initial;
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      padding: 1rem (2rem + $navWidth) 1rem 2rem;
+      transform: translateX(100vw);
+    }
+
+    &.hasContent .description {
+      min-height: 1vh;
+      height: auto;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .project {
+    .description {
+
+      .title {
+        margin: 1rem 0;
+      }
+
+      .info {
+        .infoBox {
+          border: none;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid $darkGrey;
+
+          &:last-of-type {
+            border-bottom: 1px solid $darkGrey;
+          }
+
+          label {
+            font-size: 1.3rem;
+          }
+
+          p {
+            font-size: 1.3rem;
+          }
+        }
+
+        .contact {
+          div {
+            display: none;
+          }
+
+          hr {
+            display: none;
+          }
+
+          a {
+            @include button;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

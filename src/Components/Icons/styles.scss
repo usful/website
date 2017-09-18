@@ -1,0 +1,50 @@
+@import '../../variables';
+
+svg {
+  .dashArray {
+    stroke: white;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash $transitionSlick forwards;
+  }
+
+  .yellowFill {
+    fill: $yellow;
+  }
+
+  .greenFill {
+    fill: $green;
+  }
+
+  .whiteFill {
+    fill: $white;
+  }
+
+  .blackFill {
+    fill: $black;
+  }
+
+  .yellowStroke {
+    stroke: $yellow;
+  }
+
+  .greenStroke {
+    stroke: $green;
+  }
+
+  .whiteStroke {
+    stroke: $white;
+  }
+
+  .blackStroke {
+    stroke: $black;
+  }
+}
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

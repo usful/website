@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!lane-shared)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           plugins: ['transform-runtime'],

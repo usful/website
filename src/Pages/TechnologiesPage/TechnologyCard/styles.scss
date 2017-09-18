@@ -1,0 +1,91 @@
+@import '../../../variables';
+
+.technologyCard {
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    text-decoration: none;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+    color: $white;
+    padding: 0 15%;
+    opacity: 0;
+
+    transition: opacity $transitionSlick;
+
+    h1 {
+      font-family: $fontSans;
+      font-size: 4rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    p {
+      font-size: 2rem;
+      text-decoration: none;
+      line-height: 1.4em;
+    }
+  }
+
+  &:hover {
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .technologyCard {
+    height: 30rem;
+    width: 100vw;
+
+    video {
+      height: 30rem;
+      width: 100vw;
+    }
+
+    a {
+      height: 30rem;
+      opacity: 1;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
+  .technologyCard {
+    height: 40rem;
+    width: 33vw;
+
+    video {
+      height: 40rem;
+      width: 33vw;
+    }
+  }
+}

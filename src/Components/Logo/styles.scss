@@ -1,9 +1,9 @@
+@import '../../variables.scss';
+
 .logo {
-  font-family: 'Maison Neue', sans-serif;
+  display: inline-block;
+  font-family: $fontSans;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 7.5rem;
-  letter-spacing: -0.1rem;
-
-  margin-right: 0.25em;
+  text-decoration: none;
 }

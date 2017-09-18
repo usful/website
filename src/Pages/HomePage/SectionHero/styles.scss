@@ -1,0 +1,25 @@
+@import '../../../variables';
+
+.sectionHero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  color: white;
+  transform: translate3d(0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity $transition, transform 1000ms ease-in;
+
+  &.hovering, &.selected {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.selected {
+    //transform: scale3d(3,3,1);
+  }
+}

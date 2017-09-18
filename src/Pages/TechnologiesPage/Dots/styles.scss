@@ -1,0 +1,9 @@
+@import '../../../variables';
+
+.dots {
+  path {
+    transform: scale(1,1);
+    transform-origin: 50% 50%;
+    transition: transform 3000ms ease-in-out;
+  }
+}

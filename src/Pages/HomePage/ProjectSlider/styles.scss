@@ -1,0 +1,69 @@
+@import '../../../variables';
+
+.projectSlider {
+  position: relative;
+  background-color: $black;
+  overflow: hidden;
+
+  section.slides {
+    display: flex;
+    flex-direction: row;
+    transition: transform $transitionMedium;
+  }
+
+  section.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity $transitionMedium;
+
+    h1 {
+      color: #fff;
+      text-align: right;
+      padding: 1em;
+      font-family: $fontSans;
+      font-weight: 400;
+      font-size: 1rem;
+
+      a, span {
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0 0.5em;
+      }
+    }
+  }
+
+  &.showInfo {
+    section.info {
+      opacity: 1;
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .projectSlider {
+    width: 90vw;
+    height: 35rem;
+
+    section.slides {
+      height: 35rem;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .projectSlider {
+    width: 69rem;
+    height: 42rem;
+
+    section.slides {
+      height: 42rem;
+    }
+  }
+}

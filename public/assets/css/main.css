@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Maison Neue';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Demi.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/assets/fonts/MaisonNeue-Mono.ttf') format('truetype');
+}
+
+html,
+body {
+  font-size: 1.6vh;
+  font-family: Adamina, serif;
+  background-color: #1f1f1f;
+}
+
+@media (max-height: 700px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+
+#bootstrap {
+  color: white;
+  opacity: 0;
+}

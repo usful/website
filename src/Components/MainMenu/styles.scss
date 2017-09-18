@@ -1,0 +1,59 @@
+@import '../../variables';
+
+.mainMenu {
+  a {
+    @include fontSmoothing;
+
+    font-family: $fontMono;
+    font-size: 1.4rem;
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.25em 0.25em;
+    margin: 0.75em 1.25em;
+  }
+
+  &.white {
+    color: $white;
+
+    a {
+      @include hoverLine($white);
+    }
+  }
+
+  &.black {
+    color: $black;
+
+    a {
+      @include hoverLine($black);
+    }
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .mainMenu {
+    a {
+      font-size: 1.1rem;
+      padding: 0.25em 0.25em;
+      margin: 0.75em 1.25em;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .mainMenu {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mainMenu {
+    a {
+      font-size: 1.4rem;
+      padding: 0.25em 0.25em;
+      margin: 0.75em 1.25em;
+    }
+  }
+}

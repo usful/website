@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     // Entry to your app
-    main: ['whatwg-fetch', 'babel-polyfill', path.resolve('src', 'main.js')],
+    main: ['babel-polyfill', path.resolve('src', 'main.js')],
     // It is a good idea to separate your npm-packages from
     // the application bundle. By creating an entry specifying
     // the packages and using the CommonsChunkPlugin, Wepback will produce
@@ -19,7 +19,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'index_bundle.[chunkhash].js',
     chunkFilename: '[chunkhash].js',
   },
@@ -30,7 +30,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!lane-shared)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           plugins: ['transform-runtime'],

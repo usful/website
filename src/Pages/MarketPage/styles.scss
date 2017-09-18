@@ -1,0 +1,316 @@
+@import '../../variables';
+
+$coverWidth: 3rem;
+
+.marketPage {
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar(rgba(0,0,0,0.2));
+
+  background-color: $black;
+  color: $white;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity $showTransition;
+  overflow-x: hidden;
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .coverTop,
+  .coverRight,
+  .coverBottom,
+  .coverLeft {
+    position: absolute;
+    background-color: $black;
+    opacity: 0;
+    transition: opacity $showTransition, background-color $transitionSlick;
+  }
+
+  .coverTop {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 11vh;
+  }
+
+  .coverRight {
+    top: 0;
+    right: 0;
+    width: $coverWidth;
+    height: 100vh;
+  }
+
+  .coverBottom {
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 8vh;
+  }
+
+  .coverLeft {
+    top: 0;
+    left: 0;
+    width: $coverWidth;
+    height: 100vh;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .main {
+      .top {
+        @include slideUpHidden;
+        padding: 2rem 3rem 0 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 11vh;
+        overflow: hidden;
+
+        .spacer {
+          flex: 1;
+
+          .logoLink {
+            text-decoration: none;
+
+            .logo {
+              color: $white;
+              font-size: 3rem;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+
+      .box {
+        opacity: 0;
+        border: 1px solid $white;
+        margin: 0 $coverWidth 0 $coverWidth;
+        height: 81vh;
+        transition: opacity $showTransition;
+        display: flex;
+        flex-direction: row;
+
+        .col {
+          background-size: cover;
+          position: relative;
+          display: flex;
+          flex: 1;
+          border: 1px solid $white;
+          flex-direction: column;
+        }
+
+        label {
+          font-family: $fontMono;
+          font-size: 1.5rem;
+          flex: 1;
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 4rem;
+          padding: 3rem;
+          line-height: 1.4em;
+          text-align: right;
+
+          &.right {
+            text-align: left;
+            font-size: 6rem;
+          }
+
+          &.link {
+          }
+        }
+
+        .marketHero {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          background-size: cover;
+
+          transition: opacity $transitionSlick;
+
+          &.visible {
+            opacity: 1;
+          }
+
+          &a {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    color: $white;
+    padding: 2rem 0;
+  }
+
+  &.hovering {
+    .coverTop,
+    .coverRight,
+    .coverBottom,
+    .coverLeft {
+      background-color: $yellow;
+    }
+
+    .container {
+      .main {
+        .top {
+          .logoLink {
+            .logo {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      color: $black;
+    }
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show1 {
+  }
+
+  &.show2 {
+    .coverTop,
+    .coverRight,
+    .coverBottom,
+    .coverLeft {
+      opacity: 1;
+    }
+
+    .container {
+      .main {
+        .box {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.show3 {
+    .container {
+      .main {
+        .top {
+          @include slideUpShow;
+        }
+      }
+    }
+  }
+
+  &.hide3.hiding {
+    opacity: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .marketPage {
+    .video {
+      display: none;
+    }
+
+    .coverTop,
+    .coverRight,
+    .coverBottom,
+    .coverLeft {
+      display: none;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .main {
+        .top {
+          padding: 2rem 3rem;
+        }
+
+        .box {
+          height: auto;
+          flex-direction: column;
+          border: none;
+
+          margin: 0 $coverWidth 0 $coverWidth;
+
+          .col {
+            margin: 1rem 0;
+            border: none;
+
+            .col {
+              border: 1px solid $white;
+            }
+          }
+
+          h1 {
+            font-size: 4rem;
+            padding: 10rem 2rem 12rem 2rem;
+            text-align: center;
+          }
+
+          .intro {
+            border: none;
+
+            h1,
+            h1.right {
+              font-size: 2rem;
+              padding: 1rem 2rem 2rem 2rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      position: initial;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+  .marketPage {
+    .main {
+      .top {
+        .logoLink {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

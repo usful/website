@@ -1,0 +1,148 @@
+$font: Adamina, serif;
+$fontSans: 'Maison Neue', sans-serif;
+$fontMono: 'Maison Neue Mono', monospace;
+
+$black: #1f1f1f;
+$white: #fff;
+$offWhite: #F8F8F8;
+$green: #4c7648;
+$yellow: #f6d600;
+$darkYellow: #D2BA2E;
+$darkGrey: #444;
+$lightGrey: #acacac;
+$mediumGrey: #DEDEDE;
+$scrollWidth: 10px;
+
+$transitionTime: 500ms;
+$transitionTimeMedium: 750ms;
+$transitionTimeLong: 1250ms;
+$transition: $transitionTime ease-in-out;
+$transitionMedium: $transitionTimeMedium ease-in-out;
+$transitionLong: $transitionTimeLong ease-in-out;
+$transitionSlick: 300ms cubic-bezier(.77, 0, .175, 1);
+$showTransitionTime: 600ms;
+$showTransition: $showTransitionTime ease-in-out; //500ms
+
+@mixin hoverLine($color: $white) {
+  position: relative;
+
+  &::after {
+    content: ' ';
+    will-change: width;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    background: $color;
+    transition: transform $transitionSlick,
+      width $transitionSlick;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+  }
+
+  &:hover::after {
+    transform-origin: 0 50%;
+    transform: scaleX(1);
+  }
+}
+
+@mixin slideUpShow {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin slideUpHidden {
+  will-change: opacity, transform;
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity $showTransition, transform $showTransition,
+    width $showTransition;
+}
+
+$bez1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$bez2: cubic-bezier(.77, 0, .175, 1);
+@mixin reverseZoomHidden {
+  transform: scale(3, 3);
+  opacity: 0;
+  transition: opacity $showTransitionTime $bez2,
+  transform $showTransitionTime $bez2;
+}
+
+@mixin reverseZoomShow {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+$dropShadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.25);
+
+@mixin dropShadow {
+  box-shadow: $dropShadow;
+}
+
+@mixin fontSmoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin smoothYScroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin fullScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+@mixin scrollBar($background: transparent) {
+
+  &::-webkit-scrollbar-track
+  {
+    box-shadow: $dropShadow;
+    background-color: rgba(255,255,255,0.2);
+    z-index: 99999;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: $scrollWidth;
+    background-color: $background;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: $white;
+    border: 1px solid $white;
+  }
+
+}
+
+@mixin button {
+  cursor: pointer;
+  font-family: $fontSans;
+  border: 1px solid $darkYellow;
+  border-radius: 0.4em;
+  background-color: $yellow;
+  padding: 1em 2em 0.7em 2em;
+  margin: 1rem 0 0 auto;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  transition: opacity $transitionSlick;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
