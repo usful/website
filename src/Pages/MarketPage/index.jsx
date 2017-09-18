@@ -8,8 +8,7 @@ import data from '../../data';
 
 import Showable from '../../Components/Showable';
 import Footer from '../../Components/Footer';
-import MainMenu from '../../Components/MainMenu';
-import Logo from '../../Components/Logo';
+import TopBar from '../../Components/TopBar';
 import LoadableVideo from '../../Components/LoadableVideo';
 
 const CLIENTS = 'clients';
@@ -90,14 +89,7 @@ export default class MarketPage extends Showable {
 
         <div className={styles.container}>
           <div className={styles.main}>
-            <section className={styles.top}>
-              <div className={styles.spacer}>
-                <Link className={styles.logoLink} to="/">
-                  <Logo className={styles.logo} />
-                </Link>
-              </div>
-              <MainMenu color={hovering ? 'black' : 'white'} items={menu} />
-            </section>
+            <TopBar className={styles.top} path="/" menu={menu} color={hovering ? 'black' : 'white'} />
 
             <section className={styles.box}>
               <div className={cx(styles.col, styles.intro)}>

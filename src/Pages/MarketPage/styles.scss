@@ -69,26 +69,6 @@ $coverWidth: 3rem;
     .main {
       .top {
         @include slideUpHidden;
-        padding: 2rem 3rem 0 3rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 11vh;
-        overflow: hidden;
-
-        .spacer {
-          flex: 1;
-
-          .logoLink {
-            text-decoration: none;
-
-            .logo {
-              color: $white;
-              font-size: 3rem;
-              letter-spacing: 1px;
-            }
-          }
-        }
       }
 
       .box {
@@ -284,7 +264,7 @@ $coverWidth: 3rem;
 
             h1,
             h1.right {
-              font-size: 2rem;
+              font-size: 3rem;
               padding: 1rem 2rem 2rem 2rem;
               text-align: center;
             }
@@ -304,9 +284,7 @@ $coverWidth: 3rem;
   .marketPage {
     .main {
       .top {
-        .logoLink {
-          text-align: center;
-        }
+        text-align: center;
       }
     }
   }
