@@ -63,7 +63,7 @@ Message: ${req.body.message}`
   res.end();
 });
 
-const data = require('../src/data');
+const data = require('../dist/data');
 
 app.use('/sitemap.xml', (req, res) => {
   const baseUrl = 'https://www.usful.co';
