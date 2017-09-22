@@ -11,7 +11,8 @@
     "build": "webpack --env=dev --progress --profile --colors",
     "build:dev": "webpack --env=dev --progress --profile --colors",
     "build:prod": "webpack --env=prod --progress --profile --colors",
-    "build:babel": "webpack --env=babel --progress --profile --colors"
+    "build:babel": "webpack --env=babel --progress --profile --colors",
+    "build:data": "webpack --env=data --progress --profile --colors"
   },
   "repository": {
     "type": "git",
