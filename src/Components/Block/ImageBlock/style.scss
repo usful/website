@@ -103,8 +103,13 @@
 
     &.alignRight,
     &.alignLeft {
+      flex-direction:column;
+      align-items: center;
       img {
         height: 10rem;
+      }
+      p{
+        padding: 1rem;
       }
     }
   }
