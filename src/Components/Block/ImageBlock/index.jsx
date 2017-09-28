@@ -10,7 +10,7 @@ export default function ImageBlock({
   text,
   align,
   className,
-  useLoadable
+  useLoadable,
 }) {
   const Img = useLoadable ? <LoadableImage src={url} /> : <img src={url} />;
 

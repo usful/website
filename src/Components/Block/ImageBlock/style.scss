@@ -2,7 +2,7 @@
 
 .imageBlock {
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 4rem 2rem;
   color: $black;
 
   p {
@@ -35,7 +35,6 @@
 
   &.alignRight,
   &.alignLeft {
-    padding: 2rem;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
