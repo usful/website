@@ -2,27 +2,31 @@ import React, { Component } from 'react';
 
 export default class Video extends Component {
   static defaultProps = {
-    play: false
+    play: false,
+    autoPlay: false,
+    muted: true,
+    loop: true,
+    playsInline: true
   };
-  
+
   constructor(props) {
     super(props);
   }
-  
+
   play() {
     this.refs.vid.play();
   }
-  
+
   pause() {
     this.refs.vid.pause();
   }
-  
+
   componentDidMount() {
     if (this.props.play) {
       this.play();
     }
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.play && !this.props.play) {
       this.play();
@@ -30,7 +34,7 @@ export default class Video extends Component {
       this.pause();
     }
   }
-  
+
   render() {
     return (
       <video
@@ -41,7 +45,8 @@ export default class Video extends Component {
         loop={this.props.loop}
         onCanPlay={this.props.onCanPlay}
         onError={this.props.onError}
-        autoPlay={false}
+        autoPlay={this.props.autoPlay}
+        playsInline={this.props.playsInline}
       >
         <source src={this.props.src} />
       </video>
