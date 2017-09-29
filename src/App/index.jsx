@@ -14,6 +14,8 @@ import {
 } from '../Pages';
 
 import { About, Contact } from '../Modals';
+import connect from '../models/connect';
+import data from '../data';
 
 const home = NavigationHelper.getSection('Home');
 const experiences = NavigationHelper.getSection('Experiences');
@@ -25,9 +27,9 @@ const marketClients = NavigationHelper.getSection('Market Clients');
 const about = NavigationHelper.getMenu('About');
 const contact = NavigationHelper.getMenu('Contact');
 const setComponent = section => el =>
-  (section._component = el || section._component);
+  (section.component = el || section.component);
 
-export default class App extends Component {
+export default connect({ data }, class App extends Component {
   constructor(props) {
     super(props);
 
@@ -42,7 +44,6 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    NavigationHelper.addListener(() => this.setState({ _ts: Date.now() }));
     LoadHelper.addProgressListener(progress => this.setState({ progress }));
     LoadHelper.addLoadedListener(() => this.refs.loading.hide());
   }
@@ -78,4 +79,4 @@ export default class App extends Component {
       </div>
     );
   }
-}
+});

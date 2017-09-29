@@ -1,6 +1,5 @@
 import { matchPath } from 'react-router-dom';
 import data from './data';
-import { EventEmitter } from 'fbemitter';
 import utils from './utils';
 
 const TRACKING_ID = 'UA-57226902-1';
@@ -15,17 +14,14 @@ try {
 analytics('js', new Date());
 analytics('config', TRACKING_ID);
 
-const emitter = new EventEmitter();
-
 export default class NavigationHelper {
   static history = [];
   static data = data;
 
   static setup() {
-    if (!this._setup) {
+    if (!data.isSetup) {
       window.router.history.listen(location => this.routeChanged(location));
-      emitter.emit('setup');
-      this._setup = true;
+      data.isSetup = true;
     }
   }
 
@@ -35,7 +31,7 @@ export default class NavigationHelper {
         const menu = this.data.menu.find(menu => menu.hash === location.hash);
 
         if (menu) {
-          menu._component[action]();
+          menu.component[action]();
         }
       }
     };
@@ -85,48 +81,40 @@ export default class NavigationHelper {
       );
 
       if (nextSection !== lastSection) {
-        nextSection._component.setActive();
+        nextSection.component.setActive();
 
         if (lastSection) {
-          lastSection._leaving = true;
-          emitter.emit('update');
-          await lastSection._component.hide();
-          lastSection._leaving = false;
-          lastSection._active = false;
-          lastSection._component.setInactive();
-          emitter.emit('update');
+          lastSection.leaving = true;
+          await lastSection.component.hide();
+          lastSection.leaving = false;
+          lastSection.active = false;
+          lastSection.component.setInactive();
         }
 
-        nextSection._showing = true;
-        emitter.emit('update');
-        await nextSection._component.show();
-        nextSection._showing = false;
-        nextSection._active = true;
-        emitter.emit('update');
+        nextSection.showing = true;
+        await nextSection.component.show();
+        nextSection.showing = false;
+        nextSection.active = true;
       }
 
       if (nextProject) {
-        await nextProject._component.setActive();
+        await nextProject.component.setActive();
         await utils.pause(10);
       }
 
       if (lastProject) {
-        lastProject._leaving = true;
-        emitter.emit('update');
-        await lastProject._component.hide();
-        lastProject._leaving = false;
-        lastProject._active = false;
-        lastProject._component.setInactive();
-        emitter.emit('update');
+        lastProject.leaving = true;
+        await lastProject.component.hide();
+        lastProject.leaving = false;
+        lastProject.active = false;
+        lastProject.component.setInactive();
       }
 
       if (nextProject) {
-        nextProject._showing = true;
-        emitter.emit('update');
-        await nextProject._component.show();
-        nextProject._showing = false;
-        nextProject._active = true;
-        emitter.emit('update');
+        nextProject.showing = true;
+        await nextProject.component.show();
+        nextProject.showing = false;
+        nextProject.active = true;
       }
     }
   }
@@ -139,9 +127,5 @@ export default class NavigationHelper {
 
   static getMenu(name) {
     return NavigationHelper.data.menu.find(menu => menu.name === name);
-  }
-
-  static addListener(cb) {
-    return emitter.addListener('update', cb);
   }
 }

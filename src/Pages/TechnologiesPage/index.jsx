@@ -88,16 +88,16 @@ export default class TechnologiesPage extends Showable {
               {section.projects.map((project, i) => [
                 <ProjectHero
                   key={'hero' + project.id}
-                  visible={project._active || project._showing}
+                  visible={project.active || project.showing}
                   project={project}
                 />,
                 <Project
-                  ref={el => (project._component = el || project._component)}
+                  ref={el => (project.component = el || project.component)}
                   baseUrl="/technology"
                   key={'project' + project.id}
                   project={project}
                   route={project.route}
-                  selected={project._active}
+                  selected={project.active}
                   position={i + 1}
                   count={section.projects.length}
                   next={

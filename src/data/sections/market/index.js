@@ -1,6 +1,6 @@
 export default {
-  _component: null,
-  _active: false,
+  component: null,
+  active: false,
   route: {
     path: '/market',
     exact: true

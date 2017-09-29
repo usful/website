@@ -95,6 +95,10 @@
 
       .tagLine {
         margin-bottom: 1.5rem;
+
+        br {
+          display: none;
+        }
       }
     }
 
@@ -166,8 +170,11 @@
       }
 
       .tagLine {
-        width: 15em;
         margin-bottom: 1em;
+
+        strong {
+          font-size: 2rem;
+        }
       }
     }
 

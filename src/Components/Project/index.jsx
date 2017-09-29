@@ -11,7 +11,7 @@ import Tag from '../Tag/index';
 import CloseIcon from '../Icons/Close/index';
 import ScrollDownIcon from '../Icons/ScrollDown/index';
 
-import Block from '../Block/index';
+import Block from '../Block';
 
 export default class Project extends Showable {
   static enter = [utils.timing * 0.8, utils.timing * 0.8, utils.timing * 0.8];
@@ -37,14 +37,14 @@ export default class Project extends Showable {
 
   renderContent() {
     const { project } = this.props;
-
+    
     if (project.content && project.content.length) {
       return (
         <article>
           <div className={styles.scrollDown}>
             <ScrollDownIcon />
           </div>
-          {project.content.map(block => <Block key={block.id} {...block} active />)}
+          {project.content.map(block => <Block key={block.id} {...block.toJSON()} active />)}
         </article>
       );
     }

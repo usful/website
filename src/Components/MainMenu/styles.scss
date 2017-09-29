@@ -44,7 +44,22 @@
 /** PHONE **/
 @media (max-width: 640px) {
   .mainMenu {
-    display: none;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000000;
+    transform: translateX(0);
+    opacity: 1;
+
+    a {
+      display: flex;
+      background: white;
+      padding: 0.25em 0.25em;
+      margin: 0.75em 1.25em;
+      border: 1px solid rgba(0,0,0,0.2);
+    }
   }
 }
 
