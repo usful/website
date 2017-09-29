@@ -1,6 +1,6 @@
 module.exports = {
-  _component: null,
-  _active: false,
+  component: null,
+  active: false,
   route: {
     path: '/experiences/anthropocene-film',
     strict: true

@@ -6,7 +6,9 @@ import styles from './styles.scss';
 export default function TagLine({ className }) {
   return (
     <h2 className={cx(styles.tagLine, className)}>
-      Shifting consciousness is the beginning of change.
+      <strong>Shift </strong>
+      <br />
+      consciousness.
     </h2>
   );
 }

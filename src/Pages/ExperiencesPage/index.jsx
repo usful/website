@@ -72,7 +72,7 @@ export default class ExperiencesPage extends Showable {
     const { hovering, show3 } = this.state;
 
     const selected = section.projects.find(
-      experience => experience._active || experience._showing
+      experience => experience.active || experience.showing
     );
 
     const hideElement = hovering || selected ? styles.hoverHide : '';
@@ -126,10 +126,10 @@ export default class ExperiencesPage extends Showable {
 
               {section.projects.map((project, i) =>
                 <Project
-                  ref={el => (project._component = el || project._component)}
+                  ref={el => (project.component = el || project.component)}
                   key={project.id}
                   project={project}
-                  selected={project._active}
+                  selected={project.active}
                   position={i + 1}
                   count={section.projects.length}
                   next={

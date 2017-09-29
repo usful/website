@@ -17,5 +17,9 @@ const blocks = {
 export default function Block(props) {
   const FBlock = blocks[props.type];
 
+  if (!FBlock) {
+    return null;
+  }
+
   return <FBlock {...props} />;
 }
