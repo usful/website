@@ -7,5 +7,7 @@ export default Models.create('Block', {
   url: String,
   align: String,
   by: String,
-  content: 'Block'
+  content: ['Block'],
+  animation: String,
+  padding: Number
 });

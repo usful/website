@@ -1,8 +1,10 @@
-{
-  _showing: false,
-    _active: false,
-  _leaving: false,
-  id: 'a5',
-  hash: '#contact',
-  name: 'Contact'
-}
+import Models from './Models';
+
+export default Models.create('Menu', {
+  showing: Boolean,
+  active: Boolean,
+  leaving: Boolean,
+  id: String,
+  hash: String,
+  name: String
+});

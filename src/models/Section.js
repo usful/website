@@ -1,6 +1,7 @@
 import Models from './Models';
 import Route from './Route';
 import Project from './Project';
+import Block from './Block';
 
 export default Models.create('Section', {
   component: Object,
@@ -9,5 +10,6 @@ export default Models.create('Section', {
   name: String,
   inMenu: Boolean,
   route: Route,
-  projects: [Project]
+  projects: [Project],
+  content: [Block]
 });

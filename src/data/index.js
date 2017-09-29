@@ -1,23 +1,27 @@
 import sections from './sections';
+import AppModel from '../models/App';
 
-module.exports = {
+const app = new AppModel({
+  isSetup: false,
   sections: sections,
   menu: [
     {
-      _showing: false,
-      _active: false,
-      _leaving: false,
+      showing: false,
+      active: false,
+      leaving: false,
       id: 'a4',
       hash: '#about',
       name: 'About'
     },
     {
-      _showing: false,
-      _active: false,
-      _leaving: false,
+      showing: false,
+      active: false,
+      leaving: false,
       id: 'a5',
       hash: '#contact',
       name: 'Contact'
     }
   ]
-};
+});
+
+export default app;

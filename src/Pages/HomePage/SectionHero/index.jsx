@@ -12,7 +12,7 @@ export default function SectionHero({ section, hovering, selected }) {
     <div
       className={cx(styles.sectionHero, {
         [styles.hovering]: hovering,
-        [styles.selected]: section._active
+        [styles.selected]: section.active
       })}
       style={style}
     />

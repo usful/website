@@ -8,10 +8,15 @@ import utils from '../../../utils';
 
 const INTERVAL = 6000;
 
-const getProjects = sections =>
+function getProjects(sections) {
+  const arr = [];
+
   sections
     .filter(section => !!section.projects)
-    .reduce((arr, section) => arr.concat(section.projects), []);
+    .forEach(section => section.projects.forEach(project => arr.push(project)));
+  
+  return arr;
+}
 
 export default class ProjectSlider extends Component {
   static defaultProps = {
@@ -41,11 +46,13 @@ export default class ProjectSlider extends Component {
       clearTimeout(this._resizeThrottle);
     }
 
-    this._resizeThrottle = setTimeout(() =>
-      this.setState({
-        sliderWidth: this.refs.slider.offsetWidth
-      }),
-    250);
+    this._resizeThrottle = setTimeout(
+      () =>
+        this.setState({
+          sliderWidth: this.refs.slider.offsetWidth
+        }),
+      250
+    );
   }
 
   _moveSlide(by) {

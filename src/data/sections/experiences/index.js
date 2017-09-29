@@ -1,8 +1,8 @@
 import projects from './projects';
 
 export default {
-  _component: null,
-  _active: false,
+  component: null,
+  active: false,
   id: 'a1',
   inMenu: true,
   name: 'Experiences',
