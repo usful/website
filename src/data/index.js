@@ -1,10 +1,13 @@
 import sections from './sections';
+import Models from '../models/Models';
 import AppModel from '../models/App';
 
-const app = new AppModel({
-  isSetup: false,
-  sections: sections,
-  menu: [
+const app = new AppModel();
+
+Models.addOnReady(() => {
+  AppModel.isSetup = false;
+  AppModel.sections = sections;
+  AppModel.menu = [
     {
       showing: false,
       active: false,
@@ -21,7 +24,7 @@ const app = new AppModel({
       hash: '#contact',
       name: 'Contact'
     }
-  ]
+  ];
 });
 
 export default app;
