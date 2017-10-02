@@ -14,9 +14,9 @@ module.exports = {
   heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/earthweek-hero.mp4',
   client: 'Brookfield Office Properties',
   description:
-    'We partnered with local urban farming startups to bring affordable and viable new tech solutions to Toronto’s downtown core with an unexpected installation that became a powerful awareness campaign. Over a month period, the attention-grabbing installation tapped into the minds of tens of thousands of Toronto young professionals, getting the wheels turning on the benefits of growing their own food. Designed to introduce the concept of urban farming in a palatable and hands-on manner, the installation showcased the simplicity of urban farming by highlighting growing technology like Bright Agrotech’s ZipGrow Towers, Urban Cultivator Microgreen Growing Units, and Landscape Culture’s “Language of Plants.”.',
+    'We partnered with local urban farming startups to showcase affordable and viable new tech solutions to Toronto’s downtown core with an unexpected installation that became a powerful awareness campaign.',
   impact:
-    'The event not only reached over 20,000 young professionals in the downtown core, but fulfilled sustainability and greening mandates for Brookfield.',
+    'Over 20,000 people engaged with the installation further recognizing our clients commitment to sustainability & increased awareness for all partners.',
   content: [
     {
       id: 'b18',
@@ -28,8 +28,9 @@ module.exports = {
       id: 'b2',
       type: 'ImageBlock',
       url:
-        'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
-      align: 'full'
+        'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-5.jpg',
+      align: 'left',
+      text: 'Designed to introduce the concept of urban farming in a palatable and hands-on manner, the installation showcased the simplicity of urban farming by highlighting growing technologies.',
     },
     {
       id: 'b19',
