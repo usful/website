@@ -73,6 +73,8 @@ export default class CarouselBlock extends Component {
     const width = this.content.length * 100;
     const activeClass = this.props.activeClass;
 
+    console.log(this.content, width);
+    
     return (
       <div
         className={cx(styles.content, styles.slide)}
