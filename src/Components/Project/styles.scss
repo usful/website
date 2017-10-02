@@ -78,7 +78,7 @@ $descriptionWidth: 40rem;
         border-top: 1px solid $darkGrey;
         border-left: 1px solid $darkGrey;
         border-right: 1px solid $darkGrey;
-        padding: 1rem;
+        padding: 1.2rem;
 
         &:last-of-type {
           border-bottom: 1px solid $darkGrey;
@@ -87,12 +87,13 @@ $descriptionWidth: 40rem;
         label {
           font-family: $fontMono;
           color: $lightGrey;
+          font-size: 1.2rem;
         }
 
         p {
           font-family: $fontSans;
           padding: 0.5rem 0;
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           line-height: 1.4em;
         }
       }
@@ -293,7 +294,7 @@ $descriptionWidth: 40rem;
           display: none;
         }
 
-        padding: 2rem ($navWidth + 2rem) 2rem 0;
+        padding: 2rem ($navWidth) 2rem 0;
         background-color: $offWhite;
       }
     }
