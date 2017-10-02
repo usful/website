@@ -4,7 +4,10 @@ import Project from './Project';
 import Block from './Block';
 
 export default Models.create('Section', {
-  component: Object,
+  component: {
+    type: Object,
+    listen: false
+  },
   active: Boolean,
   id: String,
   name: String,
