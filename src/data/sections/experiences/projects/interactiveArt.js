@@ -13,7 +13,7 @@ module.exports = {
     'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-4.jpg',
   heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/art-hero.mp4',
   client:
-    '',
+    'Edward Burtynsky, Joshua Jensen Nagle, George Steinmetz, Benjamin Von Wong',
   description:
     'Held in typically unused, unique yet convenient spaces, our art projects are attention-grabbing. We take unused space, reimagine it, and make it a captivating, discovery-filled, and meaningful learning experience.',
   impact:
@@ -23,21 +23,21 @@ module.exports = {
       id: 'interactive-galleries-1',
       type: 'ImageBlock',
       text: 'From our global network of respected artists, we can transform a blank canvas of a space into an experience that instigates a powerful dialogue.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/wall+strategy+image.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-strategy.jpg',
       align: 'left',
     },
     {
       id: 'interactive-galleries-2',
       type: 'ImageBlock',
       text: 'Leave it to us to curate installations – whether clean and simple or infused with technology – that match your objectives, and to craft an experience that will become associated with your brand.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/gallery+setup+image+rendering.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-setup-rendering.jpg',
       align: 'right',
     },
     {
       id: 'interactive-galleries-3',
       type: 'ImageBlock',
       text: 'We took visitors on a self-guided interactive tour that explored the work and world of renowned Canadian artist Ed Burtynsky. To share the works and findings of Manufactured Landscapes – a feature-length documentary on Burtynsky – the tour showcased the photographs of Burtynsky’s 25-year exploration of how industrial activity has created and shaped the landscapes of our world.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-1.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-7.jpg',
       align: 'left',
     },
     {
@@ -51,7 +51,7 @@ module.exports = {
       type: 'ImageBlock',
       text: 'Offering a temporary escape from the daily grind, Toronto-based photographer Joshua Jensen Nagle provided a dose of vacation inspiration with his collection of signature photographs of sun-soaked shorelines.',
       // placeholder url
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-1.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-jensen-nagle.jpg',
       align: 'right',
     },
     {
@@ -101,9 +101,9 @@ module.exports = {
     {
       id: 'interactive-galleries-10',
       type: 'ImageBlock',
-      text: 'Interactive tech copy',
+      text: 'Interactive audio tours are accessible to the public through Usful’s mobile engagement app, Lane.',
       align: 'right',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/DSC0308.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-interactive-tech.jpg',
     },
   ] //Blocks
 };
