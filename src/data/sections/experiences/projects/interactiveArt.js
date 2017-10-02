@@ -23,14 +23,14 @@ module.exports = {
       id: 'interactive-galleries-1',
       type: 'ImageBlock',
       text: 'From our global network of respected artists, we can transform a blank canvas of a space into an experience that instigates a powerful dialogue.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/wall+strategy+image.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-strategy.jpg',
       align: 'left',
     },
     {
       id: 'interactive-galleries-2',
       type: 'ImageBlock',
       text: 'Leave it to us to curate installations – whether clean and simple or infused with technology – that match your objectives, and to craft an experience that will become associated with your brand.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/gallery+setup+image+rendering.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-setup-rendering.jpg',
       align: 'right',
     },
     {
@@ -103,7 +103,7 @@ module.exports = {
       type: 'ImageBlock',
       text: 'Interactive tech copy',
       align: 'right',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/DSC0308.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-interactive-tech.jpg',
     },
   ] //Blocks
 };
