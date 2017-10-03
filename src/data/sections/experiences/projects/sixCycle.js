@@ -20,30 +20,45 @@ module.exports = {
     'The impossible-to-miss installation got both the participants and passersby engaged and motivated, with business wear-clad audience members cheering on the participants in between meetings. The use of VR offered a multi-faceted and memorable experience. The first live session resulted in over 4,000 impressions.\n',
   content: [
     {
-      id: 'b18',
-      type: 'TextBlock',
-      text:
-        'From conception to tear-down, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments.'
-    },
-    {
-      id: 'b2',
+      id: 'six-cycle-1',
       type: 'ImageBlock',
-      url:
-        'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-1.jpg',
-      align: 'full'
+      align: 'left',
+      text: 'Held in collaboration with a corporate health and wellness program, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-7.jpg',
     },
     {
-      id: 'b19',
-      type: 'TextBlock',
-      text:
-        'To offer a layered experience, we sourced top-of-the-line VR technology and administered the experience for the audience. We engaged with participants through a mobile app for signups and check-ins to the event.'
-    },
-    {
-      id: 'b4',
+      id: 'six-cycle-2',
       type: 'ImageBlock',
-      url:
-        'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-3.jpg',
-      align: 'full'
-    }
+      align: 'right',
+      text: 'From conception to tear-down, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-2.jpg',
+    },
+    {
+      id: 'six-cycle-3',
+      type: 'ImageBlock',
+      align: 'left',
+      text: 'Necessary equipment and change rooms were provided to all participants.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-5.jpg',
+    },
+    {
+      id: 'six-cycle-4',
+      type: 'QuoteBlock',
+      text: 'QUOTE ABOUT REFRESHMENTS AND EXPERIENCE',
+      by: 'Unknown',
+    },
+    {
+      id: 'six-cycle-5',
+      type: 'ImageBlock',
+      align: 'right',
+      text: 'Refreshments provided on site by local vendors.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-6.jpg',
+    },
+    {
+      id: 'six-cycle-6',
+      type: 'ImageBlock',
+      align: 'center',
+      text: 'To offer a layered experience, we sourced top-of-the-line VR technology and administered the experience for the audience. We engaged with participants through a mobile app for signups and check-ins to the event.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-4.jpg',
+    },
   ] //Blocks
 };

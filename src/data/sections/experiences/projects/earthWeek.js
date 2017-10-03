@@ -36,7 +36,7 @@ module.exports = {
       id: 'earth-week-3',
       type: 'ImageBlock',
       align: 'right',
-      text: 'Microgreen growing units',
+      text: 'Urban Cultivator - Indoor gardens that grow healthy and organic vegetables, herbs, and microgreens in any kitchen.',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-6.jpg',
     },
     {

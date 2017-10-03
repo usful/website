@@ -81,7 +81,7 @@ module.exports = {
     {
       id: 'interactive-galleries-7',
       type: 'ImageBlock',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-1.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-4.jpg',
       align: 'center',
       text: 'Canadian photographer Benjamin Von Wong turned 10,000 plastic bottles into a visually mind-blowing and informative art experience with #MermaidsHatePlastic. Transforming the lobby of the Bay Adelaide Centre, the exhibition made for a value-added lunch break, as it highlighted the alarming reality of plastic pollution. Accompanying the images was a self-guided tour curated by Usful and available via a mobile app.',
     },
