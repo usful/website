@@ -49,7 +49,7 @@ export default class MarketClientsPageF extends Showable {
       return null;
     }
 
-    const carousel = section.content[0];
+    const carousel = section.content[0].toJSON();
 
     return (
       <div className={cx(styles.marketStoryPage, this.showableClasses(styles))}>

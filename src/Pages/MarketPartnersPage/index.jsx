@@ -45,7 +45,7 @@ export default class MarketPartnersPage extends Showable {
       return null;
     }
 
-    const carousel = section.content[0];
+    const carousel = section.content[0].toJSON();
 
     return (
       <div

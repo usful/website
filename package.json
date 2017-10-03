@@ -51,7 +51,7 @@
     "webpack-dev-middleware": "^1.12.0"
   },
   "dependencies": {
-    "models": "git://github.com/usful/models#v2.0.0",
+    "models": "git://github.com/usful/models#v2.1.0",
     "autoprefixer": "^7.1.4",
     "aws-sdk": "^2.123.0",
     "babel-plugin-transform-es2015-function-name": "^6.24.1",
