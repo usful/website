@@ -7,7 +7,7 @@
 
   p {
     font-family: $fontSans;
-    font-size: 1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
     line-height: 1.4rem;
     flex: 2;
@@ -39,22 +39,14 @@
     flex-direction: row;
     align-items: flex-end;
 
+    p{
+      padding: 0 2rem;
+    }
+
     img {
       flex: 3;
       object-fit: contain;
       height: 24rem;
-    }
-  }
-
-  &.alignRight {
-    p {
-      padding-left: 2rem;
-    }
-  }
-
-  &.alignLeft {
-    p {
-      padding-right: 2rem;
     }
   }
 
