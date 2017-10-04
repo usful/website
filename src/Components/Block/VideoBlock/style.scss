@@ -2,47 +2,22 @@
 
 .videoBlock {
   padding: 2rem 0;
-  width:100%;
-  display:flex;
-
-  .videoDiv {
-    flex:2;
-  }
+  overflow: hidden;
+  position: relative;
 
   video {
-    width:100%;
+    width: 100%;
     height: 100%;
-    object-fit: contain;
-  }
-
-  &.alignRight,
-  &.alignLeft {
-    padding:2rem;
-  }
-
-  &.alignLeft {
-    flex-direction:row-reverse;
+    object-fit: cover;
   }
 
   h1 {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
-  }
-
-    p {
-    flex:1;
-    padding: 0 2rem;
-    align-self: flex-end;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     line-height: 1.4em;
     color: $black;
-    font-family: $fontSans;
+    text-align: center;
   }
 }

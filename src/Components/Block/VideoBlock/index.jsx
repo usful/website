@@ -9,45 +9,11 @@ export default function VideoBlock({
   text,
   className,
   active,
-  align,
   useLoadable,
-  padding = 0
+  padding = 0,
 }) {
   const Vid = useLoadable ? LoadableVideo : Video;
 
-  if (align === 'left') {
-    return (
-      <div
-        className={cx(styles.videoBlock, styles.alignLeft, className)}
-      >
-        <div
-          className={cx(styles.videoDiv)}
-          style={{ padding: `0 ${padding}%` }}
-        >
-          <Vid muted loop play={active} src={url} />
-        </div>
-        <p>
-          {text}
-        </p>
-      </div>
-    );
-  } else if (align === 'right') {
-    return (
-      <div
-        className={cx(styles.videoBlock, styles.alignRight, className)}
-      >
-        <div
-          className={cx(styles.videoDiv)}
-          style={{ padding: `0 ${padding}%` }}
-        >
-          <Vid muted loop play={active} src={url} />
-        </div>
-        <p>
-          {text}
-        </p>
-      </div>
-    );
-  }
   return (
     <div
       className={cx(styles.videoBlock, className)}

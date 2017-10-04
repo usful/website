@@ -24,14 +24,14 @@ module.exports = {
       type: 'ImageBlock',
       align: 'left',
       text: 'Held in collaboration with a corporate health and wellness program, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-7.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-2.jpg',
     },
     {
       id: 'six-cycle-2',
       type: 'ImageBlock',
       align: 'right',
       text: 'From conception to tear-down, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-2.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-rendering.jpg',
     },
     {
       id: 'six-cycle-3',
@@ -41,17 +41,17 @@ module.exports = {
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-5.jpg',
     },
     {
-      id: 'six-cycle-4',
-      type: 'QuoteBlock',
-      text: 'QUOTE ABOUT REFRESHMENTS AND EXPERIENCE',
-      by: 'Unknown',
-    },
-    {
       id: 'six-cycle-5',
       type: 'ImageBlock',
       align: 'right',
       text: 'Refreshments provided on site by local vendors.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-6.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-8.jpg',
+    },
+    {
+      id: 'six-cycle-4',
+      type: 'QuoteBlock',
+      text: 'A perfect break in my day to re-energize and refuel.',
+      by: '6ix Cycle Participant',
     },
     {
       id: 'six-cycle-6',

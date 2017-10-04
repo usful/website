@@ -50,6 +50,7 @@ $descriptionWidth: 40rem;
     transition: transform $showTransition;
     color: $black;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+    overflow: auto;
 
     .title {
       @include slideUpHidden;
