@@ -20,9 +20,9 @@ export default function VideoBlock({
       style={{ padding: `2rem ${padding}%` }}
     >
       <Vid muted loop play={active} src={url} />
-      <h1>
+      <p>
         {text}
-      </h1>
+      </p>
     </div>
   );
 }

@@ -47,6 +47,7 @@ module.exports = {
     {
       id: 'anthropocene-5',
       type: 'VideoBlock',
+      align: 'left',
       text: 'The unique display of information, large background images, and dramatic animations encourage site visitors to continue to explore and raise awareness by sharing the cause with others.',
       url: 'https://s3.amazonaws.com/usful-portfolio/vids/anthropocene-mobile.mp4',
       padding: 33,
