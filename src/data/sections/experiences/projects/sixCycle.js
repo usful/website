@@ -15,9 +15,9 @@ module.exports = {
     'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-hero.mp4',
   client: 'Multiple',
   description:
-    'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto into a high-energy outdoor spin studio. Held in collaboration with a corporate health and wellness program, the outdoor spin cycling event offered two classes per day for two days. It involved a virtual reality (VR) component that allowed participants to experience a virtual cycle race before debriefing over local and healthy refreshments.',
+    'To highlight the benefits of wellness in the workplace, we turned a section of downtown Toronto into a high-energy outdoor spin studio.',
   impact:
-    'The impossible-to-miss installation got both the participants and passersby engaged and motivated, with business wear-clad audience members cheering on the participants in between meetings. The use of VR offered a multi-faceted and memorable experience. The first live session resulted in over 4,000 impressions.\n',
+    '100% participation by registered attendees with 4000 impressions on event registration. This success has resulted in quarterly programming and classes pre-booked in advance.',
   content: [
     {
       id: 'six-cycle-1',

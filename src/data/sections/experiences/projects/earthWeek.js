@@ -11,7 +11,7 @@ module.exports = {
   tags: ['Environment', 'Education'],
   hero:
     'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-3.jpg',
-  heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/earthweek-hero.mp4',
+  heroVideo: 'https://s3.amazonaws.com/usful-portfolio/vids/earth-week-hero-2.mp4',
   client: 'Brookfield Office Properties',
   description:
     'We partnered with local urban farming startups to showcase affordable and viable new tech solutions to Toronto’s downtown core with an unexpected installation that became a powerful awareness campaign.',
@@ -37,28 +37,27 @@ module.exports = {
       type: 'ImageBlock',
       align: 'right',
       text: 'Urban Cultivator - Indoor gardens that grow healthy and organic vegetables, herbs, and microgreens in any kitchen.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-6.jpg',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
     },
     {
       id: 'earth-week-4',
       type: 'ImageBlock',
       align: 'left',
-      text: 'Language of Plants',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-7.jpg',
+      text: 'Language of Plants - Exploring the theme of language as culture through the medium of the black oak savannah ecosystem while discovering a bio-acoustic symphony.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-9.jpg',
     },
     {
       id: 'earth-week-5',
-      type: 'ImageBlock',
-      align: 'right',
-      text: '',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-2.jpg',
+      type: 'QuoteBlock',
+      text: 'This interactive experience educated me on hydroponic and urban farming methods I can use in my own backyard!',
+      by: 'Tenant, Brookfield Properties',
     },
     {
       id: 'earth-week-6',
       type: 'ImageBlock',
       align: 'center',
-      text: 'Through the design and construction of the installation, people experienced this technology for themselves, witnessing firsthand how urban gardening could become a reality. In addition to attracting curious passersby, we invited a curated selection of guests for a series of informative lunch events in the space, inspiring a powerful dialogue on the future of food.',
-      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
+      text: 'Through the design and construction of the installation, people experienced this technology for themselves, witnessing firsthand how urban gardening could become a reality.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-8.jpg',
     },
   ] //Blocks
 };
