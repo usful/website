@@ -37,7 +37,6 @@ export default class Project extends Showable {
 
   renderContent() {
     const { project } = this.props;
-    
     if (project.content && project.content.length) {
       return (
         <article>

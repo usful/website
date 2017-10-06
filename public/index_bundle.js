@@ -11325,9 +11325,9 @@ var _CarouselBlock = __webpack_require__(205);
 
 var _CarouselBlock2 = _interopRequireDefault(_CarouselBlock);
 
-var _ImageBlock = __webpack_require__(729);
+var _MediaBlock = __webpack_require__(729);
 
-var _ImageBlock2 = _interopRequireDefault(_ImageBlock);
+var _MediaBlock2 = _interopRequireDefault(_MediaBlock);
 
 var _QuoteBlock = __webpack_require__(732);
 
@@ -11345,7 +11345,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var blocks = {
   CarouselBlock: _CarouselBlock2.default,
-  ImageBlock: _ImageBlock2.default,
+  MediaBlock: _MediaBlock2.default,
   QuoteBlock: _QuoteBlock2.default,
   TextBlock: _TextBlock2.default,
   VideoBlock: _VideoBlock2.default
@@ -43943,7 +43943,7 @@ module.exports = {
     text: 'Our team was responsible for the design, concept, and execution of the Earth Week installation. This began with extensive research and development, as we sourced the latest and greatest growing technology.'
   }, {
     id: 'b2',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
     align: 'full'
   }, {
@@ -43952,7 +43952,7 @@ module.exports = {
     text: 'Through the design and construction of the installation, people experienced this technology for themselves, witnessing firsthand how urban gardening could become a reality. '
   }, {
     id: 'b3',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-2.jpg',
     align: 'full'
   }, {
@@ -43961,7 +43961,7 @@ module.exports = {
     text: 'In addition to attracting curious passersby, we invited a curated selection of guests for a series of informative lunch events in the space, inspiring a powerful dialogue on the future of food.'
   }, {
     id: 'b4',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-3.jpg',
     align: 'full'
   }] //Blocks
@@ -44000,23 +44000,23 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-1-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-1.jpg'
     }, {
       id: 'interactive-galleries-1-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-2.jpg'
     }, {
       id: 'interactive-galleries-1-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-3.jpg'
     }, {
       id: 'interactive-galleries-1-4',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-4.jpg'
     }, {
       id: 'interactive-galleries-1-6',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-6.jpg'
     }]
   }, {
@@ -44033,15 +44033,15 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-4-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-1.jpg'
     }, {
       id: 'interactive-galleries-4-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-2.jpg'
     }, {
       id: 'interactive-galleries-4-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-3.jpg'
     }]
   }, {
@@ -44058,15 +44058,15 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-8-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-1.jpg'
     }, {
       id: 'interactive-galleries-8-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-2.jpg'
     }, {
       id: 'interactive-galleries-8-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-3.jpg'
     }]
   }, {
@@ -44083,19 +44083,19 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-11-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-1.jpg'
     }, {
       id: 'interactive-galleries-11-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-2.jpg'
     }, {
       id: 'interactive-galleries-11-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-3.jpg'
     }, {
       id: 'interactive-galleries-11-4',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-4.jpg'
     }]
   }, {
@@ -44164,7 +44164,7 @@ module.exports = {
     text: 'From conception to tear-down, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments.'
   }, {
     id: 'b2',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-1.jpg',
     align: 'full'
   }, {
@@ -44173,7 +44173,7 @@ module.exports = {
     text: 'To offer a layered experience, we sourced top-of-the-line VR technology and administered the experience for the audience. We engaged with participants through a mobile app for signups and check-ins to the event.'
   }, {
     id: 'b4',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-3.jpg',
     align: 'full'
   }] //Blocks
@@ -53658,7 +53658,7 @@ exports.locals = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ImageBlock;
+exports.default = MediaBlock;
 
 var _react = __webpack_require__(1);
 
@@ -53678,7 +53678,7 @@ var _LoadableImage2 = _interopRequireDefault(_LoadableImage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ImageBlock(_ref) {
+function MediaBlock(_ref) {
   var url = _ref.url,
       text = _ref.text,
       align = _ref.align,
@@ -53690,7 +53690,7 @@ function ImageBlock(_ref) {
   if (align === 'center') {
     return _react2.default.createElement(
       'div',
-      { className: (0, _classnames2.default)(_style2.default.imageBlock, _style2.default.alignCenter, className) },
+      { className: (0, _classnames2.default)(_style2.default.MediaBlock, _style2.default.alignCenter, className) },
       Img,
       _react2.default.createElement(
         'p',
@@ -53701,7 +53701,7 @@ function ImageBlock(_ref) {
   } else if (align === 'left') {
     return _react2.default.createElement(
       'div',
-      { className: (0, _classnames2.default)(_style2.default.imageBlock, _style2.default.alignLeft, className) },
+      { className: (0, _classnames2.default)(_style2.default.MediaBlock, _style2.default.alignLeft, className) },
       _react2.default.createElement(
         'p',
         null,
@@ -53712,7 +53712,7 @@ function ImageBlock(_ref) {
   } else if (align === 'right') {
     return _react2.default.createElement(
       'div',
-      { className: (0, _classnames2.default)(_style2.default.imageBlock, _style2.default.alignRight, className) },
+      { className: (0, _classnames2.default)(_style2.default.MediaBlock, _style2.default.alignRight, className) },
       Img,
       _react2.default.createElement(
         'p',
@@ -53724,7 +53724,7 @@ function ImageBlock(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: (0, _classnames2.default)(_style2.default.imageBlock, _style2.default.alignFull, className) },
+    { className: (0, _classnames2.default)(_style2.default.MediaBlock, _style2.default.alignFull, className) },
     Img
   );
 }
@@ -53769,11 +53769,11 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, ".imageBlock---3C6_U {\n  overflow: hidden;\n  padding: 2rem 0;\n  color: #1f1f1f; }\n  .imageBlock---3C6_U p {\n    font-family: \"Maison Neue\", sans-serif;\n    font-size: 1rem;\n    opacity: 0.9;\n    line-height: 1.4rem;\n    -webkit-box-flex: 2;\n    -ms-flex: 2;\n    flex: 2; }\n  .imageBlock---3C6_U.alignFull---3JA1w img {\n    display: block;\n    width: 100%; }\n  .imageBlock---3C6_U.alignCenter---3RzMt img {\n    display: block;\n    height: 24rem;\n    margin: 0 auto; }\n  .imageBlock---3C6_U.alignCenter---3RzMt p {\n    text-align: center;\n    padding: 2rem 10rem 0 10rem; }\n  .imageBlock---3C6_U.alignRight---YcG16, .imageBlock---3C6_U.alignLeft---1VYXW {\n    padding: 2rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-box-align: end;\n    -ms-flex-align: end;\n    align-items: flex-end; }\n    .imageBlock---3C6_U.alignRight---YcG16 img, .imageBlock---3C6_U.alignLeft---1VYXW img {\n      -webkit-box-flex: 3;\n      -ms-flex: 3;\n      flex: 3;\n      -o-object-fit: contain;\n      object-fit: contain;\n      height: 20rem; }\n  .imageBlock---3C6_U.alignRight---YcG16 p {\n    padding-left: 2rem; }\n  .imageBlock---3C6_U.alignLeft---1VYXW p {\n    padding-right: 2rem; }\n  .imageBlock---3C6_U.alignCenter---3RzMt {\n    text-align: center; }\n\n/** TABLET **/\n@media (max-width: 1024px) {\n  .imageBlock---3C6_U.alignCenter---3RzMt img {\n    height: 20rem; }\n  .imageBlock---3C6_U.alignCenter---3RzMt p {\n    padding: 2rem 5rem 0 5rem; }\n  .imageBlock---3C6_U.alignRight---YcG16 img, .imageBlock---3C6_U.alignLeft---1VYXW img {\n    height: 15rem; } }\n\n/** PHONE **/\n@media (max-width: 640px) {\n  .imageBlock---3C6_U.alignCenter---3RzMt img {\n    height: 15rem; }\n  .imageBlock---3C6_U.alignCenter---3RzMt p {\n    padding: 2rem 5rem 0 5rem; }\n  .imageBlock---3C6_U.alignRight---YcG16 img, .imageBlock---3C6_U.alignLeft---1VYXW img {\n    height: 10rem; } }\n", ""]);
+exports.push([module.i, ".MediaBlock---3C6_U {\n  overflow: hidden;\n  padding: 2rem 0;\n  color: #1f1f1f; }\n  .MediaBlock---3C6_U p {\n    font-family: \"Maison Neue\", sans-serif;\n    font-size: 1rem;\n    opacity: 0.9;\n    line-height: 1.4rem;\n    -webkit-box-flex: 2;\n    -ms-flex: 2;\n    flex: 2; }\n  .MediaBlock---3C6_U.alignFull---3JA1w img {\n    display: block;\n    width: 100%; }\n  .MediaBlock---3C6_U.alignCenter---3RzMt img {\n    display: block;\n    height: 24rem;\n    margin: 0 auto; }\n  .MediaBlock---3C6_U.alignCenter---3RzMt p {\n    text-align: center;\n    padding: 2rem 10rem 0 10rem; }\n  .MediaBlock---3C6_U.alignRight---YcG16, .MediaBlock---3C6_U.alignLeft---1VYXW {\n    padding: 2rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-box-align: end;\n    -ms-flex-align: end;\n    align-items: flex-end; }\n    .MediaBlock---3C6_U.alignRight---YcG16 img, .MediaBlock---3C6_U.alignLeft---1VYXW img {\n      -webkit-box-flex: 3;\n      -ms-flex: 3;\n      flex: 3;\n      -o-object-fit: contain;\n      object-fit: contain;\n      height: 20rem; }\n  .MediaBlock---3C6_U.alignRight---YcG16 p {\n    padding-left: 2rem; }\n  .MediaBlock---3C6_U.alignLeft---1VYXW p {\n    padding-right: 2rem; }\n  .MediaBlock---3C6_U.alignCenter---3RzMt {\n    text-align: center; }\n\n/** TABLET **/\n@media (max-width: 1024px) {\n  .MediaBlock---3C6_U.alignCenter---3RzMt img {\n    height: 20rem; }\n  .MediaBlock---3C6_U.alignCenter---3RzMt p {\n    padding: 2rem 5rem 0 5rem; }\n  .MediaBlock---3C6_U.alignRight---YcG16 img, .MediaBlock---3C6_U.alignLeft---1VYXW img {\n    height: 15rem; } }\n\n/** PHONE **/\n@media (max-width: 640px) {\n  .MediaBlock---3C6_U.alignCenter---3RzMt img {\n    height: 15rem; }\n  .MediaBlock---3C6_U.alignCenter---3RzMt p {\n    padding: 2rem 5rem 0 5rem; }\n  .MediaBlock---3C6_U.alignRight---YcG16 img, .MediaBlock---3C6_U.alignLeft---1VYXW img {\n    height: 10rem; } }\n", ""]);
 
 // exports
 exports.locals = {
-	"imageBlock": "imageBlock---3C6_U",
+	"MediaBlock": "MediaBlock---3C6_U",
 	"alignFull": "alignFull---3JA1w",
 	"alignCenter": "alignCenter---3RzMt",
 	"alignRight": "alignRight---YcG16",

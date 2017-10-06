@@ -14,28 +14,32 @@ export default {
       content: [
         {
           id: 'bc1',
-          type: 'VideoBlock',
+          type: 'MediaBlock',
           text: 'A unique, immersive, food-filled turnkey experience.',
-          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-pasta.mp4'
+          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-pasta.mp4',
+          mediaType: 'Video',
         },
         {
           id: 'bc3',
-          type: 'VideoBlock',
+          type: 'MediaBlock',
           text:
             'Highly configurable and customizable for  any location or event.',
-          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-people.mp4'
+          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-people.mp4',
+          mediaType: 'Video',
         },
         {
           id: 'bc2',
-          type: 'VideoBlock',
+          type: 'MediaBlock',
           text: 'The best vendors and products the city has to offer.',
-          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-sign.mp4'
+          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-sign.mp4',
+          mediaType: 'Video',
         },
         {
           id: 'bc4',
-          type: 'VideoBlock',
+          type: 'MediaBlock',
           text: 'We bring everything you need to host a market in any space.',
-          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-bees.mp4'
+          url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-bees.mp4',
+          mediaType: 'Video',
         }
       ]
     }

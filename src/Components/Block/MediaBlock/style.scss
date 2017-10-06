@@ -1,9 +1,23 @@
 @import '../../../variables';
 
-.imageBlock {
+.MediaBlock {
   overflow: hidden;
   padding: 2rem 2rem;
   color: $black;
+
+  .MediaDiv {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  video {
+    object-fit: cover;
+  }
 
   p {
     font-family: $fontSans;
@@ -24,7 +38,6 @@
     img {
       display: block;
       height: 24rem;
-      margin: 0 auto;
     }
 
     p {
@@ -43,6 +56,10 @@
       padding: 0 2rem;
     }
 
+    .MediaDiv {
+      flex:2;
+    }
+
     img {
       flex: 3;
       object-fit: contain;
@@ -58,7 +75,7 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
-  .imageBlock {
+  .MediaBlock {
     &.alignCenter {
       img {
         height: 20rem;
@@ -81,7 +98,7 @@
 /** PHONE **/
 @media (max-width: 640px) {
 
-  .imageBlock {
+  .MediaBlock {
     &.alignCenter {
       img {
         height: 15rem;

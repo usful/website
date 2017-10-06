@@ -1,17 +1,15 @@
 import React from 'react';
 
 import CarouselBlock from './CarouselBlock';
-import ImageBlock from './ImageBlock';
+import MediaBlock from './MediaBlock';
 import QuoteBlock from './QuoteBlock';
 import TextBlock from './TextBlock';
-import VideoBlock from './VideoBlock';
 
 const blocks = {
   CarouselBlock: CarouselBlock,
-  ImageBlock: ImageBlock,
+  MediaBlock: MediaBlock,
   QuoteBlock: QuoteBlock,
   TextBlock: TextBlock,
-  VideoBlock: VideoBlock
 };
 
 export default function Block(props) {

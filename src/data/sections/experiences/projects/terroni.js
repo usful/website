@@ -20,21 +20,24 @@ module.exports = {
   content: [
     {
       id: 'terroni-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       align: 'left',
+      mediaType: 'Video',
       text: '',
       url: '',
     },
     {
       id: 'terroni-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       align: 'left',
+      mediaType: 'Video',
       text: '',
       url: '',
     },
     {
       id: 'terroni-3',
-      type: 'ImageBlock',
-    }
+      type: 'MediaBlock',
+      mediaType: 'Image',
+    },
   ] //Blocks
 };

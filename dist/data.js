@@ -281,7 +281,7 @@ module.exports = {
     text: 'Our team was responsible for the design, concept, and execution of the Earth Week installation. This began with extensive research and development, as we sourced the latest and greatest growing technology.'
   }, {
     id: 'b2',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
     align: 'full'
   }, {
@@ -290,7 +290,7 @@ module.exports = {
     text: 'Through the design and construction of the installation, people experienced this technology for themselves, witnessing firsthand how urban gardening could become a reality. '
   }, {
     id: 'b3',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-2.jpg',
     align: 'full'
   }, {
@@ -299,7 +299,7 @@ module.exports = {
     text: 'In addition to attracting curious passersby, we invited a curated selection of guests for a series of informative lunch events in the space, inspiring a powerful dialogue on the future of food.'
   }, {
     id: 'b4',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-3.jpg',
     align: 'full'
   }] //Blocks
@@ -338,23 +338,23 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-1-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-1.jpg'
     }, {
       id: 'interactive-galleries-1-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-2.jpg'
     }, {
       id: 'interactive-galleries-1-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-3.jpg'
     }, {
       id: 'interactive-galleries-1-4',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-4.jpg'
     }, {
       id: 'interactive-galleries-1-6',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-ed-6.jpg'
     }]
   }, {
@@ -371,15 +371,15 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-4-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-1.jpg'
     }, {
       id: 'interactive-galleries-4-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-2.jpg'
     }, {
       id: 'interactive-galleries-4-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-joshua-3.jpg'
     }]
   }, {
@@ -396,15 +396,15 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-8-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-1.jpg'
     }, {
       id: 'interactive-galleries-8-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-2.jpg'
     }, {
       id: 'interactive-galleries-8-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-vonwong-3.jpg'
     }]
   }, {
@@ -421,19 +421,19 @@ module.exports = {
     type: 'CarouselBlock',
     content: [{
       id: 'interactive-galleries-11-1',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-1.jpg'
     }, {
       id: 'interactive-galleries-11-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-2.jpg'
     }, {
       id: 'interactive-galleries-11-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-3.jpg'
     }, {
       id: 'interactive-galleries-11-4',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/interactive-galleries-steinmetz-4.jpg'
     }]
   }, {
@@ -502,7 +502,7 @@ module.exports = {
     text: 'From conception to tear-down, our team designed a sleek outdoor spin studio with spin bikes, music, and refreshments.'
   }, {
     id: 'b2',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-1.jpg',
     align: 'full'
   }, {
@@ -511,7 +511,7 @@ module.exports = {
     text: 'To offer a layered experience, we sourced top-of-the-line VR technology and administered the experience for the audience. We engaged with participants through a mobile app for signups and check-ins to the event.'
   }, {
     id: 'b4',
-    type: 'ImageBlock',
+    type: 'MediaBlock',
     url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/6ix-cycle-3.jpg',
     align: 'full'
   }] //Blocks

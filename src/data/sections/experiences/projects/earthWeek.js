@@ -26,7 +26,8 @@ module.exports = {
     },
     {
       id: 'earth-week-2',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
+      mediaType: 'Image',
       url:
         'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-5.jpg',
       align: 'left',
@@ -34,14 +35,16 @@ module.exports = {
     },
     {
       id: 'earth-week-3',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
+      mediaType: 'Image',
       align: 'right',
       text: 'Urban Cultivator - Indoor gardens that grow healthy and organic vegetables, herbs, and microgreens in any kitchen.',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-1.jpg',
     },
     {
       id: 'earth-week-4',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
+      mediaType: 'Image',
       align: 'left',
       text: 'Language of Plants - Exploring the theme of language as culture through the medium of the black oak savannah ecosystem while discovering a bio-acoustic symphony.',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-9.jpg',
@@ -54,7 +57,8 @@ module.exports = {
     },
     {
       id: 'earth-week-6',
-      type: 'ImageBlock',
+      type: 'MediaBlock',
+      mediaType: 'Image',
       align: 'center',
       text: 'Through the design and construction of the installation, people experienced this technology for themselves, witnessing firsthand how urban gardening could become a reality.',
       url: 'https://s3.amazonaws.com/usful-portfolio/img/experiences/earth-week-8.jpg',
