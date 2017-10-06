@@ -21,23 +21,20 @@ module.exports = {
     {
       id: 'terroni-1',
       type: 'MediaBlock',
-      align: 'left',
+      align: 'center',
       mediaType: 'Video',
-      text: '',
-      url: '',
+      text: 'We took the original design and aesthetic of the brand and translated it to a visually pleasing online and digital experience filled with crisp, colourful, and delicious-looking photos.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/vids/terroni-1.mp4',
+      width: 90,
     },
     {
       id: 'terroni-2',
       type: 'MediaBlock',
-      align: 'left',
+      align: 'center',
       mediaType: 'Video',
-      text: '',
-      url: '',
-    },
-    {
-      id: 'terroni-3',
-      type: 'MediaBlock',
-      mediaType: 'Image',
+      text: 'The digital experience improves the customer journey while telling the story of the beloved brand while combining all business facets into one seamless experience.',
+      url: 'https://s3.amazonaws.com/usful-portfolio/vids/terroni-2.mp4',
+      width: 90,
     },
   ] //Blocks
 };
