@@ -13,7 +13,7 @@
 
   section.top {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     .logo {
       font-size: 7.5rem;
@@ -170,7 +170,7 @@
       }
 
       .tagLine {
-        margin-bottom: 1em;
+        margin-bottom: 0.9em;
 
         strong {
           font-size: 2rem;

@@ -1,13 +1,28 @@
 @import '../../../variables';
 
-.imageBlock {
+.MediaBlock {
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
   color: $black;
+
+  .MediaDiv {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  video {
+    object-fit: cover;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
 
   p {
     font-family: $fontSans;
-    font-size: 1rem;
+    font-size: 1.3rem;
     opacity: 0.9;
     line-height: 1.4rem;
     flex: 2;
@@ -24,7 +39,6 @@
     img {
       display: block;
       height: 24rem;
-      margin: 0 auto;
     }
 
     p {
@@ -35,27 +49,22 @@
 
   &.alignRight,
   &.alignLeft {
-    padding: 2rem;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
 
+    p{
+      padding: 0 2rem;
+    }
+
+    .MediaDiv {
+      flex:2;
+    }
+
     img {
       flex: 3;
       object-fit: contain;
-      height: 20rem;
-    }
-  }
-
-  &.alignRight {
-    p {
-      padding-left: 2rem;
-    }
-  }
-
-  &.alignLeft {
-    p {
-      padding-right: 2rem;
+      height: 24rem;
     }
   }
 
@@ -67,7 +76,7 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
-  .imageBlock {
+  .MediaBlock {
     &.alignCenter {
       img {
         height: 20rem;
@@ -90,7 +99,7 @@
 /** PHONE **/
 @media (max-width: 640px) {
 
-  .imageBlock {
+  .MediaBlock {
     &.alignCenter {
       img {
         height: 15rem;
@@ -103,8 +112,13 @@
 
     &.alignRight,
     &.alignLeft {
+      flex-direction:column;
+      align-items: center;
       img {
         height: 10rem;
+      }
+      p{
+        padding: 1rem;
       }
     }
   }

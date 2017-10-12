@@ -10,6 +10,6 @@ export default {
   inMenu: true,
   id: 'a3',
   name: 'Technology',
-  hero: 'https://s3.amazonaws.com/usful-portfolio/img/lane.jpg',
-  projects: projects
+  hero: 'https://s3.amazonaws.com/usful-portfolio/img/technology/lane-3.jpg',
+  projects: projects,
 };

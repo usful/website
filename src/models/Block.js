@@ -9,5 +9,7 @@ export default Models.create('Block', {
   by: String,
   content: ['Block'],
   animation: String,
-  padding: Number
+  padding: Number,
+  mediaType: String,
+  width: Number,
 });
