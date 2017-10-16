@@ -271,7 +271,7 @@
 @media (max-width: 640px) {
   .marketStoryPage {
     .intro {
-      height: 54rem;
+      height: 20rem;
 
       .top {
         text-align: center;
@@ -280,7 +280,7 @@
       .carousel {
         position: absolute;
         width: 100vw;
-        height: 54rem;
+        height: 20rem;
 
         h1 {
           font-size: 3rem;
@@ -289,12 +289,16 @@
 
         .pager {
           font-size: 1rem;
-          bottom: 12rem;
+          bottom: 2rem;
 
           li {
-            width: 1em;
+            width: 3em;
             height: 1em;
           }
+        }
+
+        video {
+          height: 20rem;
         }
       }
     }
