@@ -42,10 +42,10 @@ export default function MediaBlock({
   } else if (align === 'left') {
     return (
       <div className={cx(styles.MediaBlock, styles.alignLeft, className)}>
+        {Media}
         <p>
           {text}
         </p>
-        {Media}
       </div>
     );
   } else if (align === 'right') {

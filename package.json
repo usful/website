@@ -51,7 +51,6 @@
     "webpack-dev-middleware": "^1.12.0"
   },
   "dependencies": {
-    "models": "git://github.com/usful/models#v2.1.0",
     "autoprefixer": "^7.1.4",
     "aws-sdk": "^2.123.0",
     "babel-plugin-transform-es2015-function-name": "^6.24.1",
@@ -68,11 +67,13 @@
     "function-tree": "^2.0.0",
     "imports-loader": "^0.7.1",
     "mobile-detect": "^1.3.7",
+    "models": "git://github.com/usful/models#v2.0.0",
     "nodemailer": "^4.1.1",
     "null-loader": "^0.1.1",
     "prettier": "^1.7.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-fastclick": "^3.0.2",
     "react-ga": "^2.3.4",
     "react-google-maps": "^8.3.0",
     "react-icons": "^2.2.5",

@@ -19,8 +19,12 @@ import {
 
 const menu = [
   {
-    href: '/market/clients',
-    name: 'Clients'
+    href: '/technology',
+    name: 'Technology'
+  },
+  {
+    href: '/experiences',
+    name: 'Experiences'
   }
 ].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
 
