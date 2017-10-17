@@ -31,27 +31,3 @@ export default class MainMenu extends Component {
     );
   }
 }
-
-/**export default function MainMenu({ items = [], color = 'white', className }) {
-  const itemToggle = () => {
-    const itemDiv = document.querySelector(`.${styles.menuItems}`);
-    if (itemDiv.className.includes(`${styles.show}`)) {
-      itemDiv.className = cx(styles.menuItems);
-    } else {
-      itemDiv.className = cx(styles.menuItems, styles.show);
-    }
-  };
-
-  return (
-    <menu className={cx(styles.mainMenu, className, styles[color])}>
-      <div className={cx(styles.menuItems)}>
-        {items.map(item =>
-          (<Link to={item.href} key={item.href}>
-            {item.name}
-          </Link>),
-        )}
-      </div>
-      <a className={cx(styles.icon)} onClick={itemToggle}>&#9776;</a>
-    </menu>
-  );
-}**/
