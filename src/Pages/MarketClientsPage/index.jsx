@@ -23,8 +23,12 @@ const PointlessWrapper = withGoogleMap(props =>
 
 const menu = [
   {
-    href: '/market/partners',
-    name: 'Partners'
+    href: '/technology',
+    name: 'Technology'
+  },
+  {
+    href: '/experiences',
+    name: 'Experiences'
   }
 ].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
 

@@ -29,7 +29,16 @@ const partnerStyle = utils.isMobile
     }
   : null;
 
-const menu = data.menu.map(item => ({ href: item.hash, name: item.name }));
+const menu = [
+  {
+    href: '/technology',
+    name: 'Technology'
+  },
+  {
+    href: '/experiences',
+    name: 'Experiences'
+  }
+].concat(data.menu.map(item => ({ href: item.hash, name: item.name })));
 
 const section = data.sections.find(section => section.name === 'Technology');
 

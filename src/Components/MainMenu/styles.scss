@@ -16,7 +16,7 @@
   &.white {
     color: $white;
 
-    a {
+    a:not(.icon) {
       @include hoverLine($white);
     }
   }
@@ -24,7 +24,7 @@
   &.black {
     color: $black;
 
-    a {
+    a:not(.icon) {
       @include hoverLine($black);
     }
   }
@@ -53,12 +53,17 @@
     transform: translateX(0);
     opacity: 1;
 
-    a {
+    a:not(.icon) {
       display: flex;
       background: white;
+      color:black;
       padding: 0.25em 0.25em;
       margin: 0.75em 1.25em;
       border: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .icon {
+      font-size: 1.5rem;
     }
   }
 }
@@ -70,5 +75,9 @@
       padding: 0.25em 0.25em;
       margin: 0.75em 1.25em;
     }
+  }
+
+  .icon {
+    display:none;
   }
 }

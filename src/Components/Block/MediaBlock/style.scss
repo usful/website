@@ -2,7 +2,7 @@
 
 .MediaBlock {
   overflow: hidden;
-  padding: 2rem 2rem;
+  padding: 3.2rem 2rem;
   color: $black;
 
   .MediaDiv {
@@ -22,7 +22,7 @@
 
   p {
     font-family: $fontSans;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     opacity: 0.9;
     line-height: 1.4rem;
     flex: 2;
@@ -106,7 +106,7 @@
       }
 
       p {
-        padding: 2rem 5rem 0 5rem;
+        padding: 1rem;
       }
     }
 
