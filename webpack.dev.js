@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!models)/,
         loader: 'babel-loader',
         query: {
           plugins: ['transform-runtime'],
@@ -30,9 +30,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      __DEV__: true,
-    }),
   ],
   devtool: 'source-map',
   watch: true,
