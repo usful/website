@@ -11,7 +11,7 @@ const app = new AppModel({
       leaving: false,
       id: 'a4',
       hash: '#about',
-      name: 'About'
+      name: 'About',
     },
     {
       showing: false,
@@ -19,9 +19,9 @@ const app = new AppModel({
       leaving: false,
       id: 'a5',
       hash: '#contact',
-      name: 'Contact'
-    }
-  ]
+      name: 'Contact',
+    },
+  ],
 });
 
 export default app;

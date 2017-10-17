@@ -73,6 +73,7 @@
     "prettier": "^1.7.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-fastclick": "^3.0.2",
     "react-ga": "^2.3.4",
     "react-google-maps": "^8.3.0",
     "react-icons": "^2.2.5",

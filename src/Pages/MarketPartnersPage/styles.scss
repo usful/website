@@ -417,10 +417,27 @@
 @media (max-width: 640px) {
   .marketPartnersPage {
     .intro {
+      height:20rem;
+      .carousel {
+        height: 20rem;
+        .pager {
+          bottom: 2rem;
+
+          li {
+            width:3rem;
+          }
+        }
+
+        video {
+          height: 20rem;
+        }
+      }
+
       .top {
         text-align: center;
       }
     }
+
   }
 }
 

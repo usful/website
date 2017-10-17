@@ -18,6 +18,7 @@ export default {
           text: 'Turn-key vending with access to the best customers.',
           url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-stall.mp4',
           mediaType: 'Video',
+          width: 100,
         },
         {
           id: 'bc8',
@@ -26,6 +27,7 @@ export default {
           url:
             'https://s3.amazonaws.com/usful-portfolio/vids/market-sammiches.mp4',
           mediaType: 'Video',
+          width: 100,
         },
         {
           id: 'bc9',
@@ -33,6 +35,7 @@ export default {
           text: 'Different locations, seasons and themes to participate in.',
           url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-people.mp4',
           mediaType: 'Video',
+          width: 100,
         },
         {
           id: 'bc10',
@@ -40,11 +43,12 @@ export default {
           text: 'Join our market, contact us today!',
           url: 'https://s3.amazonaws.com/usful-portfolio/vids/market-tomato.mp4',
           mediaType: 'Video',
-        }
-      ]
-    }
+          width: 100,
+        },
+      ],
+    },
   ],
   id: 'a2',
   inMenu: false,
-  name: 'Market Partners'
+  name: 'Market Partners',
 };

@@ -8,7 +8,7 @@ export default function TagLine({ className }) {
     <h2 className={cx(styles.tagLine, className)}>
       Shift
       <br />
-      consciousness.
+      <span>consciousness.</span>
     </h2>
   );
 }
