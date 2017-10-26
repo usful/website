@@ -43,10 +43,13 @@ export default class TechnologiesPage extends Showable {
           ? <div>
               <section className={styles.intro}>
                 {utils.isMobile
-                  ? null
+                  ? <TopBar className={styles.top} menu={menu} color="black" />
                   : <Dots className={styles.dots} animate={false} />}
                 <div className={styles.inner}>
-                  <TopBar className={styles.top} menu={menu} color="black" />
+                  {utils.isMobile
+                    ? null
+                    : <TopBar className={styles.top} menu={menu} color="black" />
+                  }
                   <div className={styles.copy}>
                     <h1>Technology products with purpose.</h1>
                   </div>

@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import util from '../../utils';
+import CloseIcon from '../Icons/Close/index';
 import styles from './styles.scss';
 
 export default class MainMenu extends Component {
@@ -21,12 +22,22 @@ export default class MainMenu extends Component {
     } = this.props;
     return (
       <menu className={cx(styles.mainMenu, className, styles[color])}>
-        {this.state.showItems ? items.map(item =>
-          (<Link to={item.href} key={item.href}>
-            {item.name}
-          </Link>),
-        ) : null}
-        <a className={cx(styles.icon)} onClick={() => this.setState({ showItems: !this.state.showItems })}>&#9776;</a>
+        {
+          this.state.showItems ?
+            <div className={cx(styles.menuItems)} >
+              <a className={styles.closeMenu} onClick={() => this.setState({ showItems: !this.state.showItems })}>
+                <CloseIcon color="white" />
+              </a>
+              {items.map(item =>
+                (<Link to={item.href} key={item.href}>
+                  {item.name}
+                </Link>),
+              )}
+            </div>
+            : <a className={cx(styles.icon)} onClick={() => this.setState({ showItems: !this.state.showItems })}>
+              &#9776;
+            </a>
+        }
       </menu>
     );
   }
