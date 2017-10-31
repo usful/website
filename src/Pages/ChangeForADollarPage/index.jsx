@@ -90,7 +90,7 @@ export default class TechnologiesPage extends Showable {
                 }
               </div>
             </section>
-            <FooterTagLine text="Want to collaborate on a project?" />
+            <FooterTagLine text="Get In Touch" />
           </div>
       </div>
     );
