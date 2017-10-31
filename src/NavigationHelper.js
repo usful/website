@@ -75,10 +75,13 @@ export default class NavigationHelper {
       matchPath(next.pathname, section.route)
     );
 
+    console.log('nextSection', nextSection);
+
     if (nextSection) {
       nextProject = nextSection.projects.find(project =>
         matchPath(next.pathname, project.route)
       );
+      console.log('nextProject', nextProject);
 
       if (nextSection !== lastSection) {
         nextSection.component.setActive();
@@ -120,6 +123,7 @@ export default class NavigationHelper {
   }
 
   static getSection(name) {
+    console.log(name);
     return NavigationHelper.data.sections.find(
       section => section.name === name
     );

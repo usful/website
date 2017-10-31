@@ -4,6 +4,7 @@ import market from './market';
 import marketClients from './marketClients';
 import marketPartners from './marketPartners';
 import technology from './technology';
+import cfd from './cfd';
 
 export default [
   home,
@@ -11,5 +12,6 @@ export default [
   experiences,
   market,
   marketClients,
-  marketPartners
+  marketPartners,
+  cfd,
 ];

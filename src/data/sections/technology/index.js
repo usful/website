@@ -5,7 +5,7 @@ export default {
   active: false,
   route: {
     path: '/technology',
-    strict: true
+    strict: true,
   },
   inMenu: true,
   id: 'a3',

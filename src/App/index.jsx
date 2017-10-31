@@ -10,7 +10,8 @@ import {
   LoadingPage,
   MarketPage,
   MarketPartnersPage,
-  MarketClientsPage
+  MarketClientsPage,
+  ChangeForADollarPage,
 } from '../Pages';
 
 import { About, Contact } from '../Modals';
@@ -23,6 +24,8 @@ const technology = NavigationHelper.getSection('Technology');
 const market = NavigationHelper.getSection('Market');
 const marketPartners = NavigationHelper.getSection('Market Partners');
 const marketClients = NavigationHelper.getSection('Market Clients');
+const cfd = NavigationHelper.getSection('Change For A Dollar');
+console.log(cfd);
 
 const about = NavigationHelper.getMenu('About');
 const contact = NavigationHelper.getMenu('Contact');
@@ -68,6 +71,10 @@ export default connect({ data }, class App extends Component {
         <MarketClientsPage
           ref={setComponent(marketClients)}
           route={marketClients.route}
+        />
+        <ChangeForADollarPage
+          ref={setComponent(cfd)}
+          route={cfd.route}
         />
         <About ref={setComponent(about)} />
         <Contact ref={setComponent(contact)} />

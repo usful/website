@@ -1,0 +1,120 @@
+@import '../../variables';
+
+$lightGreen: #8dc63f;
+$darkGreen: #067c00;
+
+.cfdPage {
+  @include fullScreen;
+  @include smoothYScroll;
+  @include scrollBar(rgba(0,0,0,0.2));
+
+  overflow-x: hidden;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity $showTransition;
+  background-color: $white;
+
+  .intro {
+    background: url(https://s3.amazonaws.com/usful-portfolio/img/technology/change-for-a-dollar-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100vw;
+    height:100vh;
+
+    .topBar {
+      width:100vw;
+      color: $lightGreen;
+
+      .logo {
+        padding:2rem;
+        width:20rem;
+        height:20rem;
+      }
+    }
+
+
+    .introCopy {
+      font-family: $font;
+      display:flex;
+      flex-direction:column;
+      align-items: flex-end;
+      padding-right:2rem;
+
+
+      .hero {
+        color: $darkGreen;
+        font-size: 5.5rem;
+      }
+
+      .subTitle {
+        font-size: 3rem;
+        color: $lightGreen;
+        padding:2rem;
+      }
+    }
+  }
+
+  .blurb {
+    text-align: center;
+    padding: 4rem 0;
+
+      hr {
+        height: 4px;
+        background-color: $black;
+        opacity: 0.1;
+        width: 15rem;
+        margin: 6rem auto;
+        border: none;
+      }
+
+      h1{
+        line-height: 1.4em;
+        font-size: 3.75rem;
+        margin-bottom: 3rem;
+      }
+
+      p{
+        font-size: 2rem;
+        width: 30em;
+        margin: 0 auto;
+        line-height: 2em;
+      }
+  }
+
+  .info{
+    .guide{
+      display:flex;
+      flex-direction:column;
+
+      .guideBlock{
+        display:flex;
+        padding:4rem;
+        justify-content: space-around;
+
+        .left {
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          width:40%;
+
+          h2 {
+            line-height: 1.4em;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+          }
+        }
+
+        .right{
+          text-align:center;
+
+          p{
+            font-size: 2rem;
+            width: 30em;
+            margin: 0 auto;
+            line-height: 2em;
+          }
+        }
+      }
+    }
+  }
+}
