@@ -22,18 +22,20 @@ $darkGreen: #067c00;
     height:100vh;
 
     .topBar {
+      @include slideUpHidden;
       width:100vw;
       color: $lightGreen;
 
       .logo {
         padding:2rem;
-        width:20rem;
-        height:20rem;
+        width:15rem;
+        height:15rem;
       }
     }
 
 
     .introCopy {
+      @include reverseZoomHidden;
       font-family: $font;
       display:flex;
       flex-direction:column;
@@ -116,5 +118,40 @@ $darkGreen: #067c00;
         }
       }
     }
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show1 {
+  }
+
+  &.show2 {
+  }
+
+  &.show3 {
+    .intro {
+      .introCopy {
+        @include reverseZoomShow;
+      }
+    }
+  }
+
+  &.show4 {
+    .intro {
+      .topBar {
+        @include slideUpShow;
+      }
+    }
+  }
+
+  &.hide3.hiding {
+    opacity: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 }
