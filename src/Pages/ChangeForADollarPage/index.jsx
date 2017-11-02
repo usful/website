@@ -6,6 +6,7 @@ import utils from '../../utils';
 import data from '../../data';
 import FooterTagLine from '../../Components/FooterTagLine';
 import Footer from '../../Components/Footer';
+import CarouselBlock from '../../Components/Block';
 
 import Showable from '../../Components/Showable';
 
@@ -72,22 +73,30 @@ export default class TechnologiesPage extends Showable {
               <hr />
             </section>
             <section className={styles.info}>
-              <div className={styles.guide}>
-                {
-                  cfdGuideBlocks.map(
-                    block => (
-                      <div className={styles.guideBlock}>
-                        <div className={styles.left}>
-                          <h2>{block.title}</h2>
-                          <img src={block.image} />
-                        </div>
-                        <div className={styles.right}>
-                          <p>{block.description}</p>
-                        </div>
-                      </div>
-                    )
-                  )
-                }
+              <div className={styles.boxes}>
+                <div className={styles.box1}>
+                  <label>People</label>
+                  <h2>
+                    Our ambassadors make the experience.
+                  </h2>
+                </div>
+                <div
+                  className={styles.box2}
+                >
+
+                </div>
+                <div className={styles.box3}>
+                  <p>
+                    Our team of friendly and knowledgeable ambassadors makes the
+                    market experience a pleasant one for all guests and is on-site
+                    to assist our vendors in the market like a pro.
+                  </p>
+                  <p>
+                    Passionate and well-versed in key brand messages, the market
+                    ambassadors happily inform, educate, and assist in helping
+                    connect your products to consumers.
+                  </p>
+                </div>
               </div>
             </section>
             <FooterTagLine text="Get In Touch" />

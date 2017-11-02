@@ -2,6 +2,7 @@
 
 $lightGreen: #8dc63f;
 $darkGreen: #067c00;
+$boxHeight: 65rem;
 
 .cfdPage {
   @include fullScreen;
@@ -84,37 +85,80 @@ $darkGreen: #067c00;
   }
 
   .info{
-    .guide{
-      display:flex;
-      flex-direction:column;
+    .boxes {
+      margin: 4rem auto;
+      width: 75rem;
+      position: relative;
+      min-height: $boxHeight;
 
-      .guideBlock{
-        display:flex;
-        padding:4rem;
-        justify-content: space-around;
+      .box1 {
+        @include dropShadow;
+        top: 0;
+        left: 6rem;
+        text-align: left;
+        position: absolute;
+        width: 50rem;
+        height: $boxHeight;
+        background-size: cover;
+        padding: 3rem;
 
-        .left {
-          display:flex;
-          flex-direction: column;
-          align-items: center;
-          width:40%;
+        background-image: linear-gradient(
+                        to bottom,
+                        rgba(1, 12, 79, 0.8) 0%,
+                        rgba(20, 20, 20, 1) 100%
+        ),
+        url(https://s3.amazonaws.com/usful-portfolio/img/market-partners-1.jpg);
 
-          h2 {
-            line-height: 1.4em;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-          }
+        label {
+          display: block;
+          font-size: 1.4rem;
+          font-family: $fontMono;
+          margin-bottom: 1rem;
+          color: $white;
+          text-transform: uppercase;
         }
 
-        .right{
-          text-align:center;
+        h2 {
+          color: $white;
+          font-size: 4rem;
+          line-height: 1.3em;
+        }
+      }
 
-          p{
-            font-size: 2rem;
-            width: 30em;
-            margin: 0 auto;
-            line-height: 2em;
-          }
+      .box2 {
+        @include dropShadow;
+        position: absolute;
+        width: 50rem;
+        height: 35rem;
+        top: 23rem;
+        overflow: hidden;
+        backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market1.jpg)';
+        background-size: cover;
+        background-position: 50% 50%;
+
+        video {
+          width: 50rem;
+          height: 35rem;
+          object-fit: cover;
+        }
+      }
+
+      .box3 {
+        @include dropShadow;
+        position: absolute;
+        background-color: $yellow;
+        padding: 3rem;
+        color: $black;
+        font-family: $fontSans;
+        width: 30rem;
+        right: 6rem;
+        top: 20rem;
+
+        p {
+          font-size: 1.5rem;
+          line-height: 1.4em;
+          text-align: left;
+          padding: 0 0 1em 0;
         }
       }
     }
