@@ -74,60 +74,79 @@ export default class Project extends Showable {
               {this.renderContent()}
             </section>}
         <section className={styles.description}>
-          <div className={styles.title}>
-            <h1>
-              {project.name}
-            </h1>
-            <section className={styles.tags}>
-              {project.tags.map(tag =>
-                <Tag tag={tag} key={tag} color="green" />
-              )}
-            </section>
+          <div>
+            <div className={styles.title}>
+              <h1>
+                {project.name}
+              </h1>
+              <section className={styles.tags}>
+                {project.tags.map(tag =>
+                  <Tag tag={tag} key={tag} color="green" />
+                )}
+              </section>
+            </div>
+            <div className={styles.info}>
+              <div className={styles.infoBox}>
+                <label>Who:</label>
+                <Markdown source={project.client || project.industry} />
+              </div>
+              <div className={styles.infoBox}>
+                <label>What:</label>
+                <Markdown source={project.description} />
+              </div>
+              <div className={styles.infoBox}>
+                <label>Impact:</label>
+                <Markdown source={project.impact} />
+              </div>
+              <h1>Want to collaborate?</h1>
+              <menu className={styles.contact}>
+                <div />
+                <hr />
+                <Link className={styles.button} to="#contact">
+                  Contact Us
+                </Link>
+              </menu>
+            </div>
           </div>
-          <div className={styles.info}>
-            <div className={styles.infoBox}>
-              <label>Who:</label>
-              <Markdown source={project.client || project.industry} />
+          {utils.isMobile ? <div className={styles.nav}>
+            <Link to={this.props.baseUrl} className={styles.navClose}>
+              <CloseIcon color="white"/>
+            </Link>
+            <div className={styles.next}>
+              <div className={styles.rotate}>
+                <label>Next:</label>
+                <Link to={next.route.path}>
+                  {next.name}
+                </Link>
+              </div>
             </div>
-            <div className={styles.infoBox}>
-              <label>What:</label>
-              <Markdown source={project.description} />
+            <div className={styles.count}>
+              {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
             </div>
-            <div className={styles.infoBox}>
-              <label>Impact:</label>
-              <Markdown source={project.impact} />
-            </div>
-            <h1>Want to collaborate?</h1>
-            <menu className={styles.contact}>
-              <div />
-              <hr />
-              <Link className={styles.button} to="#contact">
-                Contact Us
-              </Link>
-            </menu>
-          </div>
+          </div> : null
+          }
         </section>
         {utils.isMobile
           ? <section className={styles.content}>
               {this.renderContent()}
             </section>
-          : null}
-        <section className={styles.nav}>
-          <Link to={this.props.baseUrl} className={styles.navClose}>
-            <CloseIcon color="white" />
-          </Link>
-          <div className={styles.next}>
-            <div className={styles.rotate}>
-              <label>Next:</label>
-              <Link to={next.route.path}>
-                {next.name}
-              </Link>
+          : <section className={styles.nav}>
+            <Link to={this.props.baseUrl} className={styles.navClose}>
+              <CloseIcon color="white" />
+            </Link>
+            <div className={styles.next}>
+              <div className={styles.rotate}>
+                <label>Next:</label>
+                <Link to={next.route.path}>
+                  {next.name}
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className={styles.count}>
-            {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
-          </div>
-        </section>
+            <div className={styles.count}>
+              {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
+            </div>
+          </section>
+        }
       </div>
     );
   }
