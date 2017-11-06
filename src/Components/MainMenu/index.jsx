@@ -25,9 +25,12 @@ export default class MainMenu extends Component {
         {
           this.state.showItems ?
             <div className={cx(styles.menuItems)} >
-              <a className={styles.closeMenu} onClick={() => this.setState({ showItems: !this.state.showItems })}>
-                <CloseIcon color="white" />
-              </a>
+              {
+                util.isMobile ?
+                  <a className={styles.closeMenu} onClick={() => this.setState({showItems: !this.state.showItems})}>
+                    <CloseIcon color="white"/>
+                  </a> : null
+              }
               {items.map(item =>
                 (<Link to={item.href} key={item.href}>
                   {item.name}

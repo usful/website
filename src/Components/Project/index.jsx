@@ -73,7 +73,7 @@ export default class Project extends Showable {
           : <section className={styles.content}>
               {this.renderContent()}
             </section>}
-        <section className={styles.description}>
+        <section className={cx(styles.description, utils.mobileDetect.os() === 'iOS' ? styles.ios : null)}>
           <div>
             <div className={styles.title}>
               <h1>
@@ -108,7 +108,7 @@ export default class Project extends Showable {
               </menu>
             </div>
           </div>
-          {utils.isMobile ? <div className={styles.nav}>
+          {utils.isMobile ? <div className={cx(styles.nav, utils.mobileDetect.os() === 'iOS' ? styles.ios : null)}>
             <Link to={this.props.baseUrl} className={styles.navClose}>
               <CloseIcon color="white"/>
             </Link>

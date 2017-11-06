@@ -243,6 +243,9 @@ $descriptionWidth: 40rem;
 
     &.hasContent .description {
       transform: translateX(-$scrollWidth);
+      &.ios {
+        transform: translateX($iosScrollWidth);
+      }
     }
   }
 
@@ -273,7 +276,14 @@ $descriptionWidth: 40rem;
 
     &.hasContent .nav {
       transform: translateX(-$scrollWidth);
+      &.ios {
+        transform: translateX($iosScrollWidth);
+      }
     }
+  }
+
+  &.shown {
+    z-index:50;
   }
 }
 
@@ -306,6 +316,27 @@ $descriptionWidth: 40rem;
       height: 100vh;
       padding: 1rem (2rem + $navWidth) 1rem 2rem;
       transform: translateX(100vw);
+
+
+      .nav {
+        color:white;
+        height:100%;
+        min-height:0;
+
+        .next {
+          .rotate {
+            position:relative;
+            bottom:$navWidth;
+            width:50vh;
+          }
+        }
+      }
+
+      .content {
+        article {
+          padding:2rem 0;
+        }
+      }
     }
 
     &.hasContent .description {
@@ -373,6 +404,16 @@ $descriptionWidth: 40rem;
           }
         }
       }
+    }
+
+    .content {
+      article {
+        padding:2rem 0;
+      }
+    }
+
+    .nav {
+      transform: translateX(0);
     }
   }
 }
