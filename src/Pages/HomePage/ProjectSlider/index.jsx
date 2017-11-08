@@ -108,7 +108,7 @@ export default class ProjectSlider extends Component {
             <ProjectSlide
               key={project.id}
               project={project}
-              selected={i === currentProject}
+              selected={i === currentProject && this.props.showInfo}
             />
           )}
         </section>

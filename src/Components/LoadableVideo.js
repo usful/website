@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Video from './Video';
 import LoadHelper from '../LoadHelper';
+import utils from '../utils';
 
 export default class LoadableVideo extends Component {
   constructor(props) {
     super(props);
 
     this.loaded = false;
-    //LoadHelper.addItem();
+    LoadHelper.addItem();
   }
 
   onCanPlay() {

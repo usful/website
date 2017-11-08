@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import utils from '../utils';
 
+const browser = utils.detect();
+
 export default class Video extends Component {
   static defaultProps = {
     play: false,
@@ -12,6 +14,7 @@ export default class Video extends Component {
 
   constructor(props) {
     super(props);
+    this.chromeFix = browser.name !== 'chrome';
   }
 
   play() {
@@ -37,7 +40,6 @@ export default class Video extends Component {
   }
 
   render() {
-    const browser = utils.detect();
     return (
       <video
         ref="vid"
@@ -45,12 +47,22 @@ export default class Video extends Component {
         style={this.props.style}
         muted={this.props.muted}
         loop={this.props.loop}
-        onCanPlay={this.props.onCanPlay}
+        onCanPlay={() => {
+          this.chromeFix = true;
+          this.props.onCanPlay()
+        }}
         onError={this.props.onError}
         autoPlay={this.props.autoPlay}
         playsInline={this.props.playsInline}
+        onSuspend={() => {
+          if(!this.chromeFix) {
+            this.chromeFix = true;
+            this.refs.vid.src = this.props.src;
+            this.refs.vid.load();
+          }
+        }}
       >
-        <source src={browser.name === 'chrome' ? `${this.props.src}?${Math.floor(Math.random()*10000)}`: this.props.src} />
+        <source src={this.props.src} />
       </video>
     );
   }
