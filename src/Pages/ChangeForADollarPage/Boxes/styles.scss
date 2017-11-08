@@ -1,0 +1,60 @@
+@import '../../../variables';
+
+.boxes {
+  margin: 4rem auto;
+  width: 75rem;
+  position: relative;
+  min-height: 58rem;
+
+  .defaultBox {
+    backgroundColor: $white;
+    color: $black;
+  }
+
+  .box1 {
+    @include dropShadow;
+    top: 0;
+    left: 6rem;
+    text-align: left;
+    position: absolute;
+    width: 50rem;
+    height: 100%;
+    padding: 3rem;
+
+    h2 {
+      font-size: 4rem;
+      line-height: 1.3em;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+
+  .box2 {
+    @include dropShadow;
+    position: absolute;
+    width: 50rem;
+    top: 20rem;
+    overflow: hidden;
+  }
+
+  .box3 {
+    @include dropShadow;
+    position: absolute;
+    padding: 3rem;
+    font-family: $fontSans;
+    width: 30rem;
+    right: 6rem;
+    top: 17rem;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+
+    p {
+      font-size: 2rem;
+      line-height: 1.4em;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}

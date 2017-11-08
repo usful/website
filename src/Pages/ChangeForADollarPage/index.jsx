@@ -6,27 +6,55 @@ import utils from '../../utils';
 import data from '../../data';
 import FooterTagLine from '../../Components/FooterTagLine';
 import Footer from '../../Components/Footer';
-import CarouselBlock from '../../Components/Block';
+import Block from '../../Components/Block';
+import Boxes from './Boxes';
 
 import Showable from '../../Components/Showable';
 
 const section = data.sections.find(section => section.name === 'Change For A Dollar Site');
 
-const cfdGuideBlocks = [
+const carousalImages = [
   {
-    title:'Choose A Cause',
-    image: 'https://image.ibb.co/kAQKJG/icons8_Checklist_100.jpg',
-    description: 'Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.',
+    id: 'carousal-1',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url:'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_+housing.jpg'
   },
   {
-    title:'Link Your Cards',
-    image: 'https://image.ibb.co/hyHYdG/icons8_Bank_Cards_100.jpg',
-    description: 'Link your debit or credit card and set your donation preferences, cap your monthly giving at an amount you are comfortable with. All your data is safe and secure.',
+    id: 'carousal-2',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url:'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_animals.jpg'
   },
   {
-    title:'Donate With Every Purchase',
-    image: 'https://image.ibb.co/eXSYdG/icons8_Coins_100.jpg',
-    description: 'Live your life - go for coffee with your friends, have night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.',
+    id: 'carousal-3',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url: 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_civil+rights.jpg'
+  },
+  {
+    id: 'carousal-4',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url: 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_education.jpg'
+  },
+  {
+    id: 'carousal-5',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url: 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_environment.jpg'
+  },
+  {
+    id: 'carousal-6',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url: 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_graduation.jpg'
+  },
+  {
+    id: 'carousal-7',
+    type: 'MediaBlock',
+    mediaType: 'Image',
+    url: 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CauseCarousal/CFD+site_healthcare.jpg'
   },
 ];
 
@@ -83,25 +111,46 @@ export default class TechnologiesPage extends Showable {
                 <p> The future of giving is digital. We made Change for a Dollar to empower the next generation of donors.</p>
               <hr />
             </section>
-            <section className={styles.cause}>
-              <div className={styles.boxes}>
-                <div className={styles.box1}>
-                  <h2>
-                    Choose a cause
-                  </h2>
-                </div>
-                <div
-                  className={styles.box2}
-                >
-
-                </div>
-                <div className={styles.box3}>
-                  <p>
-                    Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.
-                  </p>
-                </div>
-              </div>
+            <section className={styles.stepOne}>
+              <Boxes
+                className={styles.boxes}
+                box1Style={styles.box1}
+                box2Style={styles.box2}
+                box3Style={styles.box3}
+                title='Choose a Cause'
+                block={
+                  {
+                    type: 'CarouselBlock',
+                    content: carousalImages,
+                    width: 100,
+                    className: styles.carousal,
+                  }
+                }
+                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/checklist.png'
+                text='Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.'
+              />
             </section>
+            <section className={styles.stepTwo}>
+              <Boxes
+                className={styles.boxes}
+                box1Style={styles.box1}
+                box2Style={styles.box2}
+                box3Style={styles.box3}
+                title='Link Your Cards'
+                block={
+                  {
+                    id: 'image-2-1',
+                    type: 'MediaBlock',
+                    mediaType: 'Image',
+                    url:'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD-StepTwo-Image.jpg',
+                    width: 100,
+                  }
+                }
+                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/bank-cards.png'
+                text='Link your debit or credit card and set your donation preferences, cap your monthly giving at an amount you are comfortable with. All your data is safe and secure.'
+              />
+            </section>
+            <section className={styles.stepThree}></section>
             <FooterTagLine text="Get In Touch" />
           </div>
       </div>

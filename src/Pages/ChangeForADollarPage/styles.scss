@@ -2,7 +2,7 @@
 
 $lightGreen: #8dc63f;
 $darkGreen: #067c00;
-$boxHeight: 65rem;
+$boxHeight: 58rem;
 $introMediaYOffset: 5rem;
 
 .cfdPage {
@@ -113,66 +113,76 @@ $introMediaYOffset: 5rem;
       }
   }
 
-  .cause{
+  .boxes {
+    height: $boxHeight;
+  }
+
+  .stepOne{
     .boxes {
-      margin: 4rem auto;
-      width: 75rem;
-      position: relative;
-      min-height: $boxHeight;
 
       .box1 {
-        @include dropShadow;
-        top: 0;
-        left: 6rem;
-        text-align: left;
-        position: absolute;
-        width: 50rem;
-        height: $boxHeight;
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+        url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/artur-luczka-283249.jpg);
         background-size: cover;
-        padding: 3rem;
-
-        background-image: linear-gradient(
-                        to bottom,
-                        rgba(1, 12, 79, 0.8) 0%,
-                        rgba(20, 20, 20, 1) 100%
-        ),
-        url(https://s3.amazonaws.com/usful-portfolio/img/market-partners-1.jpg);
-
-        h2 {
-          color: $white;
-          font-size: 4rem;
-          line-height: 1.3em;
-        }
+        color: $white;
       }
 
       .box2 {
-        @include dropShadow;
-        position: absolute;
-        width: 50rem;
-        height: 35rem;
-        top: 23rem;
-        overflow: hidden;
-        
+        .carousal {
+          height:100%;
+          padding: 0;
+
+          ul {
+            display:none;
+          }
+        }
       }
 
       .box3 {
-        @include dropShadow;
-        position: absolute;
-        background-color: $yellow;
-        padding: 3rem;
-        color: $black;
-        font-family: $fontSans;
-        width: 30rem;
-        right: 6rem;
-        top: 20rem;
+        color:$white;
+        background-color: $darkGreen;
+      }
+    }
+  }
 
-        p {
-          font-size: 1.5rem;
-          line-height: 1.4em;
-          text-align: left;
-          padding: 0 0 1em 0;
+  .stepTwo{
+    .boxes {
+
+      .box1 {
+        background-image: url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/becca-romine-221447.jpg);
+        background-size: cover;
+        color: $white;
+      }
+
+      .box2 {
+        right: 14rem;
+
+        div {
+          padding: 0;
         }
       }
+
+      .box3 {
+        background-color: $lightGreen;
+        color:$white;
+        top: 14rem;
+        left: -11rem;
+      }
+
+    }
+  }
+
+  .stepThree{
+    .box1 {
+
+    }
+
+    .box2 {
+
+    }
+
+    .box3 {
+
     }
   }
 
