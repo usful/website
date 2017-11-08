@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import utils from '../utils';
 
 export default class Video extends Component {
   static defaultProps = {
@@ -36,6 +37,7 @@ export default class Video extends Component {
   }
 
   render() {
+    const browser = utils.detect();
     return (
       <video
         ref="vid"
@@ -48,7 +50,7 @@ export default class Video extends Component {
         autoPlay={this.props.autoPlay}
         playsInline={this.props.playsInline}
       >
-        <source src={this.props.src} />
+        <source src={browser.name === 'chrome' ? `${this.props.src}?${Math.floor(Math.random()*10000)}`: this.props.src} />
       </video>
     );
   }

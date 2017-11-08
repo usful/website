@@ -51,7 +51,6 @@
     "webpack-dev-middleware": "^1.12.0"
   },
   "dependencies": {
-    "models": "git://github.com/usful/models#v2.3.0",
     "autoprefixer": "^7.1.4",
     "aws-sdk": "^2.123.0",
     "babel-plugin-transform-es2015-function-name": "^6.24.1",
@@ -61,6 +60,7 @@
     "classnames": "^2.2.5",
     "compression": "^1.7.1",
     "core-js": "^2.5.1",
+    "detect-browser": "^2.0.0",
     "es6-promise": "^4.1.1",
     "exports-loader": "^0.6.4",
     "express": "^4.15.5",
@@ -68,6 +68,7 @@
     "function-tree": "^2.0.0",
     "imports-loader": "^0.7.1",
     "mobile-detect": "^1.3.7",
+    "models": "git://github.com/usful/models#v2.3.0",
     "nodemailer": "^4.1.1",
     "null-loader": "^0.1.1",
     "prettier": "^1.7.1",

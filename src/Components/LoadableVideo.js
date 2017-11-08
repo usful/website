@@ -7,7 +7,7 @@ export default class LoadableVideo extends Component {
     super(props);
 
     this.loaded = false;
-    LoadHelper.addItem();
+    //LoadHelper.addItem();
   }
 
   onCanPlay() {
