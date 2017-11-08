@@ -55,29 +55,39 @@ export default class TechnologiesPage extends Showable {
       <div className={cx(styles.cfdPage, this.showableClasses(styles))}>
           <div>
             <section className={styles.intro}>
-              <div className={styles.topBar}>
+              <div className={styles.left}>
                 <img
                   src='https://s3.amazonaws.com/usful-portfolio/img/technology/cfd-logo.png'
                   className={styles.logo}
                 />
+                <div className={styles.introCopy}>
+                  <h1 className={styles.hero}>Change For A Dollar</h1>
+                  <p className={styles.subTitle}>Automated Cashless Giving</p>
+                </div>
               </div>
-              <div className={styles.introCopy}>
-                <h1 className={styles.hero}>Change For A Dollar</h1>
-                <p className={styles.subTitle}>Automated Cashless Giving</p>
+              <div className={styles.right}>
+                <img
+                  className={styles.donationHistoryPNG}
+                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD_donation+history.png'
+                />
+
+                <img
+                  className={styles.charityProfilePNG}
+                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/charity+profile.png'
+                />
               </div>
             </section>
             <section className={styles.blurb}>
               <hr />
-                <h1> Making it easy to support the causes that matter most to you </h1>
-                <p> With cash increasingly becoming a thing of the past, the way we give to charities is changing. We made Change for a Dollar to empower the next generation of donors.</p>
+                <h1> Making it easier to support the causes that matter to you </h1>
+                <p> The future of giving is digital. We made Change for a Dollar to empower the next generation of donors.</p>
               <hr />
             </section>
-            <section className={styles.info}>
+            <section className={styles.cause}>
               <div className={styles.boxes}>
                 <div className={styles.box1}>
-                  <label>People</label>
                   <h2>
-                    Our ambassadors make the experience.
+                    Choose a cause
                   </h2>
                 </div>
                 <div
@@ -87,14 +97,7 @@ export default class TechnologiesPage extends Showable {
                 </div>
                 <div className={styles.box3}>
                   <p>
-                    Our team of friendly and knowledgeable ambassadors makes the
-                    market experience a pleasant one for all guests and is on-site
-                    to assist our vendors in the market like a pro.
-                  </p>
-                  <p>
-                    Passionate and well-versed in key brand messages, the market
-                    ambassadors happily inform, educate, and assist in helping
-                    connect your products to consumers.
+                    Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.
                   </p>
                 </div>
               </div>

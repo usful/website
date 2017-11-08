@@ -3,6 +3,7 @@
 $lightGreen: #8dc63f;
 $darkGreen: #067c00;
 $boxHeight: 65rem;
+$introMediaYOffset: 5rem;
 
 .cfdPage {
   @include fullScreen;
@@ -16,43 +17,71 @@ $boxHeight: 65rem;
   background-color: $white;
 
   .intro {
-    background: url(https://s3.amazonaws.com/usful-portfolio/img/technology/change-for-a-dollar-hero.jpg);
+    background: url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/header-background.jpg);
     background-size: cover;
+    background-position-y: center;
     background-repeat: no-repeat;
     width:100vw;
     height:100vh;
+    display:flex;
 
-    .topBar {
-      @include slideUpHidden;
-      width:100vw;
-      color: $lightGreen;
+    .left, .right {
+      width:50%;
+    }
+
+    .left {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding:0 4rem;
 
       .logo {
-        padding:2rem;
-        width:15rem;
-        height:15rem;
+        @include slideUpHidden;
+        width: 30rem;
+        height: 30rem;
+        align-self: flex-start;
+        margin-left: 6rem;
+      }
+
+      .introCopy {
+        @include reverseZoomHidden;
+        font-family: $font;
+        display: flex;
+        flex-direction: column;
+
+        .hero {
+          color: $darkGreen;
+          font-size: 5.5rem;
+          margin-bottom:2rem;
+        }
+
+        .subTitle {
+          font-size: 3rem;
+          color: $darkGreen;
+        }
       }
     }
 
-
-    .introCopy {
-      @include reverseZoomHidden;
-      font-family: $font;
+    .right {
       display:flex;
-      flex-direction:column;
-      align-items: flex-end;
-      padding-right:2rem;
+      align-items: center;
+      justify-content: center;
 
-
-      .hero {
-        color: $darkGreen;
-        font-size: 5.5rem;
+      img {
+        position:relative;
       }
 
-      .subTitle {
-        font-size: 3rem;
-        color: $lightGreen;
-        padding:2rem;
+      .donationHistoryPNG {
+        width: 30rem;
+        z-index:1;
+        left:22rem;
+        top:4rem;
+      }
+
+      .charityProfilePNG {
+        width: 60rem;
+        right:7rem;
       }
     }
   }
@@ -84,7 +113,7 @@ $boxHeight: 65rem;
       }
   }
 
-  .info{
+  .cause{
     .boxes {
       margin: 4rem auto;
       width: 75rem;
@@ -109,15 +138,6 @@ $boxHeight: 65rem;
         ),
         url(https://s3.amazonaws.com/usful-portfolio/img/market-partners-1.jpg);
 
-        label {
-          display: block;
-          font-size: 1.4rem;
-          font-family: $fontMono;
-          margin-bottom: 1rem;
-          color: $white;
-          text-transform: uppercase;
-        }
-
         h2 {
           color: $white;
           font-size: 4rem;
@@ -132,15 +152,7 @@ $boxHeight: 65rem;
         height: 35rem;
         top: 23rem;
         overflow: hidden;
-        backgroundImage: 'url(https://s3.amazonaws.com/usful-portfolio/img/market1.jpg)';
-        background-size: cover;
-        background-position: 50% 50%;
-
-        video {
-          width: 50rem;
-          height: 35rem;
-          object-fit: cover;
-        }
+        
       }
 
       .box3 {
@@ -184,7 +196,7 @@ $boxHeight: 65rem;
 
   &.show4 {
     .intro {
-      .topBar {
+      .logo {
         @include slideUpShow;
       }
     }
