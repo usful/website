@@ -46,7 +46,7 @@ $introMediaYOffset: 5rem;
 
       .introCopy {
         @include reverseZoomHidden;
-        font-family: $font;
+        font-family: $fontSans;
         display: flex;
         flex-direction: column;
 
@@ -88,7 +88,6 @@ $introMediaYOffset: 5rem;
 
   .blurb {
     text-align: center;
-    padding: 4rem 0;
 
       hr {
         height: 4px;
@@ -115,75 +114,7 @@ $introMediaYOffset: 5rem;
 
   .boxes {
     height: $boxHeight;
-  }
-
-  .stepOne{
-    .boxes {
-
-      .box1 {
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
-        url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/artur-luczka-283249.jpg);
-        background-size: cover;
-        color: $white;
-      }
-
-      .box2 {
-        .carousal {
-          height:100%;
-          padding: 0;
-
-          ul {
-            display:none;
-          }
-        }
-      }
-
-      .box3 {
-        color:$white;
-        background-color: $darkGreen;
-      }
-    }
-  }
-
-  .stepTwo{
-    .boxes {
-
-      .box1 {
-        background-image: url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/becca-romine-221447.jpg);
-        background-size: cover;
-        color: $white;
-      }
-
-      .box2 {
-        right: 14rem;
-
-        div {
-          padding: 0;
-        }
-      }
-
-      .box3 {
-        background-color: $lightGreen;
-        color:$white;
-        top: 14rem;
-        left: -11rem;
-      }
-
-    }
-  }
-
-  .stepThree{
-    .box1 {
-
-    }
-
-    .box2 {
-
-    }
-
-    .box3 {
-
-    }
+    right:-7rem;
   }
 
   &.showing {

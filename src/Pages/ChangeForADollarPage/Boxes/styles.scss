@@ -1,13 +1,12 @@
 @import '../../../variables';
 
 .boxes {
-  margin: 4rem auto;
   width: 75rem;
   position: relative;
   min-height: 58rem;
 
   .defaultBox {
-    backgroundColor: $white;
+    background-color: $white;
     color: $black;
   }
 
@@ -33,8 +32,19 @@
     @include dropShadow;
     position: absolute;
     width: 50rem;
-    top: 20rem;
     overflow: hidden;
+
+    &.right {
+      left:15rem;
+    }
+
+    .block {
+      padding:0;
+
+      ul {
+        display:none;
+      }
+    }
   }
 
   .box3 {
@@ -43,12 +53,18 @@
     padding: 3rem;
     font-family: $fontSans;
     width: 30rem;
-    right: 6rem;
-    top: 17rem;
     display:flex;
     flex-direction:column;
     align-items: center;
     justify-content: space-around;
+
+    &.right{
+      left: -6rem;
+    }
+
+    &.left{
+      right: 6rem;
+    }
 
     p {
       font-size: 2rem;
@@ -56,5 +72,25 @@
       text-align: center;
       margin-top: 1rem;
     }
+
+    img {
+      margin: 2rem 0;
+    }
+
+    &.initial {
+      right: 6rem;
+    }
+  }
+
+  &.left {
+    margin: 4rem 4rem;
+  }
+
+  &.center{
+    margin: 4rem auto;
+  }
+
+  &.right{
+    margin: 4rem 42rem;
   }
 }

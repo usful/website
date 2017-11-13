@@ -114,9 +114,11 @@ export default class TechnologiesPage extends Showable {
             <section className={styles.stepOne}>
               <Boxes
                 className={styles.boxes}
-                box1Style={styles.box1}
-                box2Style={styles.box2}
-                box3Style={styles.box3}
+                background1={'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/artur-luczka-283249.jpg)'}
+                color1={'white'}
+                background3={'#067c00'}
+                color3={'white'}
+                yDiff={5}
                 title='Choose a Cause'
                 block={
                   {
@@ -133,9 +135,11 @@ export default class TechnologiesPage extends Showable {
             <section className={styles.stepTwo}>
               <Boxes
                 className={styles.boxes}
-                box1Style={styles.box1}
-                box2Style={styles.box2}
-                box3Style={styles.box3}
+                background1={'url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/becca-romine-221447.jpg)'}
+                color1={'white'}
+                background3={'#8dc63f'}
+                color3={'white'}
+                contentStyle='right'
                 title='Link Your Cards'
                 block={
                   {
@@ -150,8 +154,29 @@ export default class TechnologiesPage extends Showable {
                 text='Link your debit or credit card and set your donation preferences, cap your monthly giving at an amount you are comfortable with. All your data is safe and secure.'
               />
             </section>
-            <section className={styles.stepThree}></section>
-            <FooterTagLine text="Get In Touch" />
+            <section className={styles.stepThree}>
+              <Boxes
+                className={styles.boxes}
+                background1={'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg)'}
+                color1={'white'}
+                yOffset={15}
+                yDiff={10}
+                title='Donate with Every Purchase'
+                block={
+                  {
+                    id: 'video-3-1',
+                    type: 'MediaBlock',
+                    mediaType: 'Video',
+                    url: 'https://s3.amazonaws.com/usful-portfolio/vids/cfd-hero.mp4',
+                    width: 100,
+                    active:true,
+                  }
+                }
+                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/coins.png'
+                text='Live your life - go for coffee with your friends, have night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.'
+              />
+            </section>
+            <FooterTagLine text="Have a question? We would love to hear from you!" />
           </div>
       </div>
     );
