@@ -37,14 +37,16 @@ export default class Project extends Showable {
 
   renderContent() {
     const { project } = this.props;
-    
+
     if (project.content && project.content.length) {
       return (
         <article>
           <div className={styles.scrollDown}>
             <ScrollDownIcon />
           </div>
-          {project.content.map(block => <Block key={block.id} {...block.toJSON()} active />)}
+          {project.content.map(block => (
+            <Block key={block.id} {...block.toJSON()} active />
+          ))}
         </article>
       );
     }
@@ -54,7 +56,7 @@ export default class Project extends Showable {
     if (!this.shouldRender) {
       return null;
     }
-    
+
     const { project, count, position, next, align } = this.props;
 
     return (
@@ -68,21 +70,22 @@ export default class Project extends Showable {
           }
         )}
       >
-        {utils.isMobile
-          ? null
-          : <section className={styles.content}>
-              {this.renderContent()}
-            </section>}
-        <section className={cx(styles.description, utils.mobileDetect.os() === 'iOS' ? styles.ios : null)}>
+        {utils.isMobile ? null : (
+          <section className={styles.content}>{this.renderContent()}</section>
+        )}
+        <section
+          className={cx(
+            styles.description,
+            utils.mobileDetect.os() === 'iOS' ? styles.ios : null
+          )}
+        >
           <div>
             <div className={styles.title}>
-              <h1>
-                {project.name}
-              </h1>
+              <h1>{project.name}</h1>
               <section className={styles.tags}>
-                {project.tags.map(tag =>
+                {project.tags.map(tag => (
                   <Tag tag={tag} key={tag} color="green" />
-                )}
+                ))}
               </section>
             </div>
             <div className={styles.info}>
@@ -108,45 +111,46 @@ export default class Project extends Showable {
               </menu>
             </div>
           </div>
-          {utils.isMobile ? <div className={cx(styles.nav, utils.mobileDetect.os() === 'iOS' ? styles.ios : null)}>
-            <Link to={this.props.baseUrl} className={styles.navClose}>
-              <CloseIcon color="white"/>
-            </Link>
-            <div className={styles.next}>
-              <div className={styles.rotate}>
-                <label>Next:</label>
-                <Link to={next.route.path}>
-                  {next.name}
-                </Link>
+          {utils.isMobile ? (
+            <div
+              className={cx(
+                styles.nav,
+                utils.mobileDetect.os() === 'iOS' ? styles.ios : null
+              )}
+            >
+              <Link to={this.props.baseUrl} className={styles.navClose}>
+                <CloseIcon color="white" />
+              </Link>
+              <div className={styles.next}>
+                <div className={styles.rotate}>
+                  <label>Next:</label>
+                  <Link to={next.route.path}>{next.name}</Link>
+                </div>
+              </div>
+              <div className={styles.count}>
+                {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
               </div>
             </div>
-            <div className={styles.count}>
-              {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
-            </div>
-          </div> : null
-          }
+          ) : null}
         </section>
-        {utils.isMobile
-          ? <section className={styles.content}>
-              {this.renderContent()}
-            </section>
-          : <section className={styles.nav}>
+        {utils.isMobile ? (
+          <section className={styles.content}>{this.renderContent()}</section>
+        ) : (
+          <section className={styles.nav}>
             <Link to={this.props.baseUrl} className={styles.navClose}>
               <CloseIcon color="white" />
             </Link>
             <div className={styles.next}>
               <div className={styles.rotate}>
                 <label>Next:</label>
-                <Link to={next.route.path}>
-                  {next.name}
-                </Link>
+                <Link to={next.route.path}>{next.name}</Link>
               </div>
             </div>
             <div className={styles.count}>
               {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
             </div>
           </section>
-        }
+        )}
       </div>
     );
   }

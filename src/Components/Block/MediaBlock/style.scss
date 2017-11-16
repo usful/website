@@ -5,7 +5,7 @@
   padding: 3.2rem 2rem;
   color: $black;
 
-  .MediaDiv {
+  .wrapper {
     display:flex;
     justify-content:center;
     align-items: center;
@@ -57,7 +57,7 @@
       padding: 0 2rem;
     }
 
-    .MediaDiv {
+    .wrapper {
       flex:2;
     }
 

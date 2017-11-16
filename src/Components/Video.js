@@ -9,16 +9,23 @@ export default class Video extends Component {
     autoPlay: false,
     muted: true,
     loop: true,
-    playsInline: true
+    playsInline: true,
+    onCanPlay: e => null
   };
 
   constructor(props) {
     super(props);
+
     this.chromeFix = browser.name !== 'chrome';
   }
 
   play() {
-    this.refs.vid.play();
+    const status = this.refs.vid.play();
+    //Some browsers promisify Play, but not all.
+    //This can cause an error to be thrown if play was interrupted.
+    if (status.then) {
+      status.then(e => null).catch(err => null);
+    }
   }
 
   pause() {
@@ -47,15 +54,15 @@ export default class Video extends Component {
         style={this.props.style}
         muted={this.props.muted}
         loop={this.props.loop}
-        onCanPlay={() => {
+        onCanPlay={e => {
           this.chromeFix = true;
-          this.props.onCanPlay()
+          this.props.onCanPlay(e);
         }}
         onError={this.props.onError}
         autoPlay={this.props.autoPlay}
         playsInline={this.props.playsInline}
         onSuspend={() => {
-          if(!this.chromeFix) {
+          if (!this.chromeFix) {
             this.chromeFix = true;
             this.refs.vid.src = this.props.src;
             this.refs.vid.load();

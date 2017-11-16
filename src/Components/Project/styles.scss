@@ -46,6 +46,7 @@ $descriptionWidth: 40rem;
     height: 100vh;
     padding: 2rem (3rem + $navWidth) 2rem 3rem;
     background-color: $white;
+    transform: translateX($descriptionWidth + $navWidth);
     transition: transform $showTransition;
     color: $black;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
@@ -243,6 +244,7 @@ $descriptionWidth: 40rem;
 
     &.hasContent .description {
       transform: translateX(-$scrollWidth);
+
       &.ios {
         transform: translateX($iosScrollWidth);
       }
@@ -276,6 +278,7 @@ $descriptionWidth: 40rem;
 
     &.hasContent .nav {
       transform: translateX(-$scrollWidth);
+
       &.ios {
         transform: translateX($iosScrollWidth);
       }
