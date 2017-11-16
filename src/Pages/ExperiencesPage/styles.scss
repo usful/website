@@ -66,6 +66,26 @@
     padding: 4rem 10vw;
   }
 
+  section.logos {
+    padding: 4rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      margin: 4rem 0;
+    }
+
+    > div {
+      width: 60vw;
+      margin: 0 auto;
+
+      svg {
+        margin: 1vw 2vw;
+        width: 8vw;
+        height: 8vw;
+      }
+    }
+  }
   &.showing {
     opacity: 1;
     pointer-events: none;
