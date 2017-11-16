@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!models)/,
         loader: 'babel-loader',
         query: {
           plugins: [],

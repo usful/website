@@ -166,6 +166,10 @@
 /** PHONE **/
 @media (max-width: 640px) {
   section.top {
+    position:relative;
+    z-index:4;
+    left:-2rem;
+
     .logoLink {
       text-align: center;
     }

@@ -63,7 +63,7 @@ export default class MarketPartnersPage extends Showable {
             pagerClass={styles.pager}
           />
 
-          <TopBar className={styles.top} path="/market" menu={menu} />
+          <TopBar className={styles.top} path="/market" menu={menu} color="black"/>
         </section>
         <section className={styles.main}>
           <h1>

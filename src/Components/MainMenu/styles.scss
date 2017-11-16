@@ -16,7 +16,7 @@
   &.white {
     color: $white;
 
-    a:not(.icon) {
+    a {
       @include hoverLine($white);
     }
   }
@@ -24,7 +24,7 @@
   &.black {
     color: $black;
 
-    a:not(.icon) {
+    a {
       @include hoverLine($black);
     }
   }
@@ -53,17 +53,36 @@
     transform: translateX(0);
     opacity: 1;
 
-    a:not(.icon) {
-      display: flex;
-      background: white;
-      color:black;
-      padding: 0.25em 0.25em;
-      margin: 0.75em 1.25em;
-      border: 1px solid rgba(0,0,0,0.2);
+    .menuItems {
+      @include fullScreen;
+      display:flex;
+      align-items:center;
+      background-color:black;
+      flex-direction:column;
+      padding-top:4rem;
+
+      a {
+        display: flex;
+        color: white;
+        font-size:2rem;
+        padding: 0.25em 0.25em;
+        margin: 0.75em 1.25em;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .closeMenu {
+        position:relative;
+        padding:0;
+        font-size:1.4rem;
+        top:1rem;
+        right:2.5rem;
+        align-self:flex-end;
+      }
     }
 
     .icon {
-      font-size: 1.5rem;
+      font-size: 2rem;
+      padding-top: 2rem;
     }
   }
 }

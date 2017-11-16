@@ -286,6 +286,8 @@ $coverWidth: 3rem;
     .main {
       .top {
         text-align: center;
+        position:relative;
+        z-index:4
       }
     }
   }
