@@ -25,6 +25,14 @@ export default class NavigationHelper {
     }
   }
 
+  static changeTitle(next) {
+    if (next.name === 'home') {
+      document.getElementsByTagName('title')[0].innerText = `Usful ❤ 2017`;
+    }else {
+      document.getElementsByTagName('title')[0].innerText = `${next.name} ❤ 2017`;
+    }
+  }
+
   static async hashChanged(next, last) {
     const toggle = (location, action) => {
       if (location && location.hash) {
@@ -81,6 +89,7 @@ export default class NavigationHelper {
       );
 
       if (nextSection !== lastSection) {
+        NavigationHelper.changeTitle(nextSection);
         nextSection.component.setActive();
 
         if (lastSection) {
