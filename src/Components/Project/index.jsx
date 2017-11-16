@@ -79,7 +79,7 @@ export default class Project extends Showable {
             utils.mobileDetect.os() === 'iOS' ? styles.ios : null
           )}
         >
-          <div>
+          <div className={styles.descriptionCopy}>
             <div className={styles.title}>
               <h1>{project.name}</h1>
               <section className={styles.tags}>
@@ -111,32 +111,12 @@ export default class Project extends Showable {
               </menu>
             </div>
           </div>
-          {utils.isMobile ? (
-            <div
-              className={cx(
-                styles.nav,
-                utils.mobileDetect.os() === 'iOS' ? styles.ios : null
-              )}
-            >
-              <Link to={this.props.baseUrl} className={styles.navClose}>
-                <CloseIcon color="white" />
-              </Link>
-              <div className={styles.next}>
-                <div className={styles.rotate}>
-                  <label>Next:</label>
-                  <Link to={next.route.path}>{next.name}</Link>
-                </div>
-              </div>
-              <div className={styles.count}>
-                {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
-              </div>
-            </div>
-          ) : null}
-        </section>
-        {utils.isMobile ? (
-          <section className={styles.content}>{this.renderContent()}</section>
-        ) : (
-          <section className={styles.nav}>
+          <div
+            className={cx(
+              styles.nav,
+              utils.mobileDetect.os() === 'iOS' ? styles.ios : null
+            )}
+          >
             <Link to={this.props.baseUrl} className={styles.navClose}>
               <CloseIcon color="white" />
             </Link>
@@ -149,8 +129,11 @@ export default class Project extends Showable {
             <div className={styles.count}>
               {`${position}`.padStart(2, '0')}/{`${count}`.padStart(2, '0')}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
+        {utils.isMobile ? (
+          <section className={styles.content}>{this.renderContent()}</section>
+        ) : null}
       </div>
     );
   }
