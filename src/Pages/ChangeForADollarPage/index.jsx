@@ -2,12 +2,9 @@ import React from 'react';
 import cx from 'classnames';
 
 import styles from './styles.scss';
-import utils from '../../utils';
 import data from '../../data';
 import FooterTagLine from '../../Components/FooterTagLine';
-import Footer from '../../Components/Footer';
 import Block from '../../Components/Block';
-import Boxes from './Boxes';
 
 import Showable from '../../Components/Showable';
 
@@ -74,6 +71,40 @@ export default class TechnologiesPage extends Showable {
     super(props);
   }
 
+  renderBoxes(icon, title, text, block, className) {
+    return (
+      <div
+        className={cx(styles.boxes, className)}
+      >
+        <div
+          className={cx(styles.box, styles.box1)}
+        >
+          <h2 className={styles.title}>
+            {title}
+          </h2>
+        </div>
+        <div
+          className={cx(styles.box, styles.box2)}
+        >
+          <Block
+            {...block}
+          />
+        </div>
+        <div
+          className={cx(styles.box, styles.box3)}
+        >
+          <img
+            className={styles.icon}
+            src={icon}
+          />
+          <p className={styles.text}>
+            {text}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     if (!this.shouldRender) {
       return null;
@@ -112,69 +143,50 @@ export default class TechnologiesPage extends Showable {
               <hr />
             </section>
             <section className={styles.stepOne}>
-              <Boxes
-                className={styles.boxes}
-                background1={'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/artur-luczka-283249.jpg)'}
-                color1={'white'}
-                background3={'#067c00'}
-                color3={'white'}
-                yDiff={5}
-                title='Choose a Cause'
-                block={
-                  {
-                    type: 'CarouselBlock',
-                    content: carousalImages,
-                    width: 100,
-                    className: styles.carousal,
-                  }
+              {this.renderBoxes(
+                'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/checklist.png',
+                '1. Choose a Cause',
+                'Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.',
+                {
+                  type: 'CarouselBlock',
+                  content: carousalImages,
+                  timing: 3000,
+                  width: 100,
+                  className: cx(styles.block, styles.carousal),
                 }
-                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/checklist.png'
-                text='Sign up with Change for a Dollar and choose the charities you would like to support. Search for a charity you know or discover a new one.'
-              />
+              )}
             </section>
             <section className={styles.stepTwo}>
-              <Boxes
-                className={styles.boxes}
-                background1={'url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/becca-romine-221447.jpg)'}
-                color1={'white'}
-                background3={'#8dc63f'}
-                color3={'white'}
-                contentStyle='right'
-                title='Link Your Cards'
-                block={
-                  {
-                    id: 'image-2-1',
-                    type: 'MediaBlock',
-                    mediaType: 'Image',
-                    url:'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD-StepTwo-Image.jpg',
-                    width: 100,
-                  }
-                }
-                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/bank-cards.png'
-                text='Link your debit or credit card and set your donation preferences, cap your monthly giving at an amount you are comfortable with. All your data is safe and secure.'
-              />
+              {this.renderBoxes(
+                'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/bank-cards.png',
+                '2. Link Your Cards',
+                'Link your debit or credit card and set your donation preferences, cap your monthly giving at an amount you are comfortable with. All your data is safe and secure.',
+                {
+                  id: 'image-2-1',
+                  type: 'MediaBlock',
+                  mediaType: 'Image',
+                  url:'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD-StepTwo-Image.jpg',
+                  width: 100,
+                  className: styles.block,
+                },
+                styles.reverse
+              )}
             </section>
             <section className={styles.stepThree}>
-              <Boxes
-                className={styles.boxes}
-                background1={'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg)'}
-                color1={'white'}
-                yOffset={15}
-                yDiff={10}
-                title='Donate with Every Purchase'
-                block={
-                  {
-                    id: 'video-3-1',
-                    type: 'MediaBlock',
-                    mediaType: 'Video',
-                    url: 'https://s3.amazonaws.com/usful-portfolio/vids/cfd-hero.mp4',
-                    width: 100,
-                    active:true,
-                  }
+              {this.renderBoxes(
+                'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/coins.png',
+                '3. Donate with Every Purchase',
+                'Live your life - go for coffee with your friends, have night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.',
+                {
+                  id: 'video-3-1',
+                  type: 'MediaBlock',
+                  mediaType: 'Video',
+                  url: 'https://s3.amazonaws.com/usful-portfolio/vids/cfd-hero.mp4',
+                  width: 100,
+                  active:true,
+                  className: styles.block,
                 }
-                icon='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/coins.png'
-                text='Live your life - go for coffee with your friends, have night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.'
-              />
+              )}
             </section>
             <FooterTagLine text="Have a question? We would love to hear from you!" />
           </div>

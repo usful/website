@@ -2,6 +2,7 @@
 
 $lightGreen: #8dc63f;
 $darkGreen: #067c00;
+$silver: #cdc0b6;
 $boxHeight: 58rem;
 $introMediaYOffset: 5rem;
 
@@ -16,13 +17,92 @@ $introMediaYOffset: 5rem;
   transition: opacity $showTransition;
   background-color: $white;
 
+
+  .boxes {
+    height: $boxHeight;
+    margin: 4rem auto;
+    width: 50rem;
+    position:relative;
+    display:flex;
+    align-items: center;
+
+    .box {
+      @include dropShadow;
+      position:absolute;
+      background-color: $white;
+      color: $black;
+      background-size: contain;
+    }
+
+    .box1 {
+      top: 0;
+      text-align: left;
+      width: 50rem;
+      height: 100%;
+      padding: 3rem;
+
+      .title {
+        font-size: 4rem;
+        line-height: 1.3em;
+        text-align: center;
+        margin-top: 2rem;
+      }
+    }
+
+    .box2 {
+      width: 50rem;
+      overflow: hidden;
+      right:10rem;
+      bottom: 4rem;
+
+      .block {
+        padding:0;
+      }
+    }
+
+    .box3 {
+      padding: 3rem;
+      right: 6rem;
+      font-family: $fontSans;
+      width: 30rem;
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: space-around;
+      bottom: 6rem;
+      left: 32rem;
+
+      .text {
+        font-size: 2rem;
+        line-height: 1.4em;
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .icon {
+        margin: 2rem 0;
+      }
+    }
+
+    &.reverse {
+      .box2 {
+        left:6rem;
+      }
+
+      .box3 {
+        left:-10rem;
+      }
+    }
+
+  }
+
   .intro {
     background: url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/header-background.jpg);
     background-size: cover;
     background-position-y: center;
     background-repeat: no-repeat;
     width:100vw;
-    height:100vh;
+    height:90vh;
     display:flex;
 
     .left, .right {
@@ -38,8 +118,7 @@ $introMediaYOffset: 5rem;
 
       .logo {
         @include slideUpHidden;
-        width: 30rem;
-        height: 30rem;
+        width: 26rem;
         align-self: flex-start;
         margin-left: 6rem;
       }
@@ -52,12 +131,12 @@ $introMediaYOffset: 5rem;
 
         .hero {
           color: $darkGreen;
-          font-size: 5.5rem;
+          font-size: 5rem;
           margin-bottom:2rem;
         }
 
         .subTitle {
-          font-size: 3rem;
+          font-size: 2.5rem;
           color: $darkGreen;
         }
       }
@@ -70,18 +149,81 @@ $introMediaYOffset: 5rem;
 
       img {
         position:relative;
+        transition: $transitionLong;
       }
 
       .donationHistoryPNG {
-        width: 30rem;
+        width: 25rem;
         z-index:1;
         left:22rem;
         top:4rem;
       }
 
       .charityProfilePNG {
-        width: 60rem;
+        width: 51rem;
         right:7rem;
+      }
+    }
+  }
+
+  .stepOne {
+    .boxes {
+      margin-left:15rem;
+      .box1 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
+        .title {
+          color: $white;
+        }
+      }
+      .box2 {
+        .carousal {
+          height:33rem;
+
+          ul {
+            display: none;
+          }
+        }
+      }
+      .box3 {
+        background-color: $darkGreen;
+        .text {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .stepTwo {
+    .boxes {
+      margin-right:15rem;
+      .box1 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
+        .title {
+          color: $white;
+        }
+      }
+      .box3 {
+        background-color: $silver;
+        .text {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .stepThree {
+    .boxes {
+      margin-left:15rem;
+      .box1 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
+        .title {
+          color: $white;
+        }
+      }
+
+      .box3 {
+        bottom: -2rem;
+        background-color: $lightGreen;
       }
     }
   }
@@ -110,11 +252,6 @@ $introMediaYOffset: 5rem;
         margin: 0 auto;
         line-height: 2em;
       }
-  }
-
-  .boxes {
-    height: $boxHeight;
-    right:-7rem;
   }
 
   &.showing {
