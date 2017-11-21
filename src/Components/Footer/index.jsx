@@ -9,10 +9,11 @@ export default function Footer({ className }) {
         <li>
           <a href="mailto:hello@usful.co">hello@usful.co</a>
         </li>
-        <li>
-          &copy; {new Date().getFullYear()} Usful Co Inc.
-        </li>
+        <li>&copy; {new Date().getFullYear()} Usful</li>
         <li>❤ from Toronto</li>
+        <li>
+          <span>Mona Networks Inc.</span>
+        </li>
         <li className={styles.social}>
           <a
             href="https://twitter.com/Usful_"

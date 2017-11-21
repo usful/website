@@ -236,6 +236,9 @@ $coverWidth: 3rem;
       .main {
         .top {
           padding: 2rem 3rem;
+          text-align: center;
+          position: relative;
+          z-index: 4;
         }
 
         .box {
@@ -286,8 +289,8 @@ $coverWidth: 3rem;
     .main {
       .top {
         text-align: center;
-        position:relative;
-        z-index:4
+        position: relative;
+        z-index: 4;
       }
     }
   }

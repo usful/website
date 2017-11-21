@@ -153,6 +153,9 @@
 @media (max-width: 1024px) {
   .technologyPage {
     .intro {
+      text-align: center;
+      position: relative;
+      z-index: 4;
       height: 50rem;
 
       .inner {
@@ -199,15 +202,13 @@
 /** PHONE **/
 @media (max-width: 640px) {
   .technologyPage {
-    section.top {
-      text-align: center;
-    }
-
     .intro {
       .top {
-        position:relative;
-        z-index:4;
+        text-align: center;
+        position: relative;
+        z-index: 4;
       }
+
       .inner {
         .copy {
           h1 {
