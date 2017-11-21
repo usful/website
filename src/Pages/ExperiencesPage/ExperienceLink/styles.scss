@@ -44,8 +44,8 @@
   }
 }
 
-/** PHONE **/
-@media (max-width: 640px) {
+/** TABLET **/
+@media (max-width: 1024px) {
   .experience {
     padding: 2rem 0;
     text-align: center;
@@ -67,9 +67,10 @@
   }
 }
 
-/** TABLET **/
-@media (max-width: 1024px) {
+/** PHONE **/
+@media (max-width: 640px) {
 }
+
 
 @media (min-width: 1025px) {
   .experience {

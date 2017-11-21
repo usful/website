@@ -238,6 +238,9 @@ $coverTop: 11vh;
       .main {
         .top {
           padding: 2rem 3rem;
+          text-align: center;
+          position: relative;
+          z-index: 4;
         }
 
         .box {
@@ -288,8 +291,8 @@ $coverTop: 11vh;
     .main {
       .top {
         text-align: center;
-        position:relative;
-        z-index:4
+        position: relative;
+        z-index: 4;
       }
     }
   }

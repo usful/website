@@ -33,17 +33,12 @@
 /** TABLET **/
 @media (max-width: 1024px) {
   .mainMenu {
-    a {
-      font-size: 1.1rem;
-      padding: 0.25em 0.25em;
-      margin: 0.75em 1.25em;
-    }
-  }
-}
+    @include slideUpHidden;
 
-/** PHONE **/
-@media (max-width: 640px) {
-  .mainMenu {
+    &.shown {
+      @include  slideUpShow;
+    }
+
     top: 0;
     left: 0;
     position: fixed;
@@ -55,28 +50,27 @@
 
     .menuItems {
       @include fullScreen;
-      display:flex;
-      align-items:center;
-      background-color:black;
-      flex-direction:column;
-      padding-top:4rem;
+      padding-top: 6rem;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      flex-direction: column;
 
       a {
         display: flex;
         color: white;
-        font-size:2rem;
-        padding: 0.25em 0.25em;
-        margin: 0.75em 1.25em;
+        font-size: 2rem;
+        padding: 0.25em;
+        margin: 0.75em 1em;
         border: 1px solid rgba(0, 0, 0, 0.2);
       }
 
       .closeMenu {
-        position:relative;
-        padding:0;
-        font-size:1.4rem;
-        top:1rem;
-        right:2.5rem;
-        align-self:flex-end;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        padding: 0;
+        font-size: 1.4rem;
       }
     }
 
@@ -85,6 +79,11 @@
       padding-top: 2rem;
     }
   }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+
 }
 
 @media (min-width: 1025px) {
@@ -97,6 +96,6 @@
   }
 
   .icon {
-    display:none;
+    display: none;
   }
 }
