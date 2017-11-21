@@ -12,9 +12,6 @@
   transition: opacity $transitionLong;
 
   section.top {
-    display: flex;
-    align-items: flex-end;
-
     .logo {
       font-size: 7.5rem;
       letter-spacing: -0.05em;
@@ -167,7 +164,9 @@
     }
 
     section.top {
+      display: flex;
       flex-direction: row;
+      align-items: flex-end;
 
       .logo {
         margin-right: 0.25em;
