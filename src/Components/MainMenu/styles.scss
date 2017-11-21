@@ -1,8 +1,6 @@
 @import '../../variables';
 
 .mainMenu {
-  @include slideUpHidden;
-
   a {
     @include fontSmoothing;
 
@@ -30,15 +28,17 @@
       @include hoverLine($black);
     }
   }
-
-  &.shown {
-    @include slideUpShow;
-  }
 }
 
 /** TABLET **/
 @media (max-width: 1024px) {
   .mainMenu {
+    @include slideUpHidden;
+
+    &.shown {
+      @include  slideUpShow;
+    }
+
     top: 0;
     left: 0;
     position: fixed;

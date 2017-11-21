@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon dev-server/server --watch dev-server/server.js",
     "start:babel": "NODE_ENV=babel babel-node --presets es2015,stage-0,react prod-server/server.js",
-    "start:prod": "NODE_ENV=production nodemon dev-server/server",
+    "start:prod": "NODE_ENV=production nodemon prod-server/server",
     "build": "webpack --env=dev --progress --profile --colors",
     "build:dev": "webpack --env=dev --progress --profile --colors",
     "build:prod": "webpack --env=prod --progress --profile --colors",

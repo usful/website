@@ -25,7 +25,13 @@ export default class MainMenu extends Showable {
     const { className, color, items } = this.props;
 
     return (
-      <menu className={cx(styles.mainMenu, className, styles[color])}>
+      <menu
+        className={cx(
+          styles.mainMenu,
+          className,
+          styles[color]
+        )}
+      >
         {this.state.shown ? (
           <div className={cx(styles.menuItems)}>
             {util.isMobile ? (
