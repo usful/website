@@ -26,11 +26,7 @@ export default class NavigationHelper {
   }
 
   static changeTitle(next) {
-    if (next.name === 'Home') {
-      document.getElementsByTagName('title')[0].innerText = `Usful ❤ 2017`;
-    }else {
-      document.getElementsByTagName('title')[0].innerText = `${next.name} ❤ 2017`;
-    }
+    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  2017`;
   }
 
   static async hashChanged(next, last) {
