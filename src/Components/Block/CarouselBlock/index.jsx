@@ -140,8 +140,6 @@ export default class CarouselBlock extends Component {
                   transform: `scale(${i === this.state.current
                     ? this.state.currentPercentage
                     : '0'},1)`,
-                  borderRadius: `${i === this.state.current
-                    ? 0.5/this.state.currentPercentage : '0'}em`
                 }}
               />
             </li>
