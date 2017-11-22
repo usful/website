@@ -203,6 +203,8 @@ $introMediaYOffset: 5rem;
         }
       }
       .box3 {
+        bottom: 2rem;
+        left: -12rem;
         background-color: $silver;
         .text {
           color: $white;
@@ -214,6 +216,7 @@ $introMediaYOffset: 5rem;
   .stepThree {
     .boxes {
       margin-left:15rem;
+      margin-bottom:8rem;
       .box1 {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
         .title {
@@ -222,7 +225,7 @@ $introMediaYOffset: 5rem;
       }
 
       .box3 {
-        bottom: -2rem;
+        bottom: -4rem;
         background-color: $lightGreen;
       }
     }

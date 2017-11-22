@@ -132,7 +132,7 @@ export default class TechnologiesPage extends Showable {
 
                 <img
                   className={styles.charityProfilePNG}
-                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/charity+profile.png'
+                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD+Charity+Profile.png'
                 />
               </div>
             </section>
