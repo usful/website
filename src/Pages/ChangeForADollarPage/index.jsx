@@ -5,6 +5,7 @@ import styles from './styles.scss';
 import data from '../../data';
 import FooterTagLine from '../../Components/FooterTagLine';
 import Block from '../../Components/Block';
+import utils from '../../utils';
 
 import Showable from '../../Components/Showable';
 
@@ -124,17 +125,19 @@ export default class TechnologiesPage extends Showable {
                   <p className={styles.subTitle}>Automated Cashless Giving</p>
                 </div>
               </div>
-              <div className={styles.right}>
-                <img
-                  className={styles.donationHistoryPNG}
-                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD_donation+history.png'
-                />
+              {!utils.isMobile ?
+                <div className={styles.right}>
+                  <img
+                    className={styles.donationHistoryPNG}
+                    src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD_donation+history.png'
+                  />
 
-                <img
-                  className={styles.charityProfilePNG}
-                  src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD+Charity+Profile.png'
-                />
-              </div>
+                  <img
+                    className={styles.charityProfilePNG}
+                    src='https://s3.amazonaws.com/usful-portfolio/cfdSite/img/CFD+Charity+Profile.png'
+                  />
+                </div> : null
+              }
             </section>
             <section className={styles.blurb}>
               <hr />

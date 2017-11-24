@@ -3,6 +3,8 @@
 $lightGreen: #8dc63f;
 $darkGreen: #067c00;
 $silver: #cdc0b6;
+$lightSlateGrey: #82959d;
+$darkSlateGrey: #46664e;
 $boxHeight: 58rem;
 $introMediaYOffset: 5rem;
 
@@ -40,6 +42,7 @@ $introMediaYOffset: 5rem;
       width: 50rem;
       height: 100%;
       padding: 3rem;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/becca-romine-221447.jpg);
 
       .title {
         font-size: 4rem;
@@ -170,7 +173,6 @@ $introMediaYOffset: 5rem;
     .boxes {
       margin-left:15rem;
       .box1 {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
         .title {
           color: $white;
         }
@@ -185,7 +187,7 @@ $introMediaYOffset: 5rem;
         }
       }
       .box3 {
-        background-color: $darkGreen;
+        background-color: $darkSlateGrey;
         .text {
           color: $white;
         }
@@ -197,7 +199,6 @@ $introMediaYOffset: 5rem;
     .boxes {
       margin-right:15rem;
       .box1 {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
         .title {
           color: $white;
         }
@@ -218,7 +219,6 @@ $introMediaYOffset: 5rem;
       margin-left:15rem;
       margin-bottom:8rem;
       .box1 {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s3.amazonaws.com/usful-portfolio/cfdSite/img/samuel-scrimshaw-166751.jpg);
         .title {
           color: $white;
         }
@@ -226,7 +226,7 @@ $introMediaYOffset: 5rem;
 
       .box3 {
         bottom: -4rem;
-        background-color: $lightGreen;
+        background-color: $lightSlateGrey;
       }
     }
   }
@@ -290,5 +290,93 @@ $introMediaYOffset: 5rem;
   &.hidden {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+/** Tablet */
+@media (max-width: 1024px) {
+}
+
+/** Phone */
+@media (max-width: 640px) {
+  .cfdPage {
+    .intro {
+      height: 80vh;
+      flex-direction: column;
+      align-items: stretch;
+
+      .left {
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        .logo {
+          margin: 0 auto;
+          width:60%;
+        }
+
+        .introCopy {
+          padding: 4rem 0;
+          text-align: center;
+
+          .hero {
+            font-size: 4rem;
+          }
+
+          .subTitle {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .blurb {
+      padding: 0 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+    }
+
+    .boxes {
+      flex-direction: column;
+      width: auto;
+      height: auto;
+      position: initial;
+
+      .box {
+        position: initial;
+        width:100%;
+        height: auto;
+      }
+
+      .box1{
+        padding: 4rem 1rem;
+        background-size: cover;
+      }
+
+      .box3 {
+        .icon {
+          display: none;
+        }
+      }
+    }
+
+    .stepOne, .stepTwo, .stepThree {
+      .boxes {
+        margin: 4rem 0;
+      }
+    }
+
+    .stepOne {
+      .box2 {
+        height: 23rem;
+      }
+    }
   }
 }
