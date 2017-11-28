@@ -66,6 +66,7 @@ export default class Video extends Component {
             this.chromeFix = true;
             this.refs.vid.src = this.props.src;
             this.refs.vid.load();
+            this.refs.vid.play();
           }
         }}
       >

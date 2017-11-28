@@ -139,7 +139,7 @@ export default class CarouselBlock extends Component {
                 style={{
                   transform: `scale(${i === this.state.current
                     ? this.state.currentPercentage
-                    : '0'},1)`
+                    : '0'},1)`,
                 }}
               />
             </li>

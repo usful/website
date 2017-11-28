@@ -100,6 +100,8 @@
 @media (max-width: 640px) {
 
   .MediaBlock {
+    padding: 2rem;
+
     &.alignCenter {
       img {
         height: 15rem;
@@ -117,7 +119,8 @@
         height: 10rem;
       }
       p{
-        padding: 1rem;
+        text-align: center;
+        padding: 2rem 1rem;
       }
     }
 
