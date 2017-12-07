@@ -14,6 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(compression());
 
+/**
 app.use((req, res, next) => {
   if (!req.secure && process.env.NODE_ENV === 'production') {
     res.writeHead(301, {
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 
+ */
 // put in the actual config here.
 aws.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -104,7 +106,7 @@ app.use('/sitemap.xml', (req, res) => {
 const sendIndex = (req, res) =>
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 
-['/technology', '/experiences', '/market'].forEach(url => {
+['/technology', '/experiences', '/market', '/cfd'].forEach(url => {
   app.use(url, sendIndex);
   app.use(`${path}/*`, sendIndex);
 });
@@ -114,6 +116,7 @@ app.use('/', express.static(__dirname +'/../public'));
 http.createServer(app).listen(8080);
 console.log('http listening on port 8080!');
 
+/**
 const options = {
   key: fs.readFileSync(path.join(__dirname, '/ssl/key.pem')),
   cert: fs.readFileSync(path.join(__dirname, '/ssl/cert.pem')),
@@ -122,3 +125,5 @@ const options = {
 
 https.createServer(options, app).listen(9090);
 console.log('https listening on port 9090!');
+
+ */

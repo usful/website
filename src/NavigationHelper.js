@@ -25,6 +25,10 @@ export default class NavigationHelper {
     }
   }
 
+  static changeTitle(next) {
+    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  2017`;
+  }
+
   static async hashChanged(next, last) {
     const toggle = (location, action) => {
       if (location && location.hash) {
@@ -81,6 +85,7 @@ export default class NavigationHelper {
       );
 
       if (nextSection !== lastSection) {
+        NavigationHelper.changeTitle(nextSection);
         nextSection.component.setActive();
 
         if (lastSection) {

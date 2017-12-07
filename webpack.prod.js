@@ -30,7 +30,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!models)/,
         loader: 'babel-loader',
         query: {
           plugins: ['transform-runtime'],
@@ -53,7 +53,6 @@ module.exports = {
       inject: false,
     }),
     new webpack.DefinePlugin({
-      __DEV__: false,
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.LoaderOptionsPlugin({
@@ -87,6 +86,5 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendors', 'manifest'],
     }),
-  ],
-  devtool: 'source-map',
+  ]
 };

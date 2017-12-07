@@ -1,12 +1,10 @@
 import React from 'react';
-
 import cx from 'classnames';
 
 import styles from './style.scss';
 import LoadableImage from '../../LoadableImage';
 import LoadableVideo from '../../LoadableVideo';
 import Video from '../../Video';
-
 
 export default function MediaBlock({
   url,
@@ -16,52 +14,36 @@ export default function MediaBlock({
   mediaType,
   useLoadable,
   active,
-  width,
+  width
 }) {
+  const mediaStyle = { width: `${width}%` };
   let Media;
 
-  if (mediaType === 'Image') {
-    Media = useLoadable ?
-      <LoadableImage style={{ width: `${width}%` }} src={url} />
-      : <img style={{ width: `${width}%` }} src={url} />;
+  if (mediaType === 'Image' && useLoadable) {
+    Media = <LoadableImage style={mediaStyle} src={url} />;
+  } else if (mediaType === 'Image') {
+    Media = <img style={mediaStyle} src={url} />;
+  } else if (mediaType === 'Video' && useLoadable) {
+    Media = <LoadableVideo style={mediaStyle} muted loop play={active} src={url} />;
   } else if (mediaType === 'Video') {
-    const Vid = useLoadable ? LoadableVideo : Video;
-    Media = <Vid style={{ width: `${width}%` }} muted loop play={active} src={url} />;
-  }
-  Media = <div className={cx(styles.MediaDiv)}>{Media}</div>;
-
-  if (align === 'center') {
-    return (
-      <div className={cx(styles.MediaBlock, styles.alignCenter, className)}>
-        {Media}
-        <p>
-          {text}
-        </p>
-      </div>
-    );
-  } else if (align === 'left') {
-    return (
-      <div className={cx(styles.MediaBlock, styles.alignLeft, className)}>
-        <p>
-          {text}
-        </p>
-        {Media}
-      </div>
-    );
-  } else if (align === 'right') {
-    return (
-      <div className={cx(styles.MediaBlock, styles.alignRight, className)}>
-        {Media}
-        <p>
-          {text}
-        </p>
-      </div>
-    );
+    Media = <Video style={mediaStyle} muted loop play={active} src={url} />;
   }
 
   return (
-    <div className={cx(styles.MediaBlock, styles.alignFull, className)}>
-      {Media}
+    <div
+      className={cx(
+        styles.MediaBlock,
+        {
+          [styles.alignCenter]: align === 'center',
+          [styles.alignLeft]: align === 'left',
+          [styles.alignRight]: align === 'right'
+        },
+        className
+      )}
+    >
+      {align === 'left' ? <p>{text}</p> : null}
+      <div className={styles.wrapper}>{Media}</div>
+      {align !== 'left' ? <p>{text}</p> : null}
     </div>
   );
 }

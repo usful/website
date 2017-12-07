@@ -5,7 +5,7 @@
   padding: 3.2rem 2rem;
   color: $black;
 
-  .MediaDiv {
+  .wrapper {
     display:flex;
     justify-content:center;
     align-items: center;
@@ -57,7 +57,7 @@
       padding: 0 2rem;
     }
 
-    .MediaDiv {
+    .wrapper {
       flex:2;
     }
 
@@ -100,6 +100,8 @@
 @media (max-width: 640px) {
 
   .MediaBlock {
+    padding: 2rem;
+
     &.alignCenter {
       img {
         height: 15rem;
@@ -117,7 +119,8 @@
         height: 10rem;
       }
       p{
-        padding: 1rem;
+        text-align: center;
+        padding: 2rem 1rem;
       }
     }
 

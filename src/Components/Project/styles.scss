@@ -42,105 +42,105 @@ $descriptionWidth: 40rem;
     position: fixed;
     top: 0;
     width: $descriptionWidth + $navWidth;
-    min-height: 100vh;
-    height: 100vh;
-    padding: 2rem (3rem + $navWidth) 2rem 3rem;
     background-color: $white;
     transform: translateX($descriptionWidth + $navWidth);
     transition: transform $showTransition;
     color: $black;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
-    overflow: auto;
+    overflow:hidden;
+    height:100vh;
+    display:flex;
 
-    .title {
-      @include slideUpHidden;
-      margin: 3rem 0 2rem 0;
+    .descriptionCopy {
+      width:$descriptionWidth;
+      padding: 1rem 2rem;
+      overflow:auto;
+      .title {
+        @include slideUpHidden;
+        margin: 3rem 0 2rem 0;
 
-      h1 {
-        font-size: 3.5rem;
-      }
-
-      section.tags {
-        padding: 0.5rem 0 1rem 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        :global(.icon) {
-          font-size: 125%;
-          margin: 0.25em;
-        }
-      }
-    }
-
-    .info {
-      @include slideUpHidden;
-      .infoBox {
-        border-top: 1px solid $darkGrey;
-        border-left: 1px solid $darkGrey;
-        border-right: 1px solid $darkGrey;
-        padding: 1.2rem;
-
-        &:last-of-type {
-          border-bottom: 1px solid $darkGrey;
+        h1 {
+          font-size: 3.5rem;
         }
 
-        label {
-          font-family: $fontMono;
-          color: $lightGrey;
-          font-size: 1.4rem;
-        }
+        section.tags {
+          padding: 0.5rem 0 1rem 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
 
-        p {
-          font-family: $fontSans;
-          padding: 0.5rem 0;
-          font-size: 1.5rem;
-          line-height: 1.4em;
+          :global(.icon) {
+            font-size: 125%;
+            margin: 0.25em;
+          }
         }
       }
 
-      h1 {
-        margin: 3rem 0 1rem 0;
-        font-family: $font;
-        font-size: 2rem;
-      }
+      .info {
+        @include slideUpHidden;
+        .infoBox {
+          border-top: 1px solid $darkGrey;
+          border-left: 1px solid $darkGrey;
+          border-right: 1px solid $darkGrey;
+          padding: 1.2rem;
 
-      .contact {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+          &:last-of-type {
+            border-bottom: 1px solid $darkGrey;
+          }
 
-        div {
-          flex: 1;
+          label {
+            font-family: $fontMono;
+            color: $lightGrey;
+            font-size: 1.4rem;
+          }
+
+          p {
+            font-family: $fontSans;
+            padding: 0.5rem 0;
+            font-size: 1.5rem;
+            line-height: 1.4em;
+          }
         }
 
-        hr {
-          margin-right: 2rem;
-          width: 10rem;
-          height: 1px;
-          border: none;
-          background-color: $black;
+        h1 {
+          margin: 3rem 0 1rem 0;
+          font-family: $font;
+          font-size: 2rem;
         }
 
-        a {
-          @include button;
+        .contact {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          div {
+            flex: 1;
+          }
+
+          hr {
+            margin-right: 2rem;
+            width: 10rem;
+            height: 1px;
+            border: none;
+            background-color: $black;
+          }
+
+          a {
+            @include button;
+          }
         }
       }
     }
   }
 
   .nav {
-    position: fixed;
-    top: 0;
     width: $navWidth;
-    min-height: 100vh;
-    height: 100vh;
     background-color: $black;
-    transform: translateX($navWidth);
     transition: transform $showTransition;
     display: flex;
     flex-direction: column;
+    color:$white;
 
     .navClose {
       display: block;
@@ -176,7 +176,6 @@ $descriptionWidth: 40rem;
           opacity: 0.6;
           font-size: 1.4rem;
           padding-right: 0.5rem;
-          color: $white;
         }
 
         a {
@@ -201,10 +200,6 @@ $descriptionWidth: 40rem;
     .description {
       right: 0;
     }
-
-    .nav {
-      right: 0;
-    }
   }
 
   &.left {
@@ -216,14 +211,7 @@ $descriptionWidth: 40rem;
 
     .description {
       left: 0;
-      padding: 2rem 3rem 2rem (3rem + $navWidth);
-      transform: translateX(-$descriptionWidth - $navWidth);
-    }
-
-    .nav {
-      left: 0;
-      width: $navWidth;
-      transform: translateX(-$navWidth);
+      flex-direction:row-reverse;
     }
   }
 
@@ -240,10 +228,6 @@ $descriptionWidth: 40rem;
 
     .description {
       transform: translateX(0);
-    }
-
-    &.hasContent .description {
-      transform: translateX(-$scrollWidth);
     }
   }
 
@@ -267,21 +251,16 @@ $descriptionWidth: 40rem;
         }
       }
     }
+  }
 
-    .nav {
-      transform: translateX(0);
-    }
-
-    &.hasContent .nav {
-      transform: translateX(-$scrollWidth);
-    }
+  &.shown {
+    z-index:50;
   }
 }
 
 /** TABLET **/
 @media (max-width: 1024px) {
   .project {
-    position: fixed;
 
     .content {
       width: 100vw;
@@ -290,23 +269,32 @@ $descriptionWidth: 40rem;
 
       article {
         position: relative;
+        padding: 2rem 0;
+        background-color: $offWhite;
 
         .scrollDown {
           display: none;
         }
-
-        padding: 2rem ($navWidth) 2rem 0;
-        background-color: $offWhite;
       }
     }
 
     .description {
       position: initial;
-      width: 100vw;
-      min-height: 100vh;
-      height: 100vh;
-      padding: 1rem (2rem + $navWidth) 1rem 2rem;
-      transform: translateX(100vw);
+      width:100vw;
+
+      .descriptionCopy {
+        flex:1;
+      }
+
+      .nav {
+        .next {
+          .rotate {
+            position: relative;
+            bottom: $navWidth;
+            width: 50vh;
+          }
+        }
+      }
     }
 
     &.hasContent .description {
@@ -319,44 +307,68 @@ $descriptionWidth: 40rem;
 /** PHONE **/
 @media (max-width: 640px) {
   .project {
-    .description {
 
-      .title {
-        margin: 1rem 0;
+    .description {
+      display:flex;
+
+      .descriptionCopy {
+        flex: 1;
+
+        .title {
+          margin: 1rem 0;
+        }
+
+        .info {
+          .infoBox {
+            border: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid $darkGrey;
+
+            &:last-of-type {
+              border-bottom: 1px solid $darkGrey;
+            }
+
+            label {
+              font-size: 1.3rem;
+            }
+
+            p {
+              font-size: 1.3rem;
+            }
+          }
+
+          .contact {
+            div {
+              display: none;
+            }
+
+            hr {
+              display: none;
+            }
+
+            a {
+              @include button;
+            }
+          }
+        }
       }
 
-      .info {
-        .infoBox {
-          border: none;
-          padding: 0.5rem 0;
-          border-bottom: 1px solid $darkGrey;
+      .nav {
+        color:white;
 
-          &:last-of-type {
-            border-bottom: 1px solid $darkGrey;
-          }
-
-          label {
-            font-size: 1.3rem;
-          }
-
-          p {
-            font-size: 1.3rem;
+        .next {
+          .rotate {
+            position:relative;
+            bottom:$navWidth;
+            width:50vh;
           }
         }
+      }
+    }
 
-        .contact {
-          div {
-            display: none;
-          }
-
-          hr {
-            display: none;
-          }
-
-          a {
-            @include button;
-          }
-        }
+    .content {
+      article {
+        padding:2rem 0;
       }
     }
   }

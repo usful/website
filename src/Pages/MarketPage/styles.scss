@@ -1,6 +1,7 @@
 @import '../../variables';
 
 $coverWidth: 3rem;
+$coverTop: 11vh;
 
 .marketPage {
   @include fullScreen;
@@ -37,7 +38,7 @@ $coverWidth: 3rem;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 11vh;
+    height: $coverTop;
   }
 
   .coverRight {
@@ -70,6 +71,7 @@ $coverWidth: 3rem;
       .top {
         @include slideUpHidden;
         padding: 3rem 3rem 1rem 3rem;
+        height: $coverTop;
       }
 
       .box {
@@ -236,6 +238,9 @@ $coverWidth: 3rem;
       .main {
         .top {
           padding: 2rem 3rem;
+          text-align: center;
+          position: relative;
+          z-index: 4;
         }
 
         .box {
@@ -286,8 +291,8 @@ $coverWidth: 3rem;
     .main {
       .top {
         text-align: center;
-        position:relative;
-        z-index:4
+        position: relative;
+        z-index: 4;
       }
     }
   }

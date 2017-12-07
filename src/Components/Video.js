@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import utils from '../utils';
+
+const browser = utils.detect();
 
 export default class Video extends Component {
   static defaultProps = {
@@ -6,15 +9,23 @@ export default class Video extends Component {
     autoPlay: false,
     muted: true,
     loop: true,
-    playsInline: true
+    playsInline: true,
+    onCanPlay: e => null
   };
 
   constructor(props) {
     super(props);
+
+    this.chromeFix = browser.name !== 'chrome';
   }
 
   play() {
-    this.refs.vid.play();
+    const status = this.refs.vid.play();
+    //Some browsers promisify Play, but not all.
+    //This can cause an error to be thrown if play was interrupted.
+    if (status.then) {
+      status.then(e => null).catch(err => null);
+    }
   }
 
   pause() {
@@ -43,10 +54,21 @@ export default class Video extends Component {
         style={this.props.style}
         muted={this.props.muted}
         loop={this.props.loop}
-        onCanPlay={this.props.onCanPlay}
+        onCanPlay={e => {
+          this.chromeFix = true;
+          this.props.onCanPlay(e);
+        }}
         onError={this.props.onError}
         autoPlay={this.props.autoPlay}
         playsInline={this.props.playsInline}
+        onSuspend={() => {
+          if (!this.chromeFix) {
+            this.chromeFix = true;
+            this.refs.vid.src = this.props.src;
+            this.refs.vid.load();
+            this.refs.vid.play();
+          }
+        }}
       >
         <source src={this.props.src} />
       </video>

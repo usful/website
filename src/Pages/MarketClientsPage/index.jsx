@@ -65,7 +65,7 @@ export default class MarketClientsPageF extends Showable {
             pagerClass={styles.pager}
           />
 
-          <TopBar className={styles.top} path="/market" menu={menu} />
+          <TopBar className={styles.top} path="/market" menu={menu} color="black"/>
         </section>
         <section className={styles.main}>
           <h1>Engage your audience with a truly unique market experience.</h1>
