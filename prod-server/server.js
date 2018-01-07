@@ -14,11 +14,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(compression());
 
-/**
 app.use((req, res, next) => {
-  if (!req.secure && process.env.NODE_ENV === 'production') {
+  if (
+    (!req.secure && process.env.NODE_ENV === 'production') ||
+    req.headers['host'] === 'www.usful.co'
+  ) {
     res.writeHead(301, {
-      Location: `https://${req.headers['host']}${req.url}`
+      Location: `https://usful.co/${req.url}`
     });
 
     res.end();
@@ -27,7 +29,6 @@ app.use((req, res, next) => {
   next();
 });
 
- */
 // put in the actual config here.
 aws.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -111,12 +112,11 @@ const sendIndex = (req, res) =>
   app.use(`${path}/*`, sendIndex);
 });
 
-app.use('/', express.static(__dirname +'/../public'));
+app.use('/', express.static(__dirname + '/../public'));
 
 http.createServer(app).listen(8080);
 console.log('http listening on port 8080!');
 
-/**
 const options = {
   key: fs.readFileSync(path.join(__dirname, '/ssl/key.pem')),
   cert: fs.readFileSync(path.join(__dirname, '/ssl/cert.pem')),
@@ -125,5 +125,3 @@ const options = {
 
 https.createServer(options, app).listen(9090);
 console.log('https listening on port 9090!');
-
- */
