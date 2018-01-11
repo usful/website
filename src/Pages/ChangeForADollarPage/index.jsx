@@ -179,7 +179,7 @@ export default class TechnologiesPage extends Showable {
               {this.renderBoxes(
                 'https://s3.amazonaws.com/usful-portfolio/cfdSite/img/coins.png',
                 '3. Donate with Every Purchase',
-                'Live your life - go for coffee with your friends, have night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.',
+                'Live your life - go for coffee with your friends, have a night out, grab groceries. Change for a Dollar automatically rounds up all of your purchases to the nearest dollar and donates the change.',
                 {
                   id: 'video-3-1',
                   type: 'MediaBlock',
