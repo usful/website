@@ -26,7 +26,7 @@ export default class NavigationHelper {
   }
 
   static changeTitle(next) {
-    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  2017`;
+    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  2018`;
   }
 
   static async hashChanged(next, last) {
