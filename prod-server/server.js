@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     req.headers['host'] === 'www.usful.co'
   ) {
     res.writeHead(301, {
-      Location: `https://usful.co/${req.url}`
+      Location: `https://usful.co${req.url !== '/' ? req.url : ''}`
     });
 
     res.end();
@@ -66,28 +66,21 @@ Message: ${req.body.message}`
   res.end();
 });
 
-const data = require('../dist/data');
+const data = require('../dist/data').default;
 
 app.use('/sitemap.xml', (req, res) => {
   const baseUrl = 'https://www.usful.co';
 
   res.type('application/xml');
 
+  console.log(data);
+
   res.send(
     `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${data.sections
+      ${data.projects
         .map(
-          section => `
-        <url>
-          <loc>${baseUrl}${section.route.path}</loc>
-          <lastmod>2017-09-01</lastmod>
-          <changefreq>monthly</changefreq>
-          <priority>1.0</priority>
-        </url>
-        ${section.projects
-          .map(
-            project => `
+          project => `
           <url>
             <loc>${baseUrl}${project.route.path}</loc>
             <lastmod>2017-09-01</lastmod>
@@ -95,9 +88,6 @@ app.use('/sitemap.xml', (req, res) => {
             <priority>0.9</priority>
           </url>
         `
-          )
-          .join('')}
-      `
         )
         .join('')}
     </urlset>`
@@ -107,7 +97,7 @@ app.use('/sitemap.xml', (req, res) => {
 const sendIndex = (req, res) =>
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 
-['/technology', '/experiences', '/market'].forEach(url => {
+['/technology', '/experiences', '/market', '/project'].forEach(url => {
   app.use(url, sendIndex);
   app.use(`${path}/*`, sendIndex);
 });

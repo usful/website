@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/osheaga-oasis',
+    path: '/project/osheaga-oasis',
     strict: true
   },
   id: 'ep2',

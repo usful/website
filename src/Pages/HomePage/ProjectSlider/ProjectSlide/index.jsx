@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import cx from 'classnames';
 
 import utils from '../../../../utils';
@@ -6,7 +6,7 @@ import styles from './styles.scss';
 import LoadableImage from '../../../../Components/LoadableImage';
 import LoadableVideo from '../../../../Components/LoadableVideo';
 
-export default class ProjectSlide extends Component {
+export default class ProjectSlide extends PureComponent {
   static defaultProps = {
     project: {},
     selected: false

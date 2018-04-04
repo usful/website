@@ -1,0 +1,37 @@
+@import '../variables';
+
+.sectionMenu {
+  overflow: hidden;
+
+  .menu {
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    box-shadow: $dropShadow;
+    transform: translate3d(40vw,0,0);
+
+    transition: background-color 300ms ease-out, transform 300ms ease-out;
+
+  }
+
+  &.visible {
+    .menu {
+      transform: translate3d(0,0,0);
+
+      &:hover {
+        background-color: $green;
+        transform: translate3d(0, -0.5rem, 0);
+      }
+    }
+  }
+}
+
+
+/** PHONE **/
+@media (max-width:640px) {
+  .sectionMenu {
+    .menu {
+      flex-direction: column;
+    }
+  }
+}

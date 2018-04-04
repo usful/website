@@ -1,10 +1,8 @@
 import ModelsLibrary from 'models';
 
-const Models = new ModelsLibrary({
+export default new ModelsLibrary({
   middleware: [
-    ModelsLibrary.middleware.immutable,
-    ModelsLibrary.middleware.events
+    ModelsLibrary.middleware.events,
+    ModelsLibrary.middleware.immutable
   ]
 });
-
-export default Models;

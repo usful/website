@@ -87,7 +87,7 @@ app.use(
 const sendIndex = (req, res) =>
   res.sendFile(path.join(__dirname + '/../public/index.html'));
 
-['/technology', '/experiences', '/market'].forEach(url => {
+['/technology', '/experiences', '/market', '/project', '/not-found', '/error'].forEach(url => {
   app.use(url, sendIndex);
   app.use(`${path}/*`, sendIndex);
 });

@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/6ix-cycle',
+    path: '/project/6ix-cycle',
     strict: true
   },
   id: 'ep5',

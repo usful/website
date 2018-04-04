@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 
 import utils from '../../utils';
 import styles from './styles.scss';
@@ -128,8 +127,8 @@ export default class MarketPage extends Showable {
                 >
                   <label>01</label>
                   <h1 className={styles.link}>Clients</h1>
-                  <Link
-                    to={`/market/${CLIENTS}`}
+                  <a
+                    href={`/market/${CLIENTS}`}
                     className={cx(styles.marketHero, {
                       [styles.visible]: hovering === PARTNERS
                     })}
@@ -143,8 +142,8 @@ export default class MarketPage extends Showable {
                 >
                   <label>02</label>
                   <h1 className={styles.link}>Partners</h1>
-                  <Link
-                    to={`/market/${PARTNERS}`}
+                  <a
+                    href={`/market/${PARTNERS}`}
                     className={cx(styles.marketHero, {
                       [styles.visible]: hovering === CLIENTS
                     })}

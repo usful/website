@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import cx from 'classnames';
 
 import styles from './styles.scss';
@@ -6,7 +6,7 @@ import styles from './styles.scss';
 const POINTS = 759;
 
 const randomSize = () => 0.25 + Math.random() * 1.1;
-export default class Dots extends Component {
+export default class Dots extends PureComponent {
   constructor(props) {
     super(props);
 

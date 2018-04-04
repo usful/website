@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/earth-week',
+    path: '/project/earth-week',
     strict: true
   },
   id: 'ep3',

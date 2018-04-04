@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { matchPath } from 'react-router-dom';
-import utils from '../utils/index';
+import React, { PureComponent } from 'react';
+import utils from '../utils';
 
-export default class Showable extends Component {
+export default class Showable extends PureComponent {
   static enter = [utils.timing];
   static exit = [utils.timing];
 
@@ -14,7 +13,7 @@ export default class Showable extends Component {
     onHide: () => {},
     onHidden: () => {},
     visible: false,
-    route: {}
+    active: false,
   };
 
   constructor(props) {
@@ -24,13 +23,8 @@ export default class Showable extends Component {
       showing: false,
       hiding: false,
       shown: false,
-      hidden: true,
-      active: false
+      hidden: true
     };
-
-    if (this.props.route) {
-      state.active = !!matchPath(window.location.pathname, this.props.route);
-    }
 
     for (let i = 1; i < this.constructor.enter.length + 1; i++) {
       state[`show${i}`] = false;
@@ -50,6 +44,24 @@ export default class Showable extends Component {
 
   onHide() {}
 
+  componentDidMount() {
+    if (this.props.visible) {
+      this.show();
+    } else if (!this.props.visible) {
+      this.hide();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.visible && !this.props.visible) {
+      this.hide();
+    }
+
+    if (!prevProps.visible && this.props.visible) {
+      this.show();
+    }
+  }
+
   showableClasses(styles) {
     const names = {
       [styles.shown]: this.state.shown,
@@ -64,28 +76,6 @@ export default class Showable extends Component {
     }
 
     return names;
-  }
-
-  setActive() {
-    return new Promise(resolve =>
-      this.setState(
-        {
-          active: true
-        },
-        resolve
-      )
-    );
-  }
-
-  setInactive() {
-    return new Promise(resolve =>
-      this.setState(
-        {
-          active: false
-        },
-        resolve
-      )
-    );
   }
 
   async show() {
@@ -106,7 +96,7 @@ export default class Showable extends Component {
       )
     );
 
-    this.onShown();
+    this.onShow();
     this.props.onShow();
 
     for (let i = 1; i < states + 1; i++) {
@@ -161,7 +151,7 @@ export default class Showable extends Component {
   }
 
   get shouldRender() {
-    return this.state.active;
+    return this.props.active;
   }
 
   render() {

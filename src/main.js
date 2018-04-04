@@ -4,14 +4,20 @@ import initReactFastclick from 'react-fastclick';
 
 initReactFastclick();
 
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App/index';
+const TRACKING_ID = 'UA-57226902-1';
 
-render(
-  <BrowserRouter ref={router => (window.router = router || window.router)}>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
+let analytics;
+try {
+  analytics = gtag;
+} catch (e) {
+  analytics = () => {};
+}
+
+analytics('js', new Date());
+analytics('config', TRACKING_ID);
+
+import React from 'react';
+import { render } from 'react-dom';
+import App from './Components/App';
+
+render(<App />, document.getElementById('root'));

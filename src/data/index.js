@@ -1,9 +1,10 @@
-import sections from './sections';
 import AppModel from '../models/App';
+import projects from './sections/experiences/projects';
 
 const app = new AppModel({
   isSetup: false,
-  sections: sections,
+  projects: projects,
+  project: null,
   menu: [
     {
       showing: false,

@@ -26,32 +26,21 @@ export default class NavigationHelper {
   }
 
   static changeTitle(next) {
-    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  2017`;
+    document.title = `${next.name === 'Home' ? 'Usful' : next.name} ❤  ${new Date().getFullYear()}`;
   }
 
   static async hashChanged(next, last) {
-    const toggle = (location, action) => {
-      if (location && location.hash) {
-        const menu = this.data.menu.find(menu => menu.hash === location.hash);
-
-        if (menu) {
-          menu.component[action]();
-        }
-      }
-    };
-
-    toggle(last, 'hide');
-    toggle(next, 'show');
+    next.shown = true;
+    last.shown = false;
   }
 
   static async routeChanged(next) {
-    let last, lastSection, lastProject;
-    let nextSection, nextProject;
+    let last, lastProject, nextProject;
 
     //Google analytics
     analytics('event', 'page_view', {
-      'page_location': `https://usful.co/${next.pathname}`,
-      'page_path': next.pathname
+      page_location: `https://usful.co/${next.pathname}`,
+      page_path: next.pathname
     });
 
     last = this.history[this.history.length - 1];
@@ -64,70 +53,31 @@ export default class NavigationHelper {
         return;
       }
 
-      lastSection = this.data.sections.find(section =>
-        matchPath(last.pathname, section.route)
+      lastProject = this.data.projects.find(project =>
+        matchPath(last.pathname, project.route)
       );
-
-      if (lastSection) {
-        lastProject = lastSection.projects.find(project =>
-          matchPath(last.pathname, project.route)
-        );
-      }
     }
 
-    nextSection = this.data.sections.find(section =>
-      matchPath(next.pathname, section.route)
+    nextProject = this.data.projects.find(project =>
+      matchPath(next.pathname, project.route)
     );
 
-    if (nextSection) {
-      nextProject = nextSection.projects.find(project =>
-        matchPath(next.pathname, project.route)
-      );
-
-      if (nextSection !== lastSection) {
-        NavigationHelper.changeTitle(nextSection);
-        nextSection.component.setActive();
-
-        if (lastSection) {
-          lastSection.leaving = true;
-          await lastSection.component.hide();
-          lastSection.leaving = false;
-          lastSection.active = false;
-          lastSection.component.setInactive();
-        }
-
-        nextSection.showing = true;
-        await nextSection.component.show();
-        nextSection.showing = false;
-        nextSection.active = true;
-      }
-
-      if (nextProject) {
-        await nextProject.component.setActive();
-        await utils.pause(10);
-      }
-
-      if (lastProject) {
-        lastProject.leaving = true;
-        await lastProject.component.hide();
-        lastProject.leaving = false;
-        lastProject.active = false;
-        lastProject.component.setInactive();
-      }
-
-      if (nextProject) {
-        nextProject.showing = true;
-        await nextProject.component.show();
-        nextProject.showing = false;
-        nextProject.active = true;
-      }
+    if (nextProject) {
+      nextProject.active = true;
+      await utils.pause(10);
     }
-  }
 
-  static getSection(name) {
-    return NavigationHelper.data.sections.find(
-      section => section.name === name
-    );
+    if (lastProject) {
+      lastProject.leaving = true;
+      lastProject.leaving = false;
+      lastProject.active = false;
+    }
+
+    if (nextProject) {
+      nextProject.showing = true;
+      nextProject.showing = false;
+      nextProject.active = true;
+    }
   }
 
   static getMenu(name) {

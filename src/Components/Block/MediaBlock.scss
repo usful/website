@@ -1,0 +1,138 @@
+@import '../../variables';
+
+.MediaBlock {
+  overflow: hidden;
+  padding: 3.2rem 2rem;
+  color: $black;
+
+  .wrapper {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  video {
+    object-fit: cover;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+
+  p {
+    font-family: $fontSans;
+    font-size: 1.5rem;
+    opacity: 0.9;
+    line-height: 1.4rem;
+    flex: 2;
+  }
+
+  &.alignFull {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.alignCenter {
+    img {
+      display: block;
+      height: 24rem;
+    }
+
+    p {
+      text-align: center;
+      padding: 2rem 10rem 0 10rem;
+    }
+  }
+
+  &.alignRight,
+  &.alignLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    p{
+      padding: 0 2rem;
+    }
+
+    .wrapper {
+      flex:2;
+    }
+
+    img {
+      flex: 3;
+      object-fit: contain;
+      height: 24rem;
+    }
+  }
+
+  &.alignCenter {
+    text-align: center;
+  }
+}
+
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .MediaBlock {
+    &.alignCenter {
+      img {
+        height: 20rem;
+      }
+
+      p {
+        padding: 2rem 5rem 0 5rem;
+      }
+    }
+
+    &.alignRight,
+    &.alignLeft {
+      img {
+        height: 15rem;
+      }
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+
+  .MediaBlock {
+    padding: 2rem;
+
+    &.alignCenter {
+      img {
+        height: 15rem;
+      }
+
+      p {
+        padding: 1rem;
+      }
+    }
+
+    &.alignRight,
+    &.alignLeft {
+      align-items: center;
+      img {
+        height: 10rem;
+      }
+      p{
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+    }
+
+    &.alignLeft {
+      flex-direction: column-reverse;
+    }
+
+    &.alignRight {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

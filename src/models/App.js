@@ -1,9 +1,12 @@
 import Models from './Models';
 import Menu from './Menu';
-import Section from './Section';
+import Project from './Project';
+import Route from './Route';
 
 export default Models.create('App', {
   isSetup: Boolean,
-  sections: [Section],
-  menu: [Menu]
+  projects: [Project],
+  project: String,
+  menu: [Menu],
+  route: Route
 });
