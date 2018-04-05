@@ -32,53 +32,6 @@
 
 /** TABLET **/
 @media (max-width: 1024px) {
-  .mainMenu {
-    @include slideUpHidden;
-
-    &.shown {
-      @include  slideUpShow;
-    }
-
-    top: 0;
-    left: 0;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000000;
-    transform: translateX(0);
-    opacity: 1;
-
-    .menuItems {
-      @include fullScreen;
-      padding-top: 6rem;
-      display: flex;
-      align-items: center;
-      background-color: black;
-      flex-direction: column;
-
-      a {
-        display: flex;
-        color: white;
-        font-size: 2rem;
-        padding: 0.25em;
-        margin: 0.75em 1em;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-      }
-
-      .closeMenu {
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
-        padding: 0;
-        font-size: 1.4rem;
-      }
-    }
-
-    .icon {
-      font-size: 2rem;
-      padding-top: 2rem;
-    }
-  }
 }
 
 /** PHONE **/

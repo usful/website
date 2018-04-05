@@ -3,10 +3,19 @@ import cx from 'classnames';
 
 import styles from './TopBar.scss';
 
+import util from '../utils';
 import Logo from './Logo';
 import MainMenu from './MainMenu';
+import MainMenuMobile from './MainMenuMobile';
 
-export default function TopBar({ className, menu = [], path = '/', color = 'white' }) {
+const isMobile = util.isMobile || util.isTablet;
+
+export default function TopBar({
+  className,
+  menu = [],
+  path = '/',
+  color = 'white'
+}) {
   return (
     <section className={cx(styles.topBar, className)}>
       <div className={styles.spacer}>
@@ -14,7 +23,12 @@ export default function TopBar({ className, menu = [], path = '/', color = 'whit
           <Logo className={styles.logo} style={{ color: color }} />
         </a>
       </div>
-      <MainMenu color={color} items={menu} active visible />
+
+      {isMobile ? (
+        <MainMenuMobile color={color} items={menu} active={false} visible={false} />
+      ) : (
+        <MainMenu color={color} items={menu} active visible />
+      )}
     </section>
   );
 }
