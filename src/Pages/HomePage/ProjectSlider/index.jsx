@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 import ProjectSlide from './ProjectSlide';
@@ -14,11 +13,11 @@ function getProjects(sections) {
   sections
     .filter(section => !!section.projects)
     .forEach(section => section.projects.forEach(project => arr.push(project)));
-  
+
   return arr;
 }
 
-export default class ProjectSlider extends Component {
+export default class ProjectSlider extends PureComponent {
   static defaultProps = {
     sections: [],
     interval: INTERVAL,
@@ -117,7 +116,7 @@ export default class ProjectSlider extends Component {
           <h1>
             <span>{project.name}</span>
             in
-            <Link to={`/${project.type}`}>{project.type}</Link>
+            <a href={`/${project.type}`}>{project.type}</a>
           </h1>
         </section>
       </div>

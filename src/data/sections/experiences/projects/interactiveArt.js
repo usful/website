@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/interactive-art',
+    path: '/project/interactive-art',
     strict: true
   },
   id: 'ep1',

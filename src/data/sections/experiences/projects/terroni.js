@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/terroni',
+    path: '/project/terroni',
     strict: true
   },
   id: 'ep8',

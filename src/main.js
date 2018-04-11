@@ -1,17 +1,19 @@
 import 'core-js/es6/map';
 import 'core-js/es6/set';
-import initReactFastclick from 'react-fastclick';
 
-initReactFastclick();
+const TRACKING_ID = 'UA-57226902-1';
 
-import React, { Component } from 'react';
+if (typeof gtag === 'undefined') {
+  window.analytics = gtag;
+} else {
+  window.analytics = () => {};
+}
+
+window.analytics('js', new Date());
+window.analytics('config', TRACKING_ID);
+
+import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App/index';
+import App from './Components/App';
 
-render(
-  <BrowserRouter ref={router => (window.router = router || window.router)}>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
+render(<App />, document.getElementById('root'));

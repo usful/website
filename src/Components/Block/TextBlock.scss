@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.textBlock {
+  color: $black;
+  padding: 3.2rem 4rem;
+
+  p {
+    font-size: 2.2rem;
+    font-family: $font;
+    line-height: 1.4em;
+  }
+}
+
+/** TABLET **/
+@media (max-width: 1024px) {
+  .textBlock {
+    padding: 2rem;
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+
+/** PHONE **/
+@media (max-width: 640px) {
+}
+
+@media (min-width: 1025px) {
+}

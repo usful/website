@@ -2,7 +2,7 @@ module.exports = {
   component: null,
   active: false,
   route: {
-    path: '/experiences/anthropocene-film',
+    path: '/project/anthropocene-film',
     strict: true
   },
   id: 'ep4',

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 export default function connect(models, Child) {
-  return class ModelsHoc extends Component {
+  return class ModelsHoc extends PureComponent {
     constructor(props) {
       super(props);
 
